@@ -8,28 +8,28 @@ import { SelectModule } from '@wawjs/ngx-prime/select';
 import { ListingRelationType, ListingShortComponent } from '../../../components/listing/listing-short/listing-short.component';
 import { Listing, ListingStatus, ListingType } from '../../../listing/listing.interface';
 import { listings } from '../../../listing/listing.data';
-import { ListingRelations, propertyForListing, relationsForListing } from '../../../listing/listing-relations';
-import { PropertyType } from '../../../property/property.interface';
+import { ListingRelations, patientForListing, relationsForListing } from '../../../listing/listing-relations';
+import { PatientCategory } from '../../../patient/patient.interface';
 
 interface SelectOption<T> {
 	label: string;
 	value: T;
 }
 
-const PROPERTY_TYPE_LABELS: Record<PropertyType, string> = {
-	apartment: 'Квартира',
-	house: 'Будинок',
-	room: 'Кімната',
-	land: 'Земельна ділянка',
-	office: 'Офіс',
-	'retail-space': 'Торгове приміщення',
-	warehouse: 'Склад',
-	garage: 'Гараж',
-	'parking-space': 'Паркомісце',
-	'commercial-building': 'Комерційна будівля',
-	'industrial-property': 'Промислова нерухомість',
-	'agricultural-property': 'Сільськогосподарська нерухомість',
-	'unfinished-construction': 'Незавершене будівництво',
+const PATIENT_CATEGORY_LABELS: Record<PatientCategory, string> = {
+	inpatient: 'Стаціонарний',
+	outpatient: 'Амбулаторний',
+	emergency: 'Невідкладна допомога',
+	'day-case': 'Денний стаціонар',
+	icu: 'Реанімація',
+	maternity: 'Пологове відділення',
+	pediatric: 'Педіатрія',
+	surgical: 'Хірургія',
+	psychiatric: 'Психіатрія',
+	rehabilitation: 'Реабілітація',
+	palliative: 'Паліативна допомога',
+	observation: 'Спостереження',
+	transfer: 'Переведення',
 };
 
 const LISTING_TYPE_LABELS: Record<ListingType, string> = {
@@ -70,9 +70,9 @@ const LISTING_STATUS_LABELS: Record<ListingStatus, string> = {
 export class ExploreComponent {
 	private readonly _router = inject(Router);
 
-	readonly propertyTypeOptions: SelectOption<PropertyType>[] = Object.entries(
-		PROPERTY_TYPE_LABELS,
-	).map(([value, label]) => ({ value: value as PropertyType, label }));
+	readonly patientCategoryOptions: SelectOption<PatientCategory>[] = Object.entries(
+		PATIENT_CATEGORY_LABELS,
+	).map(([value, label]) => ({ value: value as PatientCategory, label }));
 
 	readonly listingTypeOptions: SelectOption<ListingType>[] = Object.entries(
 		LISTING_TYPE_LABELS,
@@ -83,26 +83,26 @@ export class ExploreComponent {
 	).map(([value, label]) => ({ value: value as ListingStatus, label }));
 
 	readonly searchTerm = signal('');
-	readonly selectedPropertyTypes = signal<PropertyType[]>([]);
+	readonly selectedPatientCategories = signal<PatientCategory[]>([]);
 	readonly selectedListingType = signal<ListingType | null>(null);
 	readonly selectedStatus = signal<ListingStatus | null>(null);
 
 	readonly results = computed<{ listing: Listing; relations: ListingRelations }[]>(() => {
 		const term = this.searchTerm().trim().toLowerCase();
-		const types = this.selectedPropertyTypes();
+		const types = this.selectedPatientCategories();
 		const listingType = this.selectedListingType();
 		const status = this.selectedStatus();
 
 		return listings
 			.filter((item) => {
-				const property = propertyForListing(item);
+				const patient = patientForListing(item);
 
 				if (term) {
 					const haystack = [
 						item.title,
 						item.publicLocation,
-						property?.city,
-						property?.address,
+						patient?.city,
+						patient?.address,
 					]
 						.filter(Boolean)
 						.join(' ')
@@ -112,7 +112,7 @@ export class ExploreComponent {
 					}
 				}
 
-				if (types.length && (!property || !types.includes(property.type))) {
+				if (types.length && (!patient || !types.includes(patient.category))) {
 					return false;
 				}
 

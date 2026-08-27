@@ -15,7 +15,7 @@ export interface Agency {
 	foundedYear: number;
 	agentIds: string[];
 	listingIds: string[];
-	representedPropertyIds: string[];
+	representedPatientIds: string[];
 	contact: AgencyContact;
 	averageRating: number;
 	reviewCount: number;

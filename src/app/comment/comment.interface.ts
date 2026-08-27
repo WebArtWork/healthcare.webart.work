@@ -1,4 +1,4 @@
-export type CommentEntityType = 'property' | 'listing' | 'complex' | 'developer' | 'agency' | 'agent' | 'user';
+export type CommentEntityType = 'patient' | 'listing' | 'complex' | 'developer' | 'agency' | 'agent' | 'user';
 
 export type CommentModerationStatus = 'pending' | 'approved' | 'rejected' | 'flagged';
 

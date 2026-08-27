@@ -1,7 +1,7 @@
 [
 	{
 		"_id": "listing-1",
-		"propertyId": "prop-1",
+		"patientId": "prop-1",
 		"listingType": "sale",
 		"title": "2-bedroom apartment in Aurelia Gardens, Building A",
 		"description": "Under-construction 2-bedroom apartment on the 5th floor of Building A, with river views, expected handover in 12 months.",
@@ -22,7 +22,7 @@
 	},
 	{
 		"_id": "listing-2",
-		"propertyId": "prop-2",
+		"patientId": "prop-2",
 		"listingType": "commercial-lease",
 		"title": "Ground-floor retail unit, Aurelia Gardens podium",
 		"description": "120 sqm retail unit with street frontage in the Aurelia Gardens retail podium, suitable for a cafe or convenience store.",
@@ -43,7 +43,7 @@
 	},
 	{
 		"_id": "listing-3",
-		"propertyId": "prop-3",
+		"patientId": "prop-3",
 		"listingType": "long-term-rent",
 		"title": "Cozy 1-bedroom apartment in Old Town",
 		"description": "Bright 1-bedroom apartment on the 2nd floor of a well-maintained building in the Old Town district, close to public transport.",
@@ -64,7 +64,7 @@
 	},
 	{
 		"_id": "listing-4",
-		"propertyId": "prop-4",
+		"patientId": "prop-4",
 		"listingType": "commercial-lease",
 		"title": "Office suite in Business District Plaza Tower",
 		"description": "210 sqm office suite on the 6th floor with 6 rooms, elevator access, and 24/7 building security.",

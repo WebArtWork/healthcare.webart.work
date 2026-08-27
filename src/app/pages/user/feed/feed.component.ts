@@ -12,7 +12,7 @@ import { ListingRelationType } from '../../../components/listing/listing-short/l
 type FeedAction = 'favourite' | 'ignore';
 
 /** Fallback image shown when a listing has no photos or its photo fails to load. */
-const DEFAULT_PHOTO = '/property-default.svg';
+const DEFAULT_PHOTO = '/patient-default.svg';
 
 @Component({
 	imports: [ButtonModule, AgentIconComponent, AgencyIconComponent, DeveloperIconComponent],

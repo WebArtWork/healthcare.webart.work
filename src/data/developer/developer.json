@@ -9,7 +9,7 @@
 		"foundedYear": 2011,
 		"isClaimed": true,
 		"complexIds": ["complex-1"],
-		"propertyIds": ["prop-1", "prop-2", "prop-6"],
+		"patientIds": ["prop-1", "prop-2", "prop-6"],
 		"listingIds": ["listing-1", "listing-2"],
 		"contact": {
 			"phone": "+1-555-0110",
@@ -27,7 +27,7 @@
 		"foundedYear": 2004,
 		"isClaimed": false,
 		"complexIds": [],
-		"propertyIds": ["prop-7"],
+		"patientIds": ["prop-7"],
 		"listingIds": [],
 		"contact": {
 			"phone": "+1-555-0199",

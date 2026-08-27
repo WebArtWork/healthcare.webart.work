@@ -7,15 +7,15 @@ import {
 	RECORD_TYPE_LABELS,
 	RECORD_VISIBILITY_LABELS,
 } from '../../../record/record-labels';
-import { Property } from '../../../property/property.interface';
+import { Patient } from '../../../patient/patient.interface';
 import { User } from '../../../user/user.interface';
-import { PropertyShortComponent } from '../../property/property-short/property-short.component';
+import { PatientShortComponent } from '../../patient/patient-short/patient-short.component';
 import { UserIconComponent } from '../../user/user-icon/user-icon.component';
 
 @Component({
 	selector: 'app-record-view',
 	standalone: true,
-	imports: [CommonModule, PropertyShortComponent, UserIconComponent],
+	imports: [CommonModule, PatientShortComponent, UserIconComponent],
 	templateUrl: './record-view.component.html',
 	styleUrl: './record-view.component.scss',
 })
@@ -23,7 +23,7 @@ export class RecordViewComponent {
 	private readonly _router = inject(Router);
 
 	@Input() entity!: PropertyRecord;
-	@Input() property?: Property | null;
+	@Input() patient?: Patient | null;
 	@Input() author?: User | null;
 	@Input() involvedUsers: User[] = [];
 
@@ -31,8 +31,8 @@ export class RecordViewComponent {
 	readonly statusLabels = RECORD_STATUS_LABELS;
 	readonly visibilityLabels = RECORD_VISIBILITY_LABELS;
 
-	viewProperty(): void {
-		if (this.property) this._router.navigate(['/property', this.property._id]);
+	viewPatient(): void {
+		if (this.patient) this._router.navigate(['/patient', this.patient._id]);
 	}
 
 	viewUser(user: User): void {

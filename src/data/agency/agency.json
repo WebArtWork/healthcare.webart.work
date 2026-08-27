@@ -9,7 +9,7 @@
 		"foundedYear": 2008,
 		"agentIds": ["agent-1", "agent-2"],
 		"listingIds": ["listing-3", "listing-4"],
-		"representedPropertyIds": ["prop-3", "prop-4"],
+		"representedPatientIds": ["prop-3", "prop-4"],
 		"contact": {
 			"phone": "+1-555-0140",
 			"email": "hello@draecia-realty.example",

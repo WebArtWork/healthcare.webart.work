@@ -1,0 +1,29 @@
+<section class="patients">
+	<div class="patients__filters">
+		<input
+			id="patients-search"
+			pInputText
+			type="text"
+			placeholder="Адреса, місто або країна"
+			class="patients__search"
+			[ngModel]="searchTerm()"
+			(ngModelChange)="searchTerm.set($event)"
+		/>
+
+		<a pButton routerLink="/map" severity="secondary" size="small" class="patients__map-link">
+			Мапа
+		</a>
+	</div>
+
+	<div class="patients__results">
+		<div class="patients__grid">
+			@for (item of results(); track item._id) {
+			<div class="patients__row" (click)="view(item)">
+				<app-patient-short [entity]="item" />
+			</div>
+			} @empty {
+			<p class="patients__empty">За заданим запитом пацієнтів не знайдено.</p>
+			}
+		</div>
+	</div>
+</section>

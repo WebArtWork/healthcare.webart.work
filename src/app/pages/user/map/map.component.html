@@ -22,14 +22,14 @@
 			/>
 
 			@if (!markers().length) {
-			<p class="map-page__empty">Немає об'єктів із координатами.</p>
+			<p class="map-page__empty">Немає пацієнтів із координатами.</p>
 			}
 		</div>
 
-		@if (selected(); as property) {
+		@if (selected(); as patient) {
 		<p-card class="map-page__panel">
 			<div class="map-page__panel-header">
-				<span class="map-page__panel-title">Обраний об'єкт</span>
+				<span class="map-page__panel-title">Обраний пацієнт</span>
 				<p-button
 					icon="pi pi-times"
 					[text]="true"
@@ -39,14 +39,14 @@
 				/>
 			</div>
 
-			<app-property-short [entity]="property" />
+			<app-patient-short [entity]="patient" />
 
 			<p-button
 				class="map-page__panel-action"
-				label="Переглянути об'єкт"
+				label="Переглянути пацієнта"
 				icon="pi pi-arrow-right"
 				iconPos="right"
-				(onClick)="view(property)"
+				(onClick)="view(patient)"
 			/>
 		</p-card>
 		}

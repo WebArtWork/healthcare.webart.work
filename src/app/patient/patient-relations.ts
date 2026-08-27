@@ -12,16 +12,16 @@ import { PropertyRecord } from '../record/record.interface';
 import { records } from '../record/record.data';
 import { EntityComment } from '../comment/comment.interface';
 import { comments } from '../comment/comment.data';
-import { Property } from './property.interface';
+import { Patient } from './patient.interface';
 
 /**
- * A property's related entities: it carries the authoritative
+ * A patient's related entities: it carries the authoritative
  * complexId/developerId/agencyId/agentId directly, plus arrays of ids
  * pointing at its own listings/records/comments — this resolves all of
- * them so the property detail page can show (and link to) its full
- * "digital passport" instead of raw ids.
+ * them so the patient detail page can show (and link to) its full
+ * medical record instead of raw ids.
  */
-export interface PropertyRelations {
+export interface PatientRelations {
 	complex: Complex | null;
 	developer: Developer | null;
 	agency: Agency | null;
@@ -39,19 +39,19 @@ const _listingById = new Map<string, Listing>(listings.map((l) => [l._id, l]));
 const _recordById = new Map<string, PropertyRecord>(records.map((r) => [r._id, r]));
 const _commentById = new Map<string, EntityComment>(comments.map((c) => [c._id, c]));
 
-export function relationsForProperty(property: Property): PropertyRelations {
+export function relationsForPatient(patient: Patient): PatientRelations {
 	return {
-		complex: property.complexId ? (_complexById.get(property.complexId) ?? null) : null,
-		developer: property.developerId ? (_developerById.get(property.developerId) ?? null) : null,
-		agency: property.agencyId ? (_agencyById.get(property.agencyId) ?? null) : null,
-		agent: property.agentId ? (_agentById.get(property.agentId) ?? null) : null,
-		listings: property.listingIds
+		complex: patient.complexId ? (_complexById.get(patient.complexId) ?? null) : null,
+		developer: patient.developerId ? (_developerById.get(patient.developerId) ?? null) : null,
+		agency: patient.agencyId ? (_agencyById.get(patient.agencyId) ?? null) : null,
+		agent: patient.agentId ? (_agentById.get(patient.agentId) ?? null) : null,
+		listings: patient.listingIds
 			.map((id) => _listingById.get(id))
 			.filter((l): l is Listing => !!l),
-		records: property.recordIds
+		records: patient.recordIds
 			.map((id) => _recordById.get(id))
 			.filter((r): r is PropertyRecord => !!r),
-		comments: property.commentIds
+		comments: patient.commentIds
 			.map((id) => _commentById.get(id))
 			.filter((c): c is EntityComment => !!c),
 	};

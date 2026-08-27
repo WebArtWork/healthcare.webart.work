@@ -6,12 +6,12 @@ import { CardModule } from '@wawjs/ngx-prime/card';
 import { RecordViewComponent } from '../../../components/record/record-view/record-view.component';
 import { PropertyRecord } from '../../../record/record.interface';
 import { records } from '../../../record/record.data';
-import { Property } from '../../../property/property.interface';
-import { properties } from '../../../property/property.data';
+import { Patient } from '../../../patient/patient.interface';
+import { patients } from '../../../patient/patient.data';
 import { User } from '../../../user/user.interface';
 import { users } from '../../../user/user.data';
 
-const _propertyById = new Map<string, Property>(properties.map((p) => [p._id, p]));
+const _patientById = new Map<string, Patient>(patients.map((p) => [p._id, p]));
 const _userById = new Map<string, User>(users.map((u) => [u._id, u]));
 
 @Component({
@@ -31,9 +31,9 @@ export class RecordsComponent {
 		records.find((item) => item._id === this._id()),
 	);
 
-	readonly property = computed<Property | null>(() => {
+	readonly patient = computed<Patient | null>(() => {
 		const record = this.entity();
-		return record ? (_propertyById.get(record.propertyId) ?? null) : null;
+		return record ? (_patientById.get(record.propertyId) ?? null) : null;
 	});
 
 	readonly author = computed<User | null>(() => {

@@ -14,7 +14,7 @@ export interface Developer {
 	foundedYear: number;
 	isClaimed: boolean;
 	complexIds: string[];
-	propertyIds: string[];
+	patientIds: string[];
 	listingIds: string[];
 	contact: DeveloperContact;
 }

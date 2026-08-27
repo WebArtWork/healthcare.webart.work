@@ -11,7 +11,7 @@ export interface Agent {
 	specializations: string[];
 	yearsExperience: number;
 	listingIds: string[];
-	representedPropertyIds: string[];
+	representedPatientIds: string[];
 	contactPhone: string;
 	contactEmail: string;
 	averageRating: number;

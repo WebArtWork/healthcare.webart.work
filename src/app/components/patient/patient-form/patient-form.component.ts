@@ -7,15 +7,15 @@ import { InputNumberModule } from '@wawjs/ngx-prime/inputnumber';
 import { InputTextModule } from '@wawjs/ngx-prime/inputtext';
 import { SelectModule } from '@wawjs/ngx-prime/select';
 import { TranslateDirective } from '@wawjs/ngx-translate';
-import { Property } from '../../../property/property.interface';
+import { Patient } from '../../../patient/patient.interface';
 import {
-	PROPERTY_STATUS_OPTIONS,
-	PROPERTY_TYPE_OPTIONS,
-	PROPERTY_VISIBILITY_OPTIONS,
-} from '../../../property/property-labels';
+	PATIENT_STATUS_OPTIONS,
+	PATIENT_CATEGORY_OPTIONS,
+	PATIENT_VISIBILITY_OPTIONS,
+} from '../../../patient/patient-labels';
 
 @Component({
-	selector: 'app-property-form',
+	selector: 'app-patient-form',
 	standalone: true,
 	imports: [
 		CommonModule,
@@ -26,34 +26,36 @@ import {
 		SelectModule,
 		TranslateDirective,
 	],
-	templateUrl: './property-form.component.html',
-	styleUrl: './property-form.component.scss',
+	templateUrl: './patient-form.component.html',
+	styleUrl: './patient-form.component.scss',
 })
-export class PropertyFormComponent {
-	@Input() entity?: Property;
+export class PatientFormComponent {
+	@Input() entity?: Patient;
 
 	readonly form: FormGroup;
-	readonly typeOptions = PROPERTY_TYPE_OPTIONS;
-	readonly statusOptions = PROPERTY_STATUS_OPTIONS;
-	readonly visibilityOptions = PROPERTY_VISIBILITY_OPTIONS;
+	readonly categoryOptions = PATIENT_CATEGORY_OPTIONS;
+	readonly statusOptions = PATIENT_STATUS_OPTIONS;
+	readonly visibilityOptions = PATIENT_VISIBILITY_OPTIONS;
 
 	constructor(private readonly fb: FormBuilder) {
 		this.form = this.fb.group({
-			type: ['apartment', Validators.required],
+			category: ['inpatient', Validators.required],
+			fullName: ['', Validators.required],
+			sex: ['female', Validators.required],
 			country: ['', Validators.required],
 			city: ['', Validators.required],
 			address: ['', Validators.required],
 			buildingUnitInfo: [''],
-			cadastralId: [''],
-			sizeSqm: [0, [Validators.required, Validators.min(1)]],
-			rooms: [1, [Validators.required, Validators.min(0)]],
-			bedrooms: [0, [Validators.required, Validators.min(0)]],
-			bathrooms: [0, [Validators.required, Validators.min(0)]],
-			floor: [null],
-			totalFloors: [null],
-			yearBuilt: [null],
-			status: ['active', Validators.required],
-			visibility: ['public', Validators.required],
+			mrn: [''],
+			heightCm: [0, [Validators.required, Validators.min(1)]],
+			weightKg: [0, [Validators.required, Validators.min(0)]],
+			ageYears: [0, [Validators.required, Validators.min(0)]],
+			bloodType: [''],
+			bedNumber: [null],
+			wardFloor: [null],
+			yearOfBirth: [null],
+			status: ['admitted', Validators.required],
+			visibility: ['private', Validators.required],
 		});
 	}
 
@@ -61,7 +63,7 @@ export class PropertyFormComponent {
 		if (this.entity) {
 			this.form.patchValue({
 				...this.entity,
-				...this.entity.characteristics,
+				...this.entity.vitals,
 			});
 		}
 	}

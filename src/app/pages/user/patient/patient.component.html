@@ -1,8 +1,8 @@
-<section class="property">
+<section class="patient">
 
 	@if (entity(); as item) {
 	@let rel = relations();
-	<app-property-view
+	<app-patient-view
 		[entity]="item"
 		[complex]="rel?.complex"
 		[developer]="rel?.developer"
@@ -13,8 +13,8 @@
 		[comments]="rel?.comments ?? []"
 	/>
 	} @else {
-	<p-card class="property__not-found">
-		<p>Об'єкт нерухомості не знайдено.</p>
+	<p-card class="patient__not-found">
+		<p>Пацієнта не знайдено.</p>
 	</p-card>
 	}
 </section>

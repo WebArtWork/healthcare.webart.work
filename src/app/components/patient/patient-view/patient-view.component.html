@@ -1,5 +1,5 @@
 <article class="card">
-	<h2 class="card__title">{{ typeLabels[entity.type] }} · {{ entity.city }}, {{ entity.country }}</h2>
+	<h2 class="card__title">{{ entity.fullName }} · {{ categoryLabels[entity.category] }}</h2>
 
 	<div class="card__meta">
 		<span class="card__badge">{{ statusLabels[entity.status] }}</span>
@@ -12,41 +12,42 @@
 		}
 	</div>
 
+		<div class="card__row"><dt>Стать</dt><dd>{{ entity.sex }}</dd></div>
 		<div class="card__row"><dt>Адреса</dt><dd>{{ entity.address }}</dd></div>
-		<div class="card__row"><dt>Корпус / квартира</dt><dd>{{ entity.buildingUnitInfo }}</dd></div>
-		<div class="card__row"><dt>Кадастровий номер</dt><dd>{{ entity.cadastralId }}</dd></div>
+		<div class="card__row"><dt>Палата / ліжко</dt><dd>{{ entity.buildingUnitInfo }}</dd></div>
+		<div class="card__row"><dt>Номер медичної картки (МКН)</dt><dd>{{ entity.mrn }}</dd></div>
 		<div class="card__row"><dt>Координати</dt><dd>{{ entity.coordinates.lat }}, {{ entity.coordinates.lng }}</dd></div>
-		<div class="card__row"><dt>Площа</dt><dd>{{ entity.characteristics.sizeSqm }} m²</dd></div>
-		<div class="card__row"><dt>Кімнати</dt><dd>{{ entity.characteristics.rooms }}</dd></div>
-		<div class="card__row"><dt>Спальні</dt><dd>{{ entity.characteristics.bedrooms }}</dd></div>
-		<div class="card__row"><dt>Санвузли</dt><dd>{{ entity.characteristics.bathrooms }}</dd></div>
-		@if (entity.characteristics.floor !== null) {
-			<div class="card__row"><dt>Поверх</dt><dd>{{ entity.characteristics.floor }} / {{ entity.characteristics.totalFloors }}</dd></div>
+		<div class="card__row"><dt>Зріст</dt><dd>{{ entity.vitals.heightCm }} см</dd></div>
+		<div class="card__row"><dt>Вага</dt><dd>{{ entity.vitals.weightKg }} кг</dd></div>
+		<div class="card__row"><dt>Вік</dt><dd>{{ entity.vitals.ageYears }}</dd></div>
+		<div class="card__row"><dt>Група крові</dt><dd>{{ entity.vitals.bloodType }}</dd></div>
+		@if (entity.vitals.bedNumber !== null) {
+			<div class="card__row"><dt>Ліжко / поверх</dt><dd>{{ entity.vitals.bedNumber }} / {{ entity.vitals.wardFloor }}</dd></div>
 		}
-		@if (entity.characteristics.yearBuilt !== null) {
-			<div class="card__row"><dt>Рік будівництва</dt><dd>{{ entity.characteristics.yearBuilt }}</dd></div>
+		@if (entity.vitals.yearOfBirth !== null) {
+			<div class="card__row"><dt>Рік народження</dt><dd>{{ entity.vitals.yearOfBirth }}</dd></div>
 		}
 		@if (complex) {
 			<div class="card__row">
-				<dt>Комплекс</dt>
+				<dt>Відділення</dt>
 				<dd><button type="button" class="card__relation" (click)="viewComplex()"><app-complex-icon [entity]="complex" /></button></dd>
 			</div>
 		}
 		@if (developer) {
 			<div class="card__row">
-				<dt>Забудовник</dt>
+				<dt>Заклад</dt>
 				<dd><button type="button" class="card__relation" (click)="viewDeveloper()"><app-developer-icon [entity]="developer" /></button></dd>
 			</div>
 		}
 		@if (agency) {
 			<div class="card__row">
-				<dt>Агентство</dt>
+				<dt>Медична установа</dt>
 				<dd><button type="button" class="card__relation" (click)="viewAgency()"><app-agency-icon [entity]="agency" /></button></dd>
 			</div>
 		}
 		@if (agent) {
 			<div class="card__row">
-				<dt>Агент</dt>
+				<dt>Лікар</dt>
 				<dd><button type="button" class="card__relation" (click)="viewAgent()"><app-agent-icon [entity]="agent" /></button></dd>
 			</div>
 		}
@@ -60,7 +61,7 @@
 	}
 
 	@if (listings.length) {
-		<h3 class="card__section-title">Оголошення</h3>
+		<h3 class="card__section-title">Призначення</h3>
 		<div class="card__list">
 			@for (listing of listings; track listing._id) {
 				<div class="card__list-item" (click)="viewListing(listing)">
@@ -71,7 +72,7 @@
 	}
 
 	@if (records.length) {
-		<h3 class="card__section-title">Історія об'єкта</h3>
+		<h3 class="card__section-title">Історія пацієнта</h3>
 		<div class="card__list">
 			@for (record of records; track record._id) {
 				<div class="card__list-item" (click)="viewRecord(record)">

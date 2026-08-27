@@ -2,20 +2,20 @@
 	<img
 		class="short__thumb"
 		[src]="photo"
-		[alt]="entity.type"
+		[alt]="entity.fullName"
 		loading="lazy"
 		(error)="onPhotoError($event)"
 	/>
 
 	<div class="short__body">
-		<h3 class="short__title">{{ entity.type }} · {{ entity.city }}</h3>
+		<h3 class="short__title">{{ entity.fullName }} · {{ entity.category }}</h3>
 		<p class="short__address">{{ entity.address }}</p>
 
 		<div class="short__meta">
 			<span>{{ entity.status }}</span>
-			<span>{{ entity.characteristics.sizeSqm }} m²</span>
-			@if (entity.characteristics.rooms) {
-				<span>{{ entity.characteristics.rooms }} кімнат</span>
+			<span>{{ entity.vitals.ageYears }} р.</span>
+			@if (entity.vitals.bedNumber) {
+				<span>Ліжко {{ entity.vitals.bedNumber }}</span>
 			}
 		</div>
 	</div>

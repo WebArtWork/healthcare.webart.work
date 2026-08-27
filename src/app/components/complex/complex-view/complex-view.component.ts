@@ -4,14 +4,14 @@ import { Router } from '@angular/router';
 import { Complex, ComplexStatus } from '../../../complex/complex.interface';
 import { Developer } from '../../../developer/developer.interface';
 import { developers } from '../../../developer/developer.data';
-import { Property } from '../../../property/property.interface';
-import { properties } from '../../../property/property.data';
+import { Patient } from '../../../patient/patient.interface';
+import { patients } from '../../../patient/patient.data';
 import { Listing } from '../../../listing/listing.interface';
 import { listings } from '../../../listing/listing.data';
 import { PropertyRecord } from '../../../record/record.interface';
 import { records } from '../../../record/record.data';
 import { DeveloperIconComponent } from '../../developer/developer-icon/developer-icon.component';
-import { PropertyShortComponent } from '../../property/property-short/property-short.component';
+import { PatientShortComponent } from '../../patient/patient-short/patient-short.component';
 import { ListingShortComponent } from '../../listing/listing-short/listing-short.component';
 import { RecordShortComponent } from '../../record/record-short/record-short.component';
 
@@ -23,7 +23,7 @@ const STATUS_LABELS: Record<ComplexStatus, string> = {
 };
 
 const _developerById = new Map<string, Developer>(developers.map((d) => [d._id, d]));
-const _propertyById = new Map<string, Property>(properties.map((p) => [p._id, p]));
+const _patientById = new Map<string, Patient>(patients.map((p) => [p._id, p]));
 const _listingById = new Map<string, Listing>(listings.map((l) => [l._id, l]));
 const _recordById = new Map<string, PropertyRecord>(records.map((r) => [r._id, r]));
 
@@ -33,7 +33,7 @@ const _recordById = new Map<string, PropertyRecord>(records.map((r) => [r._id, r
 	imports: [
 		CommonModule,
 		DeveloperIconComponent,
-		PropertyShortComponent,
+		PatientShortComponent,
 		ListingShortComponent,
 		RecordShortComponent,
 	],
@@ -51,8 +51,8 @@ export class ComplexViewComponent {
 		() => (this.entity.developerId ? (_developerById.get(this.entity.developerId) ?? null) : null),
 	);
 
-	readonly relatedProperties = computed<Property[]>(() =>
-		this.entity.propertyIds.map((id) => _propertyById.get(id)).filter((p): p is Property => !!p),
+	readonly relatedPatients = computed<Patient[]>(() =>
+		this.entity.patientIds.map((id) => _patientById.get(id)).filter((p): p is Patient => !!p),
 	);
 
 	readonly relatedListings = computed<Listing[]>(() =>
@@ -70,8 +70,8 @@ export class ComplexViewComponent {
 		}
 	}
 
-	viewProperty(property: Property): void {
-		this._router.navigate(['/property', property._id]);
+	viewPatient(patient: Patient): void {
+		this._router.navigate(['/patient', patient._id]);
 	}
 
 	viewListing(listing: Listing): void {

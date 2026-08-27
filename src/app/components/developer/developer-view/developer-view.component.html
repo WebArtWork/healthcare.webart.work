@@ -28,12 +28,12 @@
 		</div>
 	}
 
-	@if (relatedProperties().length) {
-		<h3 class="card__section-title">Об'єкти</h3>
+	@if (relatedPatients().length) {
+		<h3 class="card__section-title">Пацієнти</h3>
 		<div class="card__list">
-			@for (property of relatedProperties(); track property._id) {
-				<button type="button" class="card__list-item" (click)="viewProperty(property)">
-					<app-property-short [entity]="property" />
+			@for (patient of relatedPatients(); track patient._id) {
+				<button type="button" class="card__list-item" (click)="viewPatient(patient)">
+					<app-patient-short [entity]="patient" />
 				</button>
 			}
 		</div>

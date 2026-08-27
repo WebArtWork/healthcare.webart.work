@@ -7,12 +7,12 @@ import { Complex } from '../../../complex/complex.interface';
 import { Developer } from '../../../developer/developer.interface';
 import { Listing } from '../../../listing/listing.interface';
 import { LISTING_STATUS_LABELS, LISTING_TYPE_LABELS } from '../../../listing/listing-relations';
-import { Property } from '../../../property/property.interface';
+import { Patient } from '../../../patient/patient.interface';
 import { AgencyIconComponent } from '../../agency/agency-icon/agency-icon.component';
 import { AgentIconComponent } from '../../agent/agent-icon/agent-icon.component';
 import { ComplexIconComponent } from '../../complex/complex-icon/complex-icon.component';
 import { DeveloperIconComponent } from '../../developer/developer-icon/developer-icon.component';
-import { PropertyShortComponent } from '../../property/property-short/property-short.component';
+import { PatientShortComponent } from '../../patient/patient-short/patient-short.component';
 
 @Component({
 	selector: 'app-listing-view',
@@ -23,7 +23,7 @@ import { PropertyShortComponent } from '../../property/property-short/property-s
 		AgentIconComponent,
 		ComplexIconComponent,
 		DeveloperIconComponent,
-		PropertyShortComponent,
+		PatientShortComponent,
 	],
 	templateUrl: './listing-view.component.html',
 	styleUrl: './listing-view.component.scss',
@@ -32,7 +32,7 @@ export class ListingViewComponent {
 	private readonly _router = inject(Router);
 
 	@Input() entity!: Listing;
-	@Input() property?: Property | null;
+	@Input() patient?: Patient | null;
 	@Input() complex?: Complex | null;
 	@Input() developer?: Developer | null;
 	@Input() agency?: Agency | null;
@@ -41,8 +41,8 @@ export class ListingViewComponent {
 	readonly typeLabels = LISTING_TYPE_LABELS;
 	readonly statusLabels = LISTING_STATUS_LABELS;
 
-	viewProperty(): void {
-		if (this.property) this._router.navigate(['/property', this.property._id]);
+	viewPatient(): void {
+		if (this.patient) this._router.navigate(['/patient', this.patient._id]);
 	}
 
 	viewComplex(): void {

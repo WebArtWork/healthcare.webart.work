@@ -21,7 +21,7 @@ export interface ListingOwner {
 
 export interface Listing {
 	_id: string;
-	propertyId: string;
+	patientId: string;
 	listingType: ListingType;
 	title: string;
 	description: string;

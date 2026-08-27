@@ -16,7 +16,7 @@
 			{ "name": "Building C", "floors": 8, "unitsCount": 64 }
 		],
 		"sharedFacilities": ["underground parking", "fitness center", "children's playground", "landscaped courtyard"],
-		"propertyIds": ["prop-1", "prop-2"],
+		"patientIds": ["prop-1", "prop-2"],
 		"listingIds": ["listing-1", "listing-2"],
 		"recordIds": ["record-4"],
 		"coverImage": "https://assets.neryxomka.com/complexes/aurelia-gardens-cover.jpg"

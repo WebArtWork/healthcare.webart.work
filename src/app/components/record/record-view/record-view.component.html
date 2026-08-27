@@ -1,7 +1,7 @@
 <article class="card">
-	@if (property) {
-		<div class="card__list-item" (click)="viewProperty()">
-			<app-property-short [entity]="property" />
+	@if (patient) {
+		<div class="card__list-item" (click)="viewPatient()">
+			<app-patient-short [entity]="patient" />
 		</div>
 	}
 

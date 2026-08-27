@@ -19,7 +19,7 @@ export interface Complex {
 	constructionProgressPercent: number;
 	buildings: ComplexBuilding[];
 	sharedFacilities: string[];
-	propertyIds: string[];
+	patientIds: string[];
 	listingIds: string[];
 	recordIds: string[];
 	coverImage: string;

@@ -6,8 +6,8 @@ import { Complex } from '../complex/complex.interface';
 import { complexes } from '../complex/complex.data';
 import { Developer } from '../developer/developer.interface';
 import { developers } from '../developer/developer.data';
-import { Property } from '../property/property.interface';
-import { properties } from '../property/property.data';
+import { Patient } from '../patient/patient.interface';
+import { patients } from '../patient/patient.data';
 import { Listing, ListingStatus, ListingType } from './listing.interface';
 
 /**
@@ -37,37 +37,37 @@ export const LISTING_STATUS_LABELS: Record<ListingStatus, string> = {
 };
 
 /**
- * A listing's related entities are resolved through its property — property
+ * A listing's related entities are resolved through its patient — patient
  * carries the authoritative complexId/developerId/agencyId/agentId, so every
  * listing card can show (and link to) who's actually behind it instead of
  * just the listing in isolation.
  */
 export interface ListingRelations {
-	property: Property | null;
+	patient: Patient | null;
 	complex: Complex | null;
 	developer: Developer | null;
 	agency: Agency | null;
 	agent: Agent | null;
 }
 
-const _propertyById = new Map<string, Property>(properties.map((p) => [p._id, p]));
+const _patientById = new Map<string, Patient>(patients.map((p) => [p._id, p]));
 const _complexById = new Map<string, Complex>(complexes.map((c) => [c._id, c]));
 const _developerById = new Map<string, Developer>(developers.map((d) => [d._id, d]));
 const _agencyById = new Map<string, Agency>(agencies.map((a) => [a._id, a]));
 const _agentById = new Map<string, Agent>(agents.map((a) => [a._id, a]));
 
-export function propertyForListing(listing: Listing): Property | null {
-	return _propertyById.get(listing.propertyId) ?? null;
+export function patientForListing(listing: Listing): Patient | null {
+	return _patientById.get(listing.patientId) ?? null;
 }
 
 export function relationsForListing(listing: Listing): ListingRelations {
-	const property = propertyForListing(listing);
+	const patient = patientForListing(listing);
 
 	return {
-		property,
-		complex: property?.complexId ? (_complexById.get(property.complexId) ?? null) : null,
-		developer: property?.developerId ? (_developerById.get(property.developerId) ?? null) : null,
-		agency: property?.agencyId ? (_agencyById.get(property.agencyId) ?? null) : null,
-		agent: property?.agentId ? (_agentById.get(property.agentId) ?? null) : null,
+		patient,
+		complex: patient?.complexId ? (_complexById.get(patient.complexId) ?? null) : null,
+		developer: patient?.developerId ? (_developerById.get(patient.developerId) ?? null) : null,
+		agency: patient?.agencyId ? (_agencyById.get(patient.agencyId) ?? null) : null,
+		agent: patient?.agentId ? (_agentById.get(patient.agentId) ?? null) : null,
 	};
 }

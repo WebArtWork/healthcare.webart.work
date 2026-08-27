@@ -13,11 +13,11 @@ export interface User {
 	country: string;
 	city: string;
 	interests: string[];
-	preferredPropertyTypes: string[];
+	preferredPatientCategories: string[];
 	roles: UserRole[];
 	experienceYears: number;
 	contact: UserContact;
-	ownedPropertyIds: string[];
+	ownedPatientIds: string[];
 	listingIds: string[];
 	requestIds: string[];
 	agentId: string | null;

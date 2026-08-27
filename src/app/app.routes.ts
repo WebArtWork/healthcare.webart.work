@@ -213,17 +213,17 @@ export const routes: Routes = [
 					),
 			},
 			{
-				path: 'properties',
+				path: 'patients',
 				canActivate: [MetaGuard],
 				data: {
 					meta: {
-						title: 'Об’єкти',
+						title: 'Пацієнти',
 						description:
-							'Перегляньте всі об’єкти нерухомості в цифровому паспорті Neryxomka.',
+							'Перегляньте всіх пацієнтів у цифровій медичній картці Neryxomka.',
 					},
 				},
 				loadChildren: () =>
-					import('./pages/user/properties/properties.routes').then(
+					import('./pages/user/patients/patients.routes').then(
 						(m) => m.routes,
 					),
 			},
@@ -288,17 +288,17 @@ export const routes: Routes = [
 					),
 			},
 			{
-				path: 'property/:id',
+				path: 'patient/:id',
 				canActivate: [MetaGuard],
 				data: {
 					meta: {
-						title: 'Об’єкт нерухомості',
+						title: 'Пацієнт',
 						description:
-							'Цифровий паспорт об’єкта нерухомості: характеристики, повна історія ремонтів і обслуговування, пов’язані оголошення.',
+							'Цифрова медична картка пацієнта: показники, повна історія лікування та обстежень, пов’язані призначення.',
 					},
 				},
 				loadChildren: () =>
-					import('./pages/user/property/property.routes').then(
+					import('./pages/user/patient/patient.routes').then(
 						(m) => m.routes,
 					),
 			},

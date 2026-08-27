@@ -1,19 +1,19 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { Input } from '@angular/core';
-import { Property } from '../../../property/property.interface';
+import { Patient } from '../../../patient/patient.interface';
 
-const DEFAULT_PHOTO = '/property-default.svg';
+const DEFAULT_PHOTO = '/patient-default.svg';
 
 @Component({
-	selector: 'app-property-short',
+	selector: 'app-patient-short',
 	standalone: true,
 	imports: [CommonModule],
-	templateUrl: './property-short.component.html',
-	styleUrl: './property-short.component.scss',
+	templateUrl: './patient-short.component.html',
+	styleUrl: './patient-short.component.scss',
 })
-export class PropertyShortComponent {
-	@Input() entity!: Property;
+export class PatientShortComponent {
+	@Input() entity!: Patient;
 
 	readonly defaultPhoto = DEFAULT_PHOTO;
 

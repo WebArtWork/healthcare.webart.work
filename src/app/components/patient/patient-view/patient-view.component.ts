@@ -9,12 +9,12 @@ import { Developer } from '../../../developer/developer.interface';
 import { EntityComment } from '../../../comment/comment.interface';
 import { Listing } from '../../../listing/listing.interface';
 import { PropertyRecord } from '../../../record/record.interface';
-import { Property } from '../../../property/property.interface';
+import { Patient } from '../../../patient/patient.interface';
 import {
-	PROPERTY_STATUS_LABELS,
-	PROPERTY_TYPE_LABELS,
-	PROPERTY_VISIBILITY_LABELS,
-} from '../../../property/property-labels';
+	PATIENT_STATUS_LABELS,
+	PATIENT_CATEGORY_LABELS,
+	PATIENT_VISIBILITY_LABELS,
+} from '../../../patient/patient-labels';
 import { AgencyIconComponent } from '../../agency/agency-icon/agency-icon.component';
 import { AgentIconComponent } from '../../agent/agent-icon/agent-icon.component';
 import { ComplexIconComponent } from '../../complex/complex-icon/complex-icon.component';
@@ -23,10 +23,10 @@ import { ListingShortComponent } from '../../listing/listing-short/listing-short
 import { RecordShortComponent } from '../../record/record-short/record-short.component';
 import { CommentShortComponent } from '../../comment/comment-short/comment-short.component';
 
-const DEFAULT_PHOTO = '/property-default.svg';
+const DEFAULT_PHOTO = '/patient-default.svg';
 
 @Component({
-	selector: 'app-property-view',
+	selector: 'app-patient-view',
 	standalone: true,
 	imports: [
 		CommonModule,
@@ -38,13 +38,13 @@ const DEFAULT_PHOTO = '/property-default.svg';
 		RecordShortComponent,
 		CommentShortComponent,
 	],
-	templateUrl: './property-view.component.html',
-	styleUrl: './property-view.component.scss',
+	templateUrl: './patient-view.component.html',
+	styleUrl: './patient-view.component.scss',
 })
-export class PropertyViewComponent {
+export class PatientViewComponent {
 	private readonly _router = inject(Router);
 
-	@Input() entity!: Property;
+	@Input() entity!: Patient;
 	@Input() complex?: Complex | null;
 	@Input() developer?: Developer | null;
 	@Input() agency?: Agency | null;
@@ -54,9 +54,9 @@ export class PropertyViewComponent {
 	@Input() comments: EntityComment[] = [];
 
 	readonly defaultPhoto = DEFAULT_PHOTO;
-	readonly typeLabels = PROPERTY_TYPE_LABELS;
-	readonly statusLabels = PROPERTY_STATUS_LABELS;
-	readonly visibilityLabels = PROPERTY_VISIBILITY_LABELS;
+	readonly categoryLabels = PATIENT_CATEGORY_LABELS;
+	readonly statusLabels = PATIENT_STATUS_LABELS;
+	readonly visibilityLabels = PATIENT_VISIBILITY_LABELS;
 
 	get photos(): string[] {
 		return this.entity.photos.length ? this.entity.photos : [DEFAULT_PHOTO];

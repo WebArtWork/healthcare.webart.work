@@ -9,11 +9,11 @@ import { AgentFormComponent } from '../../../components/agent/agent-form/agent-f
 import { ComplexFormComponent } from '../../../components/complex/complex-form/complex-form.component';
 import { DeveloperFormComponent } from '../../../components/developer/developer-form/developer-form.component';
 import { ListingFormComponent } from '../../../components/listing/listing-form/listing-form.component';
-import { PropertyFormComponent } from '../../../components/property/property-form/property-form.component';
+import { PatientFormComponent } from '../../../components/patient/patient-form/patient-form.component';
 import { RecordFormComponent } from '../../../components/record/record-form/record-form.component';
 
 type EntityType =
-	| 'property'
+	| 'patient'
 	| 'listing'
 	| 'record'
 	| 'complex'
@@ -32,7 +32,7 @@ interface EntityOption {
 		ButtonModule,
 		CardModule,
 		SelectButtonModule,
-		PropertyFormComponent,
+		PatientFormComponent,
 		ListingFormComponent,
 		RecordFormComponent,
 		ComplexFormComponent,
@@ -47,7 +47,7 @@ export class EditorComponent {
 	private readonly _messageService = inject(MessageService);
 
 	readonly options: EntityOption[] = [
-		{ label: 'Об’єкт', value: 'property' },
+		{ label: 'Пацієнт', value: 'patient' },
 		{ label: 'Оголошення', value: 'listing' },
 		{ label: 'Запис історії', value: 'record' },
 		{ label: 'Комплекс', value: 'complex' },
@@ -56,9 +56,9 @@ export class EditorComponent {
 		{ label: 'Агент', value: 'agent' },
 	];
 
-	readonly selectedType = signal<EntityType>('property');
+	readonly selectedType = signal<EntityType>('patient');
 
-	private readonly _propertyForm = viewChild(PropertyFormComponent);
+	private readonly _patientForm = viewChild(PatientFormComponent);
 	private readonly _listingForm = viewChild(ListingFormComponent);
 	private readonly _recordForm = viewChild(RecordFormComponent);
 	private readonly _complexForm = viewChild(ComplexFormComponent);
@@ -68,8 +68,8 @@ export class EditorComponent {
 
 	private readonly _activeForm = computed(() => {
 		switch (this.selectedType()) {
-			case 'property':
-				return this._propertyForm()?.form;
+			case 'patient':
+				return this._patientForm()?.form;
 			case 'listing':
 				return this._listingForm()?.form;
 			case 'record':

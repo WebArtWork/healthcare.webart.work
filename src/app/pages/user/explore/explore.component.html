@@ -14,13 +14,13 @@
 		<p-multiSelect
 			appendTo="body"
 			scrollHeight="auto"
-			[options]="propertyTypeOptions"
+			[options]="patientCategoryOptions"
 			optionLabel="label"
 			optionValue="value"
 			placeholder="Тип нерухомості"
 			class="explore__filter"
-			[ngModel]="selectedPropertyTypes()"
-			(ngModelChange)="selectedPropertyTypes.set($event)"
+			[ngModel]="selectedPatientCategories()"
+			(ngModelChange)="selectedPatientCategories.set($event)"
 		/>
 
 		<p-select

@@ -1,11 +1,11 @@
-# Neryxomka
+# Healthcare
 
-Neryxomka is a real estate platform built around one core idea: **every
-property should carry its own digital passport** — a verifiable history of
-renovations, repairs, and utility work, not just a listing photo and a price.
-Buyers and tenants get real transparency before they commit; owners, agents,
-and agencies get a place to show that a property's condition is actually
-documented.
+Healthcare is a patient-record platform built around one core idea: **every
+patient should carry their own digital medical passport** — a verifiable
+history of diagnoses, treatments, medications, and test results, not just a
+name on a chart. Patients get real transparency into their own care;
+doctors, departments, and facilities get a place to show that a patient's
+condition is actually documented over time.
 
 This repository is currently a static, investor-facing demo of that product
 vision — real, realistic content and a fully navigable app, with no backend
@@ -14,37 +14,45 @@ out of scope for this phase).
 
 ## The core entities
 
-- **Property** — a physical unit (apartment, house, land, commercial space,
-  etc.) with its location, characteristics, and ownership/access info.
-- **Record** — a single history entry on a property: a renovation, a repair,
-  a utility replacement. This is the "digital passport" itself.
-- **Listing** — a sale or rental offer tied to a property.
-- **Complex** — a development containing multiple properties.
-- **Developer** — the company behind a complex.
-- **Agency** / **Agent** — the businesses and individuals who represent
-  properties and listings.
-- **Request** — a buyer's or tenant's stated need, for matching against
-  listings.
-- **Comment** — reviews/feedback on a property, listing, agency, agent, or
-  developer.
+- **Patient** — a person receiving care, with demographics, admission
+  status, and ward/room info.
+- **Record** — a single history entry on a patient: a diagnosis, a
+  prescription, a lab result, a procedure, an imaging study, a vaccination.
+  This is the "digital passport" itself.
+- **Appointment** — a scheduled visit or procedure tied to a patient.
+- **Facility** — a hospital or clinic building containing multiple
+  departments.
+- **Network** — the health system or hospital group behind a facility.
+- **Department** / **Doctor** — the clinical units and practitioners who
+  treat patients and own appointments.
+- **Referral** — a stated need for care (e.g. a GP referring a patient to a
+  specialist), for matching against appointments.
+- **Comment** — clinical notes from doctors, or feedback from patients, on a
+  patient, appointment, department, doctor, or facility.
 
 ## How people use it
 
-- **Feed** — a swipeable stream of listings; favourite what's interesting,
-  ignore what isn't.
-- **Explore** — search and filter listings by type, deal, status, price, and
-  location.
-- **Map** — find properties by location, with a summary panel per pin.
-- **Editor** — try out the data-entry forms for any entity.
+- **Worklist** — a clinician's stream of assigned patients; flag what needs
+  attention, clear what's resolved.
+- **Explore** — search and filter patients by ward, condition, status, and
+  facility (staff-only; not a public directory).
+- **Map** — find facilities by location, with a summary panel per pin.
+- **Editor** — try out the data-entry forms for any entity, including adding
+  a new record (diagnosis, medication, result) to a patient's history.
 - Every entity also has its own dedicated page showing its full profile,
-  history, and related listings/comments.
+  history, and related appointments/comments.
 
-## Who's behind a property
+## Who's behind a patient's care
 
-Properties and listings are never anonymous: each one can be linked to the
-developer who built it, the agency and agent representing it, and the
-record history that backs up its condition — so a buyer can see who to trust
-and why, not just what's being sold.
+Patients and their records are never anonymous to the care team: each
+patient can be linked to the facility admitting them, the department and
+doctor treating them, and the record history that backs up their
+condition — so clinicians can see the full picture, not just the current
+visit.
+
+Patient data is private by default: a doctor sees their own patients, and a
+patient sees only their own record — unlike the public browsing model this
+project started from.
 
 ## Status
 

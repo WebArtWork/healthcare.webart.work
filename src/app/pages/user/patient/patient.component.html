@@ -4,8 +4,8 @@
 	@let rel = relations();
 	<app-patient-view
 		[entity]="item"
-		[complex]="rel?.complex"
-		[developer]="rel?.developer"
+		[facility]="rel?.facility"
+		[network]="rel?.network"
 		[department]="rel?.department"
 		[doctor]="rel?.doctor"
 		[listings]="rel?.listings ?? []"

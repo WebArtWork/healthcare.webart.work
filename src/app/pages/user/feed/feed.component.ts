@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 import { ButtonModule } from '@wawjs/ngx-prime/button';
 import { DepartmentIconComponent } from '../../../components/department/department-icon/department-icon.component';
 import { DoctorIconComponent } from '../../../components/doctor/doctor-icon/doctor-icon.component';
-import { DeveloperIconComponent } from '../../../components/developer/developer-icon/developer-icon.component';
+import { NetworkIconComponent } from '../../../components/network/network-icon/network-icon.component';
 import { Listing } from '../../../listing/listing.interface';
 import { listings } from '../../../listing/listing.data';
 import { ListingRelations, relationsForListing } from '../../../listing/listing-relations';
@@ -15,7 +15,7 @@ type FeedAction = 'favourite' | 'ignore';
 const DEFAULT_PHOTO = '/patient-default.svg';
 
 @Component({
-	imports: [ButtonModule, DoctorIconComponent, DepartmentIconComponent, DeveloperIconComponent],
+	imports: [ButtonModule, DoctorIconComponent, DepartmentIconComponent, NetworkIconComponent],
 	templateUrl: './feed.component.html',
 	styleUrl: './feed.component.scss',
 })

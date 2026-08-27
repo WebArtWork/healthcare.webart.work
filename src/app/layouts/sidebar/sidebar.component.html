@@ -131,10 +131,10 @@
 
 	<app-nav-icon
 		[class.sidebar--minimized-icon]="!showNames()"
-		[name]="showNames() ? translateService.translate('Для забудовників')() : ''"
-		[ariaLabel]="translateService.translate('Для забудовників')()"
+		[name]="showNames() ? translateService.translate('Для мереж')() : ''"
+		[ariaLabel]="translateService.translate('Для мереж')()"
 		(click)="closeIfOverlay()"
-		routerLink="/for-developers"
+		routerLink="/for-networks"
 		icon="building"
 	/>
 

@@ -27,16 +27,16 @@
 		@if (entity.vitals.yearOfBirth !== null) {
 			<div class="card__row"><dt>Рік народження</dt><dd>{{ entity.vitals.yearOfBirth }}</dd></div>
 		}
-		@if (complex) {
+		@if (facility) {
 			<div class="card__row">
 				<dt>Відділення</dt>
-				<dd><button type="button" class="card__relation" (click)="viewComplex()"><app-complex-icon [entity]="complex" /></button></dd>
+				<dd><button type="button" class="card__relation" (click)="viewFacility()"><app-facility-icon [entity]="facility" /></button></dd>
 			</div>
 		}
-		@if (developer) {
+		@if (network) {
 			<div class="card__row">
 				<dt>Заклад</dt>
-				<dd><button type="button" class="card__relation" (click)="viewDeveloper()"><app-developer-icon [entity]="developer" /></button></dd>
+				<dd><button type="button" class="card__relation" (click)="viewNetwork()"><app-network-icon [entity]="network" /></button></dd>
 			</div>
 		}
 		@if (department) {

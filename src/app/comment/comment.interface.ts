@@ -1,4 +1,4 @@
-export type CommentEntityType = 'patient' | 'listing' | 'complex' | 'developer' | 'department' | 'doctor' | 'user';
+export type CommentEntityType = 'patient' | 'listing' | 'facility' | 'network' | 'department' | 'doctor' | 'user';
 
 export type CommentModerationStatus = 'pending' | 'approved' | 'rejected' | 'flagged';
 

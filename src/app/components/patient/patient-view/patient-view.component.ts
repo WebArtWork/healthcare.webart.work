@@ -4,8 +4,8 @@ import { inject } from '@angular/core';
 import { Router } from '@angular/router';
 import { Department } from '../../../department/department.interface';
 import { Doctor } from '../../../doctor/doctor.interface';
-import { Complex } from '../../../complex/complex.interface';
-import { Developer } from '../../../developer/developer.interface';
+import { Facility } from '../../../facility/facility.interface';
+import { Network } from '../../../network/network.interface';
 import { EntityComment } from '../../../comment/comment.interface';
 import { Listing } from '../../../listing/listing.interface';
 import { PropertyRecord } from '../../../record/record.interface';
@@ -17,8 +17,8 @@ import {
 } from '../../../patient/patient-labels';
 import { DepartmentIconComponent } from '../../department/department-icon/department-icon.component';
 import { DoctorIconComponent } from '../../doctor/doctor-icon/doctor-icon.component';
-import { ComplexIconComponent } from '../../complex/complex-icon/complex-icon.component';
-import { DeveloperIconComponent } from '../../developer/developer-icon/developer-icon.component';
+import { FacilityIconComponent } from '../../facility/facility-icon/facility-icon.component';
+import { NetworkIconComponent } from '../../network/network-icon/network-icon.component';
 import { ListingShortComponent } from '../../listing/listing-short/listing-short.component';
 import { RecordShortComponent } from '../../record/record-short/record-short.component';
 import { CommentShortComponent } from '../../comment/comment-short/comment-short.component';
@@ -32,8 +32,8 @@ const DEFAULT_PHOTO = '/patient-default.svg';
 		CommonModule,
 		DepartmentIconComponent,
 		DoctorIconComponent,
-		ComplexIconComponent,
-		DeveloperIconComponent,
+		FacilityIconComponent,
+		NetworkIconComponent,
 		ListingShortComponent,
 		RecordShortComponent,
 		CommentShortComponent,
@@ -45,8 +45,8 @@ export class PatientViewComponent {
 	private readonly _router = inject(Router);
 
 	@Input() entity!: Patient;
-	@Input() complex?: Complex | null;
-	@Input() developer?: Developer | null;
+	@Input() facility?: Facility | null;
+	@Input() network?: Network | null;
 	@Input() department?: Department | null;
 	@Input() doctor?: Doctor | null;
 	@Input() listings: Listing[] = [];
@@ -66,12 +66,12 @@ export class PatientViewComponent {
 		(event.target as HTMLImageElement).src = DEFAULT_PHOTO;
 	}
 
-	viewComplex(): void {
-		if (this.complex) this._router.navigate(['/complex', this.complex._id]);
+	viewFacility(): void {
+		if (this.facility) this._router.navigate(['/facility', this.facility._id]);
 	}
 
-	viewDeveloper(): void {
-		if (this.developer) this._router.navigate(['/developer', this.developer._id]);
+	viewNetwork(): void {
+		if (this.network) this._router.navigate(['/network', this.network._id]);
 	}
 
 	viewDepartment(): void {

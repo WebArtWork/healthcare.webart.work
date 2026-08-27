@@ -10,6 +10,7 @@ export interface Department {
 	name: string;
 	description: string;
 	logo: string;
+	facilityId: string;
 	country: string;
 	city: string;
 	foundedYear: number;

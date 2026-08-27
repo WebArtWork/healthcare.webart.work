@@ -6,8 +6,8 @@ import { CardModule } from '@wawjs/ngx-prime/card';
 import { SelectButtonModule } from '@wawjs/ngx-prime/selectbutton';
 import { DepartmentFormComponent } from '../../../components/department/department-form/department-form.component';
 import { DoctorFormComponent } from '../../../components/doctor/doctor-form/doctor-form.component';
-import { ComplexFormComponent } from '../../../components/complex/complex-form/complex-form.component';
-import { DeveloperFormComponent } from '../../../components/developer/developer-form/developer-form.component';
+import { FacilityFormComponent } from '../../../components/facility/facility-form/facility-form.component';
+import { NetworkFormComponent } from '../../../components/network/network-form/network-form.component';
 import { ListingFormComponent } from '../../../components/listing/listing-form/listing-form.component';
 import { PatientFormComponent } from '../../../components/patient/patient-form/patient-form.component';
 import { RecordFormComponent } from '../../../components/record/record-form/record-form.component';
@@ -16,8 +16,8 @@ type EntityType =
 	| 'patient'
 	| 'listing'
 	| 'record'
-	| 'complex'
-	| 'developer'
+	| 'facility'
+	| 'network'
 	| 'department'
 	| 'doctor';
 
@@ -35,8 +35,8 @@ interface EntityOption {
 		PatientFormComponent,
 		ListingFormComponent,
 		RecordFormComponent,
-		ComplexFormComponent,
-		DeveloperFormComponent,
+		FacilityFormComponent,
+		NetworkFormComponent,
 		DepartmentFormComponent,
 		DoctorFormComponent,
 	],
@@ -50,8 +50,8 @@ export class EditorComponent {
 		{ label: 'Пацієнт', value: 'patient' },
 		{ label: 'Оголошення', value: 'listing' },
 		{ label: 'Медичний запис', value: 'record' },
-		{ label: 'Комплекс', value: 'complex' },
-		{ label: 'Забудовник', value: 'developer' },
+		{ label: 'Заклад', value: 'facility' },
+		{ label: 'Мережа', value: 'network' },
 		{ label: 'Відділення', value: 'department' },
 		{ label: 'Лікар', value: 'doctor' },
 	];
@@ -61,8 +61,8 @@ export class EditorComponent {
 	private readonly _patientForm = viewChild(PatientFormComponent);
 	private readonly _listingForm = viewChild(ListingFormComponent);
 	private readonly _recordForm = viewChild(RecordFormComponent);
-	private readonly _complexForm = viewChild(ComplexFormComponent);
-	private readonly _developerForm = viewChild(DeveloperFormComponent);
+	private readonly _facilityForm = viewChild(FacilityFormComponent);
+	private readonly _networkForm = viewChild(NetworkFormComponent);
 	private readonly _departmentForm = viewChild(DepartmentFormComponent);
 	private readonly _doctorForm = viewChild(DoctorFormComponent);
 
@@ -74,10 +74,10 @@ export class EditorComponent {
 				return this._listingForm()?.form;
 			case 'record':
 				return this._recordForm()?.form;
-			case 'complex':
-				return this._complexForm()?.form;
-			case 'developer':
-				return this._developerForm()?.form;
+			case 'facility':
+				return this._facilityForm()?.form;
+			case 'network':
+				return this._networkForm()?.form;
 			case 'department':
 				return this._departmentForm()?.form;
 			case 'doctor':

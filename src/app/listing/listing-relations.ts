@@ -2,10 +2,10 @@ import { Department } from '../department/department.interface';
 import { departments } from '../department/department.data';
 import { Doctor } from '../doctor/doctor.interface';
 import { doctors } from '../doctor/doctor.data';
-import { Complex } from '../complex/complex.interface';
-import { complexes } from '../complex/complex.data';
-import { Developer } from '../developer/developer.interface';
-import { developers } from '../developer/developer.data';
+import { Facility } from '../facility/facility.interface';
+import { facilities } from '../facility/facility.data';
+import { Network } from '../network/network.interface';
+import { networks } from '../network/network.data';
 import { Patient } from '../patient/patient.interface';
 import { patients } from '../patient/patient.data';
 import { Listing, ListingStatus, ListingType } from './listing.interface';
@@ -38,21 +38,21 @@ export const LISTING_STATUS_LABELS: Record<ListingStatus, string> = {
 
 /**
  * A listing's related entities are resolved through its patient — patient
- * carries the authoritative complexId/developerId/departmentId/doctorId, so every
+ * carries the authoritative facilityId/networkId/departmentId/doctorId, so every
  * listing card can show (and link to) who's actually behind it instead of
  * just the listing in isolation.
  */
 export interface ListingRelations {
 	patient: Patient | null;
-	complex: Complex | null;
-	developer: Developer | null;
+	facility: Facility | null;
+	network: Network | null;
 	department: Department | null;
 	doctor: Doctor | null;
 }
 
 const _patientById = new Map<string, Patient>(patients.map((p) => [p._id, p]));
-const _complexById = new Map<string, Complex>(complexes.map((c) => [c._id, c]));
-const _developerById = new Map<string, Developer>(developers.map((d) => [d._id, d]));
+const _facilityById = new Map<string, Facility>(facilities.map((c) => [c._id, c]));
+const _networkById = new Map<string, Network>(networks.map((d) => [d._id, d]));
 const _departmentById = new Map<string, Department>(departments.map((a) => [a._id, a]));
 const _doctorById = new Map<string, Doctor>(doctors.map((a) => [a._id, a]));
 
@@ -65,8 +65,8 @@ export function relationsForListing(listing: Listing): ListingRelations {
 
 	return {
 		patient,
-		complex: patient?.complexId ? (_complexById.get(patient.complexId) ?? null) : null,
-		developer: patient?.developerId ? (_developerById.get(patient.developerId) ?? null) : null,
+		facility: patient?.facilityId ? (_facilityById.get(patient.facilityId) ?? null) : null,
+		network: patient?.networkId ? (_networkById.get(patient.networkId) ?? null) : null,
 		department: patient?.departmentId ? (_departmentById.get(patient.departmentId) ?? null) : null,
 		doctor: patient?.doctorId ? (_doctorById.get(patient.doctorId) ?? null) : null,
 	};

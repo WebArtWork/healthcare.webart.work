@@ -39,7 +39,7 @@
 							<span class="feed__location-text">{{ item.publicLocation }}</span>
 						</div>
 
-						@if (row.relations.doctor || row.relations.department || row.relations.developer) {
+						@if (row.relations.doctor || row.relations.department || row.relations.network) {
 							<div class="feed__relations">
 								@if (row.relations.doctor; as doctor) {
 									<button type="button" class="feed__relation" (click)="viewRelation($event, 'doctor', doctor._id)">
@@ -50,9 +50,9 @@
 									<button type="button" class="feed__relation" (click)="viewRelation($event, 'department', department._id)">
 										<app-department-icon [entity]="department" />
 									</button>
-								} @else if (row.relations.developer; as developer) {
-									<button type="button" class="feed__relation" (click)="viewRelation($event, 'developer', developer._id)">
-										<app-developer-icon [entity]="developer" />
+								} @else if (row.relations.network; as network) {
+									<button type="button" class="feed__relation" (click)="viewRelation($event, 'network', network._id)">
+										<app-network-icon [entity]="network" />
 									</button>
 								}
 							</div>

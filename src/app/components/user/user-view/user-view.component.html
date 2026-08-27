@@ -37,12 +37,12 @@
 				</dd>
 			</div>
 		}
-		@if (developer(); as dev) {
+		@if (network(); as dev) {
 			<div class="card__row">
 				<dt>Забудовник</dt>
 				<dd>
-					<button type="button" class="card__relation" (click)="viewDeveloper()">
-						<app-developer-icon [entity]="dev" />
+					<button type="button" class="card__relation" (click)="viewNetwork()">
+						<app-network-icon [entity]="dev" />
 					</button>
 				</dd>
 			</div>

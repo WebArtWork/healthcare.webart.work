@@ -1,0 +1,16 @@
+<section class="network">
+
+	@if (entity(); as item) {
+	<div class="network__actions">
+		<button pButton type="button" severity="secondary" size="small" (click)="share()">
+			<i class="pi pi-share-alt"></i>
+			{{ translateService.translate('Поділитися')() }}
+		</button>
+	</div>
+	<app-network-view [entity]="item" />
+	} @else {
+	<p-card class="network__not-found">
+		<p>Мережу не знайдено.</p>
+	</p-card>
+	}
+</section>

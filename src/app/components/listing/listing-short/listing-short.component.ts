@@ -3,28 +3,28 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Listing } from '../../../listing/listing.interface';
 import { Department } from '../../../department/department.interface';
 import { Doctor } from '../../../doctor/doctor.interface';
-import { Complex } from '../../../complex/complex.interface';
-import { Developer } from '../../../developer/developer.interface';
+import { Facility } from '../../../facility/facility.interface';
+import { Network } from '../../../network/network.interface';
 import { DepartmentIconComponent } from '../../department/department-icon/department-icon.component';
 import { DoctorIconComponent } from '../../doctor/doctor-icon/doctor-icon.component';
-import { ComplexIconComponent } from '../../complex/complex-icon/complex-icon.component';
-import { DeveloperIconComponent } from '../../developer/developer-icon/developer-icon.component';
+import { FacilityIconComponent } from '../../facility/facility-icon/facility-icon.component';
+import { NetworkIconComponent } from '../../network/network-icon/network-icon.component';
 
-export type ListingRelationType = 'doctor' | 'department' | 'developer' | 'complex';
+export type ListingRelationType = 'doctor' | 'department' | 'network' | 'facility';
 
 @Component({
 	selector: 'app-listing-short',
 	standalone: true,
-	imports: [CommonModule, DepartmentIconComponent, DoctorIconComponent, ComplexIconComponent, DeveloperIconComponent],
+	imports: [CommonModule, DepartmentIconComponent, DoctorIconComponent, FacilityIconComponent, NetworkIconComponent],
 	templateUrl: './listing-short.component.html',
 	styleUrl: './listing-short.component.scss',
 })
 export class ListingShortComponent {
 	@Input() entity!: Listing;
 	@Input() department?: Department | null;
-	@Input() developer?: Developer | null;
+	@Input() network?: Network | null;
 	@Input() doctor?: Doctor | null;
-	@Input() complex?: Complex | null;
+	@Input() facility?: Facility | null;
 
 	/** Emitted instead of navigating directly, so the host page can stop the card's own click. */
 	@Output() relationClick = new EventEmitter<{ type: ListingRelationType; id: string }>();

@@ -13,7 +13,7 @@
 			<span>{{ entity.status }}</span>
 		</div>
 
-		@if (doctor || department || developer || complex) {
+		@if (doctor || department || network || facility) {
 			<div class="short__relations">
 				@if (doctor) {
 					<button type="button" class="short__relation" (click)="onRelationClick($event, 'doctor', doctor._id)">
@@ -24,14 +24,14 @@
 					<button type="button" class="short__relation" (click)="onRelationClick($event, 'department', department._id)">
 						<app-department-icon [entity]="department" />
 					</button>
-				} @else if (developer) {
-					<button type="button" class="short__relation" (click)="onRelationClick($event, 'developer', developer._id)">
-						<app-developer-icon [entity]="developer" />
+				} @else if (network) {
+					<button type="button" class="short__relation" (click)="onRelationClick($event, 'network', network._id)">
+						<app-network-icon [entity]="network" />
 					</button>
 				}
-				@if (complex) {
-					<button type="button" class="short__relation" (click)="onRelationClick($event, 'complex', complex._id)">
-						<app-complex-icon [entity]="complex" />
+				@if (facility) {
+					<button type="button" class="short__relation" (click)="onRelationClick($event, 'facility', facility._id)">
+						<app-facility-icon [entity]="facility" />
 					</button>
 				}
 			</div>

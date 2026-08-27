@@ -1,0 +1,38 @@
+[
+	{
+		"_id": "network-1",
+		"name": "Vaelmont Health Network",
+		"description": "A regional health system active in Vaelmont since 2011, operating Vaelmont General Hospital along with several standalone clinics.",
+		"logo": "https://assets.neryxomka.com/networks/vaelmont-health-network-logo.png",
+		"country": "Draecia",
+		"city": "Vaelmont",
+		"foundedYear": 2011,
+		"isClaimed": true,
+		"facilityIds": ["facility-1"],
+		"patientIds": ["prop-1", "prop-2", "prop-6"],
+		"listingIds": ["listing-1", "listing-2"],
+		"contact": {
+			"phone": "+1-555-0110",
+			"email": "info@vaelmont-health.example",
+			"website": "https://vaelmont-health.example"
+		}
+	},
+	{
+		"_id": "network-2",
+		"name": "Northbridge Medical Group",
+		"description": "Operates outpatient and specialty care facilities on the outskirts of Vaelmont.",
+		"logo": "https://assets.neryxomka.com/networks/northbridge-medical-logo.png",
+		"country": "Draecia",
+		"city": "Vaelmont",
+		"foundedYear": 2004,
+		"isClaimed": false,
+		"facilityIds": [],
+		"patientIds": ["prop-7"],
+		"listingIds": [],
+		"contact": {
+			"phone": "+1-555-0199",
+			"email": "contact@northbridge-medical.example",
+			"website": "https://northbridge-medical.example"
+		}
+	}
+]

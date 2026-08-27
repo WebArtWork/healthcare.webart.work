@@ -15,18 +15,18 @@
 		}
 	</div>
 
-	@if (doctor || department || developer || complex) {
+	@if (doctor || department || network || facility) {
 		<div class="card__meta">
 			@if (doctor) {
 				<button type="button" class="card__relation" (click)="viewDoctor()"><app-doctor-icon [entity]="doctor" /></button>
 			}
 			@if (department) {
 				<button type="button" class="card__relation" (click)="viewDepartment()"><app-department-icon [entity]="department" /></button>
-			} @else if (developer) {
-				<button type="button" class="card__relation" (click)="viewDeveloper()"><app-developer-icon [entity]="developer" /></button>
+			} @else if (network) {
+				<button type="button" class="card__relation" (click)="viewNetwork()"><app-network-icon [entity]="network" /></button>
 			}
-			@if (complex) {
-				<button type="button" class="card__relation" (click)="viewComplex()"><app-complex-icon [entity]="complex" /></button>
+			@if (facility) {
+				<button type="button" class="card__relation" (click)="viewFacility()"><app-facility-icon [entity]="facility" /></button>
 			}
 		</div>
 	}

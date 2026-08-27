@@ -4,6 +4,7 @@
 		"name": "Cardiology",
 		"description": "Full-service cardiac care department covering diagnostics, interventional procedures, and rehabilitation across Vaelmont General Hospital.",
 		"logo": "https://assets.neryxomka.com/departments/cardiology-logo.png",
+		"facilityId": "facility-1",
 		"country": "Draecia",
 		"city": "Vaelmont",
 		"foundedYear": 2008,

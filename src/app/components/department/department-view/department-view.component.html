@@ -15,6 +15,16 @@
 		<div class="card__row"><dt>Ел. пошта</dt><dd>{{ entity.contact.email }}</dd></div>
 		<div class="card__row"><dt>Веб-сайт</dt><dd>{{ entity.contact.website }}</dd></div>
 		<div class="card__row"><dt>Адреса</dt><dd>{{ entity.contact.address }}</dd></div>
+		@if (facility(); as fac) {
+			<div class="card__row">
+				<dt>Заклад</dt>
+				<dd>
+					<button type="button" class="card__relation" (click)="viewFacility()">
+						<app-facility-icon [entity]="fac" />
+					</button>
+				</dd>
+			</div>
+		}
 
 	@if (relatedDoctors().length) {
 		<h3 class="card__section-title">Лікарі</h3>

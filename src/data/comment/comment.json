@@ -37,8 +37,8 @@
 	},
 	{
 		"_id": "comment-4",
-		"entityType": "developer",
-		"entityId": "dev-1",
+		"entityType": "network",
+		"entityId": "network-1",
 		"authorUserId": "user-4",
 		"rating": 4,
 		"text": "Solvara Developments has been transparent about construction progress for Aurelia Gardens, regular updates are appreciated.",

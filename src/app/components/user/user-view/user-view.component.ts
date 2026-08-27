@@ -6,21 +6,21 @@ import { Doctor } from '../../../doctor/doctor.interface';
 import { doctors } from '../../../doctor/doctor.data';
 import { Department } from '../../../department/department.interface';
 import { departments } from '../../../department/department.data';
-import { Developer } from '../../../developer/developer.interface';
-import { developers } from '../../../developer/developer.data';
+import { Network } from '../../../network/network.interface';
+import { networks } from '../../../network/network.data';
 import { Patient } from '../../../patient/patient.interface';
 import { patients } from '../../../patient/patient.data';
 import { Listing } from '../../../listing/listing.interface';
 import { listings } from '../../../listing/listing.data';
 import { DoctorIconComponent } from '../../doctor/doctor-icon/doctor-icon.component';
 import { DepartmentIconComponent } from '../../department/department-icon/department-icon.component';
-import { DeveloperIconComponent } from '../../developer/developer-icon/developer-icon.component';
+import { NetworkIconComponent } from '../../network/network-icon/network-icon.component';
 import { PatientShortComponent } from '../../patient/patient-short/patient-short.component';
 import { ListingShortComponent } from '../../listing/listing-short/listing-short.component';
 
 const _doctorById = new Map<string, Doctor>(doctors.map((a) => [a._id, a]));
 const _departmentById = new Map<string, Department>(departments.map((a) => [a._id, a]));
-const _developerById = new Map<string, Developer>(developers.map((d) => [d._id, d]));
+const _networkById = new Map<string, Network>(networks.map((d) => [d._id, d]));
 const _patientById = new Map<string, Patient>(patients.map((p) => [p._id, p]));
 const _listingById = new Map<string, Listing>(listings.map((l) => [l._id, l]));
 
@@ -31,7 +31,7 @@ const _listingById = new Map<string, Listing>(listings.map((l) => [l._id, l]));
 		CommonModule,
 		DoctorIconComponent,
 		DepartmentIconComponent,
-		DeveloperIconComponent,
+		NetworkIconComponent,
 		PatientShortComponent,
 		ListingShortComponent,
 	],
@@ -51,8 +51,8 @@ export class UserViewComponent {
 		() => (this.entity.departmentId ? (_departmentById.get(this.entity.departmentId) ?? null) : null),
 	);
 
-	readonly developer = computed<Developer | null>(
-		() => (this.entity.developerId ? (_developerById.get(this.entity.developerId) ?? null) : null),
+	readonly network = computed<Network | null>(
+		() => (this.entity.networkId ? (_networkById.get(this.entity.networkId) ?? null) : null),
 	);
 
 	readonly ownedPatients = computed<Patient[]>(() =>
@@ -77,10 +77,10 @@ export class UserViewComponent {
 		}
 	}
 
-	viewDeveloper(): void {
-		const developer = this.developer();
-		if (developer) {
-			this._router.navigate(['/developer', developer._id]);
+	viewNetwork(): void {
+		const network = this.network();
+		if (network) {
+			this._router.navigate(['/network', network._id]);
 		}
 	}
 

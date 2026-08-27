@@ -76,7 +76,7 @@ export const routes: Routes = [
 					meta: {
 						title: 'Редактор',
 						description:
-							'Перевірте форми додавання об’єктів, оголошень, комплексів, агентств та агентів у Neryxomka.',
+							'Перевірте форми додавання об’єктів, оголошень, закладів, мереж та агентів у Neryxomka.',
 						index: false,
 					},
 				},
@@ -170,16 +170,16 @@ export const routes: Routes = [
 					),
 			},
 			{
-				path: 'for-developers',
+				path: 'for-networks',
 				canActivate: [MetaGuard],
 				data: {
 					meta: {
-						title: 'Для забудовників',
-						description: 'Покажіть свої житлові комплекси покупцям на Neryxomka.',
+						title: 'Для мереж',
+						description: 'Покажіть свої медичні заклади пацієнтам на Neryxomka.',
 					},
 				},
 				loadChildren: () =>
-					import('./pages/user/for-developers/for-developers.routes').then(
+					import('./pages/user/for-networks/for-networks.routes').then(
 						(m) => m.routes,
 					),
 			},
@@ -243,17 +243,17 @@ export const routes: Routes = [
 					),
 			},
 			{
-				path: 'developers',
+				path: 'networks',
 				canActivate: [MetaGuard],
 				data: {
 					meta: {
-						title: 'Забудовники',
+						title: 'Мережі',
 						description:
-							'Перегляньте всіх забудовників, представлених у Neryxomka.',
+							'Перегляньте всі медичні мережі, представлені в Neryxomka.',
 					},
 				},
 				loadChildren: () =>
-					import('./pages/user/developers/developers.routes').then(
+					import('./pages/user/networks/networks.routes').then(
 						(m) => m.routes,
 					),
 			},
@@ -333,32 +333,32 @@ export const routes: Routes = [
 					),
 			},
 			{
-				path: 'complex/:id',
+				path: 'facility/:id',
 				canActivate: [MetaGuard],
 				data: {
 					meta: {
-						title: 'Житловий комплекс',
+						title: 'Медичний заклад',
 						description:
-							'Житловий комплекс у Neryxomka: об’єкти, забудовник і деталі проєкту.',
+							'Медичний заклад у Neryxomka: відділення, мережа та деталі закладу.',
 					},
 				},
 				loadChildren: () =>
-					import('./pages/user/complex/complex.routes').then(
+					import('./pages/user/facility/facility.routes').then(
 						(m) => m.routes,
 					),
 			},
 			{
-				path: 'developer/:id',
+				path: 'network/:id',
 				canActivate: [MetaGuard],
 				data: {
 					meta: {
-						title: 'Забудовник',
+						title: 'Мережа',
 						description:
-							'Профіль забудовника в Neryxomka: реалізовані комплекси та об’єкти.',
+							'Профіль медичної мережі в Neryxomka: заклади та відділення.',
 					},
 				},
 				loadChildren: () =>
-					import('./pages/user/developer/developer.routes').then(
+					import('./pages/user/network/network.routes').then(
 						(m) => m.routes,
 					),
 			},

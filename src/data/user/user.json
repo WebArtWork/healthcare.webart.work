@@ -16,7 +16,7 @@
 		"requestIds": [],
 		"doctorId": null,
 		"departmentId": null,
-		"developerId": null
+		"networkId": null
 	},
 	{
 		"_id": "user-2",
@@ -35,7 +35,7 @@
 		"requestIds": [],
 		"doctorId": "doctor-1",
 		"departmentId": "department-1",
-		"developerId": null
+		"networkId": null
 	},
 	{
 		"_id": "user-3",
@@ -54,7 +54,7 @@
 		"requestIds": [],
 		"doctorId": "doctor-2",
 		"departmentId": "department-1",
-		"developerId": null
+		"networkId": null
 	},
 	{
 		"_id": "user-4",
@@ -73,7 +73,7 @@
 		"requestIds": ["request-1"],
 		"doctorId": null,
 		"departmentId": null,
-		"developerId": null
+		"networkId": null
 	},
 	{
 		"_id": "user-5",
@@ -84,7 +84,7 @@
 		"city": "Vaelmont",
 		"interests": ["new-developments"],
 		"preferredPatientCategories": ["apartment", "land"],
-		"roles": ["tenant", "developer-rep"],
+		"roles": ["tenant", "network-rep"],
 		"experienceYears": 4,
 		"contact": { "email": "helena.voss@solvara-dev.example", "phone": "+1-555-0204" },
 		"ownedPatientIds": [],
@@ -92,6 +92,6 @@
 		"requestIds": ["request-2"],
 		"doctorId": null,
 		"departmentId": null,
-		"developerId": "dev-1"
+		"networkId": "network-1"
 	}
 ]

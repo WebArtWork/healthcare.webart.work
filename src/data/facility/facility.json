@@ -1,0 +1,26 @@
+[
+	{
+		"_id": "facility-1",
+		"name": "Vaelmont General Hospital",
+		"description": "A multi-department acute care hospital in the Vaelmont riverside district, home to the Cardiology department and several other specialty units.",
+		"networkId": "network-1",
+		"country": "Draecia",
+		"city": "Vaelmont",
+		"address": "14 Riverside Boulevard, Vaelmont",
+		"coordinates": { "lat": 47.1721, "lng": 19.3452 },
+		"status": "completed",
+		"constructionProgressPercent": 100,
+		"buildings": [
+			{ "name": "Main Tower", "floors": 12, "unitsCount": 96 },
+			{ "name": "Outpatient Wing", "floors": 10, "unitsCount": 80 },
+			{ "name": "Emergency Wing", "floors": 8, "unitsCount": 64 }
+		],
+		"sharedFacilities": ["underground parking", "cafeteria", "chapel", "landscaped courtyard"],
+		"bedCapacity": 240,
+		"departmentIds": ["department-1"],
+		"patientIds": ["prop-1", "prop-2"],
+		"listingIds": ["listing-1", "listing-2"],
+		"recordIds": ["record-4"],
+		"coverImage": "https://assets.neryxomka.com/facilities/vaelmont-general-hospital-cover.jpg"
+	}
+]

@@ -58,8 +58,8 @@ export interface Patient {
 	coordinates: { lat: number; lng: number };
 	buildingUnitInfo: string;
 	mrn: string;
-	complexId: string | null;
-	developerId: string | null;
+	facilityId: string | null;
+	networkId: string | null;
 	departmentId: string | null;
 	doctorId: string | null;
 	vitals: PatientVitals;

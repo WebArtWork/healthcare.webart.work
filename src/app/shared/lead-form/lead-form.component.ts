@@ -6,12 +6,12 @@ import { ButtonModule } from '@wawjs/ngx-prime/button';
 import { TranslateService } from '@wawjs/ngx-translate';
 import { ContactService } from '../../contact.service';
 
-export type LeadFormKind = 'user' | 'doctor' | 'developer' | 'department';
+export type LeadFormKind = 'user' | 'doctor' | 'network' | 'department';
 
 const KIND_LABELS: Record<LeadFormKind, string> = {
 	user: 'Заявка користувача',
 	doctor: 'Заявка лікаря',
-	developer: 'Заявка забудовника',
+	network: 'Заявка мережі',
 	department: 'Заявка відділення',
 };
 

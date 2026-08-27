@@ -12,7 +12,7 @@ export type ListingStatus =
 	| 'rejected'
 	| 'archived';
 
-export type ListingOwnerRole = 'owner' | 'tenant' | 'doctor' | 'department-rep' | 'developer-rep' | 'neryxomka-team';
+export type ListingOwnerRole = 'owner' | 'tenant' | 'doctor' | 'department-rep' | 'network-rep' | 'neryxomka-team';
 
 export interface ListingOwner {
 	userId: string;

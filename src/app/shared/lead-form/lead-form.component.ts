@@ -15,7 +15,7 @@ const KIND_LABELS: Record<LeadFormKind, string> = {
 	department: 'Заявка відділення',
 };
 
-/** Inline lead-capture form used on the /for-* landing pages. Sends to the Neryxomka Telegram contact channel. */
+/** Inline lead-capture form used on the /for-* landing pages. Sends to the MedPass Telegram contact channel. */
 @Component({
 	selector: 'app-lead-form',
 	imports: [FormsModule, InputTextModule, TextareaModule, ButtonModule],
@@ -47,7 +47,7 @@ export class LeadFormComponent {
 		this.status.set('sending');
 
 		const lines = [
-			`Neryxomka lead: ${KIND_LABELS[this.kind()]}`,
+			`MedPass lead: ${KIND_LABELS[this.kind()]}`,
 			`Ім'я: ${this.name()}`,
 			`Контакт: ${this.contact()}`,
 		];

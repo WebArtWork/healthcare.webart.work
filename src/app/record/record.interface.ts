@@ -25,15 +25,15 @@ export type RecordVisibility =
 	| 'public-summary-private-details'
 	| 'private'
 	| 'shared-with-selected-users'
-	| 'shared-with-owners-tenants'
-	| 'shared-with-doctor-department-contractor-manager';
+	| 'shared-with-patient-family'
+	| 'shared-with-doctor-department-insurer-coordinator';
 
 export interface RecordAttachment {
 	type: 'photo' | 'video' | 'invoice' | 'receipt' | 'plan' | 'diagram' | 'document';
 	url: string;
 }
 
-export interface PropertyRecord {
+export interface PatientRecord {
 	_id: string;
 	patientId: string;
 	recordType: RecordType;

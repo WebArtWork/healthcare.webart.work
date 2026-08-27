@@ -1,7 +1,7 @@
 [
 	{
 		"_id": "appointment-1",
-		"patientId": "prop-1",
+		"patientId": "patient-1",
 		"doctorId": "doctor-1",
 		"departmentId": "department-1",
 		"facilityId": "facility-1",
@@ -24,7 +24,7 @@
 	},
 	{
 		"_id": "appointment-2",
-		"patientId": "prop-2",
+		"patientId": "patient-2",
 		"doctorId": "doctor-2",
 		"departmentId": "department-1",
 		"facilityId": "facility-1",
@@ -47,7 +47,7 @@
 	},
 	{
 		"_id": "appointment-3",
-		"patientId": "prop-3",
+		"patientId": "patient-3",
 		"doctorId": "doctor-1",
 		"departmentId": "department-1",
 		"facilityId": "facility-1",
@@ -70,7 +70,7 @@
 	},
 	{
 		"_id": "appointment-4",
-		"patientId": "prop-4",
+		"patientId": "patient-4",
 		"doctorId": "doctor-2",
 		"departmentId": "department-1",
 		"facilityId": "facility-1",

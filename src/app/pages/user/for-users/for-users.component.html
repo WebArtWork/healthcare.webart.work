@@ -1,7 +1,7 @@
 @if (showForm()) {
 	<div class="landing-page">
 		<header class="landing-page__hero">
-			<h1>{{ translateService.translate('Приєднатися до Neryxomka')() }}</h1>
+			<h1>{{ translateService.translate('Приєднатися до MedPass')() }}</h1>
 		</header>
 
 		<app-lead-form kind="user" [submitLabel]="translateService.translate('Надіслати заявку')()" />
@@ -9,24 +9,24 @@
 } @else {
 	<div class="landing-page">
 		<header class="landing-page__hero">
-			<h1>{{ translateService.translate('Знаходьте житло без переплат посередникам')() }}</h1>
-			<p>{{ translateService.translate('Neryxomka показує цифровий паспорт кожного об’єкта: реальну історію ремонтів, перевірених агентів і актуальні оголошення.')() }}</p>
+			<h1>{{ translateService.translate('Ведіть свою медичну історію в одному місці')() }}</h1>
+			<p>{{ translateService.translate('MedPass показує цифровий медичний паспорт: реальну історію лікування, перевірених лікарів і актуальні записи прийомів.')() }}</p>
 			<button pButton type="button" (click)="showForm.set(true)">{{ translateService.translate('Приєднатися')() }}</button>
 		</header>
 
 		<section class="landing-page__section">
 			<h2>{{ translateService.translate('Як це працює')() }}</h2>
 			<ul class="landing-page__list">
-				<li>{{ translateService.translate('Шукайте й фільтруйте оголошення за типом, ціною та розташуванням.')() }}</li>
-				<li>{{ translateService.translate('Переглядайте цифровий паспорт об’єкта — історію ремонтів і обслуговування.')() }}</li>
+				<li>{{ translateService.translate('Шукайте й фільтруйте лікарів за спеціалізацією, відділенням та розташуванням.')() }}</li>
+				<li>{{ translateService.translate('Переглядайте цифровий медичний паспорт — історію діагнозів і лікування.')() }}</li>
 				<li>{{ translateService.translate('Зв’язуйтеся напряму з лікарем, відділенням чи мережею.')() }}</li>
-				<li>{{ translateService.translate('Знаходьте об’єкти на карті поруч із вами.')() }}</li>
+				<li>{{ translateService.translate('Знаходьте медичні заклади на карті поруч із вами.')() }}</li>
 			</ul>
 		</section>
 
 		<section class="landing-page__section">
-			<h2>{{ translateService.translate('Чому Neryxomka')() }}</h2>
-			<p>{{ translateService.translate('Ми об’єднуємо перевірені дані про нерухомість в одному місці, щоб ви приймали рішення на основі фактів, а не обіцянок.')() }}</p>
+			<h2>{{ translateService.translate('Чому MedPass')() }}</h2>
+			<p>{{ translateService.translate('Ми об’єднуємо перевірені медичні дані в одному місці, щоб ви й ваш лікар приймали рішення на основі фактів, а не спогадів.')() }}</p>
 		</section>
 
 		<section class="landing-page__section">

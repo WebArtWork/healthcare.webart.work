@@ -1,7 +1,7 @@
 @if (showForm()) {
 	<div class="landing-page">
 		<header class="landing-page__hero">
-			<h1>{{ translateService.translate('Стати лікарем Neryxomka')() }}</h1>
+			<h1>{{ translateService.translate('Стати лікарем MedPass')() }}</h1>
 		</header>
 
 		<app-lead-form kind="doctor" [submitLabel]="translateService.translate('Надіслати заявку')()" />
@@ -9,7 +9,7 @@
 } @else {
 	<div class="landing-page">
 		<header class="landing-page__hero">
-			<h1>{{ translateService.translate('Розвивайте свою практику з Neryxomka')() }}</h1>
+			<h1>{{ translateService.translate('Розвивайте свою практику з MedPass')() }}</h1>
 			<p>{{ translateService.translate('Публічний профіль, перевірена кваліфікація та пацієнти, які шукають саме такого лікаря, як ви.')() }}</p>
 			<button pButton type="button" (click)="showForm.set(true)">{{ translateService.translate('Стати лікарем')() }}</button>
 		</header>
@@ -25,7 +25,7 @@
 		</section>
 
 		<section class="landing-page__section">
-			<h2>{{ translateService.translate('Чому Neryxomka')() }}</h2>
+			<h2>{{ translateService.translate('Чому MedPass')() }}</h2>
 			<p>{{ translateService.translate('Ми фокусуємось на довірі: перевірені ліцензії та профілі допомагають пацієнтам обирати саме вас.')() }}</p>
 		</section>
 

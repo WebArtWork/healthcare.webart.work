@@ -19,7 +19,7 @@
 		<div class="card__row"><dt>Досвід</dt><dd>{{ entity.experienceYears }} років</dd></div>
 		@if (doctor(); as ag) {
 			<div class="card__row">
-				<dt>Агент</dt>
+				<dt>Лікар</dt>
 				<dd>
 					<button type="button" class="card__relation" (click)="viewDoctor()">
 						<app-doctor-icon [entity]="ag" />
@@ -29,7 +29,7 @@
 		}
 		@if (department(); as agc) {
 			<div class="card__row">
-				<dt>Агентство</dt>
+				<dt>Відділення</dt>
 				<dd>
 					<button type="button" class="card__relation" (click)="viewDepartment()">
 						<app-department-icon [entity]="agc" />
@@ -39,7 +39,7 @@
 		}
 		@if (network(); as dev) {
 			<div class="card__row">
-				<dt>Забудовник</dt>
+				<dt>Мережа</dt>
 				<dd>
 					<button type="button" class="card__relation" (click)="viewNetwork()">
 						<app-network-icon [entity]="dev" />
@@ -79,7 +79,7 @@
 	}
 
 	@if (relatedAppointments().length) {
-		<h3 class="card__section-title">Оголошення</h3>
+		<h3 class="card__section-title">Прийоми</h3>
 		<div class="card__list">
 			@for (appointment of relatedAppointments(); track appointment._id) {
 				<button type="button" class="card__list-item" (click)="viewAppointment(appointment)">

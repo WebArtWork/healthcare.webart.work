@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { Input } from '@angular/core';
-import { PropertyRecord } from '../../../record/record.interface';
+import { PatientRecord } from '../../../record/record.interface';
 
 @Component({
 	selector: 'app-record-short',
@@ -11,5 +11,5 @@ import { PropertyRecord } from '../../../record/record.interface';
 	styleUrl: './record-short.component.scss',
 })
 export class RecordShortComponent {
-	@Input() entity!: PropertyRecord;
+	@Input() entity!: PatientRecord;
 }

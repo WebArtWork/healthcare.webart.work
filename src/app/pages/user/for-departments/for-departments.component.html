@@ -1,7 +1,7 @@
 @if (showForm()) {
 	<div class="landing-page">
 		<header class="landing-page__hero">
-			<h1>{{ translateService.translate('Приєднайте своє відділення до Neryxomka')() }}</h1>
+			<h1>{{ translateService.translate('Приєднайте своє відділення до MedPass')() }}</h1>
 		</header>
 
 		<app-lead-form kind="department" [submitLabel]="translateService.translate('Надіслати заявку')()" />
@@ -9,7 +9,7 @@
 } @else {
 	<div class="landing-page">
 		<header class="landing-page__hero">
-			<h1>{{ translateService.translate('Розвивайте своє відділення разом з Neryxomka')() }}</h1>
+			<h1>{{ translateService.translate('Розвивайте своє відділення разом з MedPass')() }}</h1>
 			<p>{{ translateService.translate('Профіль відділення, профілі ваших лікарів та всі записи на прийом в одному перевіреному місці.')() }}</p>
 			<button pButton type="button" (click)="showForm.set(true)">{{ translateService.translate('Стати партнером')() }}</button>
 		</header>
@@ -17,7 +17,7 @@
 		<section class="landing-page__section">
 			<h2>{{ translateService.translate('Як це працює')() }}</h2>
 			<ul class="landing-page__list">
-				<li>{{ translateService.translate('Профіль відділення з’являється в пошуку Neryxomka.')() }}</li>
+				<li>{{ translateService.translate('Профіль відділення з’являється в пошуку MedPass.')() }}</li>
 				<li>{{ translateService.translate('Кожен ваш лікар отримує власний публічний профіль.')() }}</li>
 				<li>{{ translateService.translate('Пацієнти бачать усіх лікарів відділення в одному місці.')() }}</li>
 				<li>{{ translateService.translate('Діліться посиланням на профіль в один клік.')() }}</li>
@@ -25,7 +25,7 @@
 		</section>
 
 		<section class="landing-page__section">
-			<h2>{{ translateService.translate('Чому Neryxomka')() }}</h2>
+			<h2>{{ translateService.translate('Чому MedPass')() }}</h2>
 			<p>{{ translateService.translate('Ми будуємо довіру через прозорість: перевірені профілі лікарів та відділень допомагають пацієнтам обирати саме вас.')() }}</p>
 		</section>
 

@@ -8,7 +8,7 @@ import { Facility } from '../../../facility/facility.interface';
 import { Network } from '../../../network/network.interface';
 import { EntityComment } from '../../../comment/comment.interface';
 import { Appointment } from '../../../appointment/appointment.interface';
-import { PropertyRecord } from '../../../record/record.interface';
+import { PatientRecord } from '../../../record/record.interface';
 import { Patient } from '../../../patient/patient.interface';
 import {
 	PATIENT_STATUS_LABELS,
@@ -50,7 +50,7 @@ export class PatientViewComponent {
 	@Input() department?: Department | null;
 	@Input() doctor?: Doctor | null;
 	@Input() appointments: Appointment[] = [];
-	@Input() records: PropertyRecord[] = [];
+	@Input() records: PatientRecord[] = [];
 	@Input() comments: EntityComment[] = [];
 
 	readonly defaultPhoto = DEFAULT_PHOTO;
@@ -86,7 +86,7 @@ export class PatientViewComponent {
 		this._router.navigate(['/appointment', appointment._id]);
 	}
 
-	viewRecord(record: PropertyRecord): void {
+	viewRecord(record: PatientRecord): void {
 		this._router.navigate(['/records', record._id]);
 	}
 }

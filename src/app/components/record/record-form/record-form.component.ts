@@ -8,7 +8,7 @@ import { InputTextModule } from '@wawjs/ngx-prime/inputtext';
 import { SelectModule } from '@wawjs/ngx-prime/select';
 import { TextareaModule } from '@wawjs/ngx-prime/textarea';
 import { TranslateDirective } from '@wawjs/ngx-translate';
-import { PropertyRecord } from '../../../record/record.interface';
+import { PatientRecord } from '../../../record/record.interface';
 import {
 	RECORD_STATUS_OPTIONS,
 	RECORD_TYPE_OPTIONS,
@@ -32,7 +32,7 @@ import {
 	styleUrl: './record-form.component.scss',
 })
 export class RecordFormComponent {
-	@Input() entity?: PropertyRecord;
+	@Input() entity?: PatientRecord;
 
 	readonly form: FormGroup;
 	readonly recordTypeOptions = RECORD_TYPE_OPTIONS;

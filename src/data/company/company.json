@@ -1,9 +1,9 @@
 {
 	"_id": "",
-	"name": "Neryxomka",
-	"title": "Neryxomka",
-	"description": "Цифровий паспорт нерухомості: об'єкти, оголошення та повна історія в одному місці",
+	"name": "MedPass",
+	"title": "MedPass",
+	"description": "Цифровий медичний паспорт: пацієнти, лікарі та повна історія лікування в одному місці",
 	"image": "/logo.png?v=20260828-healthcare",
 	"favicon": "/favicon.png?v=20260828-healthcare",
-	"siteUrl": "https://neryxomka.com"
+	"siteUrl": "https://medpass.health"
 }

@@ -18,9 +18,9 @@
 		"sharedFacilities": ["underground parking", "cafeteria", "chapel", "landscaped courtyard"],
 		"bedCapacity": 240,
 		"departmentIds": ["department-1"],
-		"patientIds": ["prop-1", "prop-2"],
+		"patientIds": ["patient-1", "patient-2"],
 		"appointmentIds": ["appointment-1", "appointment-2"],
 		"recordIds": ["record-4"],
-		"coverImage": "https://assets.neryxomka.com/facilities/vaelmont-general-hospital-cover.jpg"
+		"coverImage": "https://assets.medpass.health/facilities/vaelmont-general-hospital-cover.jpg"
 	}
 ]

@@ -1,7 +1,7 @@
 [
 	{
 		"_id": "record-1",
-		"patientId": "prop-3",
+		"patientId": "patient-3",
 		"recordType": "medication",
 		"title": "Prescribed Amoxicillin 500mg",
 		"description": "Prescribed a 7-day course of Amoxicillin 500mg (three times daily) for acute bacterial sinusitis. Patient advised to complete the full course.",
@@ -15,14 +15,14 @@
 		"quantity": 1,
 		"units": "course",
 		"status": "completed",
-		"attachments": [{ "type": "receipt", "url": "https://assets.neryxomka.com/records/record-1-receipt.pdf" }],
+		"attachments": [{ "type": "receipt", "url": "https://assets.medpass.health/records/record-1-receipt.pdf" }],
 		"bodySite": null,
-		"visibility": "shared-with-owners-tenants",
+		"visibility": "shared-with-patient-family",
 		"verified": true
 	},
 	{
 		"_id": "record-2",
-		"patientId": "prop-3",
+		"patientId": "patient-3",
 		"recordType": "care-team-change",
 		"title": "Transferred to a new primary care physician",
 		"description": "Patient's previous primary care physician retired; care was transferred to a new attending physician within the same clinic.",
@@ -43,7 +43,7 @@
 	},
 	{
 		"_id": "record-3",
-		"patientId": "prop-4",
+		"patientId": "patient-4",
 		"recordType": "vaccination",
 		"title": "Annual influenza vaccination",
 		"description": "Routine seasonal influenza vaccine administered; no adverse reactions observed during the 15-minute post-injection observation period.",
@@ -57,14 +57,14 @@
 		"quantity": 1,
 		"units": "dose",
 		"status": "completed",
-		"attachments": [{ "type": "document", "url": "https://assets.neryxomka.com/records/record-3-report.pdf" }],
+		"attachments": [{ "type": "document", "url": "https://assets.medpass.health/records/record-3-report.pdf" }],
 		"bodySite": "Left upper arm",
 		"visibility": "public-summary-private-details",
 		"verified": true
 	},
 	{
 		"_id": "record-4",
-		"patientId": "prop-1",
+		"patientId": "patient-1",
 		"recordType": "vitals",
 		"title": "Vitals recorded on ward round",
 		"description": "Routine vitals check during inpatient ward round: blood pressure 118/76 mmHg, heart rate 72 bpm, temperature 36.7°C, oxygen saturation 98%.",
@@ -78,14 +78,14 @@
 		"quantity": null,
 		"units": null,
 		"status": "completed",
-		"attachments": [{ "type": "photo", "url": "https://assets.neryxomka.com/records/record-4-progress.jpg" }],
+		"attachments": [{ "type": "photo", "url": "https://assets.medpass.health/records/record-4-progress.jpg" }],
 		"bodySite": null,
 		"visibility": "public",
 		"verified": true
 	},
 	{
 		"_id": "record-5",
-		"patientId": "prop-5",
+		"patientId": "patient-5",
 		"recordType": "lab-result",
 		"title": "Blood test - CBC panel: results normal",
 		"description": "Complete blood count panel ordered for routine annual checkup; all values within normal reference ranges, no follow-up required.",
@@ -99,7 +99,7 @@
 		"quantity": null,
 		"units": null,
 		"status": "completed",
-		"attachments": [{ "type": "document", "url": "https://assets.neryxomka.com/records/record-5-valuation.pdf" }],
+		"attachments": [{ "type": "document", "url": "https://assets.medpass.health/records/record-5-valuation.pdf" }],
 		"bodySite": null,
 		"visibility": "private",
 		"verified": true

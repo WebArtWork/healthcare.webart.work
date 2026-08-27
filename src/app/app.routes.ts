@@ -13,9 +13,9 @@ export const routes: Routes = [
 			),
 		data: {
 			meta: {
-				title: 'Neryxomka — цифровий паспорт нерухомості',
+				title: 'MedPass — цифровий медичний паспорт',
 				description:
-					'Neryxomka показує повну історію об’єкта нерухомості — ремонти, обслуговування, комунікації — поруч з оголошеннями, картою та профілями агентств.',
+					'MedPass показує повну історію лікування пацієнта — діагнози, обстеження, призначення — поруч зі стрічкою прийомів, картою закладів та профілями лікарів.',
 			},
 		},
 		loadChildren: () =>
@@ -36,7 +36,7 @@ export const routes: Routes = [
 					meta: {
 						title: 'Вхід',
 						description:
-							'Увійдіть або зареєструйтесь у Neryxomka, щоб переглядати цифрові паспорти об’єктів, стрічку пропозицій і керувати профілем.',
+							'Увійдіть або зареєструйтесь у MedPass, щоб переглядати цифрові медичні паспорти пацієнтів, стрічку прийомів і керувати профілем.',
 					},
 				},
 				loadChildren: () =>
@@ -61,7 +61,7 @@ export const routes: Routes = [
 					meta: {
 						title: 'Мій профіль',
 						description:
-							'Керуйте особистими даними профілю Neryxomka: ім’я, телефон, фото та коротка інформація про себе.',
+							'Керуйте особистими даними профілю MedPass: ім’я, телефон, фото та коротка інформація про себе.',
 					},
 				},
 				loadChildren: () =>
@@ -76,7 +76,7 @@ export const routes: Routes = [
 					meta: {
 						title: 'Редактор',
 						description:
-							'Перевірте форми додавання об’єктів, оголошень, закладів, мереж та агентів у Neryxomka.',
+							'Перевірте форми додавання пацієнтів, прийомів, закладів, мереж та лікарів у MedPass.',
 						index: false,
 					},
 				},
@@ -92,7 +92,7 @@ export const routes: Routes = [
 					shareKind: 'profile',
 					meta: {
 						title: 'Поділитися профілем',
-						description: 'Відскануйте QR-код, щоб відкрити мій профіль Neryxomka.',
+						description: 'Відскануйте QR-код, щоб відкрити мій профіль MedPass.',
 						index: false,
 					},
 				},
@@ -117,7 +117,7 @@ export const routes: Routes = [
 				data: {
 					meta: {
 						title: 'Мої налаштування',
-						description: 'Налаштування облікового запису Neryxomka.',
+						description: 'Налаштування облікового запису MedPass.',
 						index: false,
 					},
 				},
@@ -132,8 +132,8 @@ export const routes: Routes = [
 				data: {
 					shareKind: 'app',
 					meta: {
-						title: 'Поділитися Neryxomka',
-						description: 'Відскануйте QR-код, щоб приєднатися до Neryxomka за кілька секунд.',
+						title: 'Поділитися MedPass',
+						description: 'Відскануйте QR-код, щоб приєднатися до MedPass за кілька секунд.',
 					},
 				},
 				loadChildren: () =>
@@ -147,7 +147,7 @@ export const routes: Routes = [
 				data: {
 					meta: {
 						title: 'Для користувачів',
-						description: 'Знаходьте житло без переплат посередникам разом з Neryxomka.',
+						description: 'Ведіть свою медичну історію та знаходьте перевірених лікарів разом з MedPass.',
 					},
 				},
 				loadChildren: () =>
@@ -160,8 +160,8 @@ export const routes: Routes = [
 				canActivate: [MetaGuard],
 				data: {
 					meta: {
-						title: 'Для агентів',
-						description: 'Розвивайте свою практику агента нерухомості з Neryxomka.',
+						title: 'Для лікарів',
+						description: 'Розвивайте свою лікарську практику з MedPass.',
 					},
 				},
 				loadChildren: () =>
@@ -175,7 +175,7 @@ export const routes: Routes = [
 				data: {
 					meta: {
 						title: 'Для мереж',
-						description: 'Покажіть свої медичні заклади пацієнтам на Neryxomka.',
+						description: 'Покажіть свої медичні заклади пацієнтам на MedPass.',
 					},
 				},
 				loadChildren: () =>
@@ -188,8 +188,8 @@ export const routes: Routes = [
 				canActivate: [MetaGuard],
 				data: {
 					meta: {
-						title: 'Для агентств',
-						description: 'Розвивайте агентство нерухомості разом з Neryxomka.',
+						title: 'Для відділень',
+						description: 'Розвивайте своє відділення разом з MedPass.',
 					},
 				},
 				loadChildren: () =>
@@ -204,7 +204,7 @@ export const routes: Routes = [
 					meta: {
 						title: 'Стрічка',
 						description:
-							'Перегортайте стрічку об’єктів нерухомості Neryxomka — відкладайте цікаве в обране, пропускайте зайве.',
+							'Перегортайте стрічку прийомів і оновлень пацієнтів MedPass — відкладайте важливе в обране, пропускайте зайве.',
 					},
 				},
 				loadChildren: () =>
@@ -219,7 +219,7 @@ export const routes: Routes = [
 					meta: {
 						title: 'Пацієнти',
 						description:
-							'Перегляньте всіх пацієнтів у цифровій медичній картці Neryxomka.',
+							'Перегляньте всіх пацієнтів у цифровій медичній картці MedPass.',
 					},
 				},
 				loadChildren: () =>
@@ -232,9 +232,9 @@ export const routes: Routes = [
 				canActivate: [MetaGuard],
 				data: {
 					meta: {
-						title: 'Агентства',
+						title: 'Відділення',
 						description:
-							'Перегляньте всі агентства нерухомості, представлені в Neryxomka.',
+							'Перегляньте всі відділення лікарень, представлені в MedPass.',
 					},
 				},
 				loadChildren: () =>
@@ -249,7 +249,7 @@ export const routes: Routes = [
 					meta: {
 						title: 'Мережі',
 						description:
-							'Перегляньте всі медичні мережі, представлені в Neryxomka.',
+							'Перегляньте всі медичні мережі, представлені в MedPass.',
 					},
 				},
 				loadChildren: () =>
@@ -279,7 +279,7 @@ export const routes: Routes = [
 					meta: {
 						title: 'Карта',
 						description:
-							'Знаходьте об’єкти нерухомості на карті Neryxomka за їхнім реальним розташуванням.',
+							'Знаходьте медичні заклади на карті MedPass за їхнім реальним розташуванням.',
 					},
 				},
 				loadChildren: () =>
@@ -322,9 +322,9 @@ export const routes: Routes = [
 				canActivate: [MetaGuard],
 				data: {
 					meta: {
-						title: 'Запис історії об’єкта',
+						title: 'Запис медичної історії',
 						description:
-							'Запис з цифрового паспорта об’єкта: ремонт, заміна комунікацій або обслуговування.',
+							'Запис з цифрового медичного паспорта пацієнта: діагноз, обстеження або призначення.',
 					},
 				},
 				loadChildren: () =>
@@ -339,7 +339,7 @@ export const routes: Routes = [
 					meta: {
 						title: 'Медичний заклад',
 						description:
-							'Медичний заклад у Neryxomka: відділення, мережа та деталі закладу.',
+							'Медичний заклад у MedPass: відділення, мережа та деталі закладу.',
 					},
 				},
 				loadChildren: () =>
@@ -354,7 +354,7 @@ export const routes: Routes = [
 					meta: {
 						title: 'Мережа',
 						description:
-							'Профіль медичної мережі в Neryxomka: заклади та відділення.',
+							'Профіль медичної мережі в MedPass: заклади та відділення.',
 					},
 				},
 				loadChildren: () =>
@@ -367,9 +367,9 @@ export const routes: Routes = [
 				canActivate: [MetaGuard],
 				data: {
 					meta: {
-						title: 'Агентство',
+						title: 'Відділення',
 						description:
-							'Профіль агентства нерухомості в Neryxomka: агенти, об’єкти й оголошення.',
+							'Профіль відділення лікарні в MedPass: лікарі, пацієнти та прийоми.',
 					},
 				},
 				loadChildren: () =>
@@ -382,9 +382,9 @@ export const routes: Routes = [
 				canActivate: [MetaGuard],
 				data: {
 					meta: {
-						title: 'Агент',
+						title: 'Лікар',
 						description:
-							'Профіль агента нерухомості в Neryxomka: контакти, агентство та об’єкти в роботі.',
+							'Профіль лікаря в MedPass: контакти, відділення та пацієнти в роботі.',
 					},
 				},
 				loadChildren: () =>
@@ -398,7 +398,7 @@ export const routes: Routes = [
 				data: {
 					meta: {
 						title: 'Профіль користувача',
-						description: 'Публічний профіль користувача Neryxomka.',
+						description: 'Публічний профіль користувача MedPass.',
 					},
 				},
 				loadChildren: () =>
@@ -422,7 +422,7 @@ export const routes: Routes = [
 				data: {
 					meta: {
 						title: 'Користувачі',
-						description: 'Адміністрування користувачів Neryxomka.',
+						description: 'Адміністрування користувачів MedPass.',
 						index: false,
 					},
 				},
@@ -435,7 +435,7 @@ export const routes: Routes = [
 				data: {
 					meta: {
 						title: 'Клієнти',
-						description: 'Адміністрування клієнтів Neryxomka.',
+						description: 'Адміністрування клієнтів MedPass.',
 						index: false,
 					},
 				},
@@ -448,7 +448,7 @@ export const routes: Routes = [
 				data: {
 					meta: {
 						title: 'Форми',
-						description: 'Адміністрування динамічних форм Neryxomka.',
+						description: 'Адміністрування динамічних форм MedPass.',
 						index: false,
 					},
 				},
@@ -461,7 +461,7 @@ export const routes: Routes = [
 				data: {
 					meta: {
 						title: 'Форми',
-						description: 'Редагування динамічної форми Neryxomka.',
+						description: 'Редагування динамічної форми MedPass.',
 						index: false,
 					},
 				},

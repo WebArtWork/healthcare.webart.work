@@ -1,4 +1,4 @@
-export type UserRole = 'owner' | 'tenant' | 'doctor' | 'department-rep' | 'network-rep' | 'buyer';
+export type UserRole = 'patient' | 'doctor' | 'department-rep' | 'network-rep';
 
 export interface UserContact {
 	email: string;

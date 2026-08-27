@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, Input, inject } from '@angular/core';
 import { Router } from '@angular/router';
-import { PropertyRecord } from '../../../record/record.interface';
+import { PatientRecord } from '../../../record/record.interface';
 import {
 	RECORD_STATUS_LABELS,
 	RECORD_TYPE_LABELS,
@@ -22,7 +22,7 @@ import { UserIconComponent } from '../../user/user-icon/user-icon.component';
 export class RecordViewComponent {
 	private readonly _router = inject(Router);
 
-	@Input() entity!: PropertyRecord;
+	@Input() entity!: PatientRecord;
 	@Input() patient?: Patient | null;
 	@Input() author?: User | null;
 	@Input() involvedUsers: User[] = [];

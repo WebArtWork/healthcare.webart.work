@@ -8,7 +8,7 @@ import { Patient } from '../../../patient/patient.interface';
 import { patients } from '../../../patient/patient.data';
 import { Appointment } from '../../../appointment/appointment.interface';
 import { appointments } from '../../../appointment/appointment.data';
-import { PropertyRecord } from '../../../record/record.interface';
+import { PatientRecord } from '../../../record/record.interface';
 import { records } from '../../../record/record.data';
 import { NetworkIconComponent } from '../../network/network-icon/network-icon.component';
 import { PatientShortComponent } from '../../patient/patient-short/patient-short.component';
@@ -25,7 +25,7 @@ const STATUS_LABELS: Record<FacilityStatus, string> = {
 const _networkById = new Map<string, Network>(networks.map((d) => [d._id, d]));
 const _patientById = new Map<string, Patient>(patients.map((p) => [p._id, p]));
 const _appointmentById = new Map<string, Appointment>(appointments.map((l) => [l._id, l]));
-const _recordById = new Map<string, PropertyRecord>(records.map((r) => [r._id, r]));
+const _recordById = new Map<string, PatientRecord>(records.map((r) => [r._id, r]));
 
 @Component({
 	selector: 'app-facility-view',
@@ -59,8 +59,8 @@ export class FacilityViewComponent {
 		this.entity.appointmentIds.map((id) => _appointmentById.get(id)).filter((l): l is Appointment => !!l),
 	);
 
-	readonly relatedRecords = computed<PropertyRecord[]>(() =>
-		this.entity.recordIds.map((id) => _recordById.get(id)).filter((r): r is PropertyRecord => !!r),
+	readonly relatedRecords = computed<PatientRecord[]>(() =>
+		this.entity.recordIds.map((id) => _recordById.get(id)).filter((r): r is PatientRecord => !!r),
 	);
 
 	viewNetwork(): void {
@@ -78,7 +78,7 @@ export class FacilityViewComponent {
 		this._router.navigate(['/appointment', appointment._id]);
 	}
 
-	viewRecord(record: PropertyRecord): void {
+	viewRecord(record: PatientRecord): void {
 		this._router.navigate(['/records', record._id]);
 	}
 }

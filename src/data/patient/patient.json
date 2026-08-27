@@ -1,6 +1,6 @@
 [
 	{
-		"_id": "prop-1",
+		"_id": "patient-1",
 		"category": "inpatient",
 		"fullName": "Olena Marchenko",
 		"sex": "female",
@@ -21,10 +21,10 @@
 		"appointmentIds": ["appointment-1"],
 		"recordIds": ["record-4"],
 		"commentIds": ["comment-1"],
-		"photos": ["https://assets.neryxomka.com/patients/prop-1-1.jpg", "https://assets.neryxomka.com/patients/prop-1-2.jpg"]
+		"photos": ["https://assets.medpass.health/patients/patient-1-1.jpg", "https://assets.medpass.health/patients/patient-1-2.jpg"]
 	},
 	{
-		"_id": "prop-2",
+		"_id": "patient-2",
 		"category": "outpatient",
 		"fullName": "Bohdan Tkachenko",
 		"sex": "male",
@@ -45,10 +45,10 @@
 		"appointmentIds": ["appointment-2"],
 		"recordIds": [],
 		"commentIds": [],
-		"photos": ["https://assets.neryxomka.com/patients/prop-2-1.jpg"]
+		"photos": ["https://assets.medpass.health/patients/patient-2-1.jpg"]
 	},
 	{
-		"_id": "prop-3",
+		"_id": "patient-3",
 		"category": "inpatient",
 		"fullName": "Iryna Kovalenko",
 		"sex": "female",
@@ -69,10 +69,10 @@
 		"appointmentIds": ["appointment-3"],
 		"recordIds": ["record-1", "record-2"],
 		"commentIds": ["comment-2"],
-		"photos": ["https://assets.neryxomka.com/patients/prop-3-1.jpg"]
+		"photos": ["https://assets.medpass.health/patients/patient-3-1.jpg"]
 	},
 	{
-		"_id": "prop-4",
+		"_id": "patient-4",
 		"category": "surgical",
 		"fullName": "Petro Savchenko",
 		"sex": "male",
@@ -93,10 +93,10 @@
 		"appointmentIds": ["appointment-4"],
 		"recordIds": ["record-3"],
 		"commentIds": [],
-		"photos": ["https://assets.neryxomka.com/patients/prop-4-1.jpg"]
+		"photos": ["https://assets.medpass.health/patients/patient-4-1.jpg"]
 	},
 	{
-		"_id": "prop-5",
+		"_id": "patient-5",
 		"category": "observation",
 		"fullName": "Kateryna Boiko",
 		"sex": "female",
@@ -117,10 +117,10 @@
 		"appointmentIds": [],
 		"recordIds": ["record-5"],
 		"commentIds": [],
-		"photos": ["https://assets.neryxomka.com/patients/prop-5-1.jpg"]
+		"photos": ["https://assets.medpass.health/patients/patient-5-1.jpg"]
 	},
 	{
-		"_id": "prop-6",
+		"_id": "patient-6",
 		"category": "rehabilitation",
 		"fullName": "Mykola Doroshenko",
 		"sex": "male",
@@ -141,10 +141,10 @@
 		"appointmentIds": [],
 		"recordIds": [],
 		"commentIds": [],
-		"photos": ["https://assets.neryxomka.com/patients/prop-6-1.jpg"]
+		"photos": ["https://assets.medpass.health/patients/patient-6-1.jpg"]
 	},
 	{
-		"_id": "prop-7",
+		"_id": "patient-7",
 		"category": "psychiatric",
 		"fullName": "Sofiia Lysenko",
 		"sex": "female",
@@ -165,6 +165,6 @@
 		"appointmentIds": [],
 		"recordIds": [],
 		"commentIds": [],
-		"photos": ["https://assets.neryxomka.com/patients/prop-7-1.jpg"]
+		"photos": ["https://assets.medpass.health/patients/patient-7-1.jpg"]
 	}
 ]

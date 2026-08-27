@@ -1,4 +1,4 @@
 import recordData from '../../data/record/record.json';
-import { PropertyRecord } from './record.interface';
+import { PatientRecord } from './record.interface';
 
-export const records: PropertyRecord[] = recordData as PropertyRecord[];
+export const records: PatientRecord[] = recordData as PatientRecord[];

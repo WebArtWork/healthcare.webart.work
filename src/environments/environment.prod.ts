@@ -4,7 +4,7 @@ export const environment = {
 	appId: 'appId',
 	url: 'https://it.webart.work',
 	contact: {
-		slug: 'neryxomka.com',
+		slug: 'medpass.health',
 	},
 	sign: {
 		logo: '',
@@ -12,8 +12,8 @@ export const environment = {
 		password: '',
 	},
 	image: {
-		default: 'https://neryxomka.com/logo.png',
-		logo: 'https://neryxomka.com/logo.png',
+		default: 'https://medpass.health/logo.png',
+		logo: 'https://medpass.health/logo.png',
 	},
 	defaultLanguageCode: 'en',
 	languages: [

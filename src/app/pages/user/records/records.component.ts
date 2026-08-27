@@ -4,7 +4,7 @@ import { ActivatedRoute } from '@angular/router';
 import { map } from 'rxjs';
 import { CardModule } from '@wawjs/ngx-prime/card';
 import { RecordViewComponent } from '../../../components/record/record-view/record-view.component';
-import { PropertyRecord } from '../../../record/record.interface';
+import { PatientRecord } from '../../../record/record.interface';
 import { records } from '../../../record/record.data';
 import { Patient } from '../../../patient/patient.interface';
 import { patients } from '../../../patient/patient.data';
@@ -27,7 +27,7 @@ export class RecordsComponent {
 		{ initialValue: null },
 	);
 
-	readonly entity = computed<PropertyRecord | undefined>(() =>
+	readonly entity = computed<PatientRecord | undefined>(() =>
 		records.find((item) => item._id === this._id()),
 	);
 

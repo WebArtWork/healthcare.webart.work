@@ -2,7 +2,7 @@ export type CommentEntityType = 'patient' | 'appointment' | 'facility' | 'networ
 
 export type CommentModerationStatus = 'pending' | 'approved' | 'rejected' | 'flagged';
 
-export type VerifiedReviewerStatus = 'verified-resident' | 'verified-tenant' | 'verified-buyer' | 'verified-owner' | null;
+export type VerifiedReviewerStatus = 'verified-patient' | 'verified-caregiver' | 'verified-staff' | null;
 
 export interface EntityComment {
 	_id: string;

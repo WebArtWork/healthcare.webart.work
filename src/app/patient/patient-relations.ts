@@ -8,7 +8,7 @@ import { Network } from '../network/network.interface';
 import { networks } from '../network/network.data';
 import { Appointment } from '../appointment/appointment.interface';
 import { appointments } from '../appointment/appointment.data';
-import { PropertyRecord } from '../record/record.interface';
+import { PatientRecord } from '../record/record.interface';
 import { records } from '../record/record.data';
 import { EntityComment } from '../comment/comment.interface';
 import { comments } from '../comment/comment.data';
@@ -27,7 +27,7 @@ export interface PatientRelations {
 	department: Department | null;
 	doctor: Doctor | null;
 	appointments: Appointment[];
-	records: PropertyRecord[];
+	records: PatientRecord[];
 	comments: EntityComment[];
 }
 
@@ -36,7 +36,7 @@ const _networkById = new Map<string, Network>(networks.map((d) => [d._id, d]));
 const _departmentById = new Map<string, Department>(departments.map((a) => [a._id, a]));
 const _doctorById = new Map<string, Doctor>(doctors.map((a) => [a._id, a]));
 const _appointmentById = new Map<string, Appointment>(appointments.map((l) => [l._id, l]));
-const _recordById = new Map<string, PropertyRecord>(records.map((r) => [r._id, r]));
+const _recordById = new Map<string, PatientRecord>(records.map((r) => [r._id, r]));
 const _commentById = new Map<string, EntityComment>(comments.map((c) => [c._id, c]));
 
 export function relationsForPatient(patient: Patient): PatientRelations {
@@ -50,7 +50,7 @@ export function relationsForPatient(patient: Patient): PatientRelations {
 			.filter((l): l is Appointment => !!l),
 		records: patient.recordIds
 			.map((id) => _recordById.get(id))
-			.filter((r): r is PropertyRecord => !!r),
+			.filter((r): r is PatientRecord => !!r),
 		comments: patient.commentIds
 			.map((id) => _commentById.get(id))
 			.filter((c): c is EntityComment => !!c),

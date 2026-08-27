@@ -7,7 +7,7 @@ import { Doctor } from '../../../doctor/doctor.interface';
 import { Facility } from '../../../facility/facility.interface';
 import { Network } from '../../../network/network.interface';
 import { EntityComment } from '../../../comment/comment.interface';
-import { Listing } from '../../../listing/listing.interface';
+import { Appointment } from '../../../appointment/appointment.interface';
 import { PropertyRecord } from '../../../record/record.interface';
 import { Patient } from '../../../patient/patient.interface';
 import {
@@ -19,7 +19,7 @@ import { DepartmentIconComponent } from '../../department/department-icon/depart
 import { DoctorIconComponent } from '../../doctor/doctor-icon/doctor-icon.component';
 import { FacilityIconComponent } from '../../facility/facility-icon/facility-icon.component';
 import { NetworkIconComponent } from '../../network/network-icon/network-icon.component';
-import { ListingShortComponent } from '../../listing/listing-short/listing-short.component';
+import { AppointmentShortComponent } from '../../appointment/appointment-short/appointment-short.component';
 import { RecordShortComponent } from '../../record/record-short/record-short.component';
 import { CommentShortComponent } from '../../comment/comment-short/comment-short.component';
 
@@ -34,7 +34,7 @@ const DEFAULT_PHOTO = '/patient-default.svg';
 		DoctorIconComponent,
 		FacilityIconComponent,
 		NetworkIconComponent,
-		ListingShortComponent,
+		AppointmentShortComponent,
 		RecordShortComponent,
 		CommentShortComponent,
 	],
@@ -49,7 +49,7 @@ export class PatientViewComponent {
 	@Input() network?: Network | null;
 	@Input() department?: Department | null;
 	@Input() doctor?: Doctor | null;
-	@Input() listings: Listing[] = [];
+	@Input() appointments: Appointment[] = [];
 	@Input() records: PropertyRecord[] = [];
 	@Input() comments: EntityComment[] = [];
 
@@ -82,8 +82,8 @@ export class PatientViewComponent {
 		if (this.doctor) this._router.navigate(['/doctor', this.doctor._id]);
 	}
 
-	viewListing(listing: Listing): void {
-		this._router.navigate(['/listing', listing._id]);
+	viewAppointment(appointment: Appointment): void {
+		this._router.navigate(['/appointment', appointment._id]);
 	}
 
 	viewRecord(record: PropertyRecord): void {

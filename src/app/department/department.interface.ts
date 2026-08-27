@@ -15,7 +15,7 @@ export interface Department {
 	city: string;
 	foundedYear: number;
 	doctorIds: string[];
-	listingIds: string[];
+	appointmentIds: string[];
 	representedPatientIds: string[];
 	contact: DepartmentContact;
 	averageRating: number;

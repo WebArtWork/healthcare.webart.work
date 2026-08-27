@@ -11,7 +11,7 @@ export interface Doctor {
 	serviceAreas: string[];
 	specializations: string[];
 	yearsExperience: number;
-	listingIds: string[];
+	appointmentIds: string[];
 	representedPatientIds: string[];
 	contactPhone: string;
 	contactEmail: string;

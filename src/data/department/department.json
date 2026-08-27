@@ -9,7 +9,7 @@
 		"city": "Vaelmont",
 		"foundedYear": 2008,
 		"doctorIds": ["doctor-1", "doctor-2"],
-		"listingIds": ["listing-3", "listing-4"],
+		"appointmentIds": ["appointment-3", "appointment-4"],
 		"representedPatientIds": ["prop-3", "prop-4"],
 		"contact": {
 			"phone": "+1-555-0140",

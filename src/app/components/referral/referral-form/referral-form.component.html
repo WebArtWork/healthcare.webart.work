@@ -1,0 +1,49 @@
+<form class="form" [formGroup]="form">
+		<div class="form__field">
+			<label class="form__label" for="urgency" translate>Терміновість</label>
+			<p-select id="urgency" formControlName="urgency" [options]="urgencyOptions" optionLabel="label" optionValue="value" appendTo="body" />
+
+		</div>
+		<div class="form__field">
+			<label class="form__label" for="reason" translate>Причина направлення</label>
+			<textarea id="reason" pTextarea class="form__control" rows="3" [formControlName]="'reason'" [class._invalid]="form.get('reason')?.invalid && form.get('reason')?.touched"></textarea>
+			@if (form.get('reason')?.hasError('required') && form.get('reason')?.touched) {
+				<span class="form__error" translate>Причина обов'язкова</span>
+			}
+		</div>
+		<div class="form__field">
+			<label class="form__label" for="symptoms" translate>Симптоми</label>
+			<textarea id="symptoms" pTextarea class="form__control" rows="3" [formControlName]="'symptoms'"></textarea>
+		</div>
+		<div class="form__field">
+			<label class="form__label" for="source" translate>Джерело направлення</label>
+			<p-select id="source" formControlName="source" [options]="sourceOptions" optionLabel="label" optionValue="value" appendTo="body" />
+
+		</div>
+		<div class="form__field">
+			<label class="form__label" for="preferredAppointmentDate" translate>Бажана дата прийому</label>
+			<input id="preferredAppointmentDate" pInputText class="form__control" type="date" [formControlName]="'preferredAppointmentDate'" [class._invalid]="form.get('preferredAppointmentDate')?.invalid && form.get('preferredAppointmentDate')?.touched" />
+
+		</div>
+		<div class="form__field">
+			<label class="form__label" for="expirationDate" translate>Дійсне до</label>
+			<input id="expirationDate" pInputText class="form__control" type="date" [formControlName]="'expirationDate'" [class._invalid]="form.get('expirationDate')?.invalid && form.get('expirationDate')?.touched" />
+			@if (form.get('expirationDate')?.hasError('required') && form.get('expirationDate')?.touched) {
+				<span class="form__error" translate>Дата обов'язкова</span>
+			}
+		</div>
+		<div class="form__field">
+			<label class="form__label" for="visibility" translate>Видимість</label>
+			<p-select id="visibility" formControlName="visibility" [options]="visibilityOptions" optionLabel="label" optionValue="value" appendTo="body" />
+
+		</div>
+		<div class="form__field">
+			<label class="form__label" for="status" translate>Статус</label>
+			<p-select id="status" formControlName="status" [options]="statusOptions" optionLabel="label" optionValue="value" appendTo="body" />
+
+		</div>
+
+	<div class="form__actions">
+		<button type="button" pButton class="form__submit" [disabled]="form.invalid"><span translate>Зберегти</span></button>
+	</div>
+</form>

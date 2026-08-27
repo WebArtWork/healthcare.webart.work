@@ -66,7 +66,7 @@ export interface Patient {
 	status: PatientStatus;
 	visibility: PatientVisibility;
 	access: PatientAccess[];
-	listingIds: string[];
+	appointmentIds: string[];
 	recordIds: string[];
 	commentIds: string[];
 	photos: string[];

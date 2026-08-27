@@ -1,0 +1,40 @@
+<article class="short">
+	@if (entity.attachments.length) {
+		<img class="short__thumb" [src]="entity.attachments[0]" [alt]="entity.title" loading="lazy" />
+	}
+
+	<div class="short__body">
+		<h3 class="short__title">{{ entity.title }}</h3>
+		<p class="short__address">{{ entity.location }}</p>
+
+		<div class="short__meta">
+			<span>{{ entity.scheduledDate }} · {{ entity.scheduledTime }}</span>
+			<span>{{ entity.appointmentType }}</span>
+			<span>{{ entity.status }}</span>
+		</div>
+
+		@if (doctor || department || network || facility) {
+			<div class="short__relations">
+				@if (doctor) {
+					<button type="button" class="short__relation" (click)="onRelationClick($event, 'doctor', doctor._id)">
+						<app-doctor-icon [entity]="doctor" />
+					</button>
+				}
+				@if (department) {
+					<button type="button" class="short__relation" (click)="onRelationClick($event, 'department', department._id)">
+						<app-department-icon [entity]="department" />
+					</button>
+				} @else if (network) {
+					<button type="button" class="short__relation" (click)="onRelationClick($event, 'network', network._id)">
+						<app-network-icon [entity]="network" />
+					</button>
+				}
+				@if (facility) {
+					<button type="button" class="short__relation" (click)="onRelationClick($event, 'facility', facility._id)">
+						<app-facility-icon [entity]="facility" />
+					</button>
+				}
+			</div>
+		}
+	</div>
+</article>

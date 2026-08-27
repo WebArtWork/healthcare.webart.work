@@ -10,7 +10,7 @@
 		"isClaimed": true,
 		"facilityIds": ["facility-1"],
 		"patientIds": ["prop-1", "prop-2", "prop-6"],
-		"listingIds": ["listing-1", "listing-2"],
+		"appointmentIds": ["appointment-1", "appointment-2"],
 		"contact": {
 			"phone": "+1-555-0110",
 			"email": "info@vaelmont-health.example",
@@ -28,7 +28,7 @@
 		"isClaimed": false,
 		"facilityIds": [],
 		"patientIds": ["prop-7"],
-		"listingIds": [],
+		"appointmentIds": [],
 		"contact": {
 			"phone": "+1-555-0199",
 			"email": "contact@northbridge-medical.example",

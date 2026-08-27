@@ -15,6 +15,6 @@ export interface Network {
 	isClaimed: boolean;
 	facilityIds: string[];
 	patientIds: string[];
-	listingIds: string[];
+	appointmentIds: string[];
 	contact: NetworkContact;
 }

@@ -18,8 +18,8 @@ export interface User {
 	experienceYears: number;
 	contact: UserContact;
 	ownedPatientIds: string[];
-	listingIds: string[];
-	requestIds: string[];
+	appointmentIds: string[];
+	referralIds: string[];
 	doctorId: string | null;
 	departmentId: string | null;
 	networkId: string | null;

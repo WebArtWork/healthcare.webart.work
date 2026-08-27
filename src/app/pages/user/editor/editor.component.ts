@@ -8,13 +8,13 @@ import { DepartmentFormComponent } from '../../../components/department/departme
 import { DoctorFormComponent } from '../../../components/doctor/doctor-form/doctor-form.component';
 import { FacilityFormComponent } from '../../../components/facility/facility-form/facility-form.component';
 import { NetworkFormComponent } from '../../../components/network/network-form/network-form.component';
-import { ListingFormComponent } from '../../../components/listing/listing-form/listing-form.component';
+import { AppointmentFormComponent } from '../../../components/appointment/appointment-form/appointment-form.component';
 import { PatientFormComponent } from '../../../components/patient/patient-form/patient-form.component';
 import { RecordFormComponent } from '../../../components/record/record-form/record-form.component';
 
 type EntityType =
 	| 'patient'
-	| 'listing'
+	| 'appointment'
 	| 'record'
 	| 'facility'
 	| 'network'
@@ -33,7 +33,7 @@ interface EntityOption {
 		CardModule,
 		SelectButtonModule,
 		PatientFormComponent,
-		ListingFormComponent,
+		AppointmentFormComponent,
 		RecordFormComponent,
 		FacilityFormComponent,
 		NetworkFormComponent,
@@ -48,7 +48,7 @@ export class EditorComponent {
 
 	readonly options: EntityOption[] = [
 		{ label: 'Пацієнт', value: 'patient' },
-		{ label: 'Оголошення', value: 'listing' },
+		{ label: 'Запис на прийом', value: 'appointment' },
 		{ label: 'Медичний запис', value: 'record' },
 		{ label: 'Заклад', value: 'facility' },
 		{ label: 'Мережа', value: 'network' },
@@ -59,7 +59,7 @@ export class EditorComponent {
 	readonly selectedType = signal<EntityType>('patient');
 
 	private readonly _patientForm = viewChild(PatientFormComponent);
-	private readonly _listingForm = viewChild(ListingFormComponent);
+	private readonly _appointmentForm = viewChild(AppointmentFormComponent);
 	private readonly _recordForm = viewChild(RecordFormComponent);
 	private readonly _facilityForm = viewChild(FacilityFormComponent);
 	private readonly _networkForm = viewChild(NetworkFormComponent);
@@ -70,8 +70,8 @@ export class EditorComponent {
 		switch (this.selectedType()) {
 			case 'patient':
 				return this._patientForm()?.form;
-			case 'listing':
-				return this._listingForm()?.form;
+			case 'appointment':
+				return this._appointmentForm()?.form;
 			case 'record':
 				return this._recordForm()?.form;
 			case 'facility':

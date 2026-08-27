@@ -5,10 +5,10 @@ import { ButtonModule } from '@wawjs/ngx-prime/button';
 import { InputTextModule } from '@wawjs/ngx-prime/inputtext';
 import { MultiSelectModule } from '@wawjs/ngx-prime/multiselect';
 import { SelectModule } from '@wawjs/ngx-prime/select';
-import { ListingRelationType, ListingShortComponent } from '../../../components/listing/listing-short/listing-short.component';
-import { Listing, ListingStatus, ListingType } from '../../../listing/listing.interface';
-import { listings } from '../../../listing/listing.data';
-import { ListingRelations, patientForListing, relationsForListing } from '../../../listing/listing-relations';
+import { AppointmentRelationType, AppointmentShortComponent } from '../../../components/appointment/appointment-short/appointment-short.component';
+import { Appointment, AppointmentStatus, AppointmentType } from '../../../appointment/appointment.interface';
+import { appointments } from '../../../appointment/appointment.data';
+import { AppointmentRelations, patientForAppointment, relationsForAppointment } from '../../../appointment/appointment-relations';
 import { PatientCategory } from '../../../patient/patient.interface';
 
 interface SelectOption<T> {
@@ -32,31 +32,29 @@ const PATIENT_CATEGORY_LABELS: Record<PatientCategory, string> = {
 	transfer: 'Переведення',
 };
 
-const LISTING_TYPE_LABELS: Record<ListingType, string> = {
-	sale: 'Продаж',
-	'long-term-rent': 'Довгострокова оренда',
-	'short-term-rent': 'Короткострокова оренда',
-	'commercial-lease': 'Комерційна оренда',
-	'land-sale': 'Продаж землі',
+const APPOINTMENT_TYPE_LABELS: Record<AppointmentType, string> = {
+	consultation: 'Консультація',
+	procedure: 'Процедура',
+	'follow-up': 'Повторний прийом',
+	emergency: 'Невідкладна допомога',
+	screening: 'Обстеження',
 	other: 'Інше',
 };
 
-const LISTING_STATUS_LABELS: Record<ListingStatus, string> = {
+const APPOINTMENT_STATUS_LABELS: Record<AppointmentStatus, string> = {
 	draft: 'Чернетка',
-	'pending-review': 'На розгляді',
-	active: 'Активне',
-	reserved: 'Заброньоване',
-	rented: 'Здано в оренду',
-	sold: 'Продано',
-	expired: 'Термін минув',
-	paused: 'Призупинено',
-	rejected: 'Відхилено',
-	archived: 'Архівоване',
+	'pending-confirmation': 'Очікує підтвердження',
+	scheduled: 'Заплановано',
+	'checked-in': 'Пацієнт прибув',
+	completed: 'Завершено',
+	cancelled: 'Скасовано',
+	'no-show': 'Неявка',
+	rescheduled: 'Перенесено',
 };
 
 @Component({
 	imports: [
-		ListingShortComponent,
+		AppointmentShortComponent,
 		FormsModule,
 		RouterLink,
 		ButtonModule,
@@ -74,33 +72,33 @@ export class ExploreComponent {
 		PATIENT_CATEGORY_LABELS,
 	).map(([value, label]) => ({ value: value as PatientCategory, label }));
 
-	readonly listingTypeOptions: SelectOption<ListingType>[] = Object.entries(
-		LISTING_TYPE_LABELS,
-	).map(([value, label]) => ({ value: value as ListingType, label }));
+	readonly appointmentTypeOptions: SelectOption<AppointmentType>[] = Object.entries(
+		APPOINTMENT_TYPE_LABELS,
+	).map(([value, label]) => ({ value: value as AppointmentType, label }));
 
-	readonly listingStatusOptions: SelectOption<ListingStatus>[] = Object.entries(
-		LISTING_STATUS_LABELS,
-	).map(([value, label]) => ({ value: value as ListingStatus, label }));
+	readonly appointmentStatusOptions: SelectOption<AppointmentStatus>[] = Object.entries(
+		APPOINTMENT_STATUS_LABELS,
+	).map(([value, label]) => ({ value: value as AppointmentStatus, label }));
 
 	readonly searchTerm = signal('');
 	readonly selectedPatientCategories = signal<PatientCategory[]>([]);
-	readonly selectedListingType = signal<ListingType | null>(null);
-	readonly selectedStatus = signal<ListingStatus | null>(null);
+	readonly selectedAppointmentType = signal<AppointmentType | null>(null);
+	readonly selectedStatus = signal<AppointmentStatus | null>(null);
 
-	readonly results = computed<{ listing: Listing; relations: ListingRelations }[]>(() => {
+	readonly results = computed<{ appointment: Appointment; relations: AppointmentRelations }[]>(() => {
 		const term = this.searchTerm().trim().toLowerCase();
 		const types = this.selectedPatientCategories();
-		const listingType = this.selectedListingType();
+		const appointmentType = this.selectedAppointmentType();
 		const status = this.selectedStatus();
 
-		return listings
+		return appointments
 			.filter((item) => {
-				const patient = patientForListing(item);
+				const patient = patientForAppointment(item);
 
 				if (term) {
 					const haystack = [
 						item.title,
-						item.publicLocation,
+						item.location,
 						patient?.city,
 						patient?.address,
 					]
@@ -116,7 +114,7 @@ export class ExploreComponent {
 					return false;
 				}
 
-				if (listingType && item.listingType !== listingType) {
+				if (appointmentType && item.appointmentType !== appointmentType) {
 					return false;
 				}
 
@@ -126,14 +124,14 @@ export class ExploreComponent {
 
 				return true;
 			})
-			.map((listing) => ({ listing, relations: relationsForListing(listing) }));
+			.map((appointment) => ({ appointment, relations: relationsForAppointment(appointment) }));
 	});
 
-	view(item: Listing): void {
-		this._router.navigate(['/listing', item._id]);
+	view(item: Appointment): void {
+		this._router.navigate(['/appointment', item._id]);
 	}
 
-	viewRelation(relation: { type: ListingRelationType; id: string }): void {
+	viewRelation(relation: { type: AppointmentRelationType; id: string }): void {
 		this._router.navigate(['/', relation.type, relation.id]);
 	}
 }

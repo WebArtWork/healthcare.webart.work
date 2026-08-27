@@ -18,7 +18,7 @@
 		"status": "admitted",
 		"visibility": "private",
 		"access": [{ "userId": "user-5", "role": "nurse" }],
-		"listingIds": ["listing-1"],
+		"appointmentIds": ["appointment-1"],
 		"recordIds": ["record-4"],
 		"commentIds": ["comment-1"],
 		"photos": ["https://assets.neryxomka.com/patients/prop-1-1.jpg", "https://assets.neryxomka.com/patients/prop-1-2.jpg"]
@@ -42,7 +42,7 @@
 		"status": "scheduled",
 		"visibility": "private",
 		"access": [],
-		"listingIds": ["listing-2"],
+		"appointmentIds": ["appointment-2"],
 		"recordIds": [],
 		"commentIds": [],
 		"photos": ["https://assets.neryxomka.com/patients/prop-2-1.jpg"]
@@ -66,7 +66,7 @@
 		"status": "in-treatment",
 		"visibility": "shared",
 		"access": [{ "userId": "user-1", "role": "primary-doctor" }, { "userId": "doctor-1", "role": "case-manager" }],
-		"listingIds": ["listing-3"],
+		"appointmentIds": ["appointment-3"],
 		"recordIds": ["record-1", "record-2"],
 		"commentIds": ["comment-2"],
 		"photos": ["https://assets.neryxomka.com/patients/prop-3-1.jpg"]
@@ -90,7 +90,7 @@
 		"status": "critical",
 		"visibility": "managed-by-care-team",
 		"access": [{ "userId": "doctor-2", "role": "specialist" }],
-		"listingIds": ["listing-4"],
+		"appointmentIds": ["appointment-4"],
 		"recordIds": ["record-3"],
 		"commentIds": [],
 		"photos": ["https://assets.neryxomka.com/patients/prop-4-1.jpg"]
@@ -114,7 +114,7 @@
 		"status": "under-observation",
 		"visibility": "private",
 		"access": [{ "userId": "user-4", "role": "viewer" }],
-		"listingIds": [],
+		"appointmentIds": [],
 		"recordIds": ["record-5"],
 		"commentIds": [],
 		"photos": ["https://assets.neryxomka.com/patients/prop-5-1.jpg"]
@@ -138,7 +138,7 @@
 		"status": "discharged",
 		"visibility": "private",
 		"access": [],
-		"listingIds": [],
+		"appointmentIds": [],
 		"recordIds": [],
 		"commentIds": [],
 		"photos": ["https://assets.neryxomka.com/patients/prop-6-1.jpg"]
@@ -162,7 +162,7 @@
 		"status": "unverified",
 		"visibility": "limited-preview",
 		"access": [],
-		"listingIds": [],
+		"appointmentIds": [],
 		"recordIds": [],
 		"commentIds": [],
 		"photos": ["https://assets.neryxomka.com/patients/prop-7-1.jpg"]

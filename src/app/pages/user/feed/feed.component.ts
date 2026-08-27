@@ -4,14 +4,14 @@ import { ButtonModule } from '@wawjs/ngx-prime/button';
 import { DepartmentIconComponent } from '../../../components/department/department-icon/department-icon.component';
 import { DoctorIconComponent } from '../../../components/doctor/doctor-icon/doctor-icon.component';
 import { NetworkIconComponent } from '../../../components/network/network-icon/network-icon.component';
-import { Listing } from '../../../listing/listing.interface';
-import { listings } from '../../../listing/listing.data';
-import { ListingRelations, relationsForListing } from '../../../listing/listing-relations';
-import { ListingRelationType } from '../../../components/listing/listing-short/listing-short.component';
+import { Appointment } from '../../../appointment/appointment.interface';
+import { appointments } from '../../../appointment/appointment.data';
+import { AppointmentRelations, relationsForAppointment } from '../../../appointment/appointment-relations';
+import { AppointmentRelationType } from '../../../components/appointment/appointment-short/appointment-short.component';
 
 type FeedAction = 'favourite' | 'ignore';
 
-/** Fallback image shown when a listing has no photos or its photo fails to load. */
+/** Fallback image shown when a appointment has no photos or its photo fails to load. */
 const DEFAULT_PHOTO = '/patient-default.svg';
 
 @Component({
@@ -25,27 +25,27 @@ export class FeedComponent {
 	readonly favouritedIds = signal<Set<string>>(this._restore('favourited'));
 	readonly ignoredIds = signal<Set<string>>(this._restore('ignored'));
 
-	readonly feed = computed<{ listing: Listing; relations: ListingRelations }[]>(() => {
+	readonly feed = computed<{ appointment: Appointment; relations: AppointmentRelations }[]>(() => {
 		const favourited = this.favouritedIds();
 		const ignored = this.ignoredIds();
-		return listings
+		return appointments
 			.filter((item) => !favourited.has(item._id) && !ignored.has(item._id))
-			.map((listing) => ({ listing, relations: relationsForListing(listing) }));
+			.map((appointment) => ({ appointment, relations: relationsForAppointment(appointment) }));
 	});
 
-	/** Navigates to the listing's detail page. */
-	view(item: Listing): void {
-		this._router.navigate(['/listing', item._id]);
+	/** Navigates to the appointment's detail page. */
+	view(item: Appointment): void {
+		this._router.navigate(['/appointment', item._id]);
 	}
 
-	/** Navigates to a related entity's detail page without triggering the listing's own click. */
-	viewRelation(event: Event, type: ListingRelationType, id: string): void {
+	/** Navigates to a related entity's detail page without triggering the appointment's own click. */
+	viewRelation(event: Event, type: AppointmentRelationType, id: string): void {
 		event.stopPropagation();
 		this._router.navigate(['/', type, id]);
 	}
 
-	/** Marks a listing as favourited or ignored, persisting the choice to localStorage. */
-	act(item: Listing, action: FeedAction): void {
+	/** Marks a appointment as favourited or ignored, persisting the choice to localStorage. */
+	act(item: Appointment, action: FeedAction): void {
 		if (action === 'favourite') {
 			this._update('favourited', this.favouritedIds, item._id);
 		} else {
@@ -53,12 +53,12 @@ export class FeedComponent {
 		}
 	}
 
-	/** Returns the listing's first photo, falling back to the shared default image. */
-	photo(item: Listing): string {
-		return item.photos[0] || DEFAULT_PHOTO;
+	/** Returns the appointment's first attachment, falling back to the shared default image. */
+	photo(item: Appointment): string {
+		return item.attachments[0] || DEFAULT_PHOTO;
 	}
 
-	/** Swaps in the default photo when the listing's image fails to load. */
+	/** Swaps in the default photo when the appointment's image fails to load. */
 	onPhotoError(event: Event): void {
 		(event.target as HTMLImageElement).src = DEFAULT_PHOTO;
 	}

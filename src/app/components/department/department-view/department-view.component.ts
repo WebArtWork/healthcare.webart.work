@@ -6,24 +6,24 @@ import { Doctor } from '../../../doctor/doctor.interface';
 import { doctors } from '../../../doctor/doctor.data';
 import { Patient } from '../../../patient/patient.interface';
 import { patients } from '../../../patient/patient.data';
-import { Listing } from '../../../listing/listing.interface';
-import { listings } from '../../../listing/listing.data';
+import { Appointment } from '../../../appointment/appointment.interface';
+import { appointments } from '../../../appointment/appointment.data';
 import { Facility } from '../../../facility/facility.interface';
 import { facilities } from '../../../facility/facility.data';
 import { DoctorShortComponent } from '../../doctor/doctor-short/doctor-short.component';
 import { PatientShortComponent } from '../../patient/patient-short/patient-short.component';
-import { ListingShortComponent } from '../../listing/listing-short/listing-short.component';
+import { AppointmentShortComponent } from '../../appointment/appointment-short/appointment-short.component';
 import { FacilityIconComponent } from '../../facility/facility-icon/facility-icon.component';
 
 const _doctorById = new Map<string, Doctor>(doctors.map((a) => [a._id, a]));
 const _patientById = new Map<string, Patient>(patients.map((p) => [p._id, p]));
-const _listingById = new Map<string, Listing>(listings.map((l) => [l._id, l]));
+const _appointmentById = new Map<string, Appointment>(appointments.map((l) => [l._id, l]));
 const _facilityById = new Map<string, Facility>(facilities.map((f) => [f._id, f]));
 
 @Component({
 	selector: 'app-department-view',
 	standalone: true,
-	imports: [CommonModule, DoctorShortComponent, PatientShortComponent, ListingShortComponent, FacilityIconComponent],
+	imports: [CommonModule, DoctorShortComponent, PatientShortComponent, AppointmentShortComponent, FacilityIconComponent],
 	templateUrl: './department-view.component.html',
 	styleUrl: './department-view.component.scss',
 })
@@ -46,8 +46,8 @@ export class DepartmentViewComponent {
 			.filter((p): p is Patient => !!p),
 	);
 
-	readonly relatedListings = computed<Listing[]>(() =>
-		this.entity.listingIds.map((id) => _listingById.get(id)).filter((l): l is Listing => !!l),
+	readonly relatedAppointments = computed<Appointment[]>(() =>
+		this.entity.appointmentIds.map((id) => _appointmentById.get(id)).filter((l): l is Appointment => !!l),
 	);
 
 	viewFacility(): void {
@@ -65,7 +65,7 @@ export class DepartmentViewComponent {
 		this._router.navigate(['/patient', patient._id]);
 	}
 
-	viewListing(listing: Listing): void {
-		this._router.navigate(['/listing', listing._id]);
+	viewAppointment(appointment: Appointment): void {
+		this._router.navigate(['/appointment', appointment._id]);
 	}
 }

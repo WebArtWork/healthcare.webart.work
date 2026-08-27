@@ -1,0 +1,66 @@
+<form class="form" [formGroup]="form">
+		<div class="form__field">
+			<label class="form__label" for="appointmentType" translate>Тип прийому</label>
+			<p-select id="appointmentType" formControlName="appointmentType" [options]="appointmentTypeOptions" optionLabel="label" optionValue="value" appendTo="body" />
+
+		</div>
+		<div class="form__field">
+			<label class="form__label" for="title" translate>Заголовок</label>
+			<input id="title" pInputText class="form__control" type="text" [formControlName]="'title'" [class._invalid]="form.get('title')?.invalid && form.get('title')?.touched" />
+			@if (form.get('title')?.hasError('required') && form.get('title')?.touched) {
+				<span class="form__error" translate>Заголовок обов'язковий</span>
+			}
+		</div>
+		<div class="form__field">
+			<label class="form__label" for="description" translate>Опис</label>
+			<textarea id="description" pTextarea class="form__control" rows="4" [formControlName]="'description'" [class._invalid]="form.get('description')?.invalid && form.get('description')?.touched"></textarea>
+			@if (form.get('description')?.hasError('required') && form.get('description')?.touched) {
+				<span class="form__error" translate>Опис обов'язковий</span>
+			}
+		</div>
+		<div class="form__field">
+			<label class="form__label" for="scheduledDate" translate>Дата прийому</label>
+			<input id="scheduledDate" pInputText class="form__control" type="date" [formControlName]="'scheduledDate'" [class._invalid]="form.get('scheduledDate')?.invalid && form.get('scheduledDate')?.touched" />
+			@if (form.get('scheduledDate')?.hasError('required') && form.get('scheduledDate')?.touched) {
+				<span class="form__error" translate>Дата обов'язкова</span>
+			}
+		</div>
+		<div class="form__field">
+			<label class="form__label" for="scheduledTime" translate>Час прийому</label>
+			<input id="scheduledTime" pInputText class="form__control" type="time" [formControlName]="'scheduledTime'" [class._invalid]="form.get('scheduledTime')?.invalid && form.get('scheduledTime')?.touched" />
+			@if (form.get('scheduledTime')?.hasError('required') && form.get('scheduledTime')?.touched) {
+				<span class="form__error" translate>Час обов'язковий</span>
+			}
+		</div>
+		<div class="form__field">
+			<label class="form__label" for="durationMinutes" translate>Тривалість (хв)</label>
+			<p-inputnumber id="durationMinutes" formControlName="durationMinutes" [min]="5" [invalid]="form.get('durationMinutes')?.invalid && form.get('durationMinutes')?.touched" />
+			@if (form.get('durationMinutes')?.hasError('required') && form.get('durationMinutes')?.touched) {
+				<span class="form__error" translate>Тривалість обов'язкова</span>
+			}
+			@if (form.get('durationMinutes')?.hasError('min') && form.get('durationMinutes')?.touched) {
+				<span class="form__error" translate>Має бути 5 хвилин або більше</span>
+			}
+		</div>
+		<div class="form__field">
+			<label class="form__label" for="recurrence" translate>Повторюваність</label>
+			<p-select id="recurrence" formControlName="recurrence" [options]="recurrenceOptions" optionLabel="label" optionValue="value" appendTo="body" />
+
+		</div>
+		<div class="form__field">
+			<label class="form__label" for="location" translate>Кабінет / відділення</label>
+			<input id="location" pInputText class="form__control" type="text" [formControlName]="'location'" [class._invalid]="form.get('location')?.invalid && form.get('location')?.touched" />
+			@if (form.get('location')?.hasError('required') && form.get('location')?.touched) {
+				<span class="form__error" translate>Місце обов'язкове</span>
+			}
+		</div>
+		<div class="form__field">
+			<label class="form__label" for="status" translate>Статус</label>
+			<p-select id="status" formControlName="status" [options]="statusOptions" optionLabel="label" optionValue="value" appendTo="body" />
+
+		</div>
+
+	<div class="form__actions">
+		<button type="button" pButton class="form__submit" [disabled]="form.invalid"><span translate>Зберегти</span></button>
+	</div>
+</form>

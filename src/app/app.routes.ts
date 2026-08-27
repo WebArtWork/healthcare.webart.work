@@ -264,7 +264,7 @@ export const routes: Routes = [
 					meta: {
 						title: 'Пошук',
 						description:
-							'Шукайте й фільтруйте оголошення нерухомості Neryxomka за типом, ціною, статусом і розташуванням.',
+							'Шукайте й фільтруйте прийоми та записи пацієнтів за типом, датою, статусом і відділенням.',
 					},
 				},
 				loadChildren: () =>
@@ -303,17 +303,17 @@ export const routes: Routes = [
 					),
 			},
 			{
-				path: 'listing/:id',
+				path: 'appointment/:id',
 				canActivate: [MetaGuard],
 				data: {
 					meta: {
-						title: 'Оголошення',
+						title: 'Запис на прийом',
 						description:
-							'Деталі оголошення про продаж або оренду нерухомості в Neryxomka.',
+							'Деталі запису на прийом: тип прийому, дата й час, лікар та відділення.',
 					},
 				},
 				loadChildren: () =>
-					import('./pages/user/listing/listing.routes').then(
+					import('./pages/user/appointment/appointment.routes').then(
 						(m) => m.routes,
 					),
 			},

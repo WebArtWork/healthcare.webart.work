@@ -22,7 +22,7 @@ export interface Facility {
 	bedCapacity: number;
 	departmentIds: string[];
 	patientIds: string[];
-	listingIds: string[];
+	appointmentIds: string[];
 	recordIds: string[];
 	coverImage: string;
 }

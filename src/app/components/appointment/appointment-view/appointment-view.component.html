@@ -1,0 +1,64 @@
+<article class="card">
+	@if (patient) {
+		<div class="card__list-item" (click)="viewPatient()">
+			<app-patient-short [entity]="patient" />
+		</div>
+	}
+
+	<h2 class="card__title">{{ entity.title }}</h2>
+
+	<div class="card__meta">
+		<span class="card__badge">{{ typeLabels[entity.appointmentType] }}</span>
+		<span class="card__badge">{{ statusLabels[entity.status] }}</span>
+		@if (entity.confirmed) {
+			<span class="card__badge">Підтверджено</span>
+		}
+	</div>
+
+	@if (doctor || department || network || facility) {
+		<div class="card__meta">
+			@if (doctor) {
+				<button type="button" class="card__relation" (click)="viewDoctor()"><app-doctor-icon [entity]="doctor" /></button>
+			}
+			@if (department) {
+				<button type="button" class="card__relation" (click)="viewDepartment()"><app-department-icon [entity]="department" /></button>
+			} @else if (network) {
+				<button type="button" class="card__relation" (click)="viewNetwork()"><app-network-icon [entity]="network" /></button>
+			}
+			@if (facility) {
+				<button type="button" class="card__relation" (click)="viewFacility()"><app-facility-icon [entity]="facility" /></button>
+			}
+		</div>
+	}
+
+	@if (entity.attachments.length) {
+		<div class="card__photos">
+			@for (photo of entity.attachments; track photo) {
+				<img class="card__photo" [src]="photo" alt="" />
+			}
+		</div>
+	}
+
+	<p>{{ entity.description }}</p>
+
+		<div class="card__row"><dt>Дата</dt><dd>{{ entity.scheduledDate }}</dd></div>
+		<div class="card__row"><dt>Час</dt><dd>{{ entity.scheduledTime }}</dd></div>
+		<div class="card__row"><dt>Тривалість</dt><dd>{{ entity.durationMinutes }} хв</dd></div>
+		<div class="card__row"><dt>Кабінет / відділення</dt><dd>{{ entity.location }}</dd></div>
+		<div class="card__row"><dt>Учасник</dt><dd>{{ entity.attendee.role }}: {{ entity.attendee.userId }}</dd></div>
+		<div class="card__row"><dt>Заброньовано</dt><dd>{{ entity.bookingDate }}</dd></div>
+		@if (entity.recurrence) {
+			<div class="card__row"><dt>Повторюваність</dt><dd>{{ entity.recurrence }}</dd></div>
+		}
+		@if (entity.cancelBy) {
+			<div class="card__row"><dt>Скасувати до</dt><dd>{{ entity.cancelBy }}</dd></div>
+		}
+
+	@if (entity.contactOptions.length) {
+		<div class="card__meta">
+			@for (opt of entity.contactOptions; track opt) {
+				<span class="card__badge">{{ opt }}</span>
+			}
+		</div>
+	}
+</article>

@@ -19,7 +19,7 @@
 		"bedCapacity": 240,
 		"departmentIds": ["department-1"],
 		"patientIds": ["prop-1", "prop-2"],
-		"listingIds": ["listing-1", "listing-2"],
+		"appointmentIds": ["appointment-1", "appointment-2"],
 		"recordIds": ["record-4"],
 		"coverImage": "https://assets.neryxomka.com/facilities/vaelmont-general-hospital-cover.jpg"
 	}

@@ -47,8 +47,8 @@
 				</dd>
 			</div>
 		}
-		@if (entity.requestIds.length) {
-			<div class="card__row"><dt>Запити</dt><dd>{{ entity.requestIds.length }}</dd></div>
+		@if (entity.referralIds.length) {
+			<div class="card__row"><dt>Направлення</dt><dd>{{ entity.referralIds.length }}</dd></div>
 		}
 
 	@if (entity.interests.length) {
@@ -78,12 +78,12 @@
 		</div>
 	}
 
-	@if (relatedListings().length) {
+	@if (relatedAppointments().length) {
 		<h3 class="card__section-title">Оголошення</h3>
 		<div class="card__list">
-			@for (listing of relatedListings(); track listing._id) {
-				<button type="button" class="card__list-item" (click)="viewListing(listing)">
-					<app-listing-short [entity]="listing" />
+			@for (appointment of relatedAppointments(); track appointment._id) {
+				<button type="button" class="card__list-item" (click)="viewAppointment(appointment)">
+					<app-appointment-short [entity]="appointment" />
 				</button>
 			}
 		</div>

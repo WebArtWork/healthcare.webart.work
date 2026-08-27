@@ -1,0 +1,29 @@
+<article class="card">
+	<h2 class="card__title">{{ entity.urgency }} · {{ entity.source }}</h2>
+
+	<div class="card__meta">
+		<span class="card__badge">{{ entity.visibility }}</span>
+		<span class="card__badge">{{ entity.status }}</span>
+	</div>
+
+		<div class="card__row"><dt>Reason</dt><dd>{{ entity.reason }}</dd></div>
+		<div class="card__row"><dt>Symptoms</dt><dd>{{ entity.symptoms }}</dd></div>
+		<div class="card__row"><dt>Preferred appointment date</dt><dd>{{ entity.preferredAppointmentDate }}</dd></div>
+		<div class="card__row"><dt>Expires</dt><dd>{{ entity.expirationDate }}</dd></div>
+
+	@if (entity.requestedSpecialties.length) {
+		<div class="card__meta">
+			@for (t of entity.requestedSpecialties; track t) {
+				<span class="card__badge">{{ t }}</span>
+			}
+		</div>
+	}
+
+	@if (entity.contactOptions.length) {
+		<div class="card__meta">
+			@for (opt of entity.contactOptions; track opt) {
+				<span class="card__badge">{{ opt }}</span>
+			}
+		</div>
+	}
+</article>

@@ -1,12 +1,12 @@
 <div class="feed">
-	<h1 class="sr-only">Стрічка оголошень</h1>
+	<h1 class="sr-only">Стрічка записів на прийом</h1>
 
 	@let items = feed();
 
 	@if (items.length) {
 		<div class="feed__scroll">
-			@for (row of items; track row.listing._id) {
-				@let item = row.listing;
+			@for (row of items; track row.appointment._id) {
+				@let item = row.appointment;
 				<section class="feed__section">
 					<img
 						class="feed__img"
@@ -19,8 +19,8 @@
 
 					<div class="feed__info">
 						<div class="feed__chips">
-							<span class="feed__chip">{{ item.price }} {{ item.currency }}</span>
-							<span class="feed__chip">{{ item.listingType }}</span>
+							<span class="feed__chip">{{ item.scheduledDate }} · {{ item.scheduledTime }}</span>
+							<span class="feed__chip">{{ item.appointmentType }}</span>
 							<span class="feed__chip">{{ item.status }}</span>
 						</div>
 
@@ -36,7 +36,7 @@
 
 						<div class="feed__location">
 							<span class="feed__location-icon"><i class="pi pi-map-marker"></i></span>
-							<span class="feed__location-text">{{ item.publicLocation }}</span>
+							<span class="feed__location-text">{{ item.location }}</span>
 						</div>
 
 						@if (row.relations.doctor || row.relations.department || row.relations.network) {
@@ -89,7 +89,7 @@
 		</div>
 	} @else {
 		<div class="feed__empty">
-			<p>Оголошень для перегляду більше немає.</p>
+			<p>Записів на прийом для перегляду більше немає.</p>
 		</div>
 	}
 </div>

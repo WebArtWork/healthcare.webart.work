@@ -11,7 +11,7 @@ import { CommentEntityType, EntityComment } from '../../../comment/comment.inter
 
 const ENTITY_TYPE_OPTIONS: { value: CommentEntityType; label: string }[] = [
 	{ value: 'patient', label: 'Пацієнт' },
-	{ value: 'listing', label: 'Оголошення' },
+	{ value: 'appointment', label: 'Прийом' },
 	{ value: 'facility', label: 'Заклад' },
 	{ value: 'network', label: 'Мережа' },
 	{ value: 'department', label: 'Відділення' },

@@ -5,7 +5,7 @@
 		<input
 			pInputText
 			type="text"
-			placeholder="Адреса, місто або назва оголошення"
+			placeholder="Адреса, місто або назва прийому"
 			class="explore__search"
 			[ngModel]="searchTerm()"
 			(ngModelChange)="searchTerm.set($event)"
@@ -17,7 +17,7 @@
 			[options]="patientCategoryOptions"
 			optionLabel="label"
 			optionValue="value"
-			placeholder="Тип нерухомості"
+			placeholder="Категорія пацієнта"
 			class="explore__filter"
 			[ngModel]="selectedPatientCategories()"
 			(ngModelChange)="selectedPatientCategories.set($event)"
@@ -26,20 +26,20 @@
 		<p-select
 			appendTo="body"
 			scrollHeight="auto"
-			[options]="listingTypeOptions"
+			[options]="appointmentTypeOptions"
 			optionLabel="label"
 			optionValue="value"
-			placeholder="Тип угоди"
+			placeholder="Тип прийому"
 			[showClear]="true"
 			class="explore__filter"
-			[ngModel]="selectedListingType()"
-			(ngModelChange)="selectedListingType.set($event)"
+			[ngModel]="selectedAppointmentType()"
+			(ngModelChange)="selectedAppointmentType.set($event)"
 		/>
 
 		<p-select
 			appendTo="body"
 			scrollHeight="auto"
-			[options]="listingStatusOptions"
+			[options]="appointmentStatusOptions"
 			optionLabel="label"
 			optionValue="value"
 			placeholder="Статус"
@@ -53,10 +53,10 @@
 	</div>
 
 	<div class="explore__grid">
-		@for (row of results(); track row.listing._id) {
-		<div class="explore__row" (click)="view(row.listing)">
-			<app-listing-short
-				[entity]="row.listing"
+		@for (row of results(); track row.appointment._id) {
+		<div class="explore__row" (click)="view(row.appointment)">
+			<app-appointment-short
+				[entity]="row.appointment"
 				[doctor]="row.relations.doctor"
 				[department]="row.relations.department"
 				[network]="row.relations.network"
@@ -65,7 +65,7 @@
 			/>
 		</div>
 		} @empty {
-		<p class="explore__empty">За заданими критеріями оголошень не знайдено.</p>
+		<p class="explore__empty">За заданими критеріями записів на прийом не знайдено.</p>
 		}
 	</div>
 </div>

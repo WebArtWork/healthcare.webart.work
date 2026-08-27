@@ -1,20 +1,21 @@
 export type RecordType =
-	| 'infrastructure'
-	| 'utility'
-	| 'maintenance'
-	| 'repair'
-	| 'renovation'
-	| 'expense'
-	| 'inspection'
-	| 'incident'
-	| 'damage'
-	| 'improvement'
-	| 'equipment-installation'
-	| 'meter-replacement'
+	| 'diagnosis'
+	| 'symptom'
+	| 'medication'
+	| 'lab-result'
+	| 'vitals'
+	| 'procedure'
+	| 'imaging'
+	| 'vaccination'
+	| 'allergy'
+	| 'referral'
+	| 'admission'
+	| 'discharge-summary'
+	| 'follow-up'
+	| 'consultation'
 	| 'document'
-	| 'ownership-change'
-	| 'tenant-change'
-	| 'valuation'
+	| 'insurance-update'
+	| 'care-team-change'
 	| 'note';
 
 export type RecordStatus = 'planned' | 'in-progress' | 'completed' | 'cancelled';
@@ -34,7 +35,7 @@ export interface RecordAttachment {
 
 export interface PropertyRecord {
 	_id: string;
-	propertyId: string;
+	patientId: string;
 	recordType: RecordType;
 	title: string;
 	description: string;
@@ -49,7 +50,7 @@ export interface PropertyRecord {
 	units: string | null;
 	status: RecordStatus;
 	attachments: RecordAttachment[];
-	locationInsideProperty: string | null;
+	bodySite: string | null;
 	visibility: RecordVisibility;
 	verified: boolean;
 }

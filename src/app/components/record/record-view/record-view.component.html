@@ -27,7 +27,7 @@
 			</div>
 		}
 		@if (entity.serviceProvider) {
-			<div class="card__row"><dt>Постачальник послуг</dt><dd>{{ entity.serviceProvider }}</dd></div>
+			<div class="card__row"><dt>Виконавець / заклад</dt><dd>{{ entity.serviceProvider }}</dd></div>
 		}
 		@if (entity.cost !== null) {
 			<div class="card__row"><dt>Вартість</dt><dd>{{ entity.cost }} {{ entity.currency }}</dd></div>
@@ -35,8 +35,8 @@
 		@if (entity.quantity !== null) {
 			<div class="card__row"><dt>Кількість</dt><dd>{{ entity.quantity }} {{ entity.units }}</dd></div>
 		}
-		@if (entity.locationInsideProperty) {
-			<div class="card__row"><dt>Розташування в об'єкті</dt><dd>{{ entity.locationInsideProperty }}</dd></div>
+		@if (entity.bodySite) {
+			<div class="card__row"><dt>Локалізація на тілі</dt><dd>{{ entity.bodySite }}</dd></div>
 		}
 
 	@if (involvedUsers.length) {

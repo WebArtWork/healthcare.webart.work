@@ -1,24 +1,24 @@
 /* Design tokens (CSS variables). Runtime-themable; keep SCSS using var(--token) */
 :root {
 	/* brand / actions */
-	--c-primary: #d7d71d;
-	--c-primary-hover: #0051f1;
-	--c-secondary: #c53d3d;
-	--c-secondary-hover: #962a2a;
+	--c-primary: #008f94;
+	--c-primary-hover: #006f76;
+	--c-secondary: #147cba;
+	--c-secondary-hover: #0d6092;
 
 	/* surfaces */
-	--c-bg-primary: #f3f4f7;
-	--c-bg-secondary: rgba(255, 255, 255, 0.88);
-	--c-bg-tertiary: #fcfdfe;
+	--c-bg-primary: #f4fbfb;
+	--c-bg-secondary: rgba(255, 255, 255, 0.9);
+	--c-bg-tertiary: #e9f8f7;
 
 	/* content */
-	--c-text-primary: #5f6066;
-	--c-text-secondary: #17224f;
-	--c-text-muted: #8b8d94;
-	--c-placeholder: #313335ab;
+	--c-text-primary: #3b5d63;
+	--c-text-secondary: #103d4b;
+	--c-text-muted: #718d92;
+	--c-placeholder: #46666bab;
 
 	/* borders & elevation */
-	--c-border: #eceef5;
+	--c-border: #d5e9e9;
 	--shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.06);
 	--shadow-md: 0 10px 30px rgba(0, 0, 0, 0.08);
 
@@ -55,29 +55,29 @@
 	--motion-slow: 0.4s;
 
 	/* focus */
-	--focus-ring: 0 0 0 3px rgba(215, 215, 29, 0.35);
+	--focus-ring: 0 0 0 3px rgba(0, 143, 148, 0.35);
 }
 
 /* ========= modes ========= */
 html[data-mode='dark'] {
 	/* surfaces */
-	--c-bg-primary: #282828;
-	--c-bg-secondary: rgba(52, 52, 52, 0.88);
-	--c-bg-tertiary: #404040;
+	--c-bg-primary: #102a2e;
+	--c-bg-secondary: rgba(22, 52, 57, 0.9);
+	--c-bg-tertiary: #1a4248;
 
 	/* borders & elevation */
-	--c-border: #404040;
+	--c-border: #27565c;
 	--shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.35);
 	--shadow-md: 0 10px 30px rgba(0, 0, 0, 0.45);
 
 	/* content */
-	--c-text-primary: #e8e8e8;
-	--c-text-secondary: #ffffff;
-	--c-text-muted: #b7b7b7;
-	--c-placeholder: #d3cdcd;
+	--c-text-primary: #d5eeee;
+	--c-text-secondary: #f2ffff;
+	--c-text-muted: #9ec5c7;
+	--c-placeholder: #b9d9da;
 
 	/* focus (keeps using primary) */
-	--focus-ring: 0 0 0 3px rgba(227, 227, 72, 0.35);
+	--focus-ring: 0 0 0 3px rgba(37, 190, 194, 0.35);
 }
 
 /* ========= density ========= */

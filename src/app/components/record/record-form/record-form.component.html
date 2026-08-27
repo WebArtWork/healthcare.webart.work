@@ -26,7 +26,7 @@
 			}
 		</div>
 		<div class="form__field">
-			<label class="form__label" for="serviceProvider" translate>Постачальник послуг</label>
+			<label class="form__label" for="serviceProvider" translate>Виконавець / заклад</label>
 			<input id="serviceProvider" pInputText class="form__control" type="text" [formControlName]="'serviceProvider'" [class._invalid]="form.get('serviceProvider')?.invalid && form.get('serviceProvider')?.touched" />
 
 		</div>
@@ -56,8 +56,8 @@
 
 		</div>
 		<div class="form__field">
-			<label class="form__label" for="locationInsideProperty" translate>Розташування в об'єкті</label>
-			<input id="locationInsideProperty" pInputText class="form__control" type="text" [formControlName]="'locationInsideProperty'" [class._invalid]="form.get('locationInsideProperty')?.invalid && form.get('locationInsideProperty')?.touched" />
+			<label class="form__label" for="bodySite" translate>Локалізація на тілі</label>
+			<input id="bodySite" pInputText class="form__control" type="text" [formControlName]="'bodySite'" [class._invalid]="form.get('bodySite')?.invalid && form.get('bodySite')?.touched" />
 
 		</div>
 		<div class="form__field">

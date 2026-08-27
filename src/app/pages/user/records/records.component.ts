@@ -33,7 +33,7 @@ export class RecordsComponent {
 
 	readonly patient = computed<Patient | null>(() => {
 		const record = this.entity();
-		return record ? (_patientById.get(record.propertyId) ?? null) : null;
+		return record ? (_patientById.get(record.patientId) ?? null) : null;
 	});
 
 	readonly author = computed<User | null>(() => {

@@ -1,26 +1,27 @@
 import { RecordStatus, RecordType, RecordVisibility } from './record.interface';
 
 /**
- * Ukrainian labels for property-record enums, shared between the record
+ * Ukrainian labels for medical-record enums, shared between the record
  * form and the record detail view so both stay in sync.
  */
 export const RECORD_TYPE_OPTIONS: { value: RecordType; label: string }[] = [
-	{ value: 'infrastructure', label: 'Інфраструктура' },
-	{ value: 'utility', label: 'Комунальні послуги' },
-	{ value: 'maintenance', label: 'Обслуговування' },
-	{ value: 'repair', label: 'Ремонт' },
-	{ value: 'renovation', label: 'Реконструкція' },
-	{ value: 'expense', label: 'Витрата' },
-	{ value: 'inspection', label: 'Огляд' },
-	{ value: 'incident', label: 'Інцидент' },
-	{ value: 'damage', label: 'Пошкодження' },
-	{ value: 'improvement', label: 'Покращення' },
-	{ value: 'equipment-installation', label: 'Встановлення обладнання' },
-	{ value: 'meter-replacement', label: 'Заміна лічильника' },
+	{ value: 'diagnosis', label: 'Діагноз' },
+	{ value: 'symptom', label: 'Симптом' },
+	{ value: 'medication', label: 'Призначення ліків' },
+	{ value: 'lab-result', label: 'Результат аналізу' },
+	{ value: 'vitals', label: 'Життєві показники' },
+	{ value: 'procedure', label: 'Процедура' },
+	{ value: 'imaging', label: 'Візуалізація' },
+	{ value: 'vaccination', label: 'Вакцинація' },
+	{ value: 'allergy', label: 'Алергія' },
+	{ value: 'referral', label: 'Направлення' },
+	{ value: 'admission', label: 'Госпіталізація' },
+	{ value: 'discharge-summary', label: 'Виписний епікриз' },
+	{ value: 'follow-up', label: 'Повторний огляд' },
+	{ value: 'consultation', label: 'Консультація' },
 	{ value: 'document', label: 'Документ' },
-	{ value: 'ownership-change', label: 'Зміна власника' },
-	{ value: 'tenant-change', label: 'Зміна орендаря' },
-	{ value: 'valuation', label: 'Оцінка' },
+	{ value: 'insurance-update', label: 'Оновлення страхування' },
+	{ value: 'care-team-change', label: 'Зміна лікуючої команди' },
 	{ value: 'note', label: 'Примітка' },
 ];
 
@@ -36,8 +37,8 @@ export const RECORD_VISIBILITY_OPTIONS: { value: RecordVisibility; label: string
 	{ value: 'public-summary-private-details', label: 'Публічний огляд, приватні деталі' },
 	{ value: 'private', label: 'Приватний' },
 	{ value: 'shared-with-selected-users', label: 'Доступ вибраним користувачам' },
-	{ value: 'shared-with-owners-tenants', label: 'Доступ власникам і орендарям' },
-	{ value: 'shared-with-agent-agency-contractor-manager', label: 'Доступ агенту, агенції, підряднику, керуючому' },
+	{ value: 'shared-with-owners-tenants', label: 'Доступ пацієнту та родині' },
+	{ value: 'shared-with-agent-agency-contractor-manager', label: 'Доступ лікарю, клініці, страховику, куратору' },
 ];
 
 export const RECORD_TYPE_LABELS: Record<RecordType, string> = Object.fromEntries(

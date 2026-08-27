@@ -41,7 +41,7 @@ export class RecordFormComponent {
 
 	constructor(private readonly fb: FormBuilder) {
 		this.form = this.fb.group({
-			recordType: ['maintenance', Validators.required],
+			recordType: ['note', Validators.required],
 			title: ['', Validators.required],
 			description: ['', Validators.required],
 			eventDate: ['', Validators.required],
@@ -51,7 +51,7 @@ export class RecordFormComponent {
 			quantity: [null],
 			units: [''],
 			status: ['planned', Validators.required],
-			locationInsideProperty: [''],
+			bodySite: [''],
 			visibility: ['private', Validators.required],
 		});
 	}

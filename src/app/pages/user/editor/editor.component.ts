@@ -49,7 +49,7 @@ export class EditorComponent {
 	readonly options: EntityOption[] = [
 		{ label: 'Пацієнт', value: 'patient' },
 		{ label: 'Оголошення', value: 'listing' },
-		{ label: 'Запис історії', value: 'record' },
+		{ label: 'Медичний запис', value: 'record' },
 		{ label: 'Комплекс', value: 'complex' },
 		{ label: 'Забудовник', value: 'developer' },
 		{ label: 'Агентство', value: 'agency' },

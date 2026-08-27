@@ -122,10 +122,10 @@
 
 	<app-nav-icon
 		[class.sidebar--minimized-icon]="!showNames()"
-		[name]="showNames() ? translateService.translate('Для агентів')() : ''"
-		[ariaLabel]="translateService.translate('Для агентів')()"
+		[name]="showNames() ? translateService.translate('Для лікарів')() : ''"
+		[ariaLabel]="translateService.translate('Для лікарів')()"
 		(click)="closeIfOverlay()"
-		routerLink="/for-agents"
+		routerLink="/for-doctors"
 		icon="id-card"
 	/>
 
@@ -140,10 +140,10 @@
 
 	<app-nav-icon
 		[class.sidebar--minimized-icon]="!showNames()"
-		[name]="showNames() ? translateService.translate('Для агентств')() : ''"
-		[ariaLabel]="translateService.translate('Для агентств')()"
+		[name]="showNames() ? translateService.translate('Для відділень')() : ''"
+		[ariaLabel]="translateService.translate('Для відділень')()"
 		(click)="closeIfOverlay()"
-		routerLink="/for-agencies"
+		routerLink="/for-departments"
 		icon="briefcase"
 	/>
 

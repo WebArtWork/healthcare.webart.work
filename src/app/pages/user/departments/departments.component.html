@@ -1,0 +1,35 @@
+<section class="departments">
+	<header class="departments__header">
+		<h2 class="departments__title">Відділення</h2>
+		<span class="departments__hint">Перегляньте всі відділення лікарні Neryxomka</span>
+	</header>
+
+	<p-card class="departments__filters">
+		<div class="departments__field">
+			<label for="departments-search">Пошук</label>
+			<input
+				id="departments-search"
+				pInputText
+				type="text"
+				placeholder="Назва, місто або країна"
+				[fluid]="true"
+				[ngModel]="searchTerm()"
+				(ngModelChange)="searchTerm.set($event)"
+			/>
+		</div>
+	</p-card>
+
+	<div class="departments__results">
+		<span class="departments__count">Знайдено відділень: {{ results().length }}</span>
+
+		<div class="departments__grid">
+			@for (item of results(); track item._id) {
+			<div class="departments__row" (click)="view(item)">
+				<app-department-short [entity]="item" />
+			</div>
+			} @empty {
+			<p class="departments__empty">За заданим запитом відділень не знайдено.</p>
+			}
+		</div>
+	</div>
+</section>

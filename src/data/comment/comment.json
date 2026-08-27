@@ -25,8 +25,8 @@
 	},
 	{
 		"_id": "comment-3",
-		"entityType": "agency",
-		"entityId": "agency-1",
+		"entityType": "department",
+		"entityId": "department-1",
 		"authorUserId": "user-1",
 		"rating": 5,
 		"text": "Draecia Realty Group helped me rent out my apartment quickly and handled all the paperwork professionally.",
@@ -49,8 +49,8 @@
 	},
 	{
 		"_id": "comment-5",
-		"entityType": "agent",
-		"entityId": "agent-1",
+		"entityType": "doctor",
+		"entityId": "doctor-1",
 		"authorUserId": "user-1",
 		"rating": 5,
 		"text": "Ilya was very responsive and found a good tenant within two weeks.",

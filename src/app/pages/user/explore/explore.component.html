@@ -57,8 +57,8 @@
 		<div class="explore__row" (click)="view(row.listing)">
 			<app-listing-short
 				[entity]="row.listing"
-				[agent]="row.relations.agent"
-				[agency]="row.relations.agency"
+				[doctor]="row.relations.doctor"
+				[department]="row.relations.department"
 				[developer]="row.relations.developer"
 				[complex]="row.relations.complex"
 				(relationClick)="viewRelation($event)"

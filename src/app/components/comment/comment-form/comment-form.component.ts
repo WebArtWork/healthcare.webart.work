@@ -14,8 +14,8 @@ const ENTITY_TYPE_OPTIONS: { value: CommentEntityType; label: string }[] = [
 	{ value: 'listing', label: 'Оголошення' },
 	{ value: 'complex', label: 'Комплекс' },
 	{ value: 'developer', label: 'Забудовник' },
-	{ value: 'agency', label: 'Агентство' },
-	{ value: 'agent', label: 'Агент' },
+	{ value: 'department', label: 'Відділення' },
+	{ value: 'doctor', label: 'Лікар' },
 	{ value: 'user', label: 'Користувач' },
 ];
 

@@ -76,7 +76,7 @@
 		"availableFrom": "2026-10-01",
 		"availableTo": null,
 		"creatorUserId": "user-3",
-		"owner": { "userId": "user-3", "role": "agency-rep" },
+		"owner": { "userId": "user-3", "role": "department-rep" },
 		"contactOptions": ["phone", "email", "in-app-message"],
 		"publicationDate": "2026-08-15",
 		"expirationDate": "2027-02-15",

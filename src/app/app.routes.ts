@@ -156,7 +156,7 @@ export const routes: Routes = [
 					),
 			},
 			{
-				path: 'for-agents',
+				path: 'for-doctors',
 				canActivate: [MetaGuard],
 				data: {
 					meta: {
@@ -165,7 +165,7 @@ export const routes: Routes = [
 					},
 				},
 				loadChildren: () =>
-					import('./pages/user/for-agents/for-agents.routes').then(
+					import('./pages/user/for-doctors/for-doctors.routes').then(
 						(m) => m.routes,
 					),
 			},
@@ -184,7 +184,7 @@ export const routes: Routes = [
 					),
 			},
 			{
-				path: 'for-agencies',
+				path: 'for-departments',
 				canActivate: [MetaGuard],
 				data: {
 					meta: {
@@ -193,7 +193,7 @@ export const routes: Routes = [
 					},
 				},
 				loadChildren: () =>
-					import('./pages/user/for-agencies/for-agencies.routes').then(
+					import('./pages/user/for-departments/for-departments.routes').then(
 						(m) => m.routes,
 					),
 			},
@@ -228,7 +228,7 @@ export const routes: Routes = [
 					),
 			},
 			{
-				path: 'agencies',
+				path: 'departments',
 				canActivate: [MetaGuard],
 				data: {
 					meta: {
@@ -238,7 +238,7 @@ export const routes: Routes = [
 					},
 				},
 				loadChildren: () =>
-					import('./pages/user/agencies/agencies.routes').then(
+					import('./pages/user/departments/departments.routes').then(
 						(m) => m.routes,
 					),
 			},
@@ -363,7 +363,7 @@ export const routes: Routes = [
 					),
 			},
 			{
-				path: 'agency/:id',
+				path: 'department/:id',
 				canActivate: [MetaGuard],
 				data: {
 					meta: {
@@ -373,12 +373,12 @@ export const routes: Routes = [
 					},
 				},
 				loadChildren: () =>
-					import('./pages/user/agency/agency.routes').then(
+					import('./pages/user/department/department.routes').then(
 						(m) => m.routes,
 					),
 			},
 			{
-				path: 'agent/:id',
+				path: 'doctor/:id',
 				canActivate: [MetaGuard],
 				data: {
 					meta: {
@@ -388,7 +388,7 @@ export const routes: Routes = [
 					},
 				},
 				loadChildren: () =>
-					import('./pages/user/agent/agent.routes').then(
+					import('./pages/user/doctor/doctor.routes').then(
 						(m) => m.routes,
 					),
 			},

@@ -1,6 +1,6 @@
 export type RequestTransactionType = 'buy' | 'rent' | 'lease' | 'find';
 
-export type RequestVisibility = 'public' | 'private' | 'shared-with-selected-agents' | 'shared-with-agencies';
+export type RequestVisibility = 'public' | 'private' | 'shared-with-selected-doctors' | 'shared-with-departments';
 
 export interface RequestMapArea {
 	lat: number;

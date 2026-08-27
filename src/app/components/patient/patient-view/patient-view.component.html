@@ -39,16 +39,16 @@
 				<dd><button type="button" class="card__relation" (click)="viewDeveloper()"><app-developer-icon [entity]="developer" /></button></dd>
 			</div>
 		}
-		@if (agency) {
+		@if (department) {
 			<div class="card__row">
 				<dt>Медична установа</dt>
-				<dd><button type="button" class="card__relation" (click)="viewAgency()"><app-agency-icon [entity]="agency" /></button></dd>
+				<dd><button type="button" class="card__relation" (click)="viewDepartment()"><app-department-icon [entity]="department" /></button></dd>
 			</div>
 		}
-		@if (agent) {
+		@if (doctor) {
 			<div class="card__row">
 				<dt>Лікар</dt>
-				<dd><button type="button" class="card__relation" (click)="viewAgent()"><app-agent-icon [entity]="agent" /></button></dd>
+				<dd><button type="button" class="card__relation" (click)="viewDoctor()"><app-doctor-icon [entity]="doctor" /></button></dd>
 			</div>
 		}
 

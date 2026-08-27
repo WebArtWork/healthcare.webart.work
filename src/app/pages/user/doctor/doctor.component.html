@@ -1,0 +1,16 @@
+<section class="doctor">
+
+	@if (entity(); as item) {
+	<div class="doctor__actions">
+		<button pButton type="button" severity="secondary" size="small" (click)="share()">
+			<i class="pi pi-share-alt"></i>
+			{{ translateService.translate('Поділитися')() }}
+		</button>
+	</div>
+	<app-doctor-view [entity]="item" />
+	} @else {
+	<p-card class="doctor__not-found">
+		<p>Лікаря не знайдено.</p>
+	</p-card>
+	}
+</section>

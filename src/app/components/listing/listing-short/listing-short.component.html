@@ -13,16 +13,16 @@
 			<span>{{ entity.status }}</span>
 		</div>
 
-		@if (agent || agency || developer || complex) {
+		@if (doctor || department || developer || complex) {
 			<div class="short__relations">
-				@if (agent) {
-					<button type="button" class="short__relation" (click)="onRelationClick($event, 'agent', agent._id)">
-						<app-agent-icon [entity]="agent" />
+				@if (doctor) {
+					<button type="button" class="short__relation" (click)="onRelationClick($event, 'doctor', doctor._id)">
+						<app-doctor-icon [entity]="doctor" />
 					</button>
 				}
-				@if (agency) {
-					<button type="button" class="short__relation" (click)="onRelationClick($event, 'agency', agency._id)">
-						<app-agency-icon [entity]="agency" />
+				@if (department) {
+					<button type="button" class="short__relation" (click)="onRelationClick($event, 'department', department._id)">
+						<app-department-icon [entity]="department" />
 					</button>
 				} @else if (developer) {
 					<button type="button" class="short__relation" (click)="onRelationClick($event, 'developer', developer._id)">

@@ -19,8 +19,8 @@ const TRANSACTION_TYPE_OPTIONS: { value: PropertyRequest['transactionType']; lab
 const VISIBILITY_OPTIONS: { value: PropertyRequest['visibility']; label: string }[] = [
 	{ value: 'public', label: 'Публічний' },
 	{ value: 'private', label: 'Приватний' },
-	{ value: 'shared-with-selected-agents', label: 'Спільний з обраними агентами' },
-	{ value: 'shared-with-agencies', label: 'Спільний з агенціями' },
+	{ value: 'shared-with-selected-doctors', label: 'Спільний з обраними лікарями' },
+	{ value: 'shared-with-departments', label: 'Спільний з відділеннями' },
 ];
 
 @Component({

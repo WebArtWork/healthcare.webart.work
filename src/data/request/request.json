@@ -41,7 +41,7 @@
 		"preferredMoveDate": "2027-01-01",
 		"contactOptions": ["email", "phone"],
 		"expirationDate": "2026-11-30",
-		"visibility": "shared-with-selected-agents"
+		"visibility": "shared-with-selected-doctors"
 	},
 	{
 		"_id": "request-3",

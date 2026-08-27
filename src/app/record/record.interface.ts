@@ -26,7 +26,7 @@ export type RecordVisibility =
 	| 'private'
 	| 'shared-with-selected-users'
 	| 'shared-with-owners-tenants'
-	| 'shared-with-agent-agency-contractor-manager';
+	| 'shared-with-doctor-department-contractor-manager';
 
 export interface RecordAttachment {
 	type: 'photo' | 'video' | 'invoice' | 'receipt' | 'plan' | 'diagram' | 'document';

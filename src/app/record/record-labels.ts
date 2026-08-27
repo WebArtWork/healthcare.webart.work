@@ -38,7 +38,7 @@ export const RECORD_VISIBILITY_OPTIONS: { value: RecordVisibility; label: string
 	{ value: 'private', label: 'Приватний' },
 	{ value: 'shared-with-selected-users', label: 'Доступ вибраним користувачам' },
 	{ value: 'shared-with-owners-tenants', label: 'Доступ пацієнту та родині' },
-	{ value: 'shared-with-agent-agency-contractor-manager', label: 'Доступ лікарю, клініці, страховику, куратору' },
+	{ value: 'shared-with-doctor-department-contractor-manager', label: 'Доступ лікарю, клініці, страховику, куратору' },
 ];
 
 export const RECORD_TYPE_LABELS: Record<RecordType, string> = Object.fromEntries(

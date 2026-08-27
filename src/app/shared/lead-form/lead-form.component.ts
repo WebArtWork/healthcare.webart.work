@@ -6,13 +6,13 @@ import { ButtonModule } from '@wawjs/ngx-prime/button';
 import { TranslateService } from '@wawjs/ngx-translate';
 import { ContactService } from '../../contact.service';
 
-export type LeadFormKind = 'user' | 'agent' | 'developer' | 'agency';
+export type LeadFormKind = 'user' | 'doctor' | 'developer' | 'department';
 
 const KIND_LABELS: Record<LeadFormKind, string> = {
 	user: 'Заявка користувача',
-	agent: 'Заявка агента',
+	doctor: 'Заявка лікаря',
 	developer: 'Заявка забудовника',
-	agency: 'Заявка агентства',
+	department: 'Заявка відділення',
 };
 
 /** Inline lead-capture form used on the /for-* landing pages. Sends to the Neryxomka Telegram contact channel. */

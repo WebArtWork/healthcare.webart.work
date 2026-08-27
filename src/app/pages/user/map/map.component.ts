@@ -7,7 +7,7 @@ import { LeafletMapComponent, LeafletMapMarker } from '../../../shared/leaflet-m
 import { Patient } from '../../../patient/patient.interface';
 import { patients } from '../../../patient/patient.data';
 
-type MapCategory = 'patients' | 'agencies' | 'developers';
+type MapCategory = 'patients' | 'departments' | 'developers';
 
 /**
  * Deviation note: `@wawjs/ngx-map`'s `MapComponent` (`lib-map`) wraps
@@ -30,7 +30,7 @@ export class MapComponent {
 
 	readonly categories: { value: MapCategory; label: string }[] = [
 		{ value: 'patients', label: 'Пацієнти' },
-		{ value: 'agencies', label: 'Агенції' },
+		{ value: 'departments', label: 'Відділення' },
 		{ value: 'developers', label: 'Розробники' },
 	];
 

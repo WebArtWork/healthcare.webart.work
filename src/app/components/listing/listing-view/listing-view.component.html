@@ -15,13 +15,13 @@
 		}
 	</div>
 
-	@if (agent || agency || developer || complex) {
+	@if (doctor || department || developer || complex) {
 		<div class="card__meta">
-			@if (agent) {
-				<button type="button" class="card__relation" (click)="viewAgent()"><app-agent-icon [entity]="agent" /></button>
+			@if (doctor) {
+				<button type="button" class="card__relation" (click)="viewDoctor()"><app-doctor-icon [entity]="doctor" /></button>
 			}
-			@if (agency) {
-				<button type="button" class="card__relation" (click)="viewAgency()"><app-agency-icon [entity]="agency" /></button>
+			@if (department) {
+				<button type="button" class="card__relation" (click)="viewDepartment()"><app-department-icon [entity]="department" /></button>
 			} @else if (developer) {
 				<button type="button" class="card__relation" (click)="viewDeveloper()"><app-developer-icon [entity]="developer" /></button>
 			}

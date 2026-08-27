@@ -1,8 +1,0 @@
-.agent {
-	display: flex;
-	flex-direction: column;
-	gap: var(--sp-4);
-
-	&__actions { display: flex; justify-content: flex-end; }
-	&__not-found { text-align: center; color: var(--c-text-secondary); }
-}

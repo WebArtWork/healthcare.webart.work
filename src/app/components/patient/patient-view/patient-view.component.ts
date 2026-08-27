@@ -2,8 +2,8 @@ import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
 import { inject } from '@angular/core';
 import { Router } from '@angular/router';
-import { Agency } from '../../../agency/agency.interface';
-import { Agent } from '../../../agent/agent.interface';
+import { Department } from '../../../department/department.interface';
+import { Doctor } from '../../../doctor/doctor.interface';
 import { Complex } from '../../../complex/complex.interface';
 import { Developer } from '../../../developer/developer.interface';
 import { EntityComment } from '../../../comment/comment.interface';
@@ -15,8 +15,8 @@ import {
 	PATIENT_CATEGORY_LABELS,
 	PATIENT_VISIBILITY_LABELS,
 } from '../../../patient/patient-labels';
-import { AgencyIconComponent } from '../../agency/agency-icon/agency-icon.component';
-import { AgentIconComponent } from '../../agent/agent-icon/agent-icon.component';
+import { DepartmentIconComponent } from '../../department/department-icon/department-icon.component';
+import { DoctorIconComponent } from '../../doctor/doctor-icon/doctor-icon.component';
 import { ComplexIconComponent } from '../../complex/complex-icon/complex-icon.component';
 import { DeveloperIconComponent } from '../../developer/developer-icon/developer-icon.component';
 import { ListingShortComponent } from '../../listing/listing-short/listing-short.component';
@@ -30,8 +30,8 @@ const DEFAULT_PHOTO = '/patient-default.svg';
 	standalone: true,
 	imports: [
 		CommonModule,
-		AgencyIconComponent,
-		AgentIconComponent,
+		DepartmentIconComponent,
+		DoctorIconComponent,
 		ComplexIconComponent,
 		DeveloperIconComponent,
 		ListingShortComponent,
@@ -47,8 +47,8 @@ export class PatientViewComponent {
 	@Input() entity!: Patient;
 	@Input() complex?: Complex | null;
 	@Input() developer?: Developer | null;
-	@Input() agency?: Agency | null;
-	@Input() agent?: Agent | null;
+	@Input() department?: Department | null;
+	@Input() doctor?: Doctor | null;
 	@Input() listings: Listing[] = [];
 	@Input() records: PropertyRecord[] = [];
 	@Input() comments: EntityComment[] = [];
@@ -74,12 +74,12 @@ export class PatientViewComponent {
 		if (this.developer) this._router.navigate(['/developer', this.developer._id]);
 	}
 
-	viewAgency(): void {
-		if (this.agency) this._router.navigate(['/agency', this.agency._id]);
+	viewDepartment(): void {
+		if (this.department) this._router.navigate(['/department', this.department._id]);
 	}
 
-	viewAgent(): void {
-		if (this.agent) this._router.navigate(['/agent', this.agent._id]);
+	viewDoctor(): void {
+		if (this.doctor) this._router.navigate(['/doctor', this.doctor._id]);
 	}
 
 	viewListing(listing: Listing): void {

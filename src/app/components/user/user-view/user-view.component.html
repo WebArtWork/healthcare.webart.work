@@ -17,22 +17,22 @@
 		<div class="card__row"><dt>Ел. пошта</dt><dd>{{ entity.contact.email }}</dd></div>
 		<div class="card__row"><dt>Телефон</dt><dd>{{ entity.contact.phone }}</dd></div>
 		<div class="card__row"><dt>Досвід</dt><dd>{{ entity.experienceYears }} років</dd></div>
-		@if (agent(); as ag) {
+		@if (doctor(); as ag) {
 			<div class="card__row">
 				<dt>Агент</dt>
 				<dd>
-					<button type="button" class="card__relation" (click)="viewAgent()">
-						<app-agent-icon [entity]="ag" />
+					<button type="button" class="card__relation" (click)="viewDoctor()">
+						<app-doctor-icon [entity]="ag" />
 					</button>
 				</dd>
 			</div>
 		}
-		@if (agency(); as agc) {
+		@if (department(); as agc) {
 			<div class="card__row">
 				<dt>Агентство</dt>
 				<dd>
-					<button type="button" class="card__relation" (click)="viewAgency()">
-						<app-agency-icon [entity]="agc" />
+					<button type="button" class="card__relation" (click)="viewDepartment()">
+						<app-department-icon [entity]="agc" />
 					</button>
 				</dd>
 			</div>

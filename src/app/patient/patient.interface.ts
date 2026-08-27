@@ -60,8 +60,8 @@ export interface Patient {
 	mrn: string;
 	complexId: string | null;
 	developerId: string | null;
-	agencyId: string | null;
-	agentId: string | null;
+	departmentId: string | null;
+	doctorId: string | null;
 	vitals: PatientVitals;
 	status: PatientStatus;
 	visibility: PatientVisibility;

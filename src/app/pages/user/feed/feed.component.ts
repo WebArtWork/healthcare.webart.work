@@ -1,8 +1,8 @@
 import { Component, computed, inject, signal } from '@angular/core';
 import { Router } from '@angular/router';
 import { ButtonModule } from '@wawjs/ngx-prime/button';
-import { AgencyIconComponent } from '../../../components/agency/agency-icon/agency-icon.component';
-import { AgentIconComponent } from '../../../components/agent/agent-icon/agent-icon.component';
+import { DepartmentIconComponent } from '../../../components/department/department-icon/department-icon.component';
+import { DoctorIconComponent } from '../../../components/doctor/doctor-icon/doctor-icon.component';
 import { DeveloperIconComponent } from '../../../components/developer/developer-icon/developer-icon.component';
 import { Listing } from '../../../listing/listing.interface';
 import { listings } from '../../../listing/listing.data';
@@ -15,7 +15,7 @@ type FeedAction = 'favourite' | 'ignore';
 const DEFAULT_PHOTO = '/patient-default.svg';
 
 @Component({
-	imports: [ButtonModule, AgentIconComponent, AgencyIconComponent, DeveloperIconComponent],
+	imports: [ButtonModule, DoctorIconComponent, DepartmentIconComponent, DeveloperIconComponent],
 	templateUrl: './feed.component.html',
 	styleUrl: './feed.component.scss',
 })

@@ -4,8 +4,8 @@ import { MessageService } from '@wawjs/ngx-prime/api';
 import { ButtonModule } from '@wawjs/ngx-prime/button';
 import { CardModule } from '@wawjs/ngx-prime/card';
 import { SelectButtonModule } from '@wawjs/ngx-prime/selectbutton';
-import { AgencyFormComponent } from '../../../components/agency/agency-form/agency-form.component';
-import { AgentFormComponent } from '../../../components/agent/agent-form/agent-form.component';
+import { DepartmentFormComponent } from '../../../components/department/department-form/department-form.component';
+import { DoctorFormComponent } from '../../../components/doctor/doctor-form/doctor-form.component';
 import { ComplexFormComponent } from '../../../components/complex/complex-form/complex-form.component';
 import { DeveloperFormComponent } from '../../../components/developer/developer-form/developer-form.component';
 import { ListingFormComponent } from '../../../components/listing/listing-form/listing-form.component';
@@ -18,8 +18,8 @@ type EntityType =
 	| 'record'
 	| 'complex'
 	| 'developer'
-	| 'agency'
-	| 'agent';
+	| 'department'
+	| 'doctor';
 
 interface EntityOption {
 	label: string;
@@ -37,8 +37,8 @@ interface EntityOption {
 		RecordFormComponent,
 		ComplexFormComponent,
 		DeveloperFormComponent,
-		AgencyFormComponent,
-		AgentFormComponent,
+		DepartmentFormComponent,
+		DoctorFormComponent,
 	],
 	templateUrl: './editor.component.html',
 	styleUrl: './editor.component.scss',
@@ -52,8 +52,8 @@ export class EditorComponent {
 		{ label: 'Медичний запис', value: 'record' },
 		{ label: 'Комплекс', value: 'complex' },
 		{ label: 'Забудовник', value: 'developer' },
-		{ label: 'Агентство', value: 'agency' },
-		{ label: 'Агент', value: 'agent' },
+		{ label: 'Відділення', value: 'department' },
+		{ label: 'Лікар', value: 'doctor' },
 	];
 
 	readonly selectedType = signal<EntityType>('patient');
@@ -63,8 +63,8 @@ export class EditorComponent {
 	private readonly _recordForm = viewChild(RecordFormComponent);
 	private readonly _complexForm = viewChild(ComplexFormComponent);
 	private readonly _developerForm = viewChild(DeveloperFormComponent);
-	private readonly _agencyForm = viewChild(AgencyFormComponent);
-	private readonly _agentForm = viewChild(AgentFormComponent);
+	private readonly _departmentForm = viewChild(DepartmentFormComponent);
+	private readonly _doctorForm = viewChild(DoctorFormComponent);
 
 	private readonly _activeForm = computed(() => {
 		switch (this.selectedType()) {
@@ -78,10 +78,10 @@ export class EditorComponent {
 				return this._complexForm()?.form;
 			case 'developer':
 				return this._developerForm()?.form;
-			case 'agency':
-				return this._agencyForm()?.form;
-			case 'agent':
-				return this._agentForm()?.form;
+			case 'department':
+				return this._departmentForm()?.form;
+			case 'doctor':
+				return this._doctorForm()?.form;
 			default:
 				return undefined;
 		}

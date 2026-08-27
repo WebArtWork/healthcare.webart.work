@@ -1,0 +1,22 @@
+[
+	{
+		"_id": "department-1",
+		"name": "Cardiology",
+		"description": "Full-service cardiac care department covering diagnostics, interventional procedures, and rehabilitation across Vaelmont General Hospital.",
+		"logo": "https://assets.neryxomka.com/departments/cardiology-logo.png",
+		"country": "Draecia",
+		"city": "Vaelmont",
+		"foundedYear": 2008,
+		"doctorIds": ["doctor-1", "doctor-2"],
+		"listingIds": ["listing-3", "listing-4"],
+		"representedPatientIds": ["prop-3", "prop-4"],
+		"contact": {
+			"phone": "+1-555-0140",
+			"email": "cardiology@vaelmont-general.example",
+			"website": "https://vaelmont-general.example/cardiology",
+			"address": "22 Market Street, Vaelmont"
+		},
+		"averageRating": 4.6,
+		"reviewCount": 38
+	}
+]

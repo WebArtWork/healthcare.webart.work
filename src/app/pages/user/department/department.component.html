@@ -1,0 +1,16 @@
+<section class="department">
+
+	@if (entity(); as item) {
+	<div class="department__actions">
+		<button pButton type="button" severity="secondary" size="small" (click)="share()">
+			<i class="pi pi-share-alt"></i>
+			{{ translateService.translate('Поділитися')() }}
+		</button>
+	</div>
+	<app-department-view [entity]="item" />
+	} @else {
+	<p-card class="department__not-found">
+		<p>Відділення не знайдено.</p>
+	</p-card>
+	}
+</section>

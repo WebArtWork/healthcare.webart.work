@@ -1,0 +1,36 @@
+<h1 class="demo-page__title">Input</h1>
+
+<section class="demo-section">
+	<h2 class="demo-section__title">Basic</h2>
+	<input pInputText type="text" placeholder="Enter text" />
+</section>
+
+<section class="demo-section">
+	<h2 class="demo-section__title">Sizes</h2>
+	<div class="demo-section__row">
+		@for (size of sizes; track size) {
+			<input pInputText type="text" [pSize]="size" [placeholder]="size ?? 'normal'" />
+		}
+	</div>
+</section>
+
+<section class="demo-section">
+	<h2 class="demo-section__title">Variants</h2>
+	<div class="demo-section__row">
+		<input pInputText type="text" variant="outlined" placeholder="Outlined" />
+		<input pInputText type="text" variant="filled" placeholder="Filled" />
+	</div>
+</section>
+
+<section class="demo-section">
+	<h2 class="demo-section__title">States</h2>
+	<div class="demo-section__row">
+		<input pInputText type="text" placeholder="Disabled" disabled />
+		<input pInputText type="text" [invalid]="true" placeholder="Invalid" />
+	</div>
+</section>
+
+<section class="demo-section">
+	<h2 class="demo-section__title">Fluid</h2>
+	<input pInputText type="text" [fluid]="true" placeholder="Full width" />
+</section>

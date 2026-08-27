@@ -1,0 +1,7 @@
+.client {
+	display: flex;
+	flex-direction: column;
+	gap: var(--sp-4);
+
+	&__not-found { text-align: center; color: var(--c-text-secondary); }
+}

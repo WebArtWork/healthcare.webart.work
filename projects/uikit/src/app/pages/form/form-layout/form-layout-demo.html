@@ -1,0 +1,81 @@
+<h1 class="demo-page__title">Form Layout</h1>
+
+<p class="demo-page__note">
+	A realistic registration form assembled from several Form components together, with a
+	responsive grid and validation states — the pattern a template consumer actually copies.
+</p>
+
+<section class="demo-section">
+	<form
+		style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; max-width: 40rem"
+		(ngSubmit)="submit()"
+	>
+		<div style="display: flex; flex-direction: column; gap: 0.5rem">
+			<label for="firstName">First Name</label>
+			<input id="firstName" type="text" pInputText [(ngModel)]="firstName" name="firstName" required />
+			@if (submitted() && !firstName()) {
+				<small style="color: var(--p-red-500)">First name is required.</small>
+			}
+		</div>
+
+		<div style="display: flex; flex-direction: column; gap: 0.5rem">
+			<label for="lastName">Last Name</label>
+			<input id="lastName" type="text" pInputText [(ngModel)]="lastName" name="lastName" required />
+			@if (submitted() && !lastName()) {
+				<small style="color: var(--p-red-500)">Last name is required.</small>
+			}
+		</div>
+
+		<div style="display: flex; flex-direction: column; gap: 0.5rem; grid-column: span 2">
+			<label for="email">Email</label>
+			<input
+				id="email"
+				type="email"
+				pInputText
+				[(ngModel)]="email"
+				name="email"
+				[invalid]="submitted() && !email()"
+			/>
+			@if (submitted() && !email()) {
+				<small style="color: var(--p-red-500)">Email is required.</small>
+			}
+		</div>
+
+		<div style="display: flex; flex-direction: column; gap: 0.5rem">
+			<label for="password">Password</label>
+			<p-password
+				inputId="password"
+				[(ngModel)]="password"
+				name="password"
+				[toggleMask]="true"
+				[feedback]="true"
+			/>
+		</div>
+
+		<div style="display: flex; flex-direction: column; gap: 0.5rem">
+			<label for="birthDate">Birth Date</label>
+			<p-datePicker inputId="birthDate" [(ngModel)]="birthDate" name="birthDate" />
+		</div>
+
+		<div style="display: flex; flex-direction: column; gap: 0.5rem; grid-column: span 2">
+			<label for="country">Country</label>
+			<p-select
+				inputId="country"
+				[(ngModel)]="country"
+				name="country"
+				[options]="countries"
+				optionLabel="name"
+				placeholder="Select a country"
+			/>
+		</div>
+
+		<div style="display: flex; align-items: center; gap: 0.5rem; grid-column: span 2">
+			<p-checkbox [(ngModel)]="acceptTerms" name="acceptTerms" [binary]="true" inputId="acceptTerms" />
+			<label for="acceptTerms">I accept the terms and conditions</label>
+		</div>
+
+		<div style="grid-column: span 2">
+			<p-button label="Create Account" type="submit" />
+		</div>
+	</form>
+</section>

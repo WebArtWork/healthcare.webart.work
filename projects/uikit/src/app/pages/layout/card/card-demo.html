@@ -1,0 +1,29 @@
+<h1 class="demo-page__title">Card</h1>
+
+<section class="demo-section">
+	<h2 class="demo-section__title">Basic</h2>
+	<p-card header="Simple Card" subheader="Card subheader" [style]="{ width: '22rem' }">
+		<p>Card content goes here. Cards are commonly used to group related information.</p>
+	</p-card>
+</section>
+
+<section class="demo-section">
+	<h2 class="demo-section__title">With footer</h2>
+	<p-card header="Card with Actions" [style]="{ width: '22rem' }">
+		<p>Cards can include a footer with actions such as buttons.</p>
+		<p-footer>
+			<p-button label="Cancel" [text]="true" />
+			<p-button label="Save" />
+		</p-footer>
+	</p-card>
+</section>
+
+<section class="demo-section">
+	<h2 class="demo-section__title">Custom header</h2>
+	<p-card [style]="{ width: '22rem' }">
+		<p-header>
+			<i class="pi pi-star demo-section__row" style="padding: 1rem"></i>
+		</p-header>
+		<p>A card can accept a fully custom header instead of the string header/subheader inputs.</p>
+	</p-card>
+</section>

@@ -1,0 +1,77 @@
+.form {
+	display: flex;
+	flex-direction: column;
+	gap: var(--sp-4);
+	padding: var(--sp-4);
+}
+
+.form__field {
+	display: flex;
+	flex-direction: column;
+	gap: var(--sp-1);
+}
+
+.form__row {
+	display: flex;
+	gap: var(--sp-3);
+	flex-wrap: wrap;
+}
+
+.form__row > .form__field {
+	flex: 1 1 200px;
+}
+
+.form__label {
+	font-size: 0.85rem;
+	font-weight: 600;
+	color: var(--c-text-secondary);
+}
+
+.form__control {
+	padding: var(--sp-2) var(--sp-3);
+	border: 1px solid var(--c-border);
+	border-radius: var(--radius);
+	background: var(--c-bg-tertiary);
+	color: var(--c-text-primary);
+	font: inherit;
+}
+
+.form__control:focus-visible {
+	outline: none;
+	box-shadow: var(--focus-ring);
+}
+
+.form__control._invalid {
+	border-color: var(--c-secondary);
+}
+
+.form__error {
+	font-size: 0.75rem;
+	color: var(--c-secondary);
+}
+
+.form__actions {
+	display: flex;
+	justify-content: flex-end;
+	gap: var(--sp-3);
+}
+
+.form__submit {
+	padding: var(--sp-2) var(--sp-5);
+	border: none;
+	border-radius: var(--radius-btn);
+	background: var(--c-primary);
+	color: var(--c-text-secondary);
+	font-weight: 600;
+	cursor: pointer;
+	transition: background var(--motion) var(--easing);
+}
+
+.form__submit:disabled {
+	opacity: 0.5;
+	cursor: not-allowed;
+}
+
+.form__submit:hover:not(:disabled) {
+	background: var(--c-primary-hover);
+}

@@ -1,0 +1,51 @@
+<div class="order-details">
+	<h1>Order ORD-2037</h1>
+
+	<div class="order-details__grid">
+		<p-card header="Status" class="order-details__timeline-card">
+			<p-timeline [value]="events">
+				<ng-template let-event #content>
+					<div style="font-weight: 600">{{ event.status }}</div>
+					<div style="color: var(--p-text-muted-color); font-size: 0.875rem">{{ event.date }}</div>
+				</ng-template>
+				<ng-template let-event #marker>
+					<span
+						style="display: flex; align-items: center; justify-content: center; width: 2rem; height: 2rem; border-radius: 50%; color: #fff"
+						[style.background]="event.color"
+					>
+						<i [class]="event.icon"></i>
+					</span>
+				</ng-template>
+			</p-timeline>
+		</p-card>
+
+		<p-card header="Customer">
+			<div class="order-details__customer">
+				<div><strong>{{ customer.name }}</strong></div>
+				<div>{{ customer.email }}</div>
+				<div>{{ customer.address }}</div>
+			</div>
+		</p-card>
+	</div>
+
+	<p-card header="Line Items" class="order-details__items">
+		<p-table [value]="lineItems">
+			<ng-template #header>
+				<tr>
+					<th>Product</th>
+					<th>Quantity</th>
+					<th>Price</th>
+					<th>Total</th>
+				</tr>
+			</ng-template>
+			<ng-template #body let-item>
+				<tr>
+					<td>{{ item.product }}</td>
+					<td>{{ item.quantity }}</td>
+					<td>{{ item.price }}</td>
+					<td>{{ item.total }}</td>
+				</tr>
+			</ng-template>
+		</p-table>
+	</p-card>
+</div>

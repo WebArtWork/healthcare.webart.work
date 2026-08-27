@@ -1,0 +1,23 @@
+<h1 class="demo-page__title">Tag</h1>
+
+<section class="demo-section">
+	<h2 class="demo-section__title">Severities</h2>
+	<div class="demo-section__row">
+		@for (severity of severities; track severity) {
+			<p-tag [value]="severity" [severity]="severity" />
+		}
+	</div>
+</section>
+
+<section class="demo-section">
+	<h2 class="demo-section__title">Icons</h2>
+	<div class="demo-section__row">
+		<p-tag value="Verified" icon="pi pi-check" severity="success" />
+		<p-tag value="Pending" icon="pi pi-clock" severity="warn" />
+	</div>
+</section>
+
+<section class="demo-section">
+	<h2 class="demo-section__title">Rounded</h2>
+	<p-tag value="New" [rounded]="true" />
+</section>

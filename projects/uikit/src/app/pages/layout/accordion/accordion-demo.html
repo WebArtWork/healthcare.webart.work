@@ -1,0 +1,43 @@
+<h1 class="demo-page__title">Accordion</h1>
+
+<section class="demo-section">
+	<h2 class="demo-section__title">Basic</h2>
+	<p-accordion value="0">
+		<p-accordion-panel value="0">
+			<p-accordion-header>Header I</p-accordion-header>
+			<p-accordion-content>
+				<p style="margin: 0">Content of the first panel.</p>
+			</p-accordion-content>
+		</p-accordion-panel>
+		<p-accordion-panel value="1">
+			<p-accordion-header>Header II</p-accordion-header>
+			<p-accordion-content>
+				<p style="margin: 0">Content of the second panel.</p>
+			</p-accordion-content>
+		</p-accordion-panel>
+		<p-accordion-panel value="2">
+			<p-accordion-header>Header III</p-accordion-header>
+			<p-accordion-content>
+				<p style="margin: 0">Content of the third panel.</p>
+			</p-accordion-content>
+		</p-accordion-panel>
+	</p-accordion>
+</section>
+
+<section class="demo-section">
+	<h2 class="demo-section__title">Multiple</h2>
+	<p-accordion [value]="['0', '1']" [multiple]="true">
+		<p-accordion-panel value="0">
+			<p-accordion-header>Header I</p-accordion-header>
+			<p-accordion-content>
+				<p style="margin: 0">Content of the first panel.</p>
+			</p-accordion-content>
+		</p-accordion-panel>
+		<p-accordion-panel value="1">
+			<p-accordion-header>Header II</p-accordion-header>
+			<p-accordion-content>
+				<p style="margin: 0">Content of the second panel.</p>
+			</p-accordion-content>
+		</p-accordion-panel>
+	</p-accordion>
+</section>

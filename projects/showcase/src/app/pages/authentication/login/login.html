@@ -1,0 +1,22 @@
+<div class="auth">
+	<p-card header="Sign In" class="auth__card">
+		<div class="auth__form">
+			<label class="auth__field">
+				<span>Email</span>
+				<input pInputText type="email" [(ngModel)]="email" placeholder="name@example.com" />
+			</label>
+			<label class="auth__field">
+				<span>Password</span>
+				<p-password [(ngModel)]="password" [feedback]="false" [toggleMask]="true" />
+			</label>
+			<label class="auth__field auth__field--inline">
+				<p-checkbox [(ngModel)]="remember" [binary]="true" inputId="remember" />
+				<label for="remember">Remember me</label>
+			</label>
+			<p-button label="Sign In" icon="pi pi-sign-in" styleClass="w-full" />
+		</div>
+		<p class="auth__switch">
+			Don't have an account? <a routerLink="/authentication/register">Create one</a>
+		</p>
+	</p-card>
+</div>

@@ -1,0 +1,64 @@
+<h1 class="demo-page__title">KeyFilter</h1>
+
+<p class="demo-page__note">Restricts keyboard input against a built-in or custom regular expression pattern.</p>
+
+<section class="demo-section">
+	<h2 class="demo-section__title">Positive Integers</h2>
+	<input
+		type="text"
+		pInputText
+		[ngModel]="integer()"
+		(ngModelChange)="setValue(integer, $event)"
+		pKeyFilter="pint"
+		placeholder="Positive integers only"
+	/>
+</section>
+
+<section class="demo-section">
+	<h2 class="demo-section__title">Money</h2>
+	<input
+		type="text"
+		pInputText
+		[ngModel]="money()"
+		(ngModelChange)="setValue(money, $event)"
+		pKeyFilter="money"
+		placeholder="Money format"
+	/>
+</section>
+
+<section class="demo-section">
+	<h2 class="demo-section__title">Hex</h2>
+	<input
+		type="text"
+		pInputText
+		[ngModel]="hex()"
+		(ngModelChange)="setValue(hex, $event)"
+		pKeyFilter="hex"
+		placeholder="Hexadecimal"
+	/>
+</section>
+
+<section class="demo-section">
+	<h2 class="demo-section__title">Email</h2>
+	<input
+		type="text"
+		pInputText
+		[ngModel]="email()"
+		(ngModelChange)="setValue(email, $event)"
+		pKeyFilter="email"
+		placeholder="Email characters only"
+	/>
+</section>
+
+<section class="demo-section">
+	<h2 class="demo-section__title">Alpha (Validate Only)</h2>
+	<input
+		type="text"
+		pInputText
+		[ngModel]="alpha()"
+		(ngModelChange)="setValue(alpha, $event)"
+		pKeyFilter="alpha"
+		[pValidateOnly]="true"
+		placeholder="Letters only, non-blocking"
+	/>
+</section>

@@ -1,0 +1,26 @@
+<h1 class="demo-page__title">Tree</h1>
+
+<section class="demo-section">
+	<h2 class="demo-section__title">Basic</h2>
+	<p-tree [value]="nodes" style="min-width: 20rem" />
+</section>
+
+<section class="demo-section">
+	<h2 class="demo-section__title">Selectable</h2>
+	<p-tree
+		[value]="nodes"
+		selectionMode="single"
+		[(selection)]="selection"
+		style="min-width: 20rem"
+	/>
+</section>
+
+<section class="demo-section">
+	<h2 class="demo-section__title">Filter</h2>
+	<p-tree [value]="nodes" [filter]="true" style="min-width: 20rem" />
+</section>
+
+<section class="demo-section">
+	<h2 class="demo-section__title">Loading</h2>
+	<p-tree [value]="nodes" [loading]="true" style="min-width: 20rem" />
+</section>

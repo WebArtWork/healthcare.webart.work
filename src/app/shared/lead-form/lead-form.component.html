@@ -1,0 +1,56 @@
+@switch (status()) {
+	@case ('success') {
+		<div class="lead-form lead-form--success">
+			<p>{{ translateService.translate('Дякуємо! Ми отримали ваше повідомлення і скоро зв\'яжемося.')() }}</p>
+		</div>
+	}
+	@default {
+		<form class="lead-form" novalidate #leadForm="ngForm" (ngSubmit)="submit(leadForm)">
+			<div class="lead-form__field">
+				<label>{{ translateService.translate('Ім\'я')() }}</label>
+				<input
+					#nameInput
+					pInputText
+					type="text"
+					name="name"
+					required
+					[ngModel]="name()"
+					(ngModelChange)="name.set($event)"
+				/>
+			</div>
+
+			<div class="lead-form__field">
+				<label>{{ translateService.translate('Email або телефон')() }}</label>
+				<input
+					pInputText
+					type="text"
+					name="contact"
+					required
+					[ngModel]="contact()"
+					(ngModelChange)="contact.set($event)"
+				/>
+			</div>
+
+			<div class="lead-form__field">
+				<label>{{ translateService.translate('Повідомлення')() }}</label>
+				<textarea
+					pTextarea
+					rows="3"
+					name="message"
+					[ngModel]="message()"
+					(ngModelChange)="message.set($event)"
+				></textarea>
+			</div>
+
+			@if (status() === 'error') {
+				<p class="lead-form__error">
+					{{ translateService.translate('Щось пішло не так — спробуйте ще раз.')() }}
+				</p>
+			}
+
+			<button pButton type="submit" [disabled]="leadForm.invalid || status() === 'sending'">
+				{{ submitLabel() || translateService.translate('Надіслати')() }}
+			</button>
+		</form>
+	}
+}

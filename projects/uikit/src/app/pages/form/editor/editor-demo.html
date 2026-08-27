@@ -1,0 +1,11 @@
+<h1 class="demo-page__title">Editor</h1>
+
+<section class="demo-section">
+	<h2 class="demo-section__title">Basic</h2>
+	<p-editor [(ngModel)]="text" [style]="{ height: '220px' }" />
+</section>
+
+<section class="demo-section">
+	<h2 class="demo-section__title">Readonly</h2>
+	<p-editor [ngModel]="text()" [readonly]="true" [style]="{ height: '160px' }" />
+</section>

@@ -1,0 +1,16 @@
+<section class="agency">
+
+	@if (entity(); as item) {
+	<div class="agency__actions">
+		<button pButton type="button" severity="secondary" size="small" (click)="share()">
+			<i class="pi pi-share-alt"></i>
+			{{ translateService.translate('Поділитися')() }}
+		</button>
+	</div>
+	<app-agency-view [entity]="item" />
+	} @else {
+	<p-card class="agency__not-found">
+		<p>Агентство не знайдено.</p>
+	</p-card>
+	}
+</section>

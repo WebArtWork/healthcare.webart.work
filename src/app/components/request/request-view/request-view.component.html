@@ -1,0 +1,41 @@
+<article class="card">
+	<h2 class="card__title">{{ entity.transactionType }} · {{ entity.city }}, {{ entity.country }}</h2>
+
+	<div class="card__meta">
+		<span class="card__badge">{{ entity.visibility }}</span>
+	</div>
+
+		<div class="card__row"><dt>Region</dt><dd>{{ entity.region }}</dd></div>
+		<div class="card__row"><dt>Budget</dt><dd>{{ entity.minPrice }} - {{ entity.maxPrice }} {{ entity.currency }}</dd></div>
+		<div class="card__row"><dt>Preferred size</dt><dd>{{ entity.preferredSizeSqm }} m²</dd></div>
+		<div class="card__row"><dt>Rooms</dt><dd>{{ entity.roomRequirements }}</dd></div>
+		<div class="card__row"><dt>Condition</dt><dd>{{ entity.conditionRequirements }}</dd></div>
+		<div class="card__row"><dt>Construction</dt><dd>{{ entity.constructionPreferences }}</dd></div>
+		<div class="card__row"><dt>Map area</dt><dd>{{ entity.mapArea.lat }}, {{ entity.mapArea.lng }} (radius {{ entity.mapArea.radiusKm }} km)</dd></div>
+		<div class="card__row"><dt>Preferred move date</dt><dd>{{ entity.preferredMoveDate }}</dd></div>
+		<div class="card__row"><dt>Expires</dt><dd>{{ entity.expirationDate }}</dd></div>
+
+	@if (entity.propertyTypes.length) {
+		<div class="card__meta">
+			@for (t of entity.propertyTypes; track t) {
+				<span class="card__badge">{{ t }}</span>
+			}
+		</div>
+	}
+
+	@if (entity.requiredFeatures.length) {
+		<div class="card__meta">
+			@for (f of entity.requiredFeatures; track f) {
+				<span class="card__badge">{{ f }}</span>
+			}
+		</div>
+	}
+
+	@if (entity.contactOptions.length) {
+		<div class="card__meta">
+			@for (opt of entity.contactOptions; track opt) {
+				<span class="card__badge">{{ opt }}</span>
+			}
+		</div>
+	}
+</article>

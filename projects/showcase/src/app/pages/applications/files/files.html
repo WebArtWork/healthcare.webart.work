@@ -1,0 +1,36 @@
+<div class="files">
+	<h1>Files</h1>
+	<div style="margin-bottom: 1rem">
+		<p-breadcrumb [model]="breadcrumbItems" [home]="home" />
+	</div>
+
+	<p-card>
+		<div style="margin-bottom: 1rem">
+			<p-fileUpload
+				name="files[]"
+				url="https://www.primefaces.org/cdn/api/upload.php"
+				[multiple]="true"
+				mode="basic"
+				chooseLabel="Upload"
+				(onUpload)="onUpload()"
+			/>
+		</div>
+
+		<p-table [value]="files">
+			<ng-template #header>
+				<tr>
+					<th>Name</th>
+					<th>Size</th>
+					<th>Modified</th>
+				</tr>
+			</ng-template>
+			<ng-template #body let-file>
+				<tr>
+					<td><i [class]="file.icon" style="margin-right: 0.5rem"></i>{{ file.name }}</td>
+					<td>{{ file.size }}</td>
+					<td>{{ file.modified }}</td>
+				</tr>
+			</ng-template>
+		</p-table>
+	</p-card>
+</div>

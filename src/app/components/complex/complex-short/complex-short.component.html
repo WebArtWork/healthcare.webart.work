@@ -1,0 +1,11 @@
+<article class="short">
+	@if (entity.coverImage) {
+		<img class="short__thumb" [src]="entity.coverImage" alt="" />
+	}
+
+	<div class="short__body">
+		<h3 class="short__title">{{ entity.name }}</h3>
+		<span class="short__meta">{{ entity.city }}, {{ entity.country }}</span>
+		<span class="short__price">{{ entity.status }}</span>
+	</div>
+</article>

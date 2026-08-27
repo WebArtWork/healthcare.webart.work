@@ -1,0 +1,95 @@
+<div class="feed">
+	<h1 class="sr-only">Стрічка оголошень</h1>
+
+	@let items = feed();
+
+	@if (items.length) {
+		<div class="feed__scroll">
+			@for (row of items; track row.listing._id) {
+				@let item = row.listing;
+				<section class="feed__section">
+					<img
+						class="feed__img"
+						[src]="photo(item)"
+						[alt]="item.title"
+						loading="lazy"
+						(error)="onPhotoError($event)"
+					/>
+					<div class="feed__overlay"></div>
+
+					<div class="feed__info">
+						<div class="feed__chips">
+							<span class="feed__chip">{{ item.price }} {{ item.currency }}</span>
+							<span class="feed__chip">{{ item.listingType }}</span>
+							<span class="feed__chip">{{ item.status }}</span>
+						</div>
+
+						<div
+							class="feed__link"
+							role="link"
+							tabindex="0"
+							(click)="view(item)"
+							(keydown.enter)="view(item)"
+						>
+							<h2 class="feed__heading">{{ item.title }}</h2>
+						</div>
+
+						<div class="feed__location">
+							<span class="feed__location-icon"><i class="pi pi-map-marker"></i></span>
+							<span class="feed__location-text">{{ item.publicLocation }}</span>
+						</div>
+
+						@if (row.relations.agent || row.relations.agency || row.relations.developer) {
+							<div class="feed__relations">
+								@if (row.relations.agent; as agent) {
+									<button type="button" class="feed__relation" (click)="viewRelation($event, 'agent', agent._id)">
+										<app-agent-icon [entity]="agent" />
+									</button>
+								}
+								@if (row.relations.agency; as agency) {
+									<button type="button" class="feed__relation" (click)="viewRelation($event, 'agency', agency._id)">
+										<app-agency-icon [entity]="agency" />
+									</button>
+								} @else if (row.relations.developer; as developer) {
+									<button type="button" class="feed__relation" (click)="viewRelation($event, 'developer', developer._id)">
+										<app-developer-icon [entity]="developer" />
+									</button>
+								}
+							</div>
+						}
+					</div>
+
+					<div class="feed__sidebar">
+						<div class="feed__action">
+							<p-button
+								icon="pi pi-heart"
+								severity="success"
+								[rounded]="true"
+								[outlined]="true"
+								styleClass="feed__action-btn"
+								(onClick)="act(item, 'favourite')"
+							/>
+							<span class="feed__action-label">Обране</span>
+						</div>
+
+						<div class="feed__action">
+							<p-button
+								icon="pi pi-times"
+								severity="danger"
+								[rounded]="true"
+								[outlined]="true"
+								styleClass="feed__action-btn"
+								(onClick)="act(item, 'ignore')"
+							/>
+							<span class="feed__action-label">Пропустити</span>
+						</div>
+					</div>
+				</section>
+			}
+		</div>
+	} @else {
+		<div class="feed__empty">
+			<p>Оголошень для перегляду більше немає.</p>
+		</div>
+	}
+</div>

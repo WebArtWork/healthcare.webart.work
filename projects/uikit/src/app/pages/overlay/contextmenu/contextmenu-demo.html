@@ -1,0 +1,12 @@
+<h1 class="demo-page__title">ContextMenu</h1>
+
+<section class="demo-section">
+	<h2 class="demo-section__title">Basic</h2>
+	<div
+		#target
+		style="border: 1px dashed var(--p-content-border-color); border-radius: 6px; padding: 2rem; text-align: center"
+	>
+		Right click to display the context menu.
+	</div>
+	<p-contextMenu [model]="items" [target]="target" />
+</section>

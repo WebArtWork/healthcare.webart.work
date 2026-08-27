@@ -1,0 +1,61 @@
+<div class="settings">
+	<h1>Settings</h1>
+
+	<p-card>
+		<p-tabs value="0">
+			<p-tablist>
+				<p-tab value="0">Profile</p-tab>
+				<p-tab value="1">Security</p-tab>
+				<p-tab value="2">Notifications</p-tab>
+			</p-tablist>
+			<p-tabpanels>
+				<p-tabpanel value="0">
+					<div class="settings__form">
+						<label class="settings__field">
+							<span>Name</span>
+							<input pInputText [(ngModel)]="name" />
+						</label>
+						<label class="settings__field">
+							<span>Email</span>
+							<input pInputText type="email" [(ngModel)]="email" />
+						</label>
+						<div class="settings__actions">
+							<p-button label="Save Changes" icon="pi pi-check" />
+						</div>
+					</div>
+				</p-tabpanel>
+				<p-tabpanel value="1">
+					<div class="settings__form">
+						<label class="settings__field">
+							<span>Current Password</span>
+							<p-password [(ngModel)]="currentPassword" [feedback]="false" [toggleMask]="true" />
+						</label>
+						<label class="settings__field">
+							<span>New Password</span>
+							<p-password [(ngModel)]="newPassword" [toggleMask]="true" />
+						</label>
+						<div class="settings__actions">
+							<p-button label="Update Password" icon="pi pi-lock" />
+						</div>
+					</div>
+				</p-tabpanel>
+				<p-tabpanel value="2">
+					<div class="settings__form">
+						<label class="settings__field settings__field--inline">
+							<span>Email Notifications</span>
+							<p-toggleswitch [(ngModel)]="emailNotifications" />
+						</label>
+						<label class="settings__field settings__field--inline">
+							<span>Push Notifications</span>
+							<p-toggleswitch [(ngModel)]="pushNotifications" />
+						</label>
+						<label class="settings__field settings__field--inline">
+							<span>Weekly Digest</span>
+							<p-toggleswitch [(ngModel)]="weeklyDigest" />
+						</label>
+					</div>
+				</p-tabpanel>
+			</p-tabpanels>
+		</p-tabs>
+	</p-card>
+</div>

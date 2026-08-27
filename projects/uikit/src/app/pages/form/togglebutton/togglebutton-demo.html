@@ -1,0 +1,19 @@
+<h1 class="demo-page__title">ToggleButton</h1>
+
+<section class="demo-section">
+	<h2 class="demo-section__title">Basic</h2>
+	<p-togglebutton [(ngModel)]="checked" onLabel="Yes" offLabel="No" />
+</section>
+
+<section class="demo-section">
+	<h2 class="demo-section__title">Icons</h2>
+	<p-togglebutton [ngModel]="true" onLabel="On" offLabel="Off" onIcon="pi pi-check" offIcon="pi pi-times" />
+</section>
+
+<section class="demo-section">
+	<h2 class="demo-section__title">States</h2>
+	<div class="demo-section__row">
+		<p-togglebutton [ngModel]="true" [disabled]="true" onLabel="Yes" offLabel="No" />
+		<p-togglebutton [ngModel]="false" [invalid]="true" onLabel="Yes" offLabel="No" />
+	</div>
+</section>

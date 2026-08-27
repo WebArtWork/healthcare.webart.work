@@ -1,0 +1,71 @@
+<nav
+	class="fixed inset-x-0 bottom-0 z-[100] hidden max-md:flex max-md:min-h-14 max-md:w-full max-md:items-center max-md:overflow-x-auto max-md:bg-[var(--c-bg-secondary)] max-md:px-1 max-md:shadow"
+>
+	<ul
+		class="m-0 flex w-full list-none items-center justify-between gap-0 p-0"
+	>
+		<li class="inline-flex flex-none items-center">
+			<app-nav-icon
+				routerLink="/properties"
+				[ariaLabel]="translateService.translate('Properties')()"
+				icon="building"
+			/>
+		</li>
+
+		<li class="inline-flex flex-none items-center">
+			<app-nav-icon
+				routerLink="/agencies"
+				[ariaLabel]="translateService.translate('Agencies')()"
+				icon="briefcase"
+			/>
+		</li>
+
+		<li class="inline-flex flex-none items-center">
+			<app-nav-icon
+				routerLink="/developers"
+				[ariaLabel]="translateService.translate('Developers')()"
+				icon="users"
+			/>
+		</li>
+
+		<li class="inline-flex flex-none items-center">
+			<app-nav-icon
+				routerLink="/feed"
+				[ariaLabel]="translateService.translate('Feed')()"
+				icon="images"
+			/>
+		</li>
+
+		<li class="inline-flex flex-none items-center">
+			<app-nav-icon
+				routerLink="/explore"
+				[ariaLabel]="translateService.translate('Explore')()"
+				icon="th-large"
+			/>
+		</li>
+
+		<li class="inline-flex flex-none items-center">
+			<app-nav-icon
+				routerLink="/map"
+				[ariaLabel]="translateService.translate('Map')()"
+				icon="map"
+			/>
+		</li>
+
+		<li class="inline-flex flex-none items-center">
+			<app-nav-icon
+				routerLink="/settings"
+				[ariaLabel]="translateService.translate('Settings')()"
+				icon="cog"
+			/>
+		</li>
+
+		<li class="inline-flex flex-none items-center">
+			<app-nav-icon
+				routerLink="/profile"
+				[ariaLabel]="translateService.translate('Profile')()"
+				icon="user"
+			/>
+		</li>
+	</ul>
+</nav>

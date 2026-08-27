@@ -1,0 +1,27 @@
+<h1 class="demo-page__title">FileUpload</h1>
+
+<section class="demo-section">
+	<h2 class="demo-section__title">Advanced</h2>
+	<p-fileUpload
+		name="demo[]"
+		url="https://www.primefaces.org/cdn/api/upload.php"
+		[multiple]="true"
+		accept="image/*"
+		[maxFileSize]="1000000"
+		(onUpload)="onUpload()"
+	>
+		<ng-template #empty>
+			<p style="margin: 0">Drag and drop files here to upload.</p>
+		</ng-template>
+	</p-fileUpload>
+</section>
+
+<section class="demo-section">
+	<h2 class="demo-section__title">Basic</h2>
+	<p-fileUpload mode="basic" name="demo[]" url="https://www.primefaces.org/cdn/api/upload.php" accept="image/*" [maxFileSize]="1000000" />
+</section>
+
+<section class="demo-section">
+	<h2 class="demo-section__title">States</h2>
+	<p-fileUpload mode="basic" name="demo[]" url="https://www.primefaces.org/cdn/api/upload.php" [disabled]="true" chooseLabel="Disabled" />
+</section>

@@ -1,0 +1,34 @@
+<h1 class="demo-page__title">InputOtp</h1>
+
+<section class="demo-section">
+	<h2 class="demo-section__title">Basic</h2>
+	<p-inputOtp [(ngModel)]="otp" />
+</section>
+
+<section class="demo-section">
+	<h2 class="demo-section__title">Masked</h2>
+	<p-inputOtp [ngModel]="otp()" [mask]="true" />
+</section>
+
+<section class="demo-section">
+	<h2 class="demo-section__title">Length</h2>
+	<p-inputOtp [ngModel]="otp()" [length]="6" />
+</section>
+
+<section class="demo-section">
+	<h2 class="demo-section__title">Sizes</h2>
+	<div class="demo-section__row">
+		@for (size of sizes; track size) {
+			<p-inputOtp [ngModel]="otp()" [size]="size" />
+		}
+	</div>
+</section>
+
+<section class="demo-section">
+	<h2 class="demo-section__title">States</h2>
+	<div class="demo-section__row">
+		<p-inputOtp [ngModel]="otp()" [disabled]="true" />
+		<p-inputOtp [ngModel]="otp()" [readonly]="true" />
+		<p-inputOtp [ngModel]="otp()" [integerOnly]="true" />
+	</div>
+</section>

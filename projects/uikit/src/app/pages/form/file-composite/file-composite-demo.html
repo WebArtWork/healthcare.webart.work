@@ -1,0 +1,25 @@
+<h1 class="demo-page__title">File</h1>
+
+<p class="demo-page__note">FileUpload paired with an existing-file list, the pattern a document manager page actually needs.</p>
+
+<section class="demo-section">
+	<p-fileUpload name="demo[]" url="https://www.primefaces.org/cdn/api/upload.php" [multiple]="true" chooseLabel="Add Files">
+		<ng-template #empty>
+			<p style="margin: 0">Drag and drop files here to upload.</p>
+		</ng-template>
+	</p-fileUpload>
+</section>
+
+<section class="demo-section">
+	<h2 class="demo-section__title">Existing Files</h2>
+	<div style="display: flex; flex-direction: column; gap: 0.5rem; max-width: 28rem">
+		@for (file of files(); track file.name) {
+			<div style="display: flex; align-items: center; gap: 0.75rem; padding: 0.5rem 0.75rem; border: 1px solid var(--p-content-border-color); border-radius: 6px">
+				<i class="pi pi-file"></i>
+				<span style="flex: 1">{{ file.name }}</span>
+				<p-tag [value]="file.size" severity="secondary" />
+				<p-button icon="pi pi-trash" [text]="true" size="small" severity="danger" (onClick)="remove(file.name)" />
+			</div>
+		}
+	</div>
+</section>

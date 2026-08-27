@@ -1,0 +1,38 @@
+<h1 class="demo-page__title">DatePicker</h1>
+
+<section class="demo-section">
+	<h2 class="demo-section__title">Basic</h2>
+	<p-datePicker [(ngModel)]="date" />
+</section>
+
+<section class="demo-section">
+	<h2 class="demo-section__title">With Time</h2>
+	<p-datePicker [(ngModel)]="date" [showTime]="true" [showIcon]="true" />
+</section>
+
+<section class="demo-section">
+	<h2 class="demo-section__title">Range</h2>
+	<p-datePicker [(ngModel)]="rangeDates" selectionMode="range" [readonlyInput]="true" />
+</section>
+
+<section class="demo-section">
+	<h2 class="demo-section__title">Sizes</h2>
+	<div class="demo-section__row">
+		@for (size of sizes; track size) {
+			<p-datePicker [ngModel]="date()" [size]="size" />
+		}
+	</div>
+</section>
+
+<section class="demo-section">
+	<h2 class="demo-section__title">States</h2>
+	<div class="demo-section__row">
+		<p-datePicker [ngModel]="date()" [disabled]="true" />
+		<p-datePicker [ngModel]="null" [invalid]="true" placeholder="Invalid" />
+	</div>
+</section>
+
+<section class="demo-section">
+	<h2 class="demo-section__title">Inline</h2>
+	<p-datePicker [(ngModel)]="date" [inline]="true" />
+</section>

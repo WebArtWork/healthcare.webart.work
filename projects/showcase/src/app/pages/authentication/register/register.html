@@ -1,0 +1,26 @@
+<div class="auth">
+	<p-card header="Create Account" class="auth__card">
+		<div class="auth__form">
+			<label class="auth__field">
+				<span>Name</span>
+				<input pInputText [(ngModel)]="name" placeholder="Full name" />
+			</label>
+			<label class="auth__field">
+				<span>Email</span>
+				<input pInputText type="email" [(ngModel)]="email" placeholder="name@example.com" />
+			</label>
+			<label class="auth__field">
+				<span>Password</span>
+				<p-password [(ngModel)]="password" [toggleMask]="true" />
+			</label>
+			<label class="auth__field auth__field--inline">
+				<p-checkbox [(ngModel)]="acceptTerms" [binary]="true" inputId="terms" />
+				<label for="terms">I agree to the terms of service</label>
+			</label>
+			<p-button label="Create Account" icon="pi pi-user-plus" styleClass="w-full" />
+		</div>
+		<p class="auth__switch">
+			Already have an account? <a routerLink="/authentication/login">Sign in</a>
+		</p>
+	</p-card>
+</div>

@@ -1,0 +1,41 @@
+<section class="editor">
+	<p-card header="Редактор">
+		<div class="editor__picker">
+			<p-selectbutton
+				[options]="options"
+				optionLabel="label"
+				optionValue="value"
+				[ngModel]="selectedType()"
+				(ngModelChange)="selectedType.set($event)"
+			/>
+		</div>
+
+		@switch (selectedType()) {
+			@case ('property') {
+				<app-property-form />
+			}
+			@case ('listing') {
+				<app-listing-form />
+			}
+			@case ('record') {
+				<app-record-form />
+			}
+			@case ('complex') {
+				<app-complex-form />
+			}
+			@case ('developer') {
+				<app-developer-form />
+			}
+			@case ('agency') {
+				<app-agency-form />
+			}
+			@case ('agent') {
+				<app-agent-form />
+			}
+		}
+
+		<div class="editor__actions">
+			<button pButton type="button" (click)="wValidate()">Перевірити</button>
+		</div>
+	</p-card>
+</section>

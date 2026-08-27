@@ -1,0 +1,18 @@
+<section class="listing">
+
+	@if (entity(); as item) {
+	@let rel = relations();
+	<app-listing-view
+		[entity]="item"
+		[property]="rel?.property"
+		[complex]="rel?.complex"
+		[developer]="rel?.developer"
+		[agency]="rel?.agency"
+		[agent]="rel?.agent"
+	/>
+	} @else {
+	<p-card class="listing__not-found">
+		<p>Оголошення не знайдено.</p>
+	</p-card>
+	}
+</section>

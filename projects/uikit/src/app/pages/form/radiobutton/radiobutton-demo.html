@@ -1,0 +1,36 @@
+<h1 class="demo-page__title">RadioButton</h1>
+
+<section class="demo-section">
+	<h2 class="demo-section__title">Basic</h2>
+	<div class="demo-section__row">
+		<div class="flex items-center gap-2">
+			<p-radiobutton [(ngModel)]="city" value="rome" inputId="city-rome" />
+			<label for="city-rome">Rome</label>
+		</div>
+		<div class="flex items-center gap-2">
+			<p-radiobutton [(ngModel)]="city" value="paris" inputId="city-paris" />
+			<label for="city-paris">Paris</label>
+		</div>
+		<div class="flex items-center gap-2">
+			<p-radiobutton [(ngModel)]="city" value="london" inputId="city-london" />
+			<label for="city-london">London</label>
+		</div>
+	</div>
+</section>
+
+<section class="demo-section">
+	<h2 class="demo-section__title">Sizes</h2>
+	<div class="demo-section__row">
+		@for (size of sizes; track size) {
+			<p-radiobutton [ngModel]="true" value="true" [size]="size" />
+		}
+	</div>
+</section>
+
+<section class="demo-section">
+	<h2 class="demo-section__title">States</h2>
+	<div class="demo-section__row">
+		<p-radiobutton [ngModel]="true" value="true" [disabled]="true" />
+		<p-radiobutton [ngModel]="false" value="false" [invalid]="true" />
+	</div>
+</section>

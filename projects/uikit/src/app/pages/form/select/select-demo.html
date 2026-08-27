@@ -1,0 +1,48 @@
+<h1 class="demo-page__title">Select</h1>
+
+<section class="demo-section">
+	<h2 class="demo-section__title">Basic</h2>
+	<p-select
+		appendTo="body"
+		scrollHeight="auto"
+		[(ngModel)]="selectedCity"
+		[options]="cities"
+		optionLabel="name"
+		placeholder="Select a city"
+	/>
+</section>
+
+<section class="demo-section">
+	<h2 class="demo-section__title">Filter</h2>
+	<p-select
+		appendTo="body"
+		scrollHeight="auto"
+		[(ngModel)]="selectedCity"
+		[options]="cities"
+		optionLabel="name"
+		placeholder="Search a city"
+		[filter]="true"
+		filterBy="name"
+	/>
+</section>
+
+<section class="demo-section">
+	<h2 class="demo-section__title">Clearable</h2>
+	<p-select
+		appendTo="body"
+		scrollHeight="auto"
+		[(ngModel)]="selectedCity"
+		[options]="cities"
+		optionLabel="name"
+		placeholder="Select a city"
+		[showClear]="true"
+	/>
+</section>
+
+<section class="demo-section">
+	<h2 class="demo-section__title">States</h2>
+	<div class="demo-section__row">
+		<p-select [options]="cities" optionLabel="name" placeholder="Disabled" [disabled]="true" />
+		<p-select [options]="cities" optionLabel="name" placeholder="Loading" [loading]="true" />
+	</div>
+</section>

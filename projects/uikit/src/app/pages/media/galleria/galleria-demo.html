@@ -1,0 +1,13 @@
+<h1 class="demo-page__title">Galleria</h1>
+
+<section class="demo-section">
+	<h2 class="demo-section__title">Basic</h2>
+	<p-galleria [value]="images" [numVisible]="4" style="max-width: 40rem">
+		<ng-template let-image #item>
+			<div style="height: 20rem" [style.background]="image.color"></div>
+		</ng-template>
+		<ng-template let-image #thumbnail>
+			<div style="height: 4rem" [style.background]="image.color"></div>
+		</ng-template>
+	</p-galleria>
+</section>

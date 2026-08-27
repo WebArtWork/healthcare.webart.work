@@ -1,0 +1,88 @@
+.card {
+	display: flex;
+	flex-direction: column;
+	gap: var(--sp-3);
+	padding: var(--sp-4);
+	background: var(--c-bg-secondary);
+	border: 1px solid var(--c-border);
+	border-radius: var(--radius-card);
+	box-shadow: var(--shadow-sm);
+}
+
+.card__title {
+	font-size: 1.05rem;
+	font-weight: 600;
+	color: var(--c-text-secondary);
+	margin: 0;
+}
+
+.card__meta {
+	display: flex;
+	flex-wrap: wrap;
+	gap: var(--sp-2) var(--sp-4);
+	font-size: 0.85rem;
+	color: var(--c-text-muted);
+}
+
+.card__row {
+	display: flex;
+	justify-content: space-between;
+	gap: var(--sp-3);
+	font-size: 0.9rem;
+	color: var(--c-text-primary);
+}
+
+.card__row dt {
+	color: var(--c-text-muted);
+	font-weight: 500;
+}
+
+.card__row dd {
+	margin: 0;
+	color: var(--c-text-secondary);
+	text-align: right;
+}
+
+.card__badge {
+	display: inline-flex;
+	align-items: center;
+	padding: var(--sp-1) var(--sp-3);
+	border-radius: var(--radius-btn);
+	background: var(--c-bg-tertiary);
+	color: var(--c-text-secondary);
+	font-size: 0.75rem;
+	font-weight: 600;
+	text-transform: capitalize;
+	border: 1px solid var(--c-border);
+}
+
+.card__section-title {
+	font-size: 0.9rem;
+	font-weight: 600;
+	color: var(--c-text-secondary);
+	margin: 0;
+}
+
+.card__list {
+	display: flex;
+	flex-direction: column;
+	gap: var(--sp-2);
+}
+
+.card__list-item {
+	display: block;
+	width: 100%;
+	padding: 0;
+	background: none;
+	border: none;
+	text-align: left;
+	cursor: pointer;
+}
+
+.card__relation {
+	display: inline-flex;
+	padding: 0;
+	background: none;
+	border: none;
+	cursor: pointer;
+}

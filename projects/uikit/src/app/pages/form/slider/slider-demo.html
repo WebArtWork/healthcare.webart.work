@@ -1,0 +1,30 @@
+<h1 class="demo-page__title">Slider</h1>
+
+<section class="demo-section">
+	<h2 class="demo-section__title">Basic</h2>
+	<p-slider [(ngModel)]="value" />
+</section>
+
+<section class="demo-section">
+	<h2 class="demo-section__title">Range</h2>
+	<p-slider [(ngModel)]="rangeValue" [range]="true" />
+</section>
+
+<section class="demo-section">
+	<h2 class="demo-section__title">Step</h2>
+	<p-slider [ngModel]="20" [min]="0" [max]="100" [step]="20" />
+</section>
+
+<section class="demo-section">
+	<h2 class="demo-section__title">Vertical</h2>
+	<div style="height: 12rem">
+		<p-slider [ngModel]="50" [orientation]="'vertical'" />
+	</div>
+</section>
+
+<section class="demo-section">
+	<h2 class="demo-section__title">States</h2>
+	<div class="demo-section__row">
+		<p-slider [ngModel]="30" [disabled]="true" />
+	</div>
+</section>

@@ -1,0 +1,25 @@
+<h1 class="demo-page__title">Splitter</h1>
+
+<section class="demo-section">
+	<h2 class="demo-section__title">Horizontal</h2>
+	<p-splitter style="height: 10rem" [panelSizes]="[50, 50]">
+		<ng-template #panel>
+			<div style="padding: 1rem">Panel 1</div>
+		</ng-template>
+		<ng-template #panel>
+			<div style="padding: 1rem">Panel 2</div>
+		</ng-template>
+	</p-splitter>
+</section>
+
+<section class="demo-section">
+	<h2 class="demo-section__title">Vertical</h2>
+	<p-splitter style="height: 16rem" layout="vertical" [panelSizes]="[30, 70]">
+		<ng-template #panel>
+			<div style="padding: 1rem">Panel 1</div>
+		</ng-template>
+		<ng-template #panel>
+			<div style="padding: 1rem">Panel 2</div>
+		</ng-template>
+	</p-splitter>
+</section>

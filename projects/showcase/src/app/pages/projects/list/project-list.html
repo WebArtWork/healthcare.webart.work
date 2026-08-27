@@ -1,0 +1,16 @@
+<div class="project-list">
+	<h1>Projects</h1>
+	<div class="project-list__grid">
+		@for (project of projects; track project.name) {
+			<p-card [routerLink]="['/projects/project-details']" class="project-list__card">
+				<div class="project-list__card-header">
+					<h3>{{ project.name }}</h3>
+					<p-tag [value]="project.statusLabel" [severity]="project.status" />
+				</div>
+				<p class="project-list__client">{{ project.client }}</p>
+				<p-progressBar [value]="project.progress" />
+				<p class="project-list__due">Due {{ project.dueDate }}</p>
+			</p-card>
+		}
+	</div>
+</div>

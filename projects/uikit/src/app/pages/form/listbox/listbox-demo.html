@@ -1,0 +1,27 @@
+<h1 class="demo-page__title">Listbox</h1>
+
+<section class="demo-section">
+	<h2 class="demo-section__title">Basic</h2>
+	<p-listbox [(ngModel)]="selectedCity" [options]="cities" optionLabel="name" style="width: 14rem" />
+</section>
+
+<section class="demo-section">
+	<h2 class="demo-section__title">Multiple with Checkbox</h2>
+	<p-listbox
+		[(ngModel)]="selectedCities"
+		[options]="cities"
+		optionLabel="name"
+		[multiple]="true"
+		[checkbox]="true"
+		[filter]="true"
+		style="width: 14rem"
+	/>
+</section>
+
+<section class="demo-section">
+	<h2 class="demo-section__title">States</h2>
+	<div class="demo-section__row">
+		<p-listbox [ngModel]="selectedCity()" [options]="cities" optionLabel="name" [disabled]="true" style="width: 14rem" />
+		<p-listbox [ngModel]="selectedCity()" [options]="cities" optionLabel="name" [invalid]="true" style="width: 14rem" />
+	</div>
+</section>

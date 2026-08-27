@@ -1,0 +1,24 @@
+[
+	{
+		"_id": "complex-1",
+		"name": "Aurelia Gardens",
+		"description": "A mixed-use residential complex in the Vaelmont riverside district with three residential buildings and a retail podium.",
+		"developerId": "dev-1",
+		"country": "Draecia",
+		"city": "Vaelmont",
+		"address": "14 Riverside Boulevard, Vaelmont",
+		"coordinates": { "lat": 47.1721, "lng": 19.3452 },
+		"status": "under-construction",
+		"constructionProgressPercent": 68,
+		"buildings": [
+			{ "name": "Building A", "floors": 12, "unitsCount": 96 },
+			{ "name": "Building B", "floors": 10, "unitsCount": 80 },
+			{ "name": "Building C", "floors": 8, "unitsCount": 64 }
+		],
+		"sharedFacilities": ["underground parking", "fitness center", "children's playground", "landscaped courtyard"],
+		"propertyIds": ["prop-1", "prop-2"],
+		"listingIds": ["listing-1", "listing-2"],
+		"recordIds": ["record-4"],
+		"coverImage": "https://assets.neryxomka.com/complexes/aurelia-gardens-cover.jpg"
+	}
+]

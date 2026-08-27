@@ -1,0 +1,18 @@
+<h1 class="demo-page__title">Message / Toast Stack</h1>
+
+<p class="demo-page__note">Inline validation messages next to a form field, alongside stacked toast notifications for async feedback.</p>
+
+<p-toast />
+
+<section class="demo-section">
+	<h2 class="demo-section__title">Inline Form Feedback</h2>
+	<div style="display: flex; flex-direction: column; gap: 0.5rem; max-width: 24rem">
+		<p-message severity="error" [closable]="true">Username is already taken.</p-message>
+		<p-message severity="warn" variant="simple">Password should be at least 8 characters.</p-message>
+	</div>
+</section>
+
+<section class="demo-section">
+	<h2 class="demo-section__title">Toast Notifications</h2>
+	<p-button label="Trigger Notifications" (onClick)="notify()" />
+</section>

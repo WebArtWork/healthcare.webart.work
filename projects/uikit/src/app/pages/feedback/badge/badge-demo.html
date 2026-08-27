@@ -1,0 +1,19 @@
+<h1 class="demo-page__title">Badge</h1>
+
+<section class="demo-section">
+	<h2 class="demo-section__title">Severities</h2>
+	<div class="demo-section__row">
+		@for (severity of severities; track severity) {
+			<p-badge [value]="2" [severity]="severity" />
+		}
+	</div>
+</section>
+
+<section class="demo-section">
+	<h2 class="demo-section__title">Sizes</h2>
+	<div class="demo-section__row" style="align-items: center">
+		<p-badge value="2" />
+		<p-badge value="4" size="large" />
+		<p-badge value="6" size="xlarge" />
+	</div>
+</section>

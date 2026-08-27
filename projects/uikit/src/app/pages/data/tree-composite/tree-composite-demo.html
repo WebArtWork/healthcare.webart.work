@@ -1,0 +1,30 @@
+<h1 class="demo-page__title">Tree</h1>
+
+<p class="demo-page__note">Tree with filter, node icons, selection and a per-node badge — an org/file browser pattern.</p>
+
+<section class="demo-section" style="display: flex; gap: 1.5rem">
+	<p-tree
+		[value]="nodes"
+		[filter]="true"
+		selectionMode="single"
+		[(selection)]="selection"
+		style="width: 20rem"
+	>
+		<ng-template let-node #default>
+			<span style="display: flex; align-items: center; gap: 0.5rem; width: 100%">
+				<span style="flex: 1">{{ node.label }}</span>
+				@if (node.data?.members) {
+					<p-tag [value]="node.data.members + ' members'" severity="secondary" />
+				}
+			</span>
+		</ng-template>
+	</p-tree>
+	<div style="flex: 1">
+		@if (selection(); as sel) {
+			<h3 style="margin-top: 0">{{ sel.label }}</h3>
+			<p>Details for the selected node would render here.</p>
+		} @else {
+			<p style="color: var(--p-text-muted-color)">Select a node to see its details.</p>
+		}
+	</div>
+</section>

@@ -1,0 +1,26 @@
+<h1 class="demo-page__title">Timeline</h1>
+
+<p class="demo-page__note">Order-tracking timeline built from Timeline + Card + Tag, the pattern an order-details page uses.</p>
+
+<section class="demo-section">
+	<p-card header="Order #10234" [style]="{ 'max-width': '32rem' }">
+		<p-timeline [value]="events">
+			<ng-template let-event #content>
+				<div style="font-weight: 600">{{ event.status }}</div>
+				<div style="color: var(--p-text-muted-color); font-size: 0.875rem">{{ event.date }}</div>
+				<p style="margin: 0.25rem 0 0">{{ event.description }}</p>
+			</ng-template>
+			<ng-template let-event #marker>
+				<span
+					style="display: flex; align-items: center; justify-content: center; width: 2rem; height: 2rem; border-radius: 50%; color: #fff"
+					[style.background]="event.color"
+				>
+					<i [class]="event.icon"></i>
+				</span>
+			</ng-template>
+		</p-timeline>
+		<div style="display: flex; justify-content: flex-end; gap: 0.5rem">
+			<p-button label="Track Package" icon="pi pi-map-marker" size="small" />
+		</div>
+	</p-card>
+</section>

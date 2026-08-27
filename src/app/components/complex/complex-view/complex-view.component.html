@@ -1,0 +1,76 @@
+<article class="card">
+	@if (entity.coverImage) {
+		<img class="card__photo" style="width:100%;height:auto" [src]="entity.coverImage" alt="" />
+	}
+
+	<h2 class="card__title">{{ entity.name }}</h2>
+
+	<div class="card__meta">
+		<span class="card__badge">{{ statusLabels[entity.status] }}</span>
+		<span class="card__badge">{{ entity.constructionProgressPercent }}% готово</span>
+	</div>
+
+	<p>{{ entity.description }}</p>
+
+		<div class="card__row"><dt>Розташування</dt><dd>{{ entity.address }}, {{ entity.city }}, {{ entity.country }}</dd></div>
+		<div class="card__row"><dt>Координати</dt><dd>{{ entity.coordinates.lat }}, {{ entity.coordinates.lng }}</dd></div>
+		@if (developer(); as dev) {
+			<div class="card__row">
+				<dt>Забудовник</dt>
+				<dd>
+					<button type="button" class="card__relation" (click)="viewDeveloper()">
+						<app-developer-icon [entity]="dev" />
+					</button>
+				</dd>
+			</div>
+		}
+
+	@if (entity.buildings.length) {
+		<div class="card__meta">
+			@for (b of entity.buildings; track b.name) {
+				<span class="card__badge">{{ b.name }}: {{ b.floors }}пов. / {{ b.unitsCount }}кв.</span>
+			}
+		</div>
+	}
+
+	@if (entity.sharedFacilities.length) {
+		<div class="card__meta">
+			@for (f of entity.sharedFacilities; track f) {
+				<span class="card__badge">{{ f }}</span>
+			}
+		</div>
+	}
+
+	@if (relatedProperties().length) {
+		<h3 class="card__section-title">Об'єкти комплексу</h3>
+		<div class="card__list">
+			@for (property of relatedProperties(); track property._id) {
+				<button type="button" class="card__list-item" (click)="viewProperty(property)">
+					<app-property-short [entity]="property" />
+				</button>
+			}
+		</div>
+	}
+
+	@if (relatedListings().length) {
+		<h3 class="card__section-title">Оголошення</h3>
+		<div class="card__list">
+			@for (listing of relatedListings(); track listing._id) {
+				<button type="button" class="card__list-item" (click)="viewListing(listing)">
+					<app-listing-short [entity]="listing" />
+				</button>
+			}
+		</div>
+	}
+
+	@if (relatedRecords().length) {
+		<h3 class="card__section-title">Записи</h3>
+		<div class="card__list">
+			@for (record of relatedRecords(); track record._id) {
+				<button type="button" class="card__list-item" (click)="viewRecord(record)">
+					<app-record-short [entity]="record" />
+				</button>
+			}
+		</div>
+	}
+</article>

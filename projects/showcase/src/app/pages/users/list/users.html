@@ -1,0 +1,39 @@
+<div class="users">
+	<p-table
+		#dt
+		[value]="users"
+		[paginator]="true"
+		[rows]="5"
+		[globalFilterFields]="['name', 'email', 'role']"
+	>
+		<ng-template #caption>
+			<div class="users__toolbar">
+				<p-iconfield>
+					<p-inputicon class="pi pi-search" />
+					<input
+						pInputText
+						type="text"
+						placeholder="Search users"
+						(input)="onSearch($any($event.target).value)"
+					/>
+				</p-iconfield>
+			</div>
+		</ng-template>
+		<ng-template #header>
+			<tr>
+				<th pSortableColumn="name">Name <p-sortIcon field="name" /></th>
+				<th>Email</th>
+				<th pSortableColumn="role">Role <p-sortIcon field="role" /></th>
+				<th>Status</th>
+			</tr>
+		</ng-template>
+		<ng-template #body let-user>
+			<tr>
+				<td>{{ user.name }}</td>
+				<td>{{ user.email }}</td>
+				<td>{{ user.role }}</td>
+				<td><p-tag [value]="user.status === 'success' ? 'Active' : 'Inactive'" [severity]="user.status" /></td>
+			</tr>
+		</ng-template>
+	</p-table>
+</div>

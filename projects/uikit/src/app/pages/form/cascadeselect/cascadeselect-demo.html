@@ -1,0 +1,79 @@
+<h1 class="demo-page__title">CascadeSelect</h1>
+
+<section class="demo-section">
+	<h2 class="demo-section__title">Basic</h2>
+	<p-cascadeSelect
+		[(ngModel)]="selectedCity"
+		[options]="countries"
+		optionLabel="cname"
+		optionGroupLabel="name"
+		[optionGroupChildren]="['states', 'cities']"
+		placeholder="Select a City"
+		style="min-width: 14rem"
+	/>
+</section>
+
+<section class="demo-section">
+	<h2 class="demo-section__title">Sizes</h2>
+	<div class="demo-section__row">
+		@for (size of sizes; track size) {
+			<p-cascadeSelect
+				[ngModel]="selectedCity()"
+				[options]="countries"
+				optionLabel="cname"
+				optionGroupLabel="name"
+				[optionGroupChildren]="['states', 'cities']"
+				placeholder="Select a City"
+				[size]="size"
+			/>
+		}
+	</div>
+</section>
+
+<section class="demo-section">
+	<h2 class="demo-section__title">Variants</h2>
+	<div class="demo-section__row">
+		<p-cascadeSelect
+			[ngModel]="selectedCity()"
+			[options]="countries"
+			optionLabel="cname"
+			optionGroupLabel="name"
+			[optionGroupChildren]="['states', 'cities']"
+			placeholder="Select a City"
+			variant="outlined"
+		/>
+		<p-cascadeSelect
+			[ngModel]="selectedCity()"
+			[options]="countries"
+			optionLabel="cname"
+			optionGroupLabel="name"
+			[optionGroupChildren]="['states', 'cities']"
+			placeholder="Select a City"
+			variant="filled"
+		/>
+	</div>
+</section>
+
+<section class="demo-section">
+	<h2 class="demo-section__title">States</h2>
+	<div class="demo-section__row">
+		<p-cascadeSelect
+			[ngModel]="selectedCity()"
+			[options]="countries"
+			optionLabel="cname"
+			optionGroupLabel="name"
+			[optionGroupChildren]="['states', 'cities']"
+			placeholder="Disabled"
+			[disabled]="true"
+		/>
+		<p-cascadeSelect
+			[ngModel]="selectedCity()"
+			[options]="countries"
+			optionLabel="cname"
+			optionGroupLabel="name"
+			[optionGroupChildren]="['states', 'cities']"
+			placeholder="Invalid"
+			[invalid]="true"
+		/>
+	</div>
+</section>

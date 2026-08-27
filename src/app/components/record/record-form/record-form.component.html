@@ -1,0 +1,72 @@
+<form class="form" [formGroup]="form">
+		<div class="form__field">
+			<label class="form__label" for="recordType" translate>Тип запису</label>
+			<p-select id="recordType" formControlName="recordType" [options]="recordTypeOptions" optionLabel="label" optionValue="value" appendTo="body" />
+
+		</div>
+		<div class="form__field">
+			<label class="form__label" for="title" translate>Заголовок</label>
+			<input id="title" pInputText class="form__control" type="text" [formControlName]="'title'" [class._invalid]="form.get('title')?.invalid && form.get('title')?.touched" />
+			@if (form.get('title')?.hasError('required') && form.get('title')?.touched) {
+				<span class="form__error" translate>Заголовок обов'язковий</span>
+			}
+		</div>
+		<div class="form__field">
+			<label class="form__label" for="description" translate>Опис</label>
+			<textarea id="description" pTextarea class="form__control" rows="4" [formControlName]="'description'" [class._invalid]="form.get('description')?.invalid && form.get('description')?.touched"></textarea>
+			@if (form.get('description')?.hasError('required') && form.get('description')?.touched) {
+				<span class="form__error" translate>Опис обов'язковий</span>
+			}
+		</div>
+		<div class="form__field">
+			<label class="form__label" for="eventDate" translate>Дата події</label>
+			<input id="eventDate" pInputText class="form__control" type="date" [formControlName]="'eventDate'" [class._invalid]="form.get('eventDate')?.invalid && form.get('eventDate')?.touched" />
+			@if (form.get('eventDate')?.hasError('required') && form.get('eventDate')?.touched) {
+				<span class="form__error" translate>Дата обов'язкова</span>
+			}
+		</div>
+		<div class="form__field">
+			<label class="form__label" for="serviceProvider" translate>Постачальник послуг</label>
+			<input id="serviceProvider" pInputText class="form__control" type="text" [formControlName]="'serviceProvider'" [class._invalid]="form.get('serviceProvider')?.invalid && form.get('serviceProvider')?.touched" />
+
+		</div>
+		<div class="form__field">
+			<label class="form__label" for="cost" translate>Вартість</label>
+			<p-inputnumber id="cost" formControlName="cost" [invalid]="form.get('cost')?.invalid && form.get('cost')?.touched" />
+
+		</div>
+		<div class="form__field">
+			<label class="form__label" for="currency" translate>Валюта</label>
+			<input id="currency" pInputText class="form__control" type="text" [formControlName]="'currency'" [class._invalid]="form.get('currency')?.invalid && form.get('currency')?.touched" />
+
+		</div>
+		<div class="form__field">
+			<label class="form__label" for="quantity" translate>Кількість</label>
+			<p-inputnumber id="quantity" formControlName="quantity" [invalid]="form.get('quantity')?.invalid && form.get('quantity')?.touched" />
+
+		</div>
+		<div class="form__field">
+			<label class="form__label" for="units" translate>Одиниці виміру</label>
+			<input id="units" pInputText class="form__control" type="text" [formControlName]="'units'" [class._invalid]="form.get('units')?.invalid && form.get('units')?.touched" />
+
+		</div>
+		<div class="form__field">
+			<label class="form__label" for="status" translate>Статус</label>
+			<p-select id="status" formControlName="status" [options]="statusOptions" optionLabel="label" optionValue="value" appendTo="body" />
+
+		</div>
+		<div class="form__field">
+			<label class="form__label" for="locationInsideProperty" translate>Розташування в об'єкті</label>
+			<input id="locationInsideProperty" pInputText class="form__control" type="text" [formControlName]="'locationInsideProperty'" [class._invalid]="form.get('locationInsideProperty')?.invalid && form.get('locationInsideProperty')?.touched" />
+
+		</div>
+		<div class="form__field">
+			<label class="form__label" for="visibility" translate>Видимість</label>
+			<p-select id="visibility" formControlName="visibility" [options]="visibilityOptions" optionLabel="label" optionValue="value" appendTo="body" />
+
+		</div>
+
+	<div class="form__actions">
+		<button type="button" pButton class="form__submit" [disabled]="form.invalid"><span translate>Зберегти</span></button>
+	</div>
+</form>

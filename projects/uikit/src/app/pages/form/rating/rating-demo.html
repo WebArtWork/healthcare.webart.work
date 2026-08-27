@@ -1,0 +1,21 @@
+<h1 class="demo-page__title">Rating</h1>
+
+<section class="demo-section">
+	<h2 class="demo-section__title">Basic</h2>
+	<p-rating [(ngModel)]="value" />
+</section>
+
+<section class="demo-section">
+	<h2 class="demo-section__title">Stars</h2>
+	<div class="demo-section__row">
+		<p-rating [ngModel]="2" [stars]="10" />
+	</div>
+</section>
+
+<section class="demo-section">
+	<h2 class="demo-section__title">States</h2>
+	<div class="demo-section__row">
+		<p-rating [ngModel]="3" [readonly]="true" />
+		<p-rating [ngModel]="0" [disabled]="true" />
+	</div>
+</section>

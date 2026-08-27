@@ -1,0 +1,35 @@
+<section class="developers">
+	<header class="developers__header">
+		<h2 class="developers__title">Забудовники</h2>
+		<span class="developers__hint">Перегляньте всіх забудовників Neryxomka</span>
+	</header>
+
+	<p-card class="developers__filters">
+		<div class="developers__field">
+			<label for="developers-search">Пошук</label>
+			<input
+				id="developers-search"
+				pInputText
+				type="text"
+				placeholder="Назва, місто або країна"
+				[fluid]="true"
+				[ngModel]="searchTerm()"
+				(ngModelChange)="searchTerm.set($event)"
+			/>
+		</div>
+	</p-card>
+
+	<div class="developers__results">
+		<span class="developers__count">Знайдено забудовників: {{ results().length }}</span>
+
+		<div class="developers__grid">
+			@for (item of results(); track item._id) {
+			<div class="developers__row" (click)="view(item)">
+				<app-developer-short [entity]="item" />
+			</div>
+			} @empty {
+			<p class="developers__empty">За заданим запитом забудовників не знайдено.</p>
+			}
+		</div>
+	</div>
+</section>

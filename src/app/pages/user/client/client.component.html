@@ -1,0 +1,10 @@
+<section class="client">
+
+	@if (entity(); as item) {
+	<app-user-view [entity]="item" />
+	} @else {
+	<p-card class="client__not-found">
+		<p>Користувача не знайдено.</p>
+	</p-card>
+	}
+</section>

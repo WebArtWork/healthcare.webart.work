@@ -1,0 +1,54 @@
+<section class="map-page">
+	<div class="map-page__categories">
+		@for (category of categories; track category.value) {
+		<button
+			type="button"
+			class="map-page__category"
+			[class.map-page__category--active]="activeCategory() === category.value"
+			(click)="selectCategory(category.value)"
+		>
+			{{ category.label }}
+		</button>
+		}
+	</div>
+
+	<div class="map-page__layout">
+		<div class="map-page__canvas">
+			<app-leaflet-map
+				[center]="center()"
+				[zoom]="zoom"
+				[markers]="markers()"
+				(markerSelected)="onMarkerSelected($event)"
+			/>
+
+			@if (!markers().length) {
+			<p class="map-page__empty">Немає об'єктів із координатами.</p>
+			}
+		</div>
+
+		@if (selected(); as property) {
+		<p-card class="map-page__panel">
+			<div class="map-page__panel-header">
+				<span class="map-page__panel-title">Обраний об'єкт</span>
+				<p-button
+					icon="pi pi-times"
+					[text]="true"
+					[rounded]="true"
+					severity="secondary"
+					(onClick)="closePanel()"
+				/>
+			</div>
+
+			<app-property-short [entity]="property" />
+
+			<p-button
+				class="map-page__panel-action"
+				label="Переглянути об'єкт"
+				icon="pi pi-arrow-right"
+				iconPos="right"
+				(onClick)="view(property)"
+			/>
+		</p-card>
+		}
+	</div>
+</section>

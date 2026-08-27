@@ -1,0 +1,64 @@
+<form class="form" [formGroup]="form">
+		<div class="form__field">
+			<label class="form__label" for="displayName" translate>Ім'я для показу</label>
+			<input id="displayName" pInputText class="form__control" type="text" [formControlName]="'displayName'" [class._invalid]="form.get('displayName')?.invalid && form.get('displayName')?.touched" />
+			@if (form.get('displayName')?.hasError('required') && form.get('displayName')?.touched) {
+				<span class="form__error" translate>Ім'я обов'язкове</span>
+			}
+		</div>
+		<div class="form__field">
+			<label class="form__label" for="photo" translate>URL фотографії</label>
+			<input id="photo" pInputText class="form__control" type="text" [formControlName]="'photo'" [class._invalid]="form.get('photo')?.invalid && form.get('photo')?.touched" />
+
+		</div>
+		<div class="form__field">
+			<label class="form__label" for="bio" translate>Про себе</label>
+			<textarea id="bio" pTextarea class="form__control" rows="4" [formControlName]="'bio'" [class._invalid]="form.get('bio')?.invalid && form.get('bio')?.touched"></textarea>
+
+		</div>
+		<div class="form__field">
+			<label class="form__label" for="country" translate>Країна</label>
+			<input id="country" pInputText class="form__control" type="text" [formControlName]="'country'" [class._invalid]="form.get('country')?.invalid && form.get('country')?.touched" />
+			@if (form.get('country')?.hasError('required') && form.get('country')?.touched) {
+				<span class="form__error" translate>Країна обов'язкова</span>
+			}
+		</div>
+		<div class="form__field">
+			<label class="form__label" for="city" translate>Місто</label>
+			<input id="city" pInputText class="form__control" type="text" [formControlName]="'city'" [class._invalid]="form.get('city')?.invalid && form.get('city')?.touched" />
+			@if (form.get('city')?.hasError('required') && form.get('city')?.touched) {
+				<span class="form__error" translate>Місто обов'язкове</span>
+			}
+		</div>
+		<div class="form__field">
+			<label class="form__label" for="yearsExperience" translate>Досвід роботи (років)</label>
+			<p-inputnumber id="yearsExperience" formControlName="yearsExperience" [min]="0" [max]="80" [invalid]="form.get('yearsExperience')?.invalid && form.get('yearsExperience')?.touched" />
+			@if (form.get('yearsExperience')?.hasError('min') && form.get('yearsExperience')?.touched) {
+				<span class="form__error" translate>Некоректне значення</span>
+			}
+			@if (form.get('yearsExperience')?.hasError('max') && form.get('yearsExperience')?.touched) {
+				<span class="form__error" translate>Некоректне значення</span>
+			}
+		</div>
+		<div class="form__field">
+			<label class="form__label" for="contactPhone" translate>Контактний телефон</label>
+			<input id="contactPhone" pInputText class="form__control" type="tel" [formControlName]="'contactPhone'" [class._invalid]="form.get('contactPhone')?.invalid && form.get('contactPhone')?.touched" />
+			@if (form.get('contactPhone')?.hasError('pattern') && form.get('contactPhone')?.touched) {
+				<span class="form__error" translate>Некоректний номер телефону</span>
+			}
+		</div>
+		<div class="form__field">
+			<label class="form__label" for="contactEmail" translate>Контактна електронна пошта</label>
+			<input id="contactEmail" pInputText class="form__control" type="email" [formControlName]="'contactEmail'" [class._invalid]="form.get('contactEmail')?.invalid && form.get('contactEmail')?.touched" />
+			@if (form.get('contactEmail')?.hasError('required') && form.get('contactEmail')?.touched) {
+				<span class="form__error" translate>Електронна пошта обов'язкова</span>
+			}
+			@if (form.get('contactEmail')?.hasError('email') && form.get('contactEmail')?.touched) {
+				<span class="form__error" translate>Некоректна електронна пошта</span>
+			}
+		</div>
+
+	<div class="form__actions">
+		<button type="button" pButton class="form__submit" [disabled]="form.invalid"><span translate>Зберегти</span></button>
+	</div>
+</form>

@@ -1,0 +1,92 @@
+<div class="tr-page">
+	@if (translationsState.loading()) {
+		<p>Loading translation files…</p>
+	} @else if (translationsState.loadError()) {
+		<p class="tr-page__note" style="color: var(--p-red-500)">{{ translationsState.loadError() }}</p>
+	} @else {
+		<div class="tr-toolbar">
+			<input
+				pInputText
+				placeholder="Search key or value…"
+				[(ngModel)]="filterText"
+				style="width: 18rem"
+			/>
+			<label style="display: flex; align-items: center; gap: 0.5rem">
+				<p-toggleswitch
+					[ngModel]="onlyIssues()"
+					[disabled]="translationsState.issueCount() === 0 && !onlyIssues()"
+					(ngModelChange)="onlyIssues.set($event)"
+				/>
+				Missing ({{ translationsState.issueCount() }})
+			</label>
+			<label style="display: flex; align-items: center; gap: 0.5rem">
+				<p-toggleswitch
+					[ngModel]="onlyModified()"
+					[disabled]="translationsState.modifiedCount() === 0 && !onlyModified()"
+					(ngModelChange)="onlyModified.set($event)"
+				/>
+				Modified ({{ translationsState.modifiedCount() }})
+			</label>
+			<span style="flex: 1"></span>
+			<p-button
+				label="Reset"
+				icon="pi pi-refresh"
+				size="small"
+				severity="secondary"
+				[disabled]="!translationsState.dirty()"
+				(onClick)="reset()"
+			/>
+		</div>
+
+		<div class="tr-table-wrap">
+		<p-table
+			[value]="filteredRows()"
+			dataKey="index"
+			[rowTrackBy]="trackByIndex"
+			[scrollable]="true"
+			scrollHeight="flex"
+		>
+			<ng-template #header>
+				<tr>
+					<th style="width: 3rem">#</th>
+					<th>English (key)</th>
+					@if (!translationsState.isDefaultLanguageSelected()) {
+						<th>{{ selectedLanguageName() }}</th>
+					}
+				</tr>
+			</ng-template>
+			<ng-template #body let-row>
+				<tr>
+					<td>{{ row.index }}</td>
+					<td style="max-width: 22rem">{{ row.key }}</td>
+					@if (!translationsState.isDefaultLanguageSelected()) {
+						<td>
+							<div style="display: flex; align-items: center; gap: 0.5rem">
+								<input
+									pInputText
+									size="small"
+									style="width: 100%"
+									[value]="row.values[translationsState.selectedLanguage()]"
+									(input)="setValue(row, translationsState.selectedLanguage(), $any($event.target).value)"
+								/>
+								@if (row.missing.includes(translationsState.selectedLanguage())) {
+									<p-tag severity="danger" value="missing" />
+								} @else if (row.untranslated.includes(translationsState.selectedLanguage())) {
+									<p-tag severity="warn" value="untranslated" />
+								}
+							</div>
+						</td>
+					}
+				</tr>
+			</ng-template>
+			<ng-template #emptymessage>
+				<tr>
+					<td [attr.colspan]="translationsState.isDefaultLanguageSelected() ? 2 : 3">
+						No keys match the current filter.
+					</td>
+				</tr>
+			</ng-template>
+		</p-table>
+		</div>
+	}
+</div>

@@ -1,0 +1,62 @@
+[
+	{
+		"_id": "comment-1",
+		"entityType": "property",
+		"entityId": "prop-1",
+		"authorUserId": "user-4",
+		"rating": 5,
+		"text": "Visited the sales office, the construction quality looks great so far and the river views are worth it.",
+		"verifiedReviewerStatus": null,
+		"helpfulVotes": 6,
+		"moderationStatus": "approved",
+		"date": "2026-07-25"
+	},
+	{
+		"_id": "comment-2",
+		"entityType": "property",
+		"entityId": "prop-3",
+		"authorUserId": "user-4",
+		"rating": 4,
+		"text": "Lived in this building's neighborhood for a year, it's a quiet part of Old Town with easy transit access.",
+		"verifiedReviewerStatus": "verified-tenant",
+		"helpfulVotes": 3,
+		"moderationStatus": "approved",
+		"date": "2026-06-02"
+	},
+	{
+		"_id": "comment-3",
+		"entityType": "agency",
+		"entityId": "agency-1",
+		"authorUserId": "user-1",
+		"rating": 5,
+		"text": "Draecia Realty Group helped me rent out my apartment quickly and handled all the paperwork professionally.",
+		"verifiedReviewerStatus": "verified-owner",
+		"helpfulVotes": 9,
+		"moderationStatus": "approved",
+		"date": "2026-08-05"
+	},
+	{
+		"_id": "comment-4",
+		"entityType": "developer",
+		"entityId": "dev-1",
+		"authorUserId": "user-4",
+		"rating": 4,
+		"text": "Solvara Developments has been transparent about construction progress for Aurelia Gardens, regular updates are appreciated.",
+		"verifiedReviewerStatus": null,
+		"helpfulVotes": 2,
+		"moderationStatus": "approved",
+		"date": "2026-07-28"
+	},
+	{
+		"_id": "comment-5",
+		"entityType": "agent",
+		"entityId": "agent-1",
+		"authorUserId": "user-1",
+		"rating": 5,
+		"text": "Ilya was very responsive and found a good tenant within two weeks.",
+		"verifiedReviewerStatus": "verified-owner",
+		"helpfulVotes": 4,
+		"moderationStatus": "approved",
+		"date": "2026-08-10"
+	}
+]

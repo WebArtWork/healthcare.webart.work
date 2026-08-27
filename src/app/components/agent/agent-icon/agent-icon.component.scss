@@ -1,0 +1,46 @@
+:host {
+	display: inline-flex;
+}
+
+.icon {
+	display: inline-flex;
+	align-items: center;
+	gap: var(--sp-2);
+	padding: var(--sp-1) var(--sp-2);
+	border-radius: var(--radius-pill, 999px);
+	background: var(--c-bg-tertiary);
+	border: 1px solid var(--c-border);
+	text-decoration: none;
+	max-width: 100%;
+}
+
+.icon__avatar {
+	flex: none;
+	width: 28px;
+	height: 28px;
+	border-radius: 50%;
+	object-fit: cover;
+	background: var(--c-bg-primary);
+}
+
+.icon__glyph {
+	flex: none;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 28px;
+	height: 28px;
+	border-radius: 50%;
+	background: var(--c-bg-primary);
+	color: var(--c-text-secondary);
+	font-size: 15px;
+}
+
+.icon__name {
+	font-size: 0.82rem;
+	font-weight: 500;
+	color: var(--c-text-secondary);
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}

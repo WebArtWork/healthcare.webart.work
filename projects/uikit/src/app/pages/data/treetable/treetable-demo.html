@@ -1,0 +1,24 @@
+<h1 class="demo-page__title">TreeTable</h1>
+
+<section class="demo-section">
+	<h2 class="demo-section__title">Basic</h2>
+	<p-treeTable [value]="files">
+		<ng-template #header>
+			<tr>
+				<th>Name</th>
+				<th>Size</th>
+				<th>Type</th>
+			</tr>
+		</ng-template>
+		<ng-template #body let-rowNode let-rowData="rowData">
+			<tr>
+				<td>
+					<p-treeTableToggler [rowNode]="rowNode" />
+					{{ rowData.name }}
+				</td>
+				<td>{{ rowData.size }}</td>
+				<td>{{ rowData.type }}</td>
+			</tr>
+		</ng-template>
+	</p-treeTable>
+</section>

@@ -1,0 +1,51 @@
+<div class="product-form">
+	<p-card header="Create / Edit Product">
+		<div class="product-form__grid">
+			<label class="product-form__field">
+				<span>Name</span>
+				<input pInputText [(ngModel)]="name" placeholder="Product name" />
+			</label>
+			<label class="product-form__field">
+				<span>Category</span>
+				<p-select
+					[options]="categories"
+					optionLabel="label"
+					[(ngModel)]="category"
+					placeholder="Select a category"
+				/>
+			</label>
+			<label class="product-form__field">
+				<span>Price</span>
+				<p-inputnumber [(ngModel)]="price" mode="currency" currency="USD" locale="en-US" />
+			</label>
+			<label class="product-form__field">
+				<span>Stock</span>
+				<p-inputnumber [(ngModel)]="stock" [min]="0" />
+			</label>
+			<div class="product-form__field product-form__field--full">
+				<span>Description</span>
+				<p-editor [(ngModel)]="description" [style]="{ height: '200px' }" />
+			</div>
+			<div class="product-form__field product-form__field--full">
+				<span>Images</span>
+				<p-fileUpload
+					name="images[]"
+					url="https://www.primefaces.org/cdn/api/upload.php"
+					[multiple]="true"
+					accept="image/*"
+					[maxFileSize]="1000000"
+					(onUpload)="onImageUpload()"
+				>
+					<ng-template #empty>
+						<p style="margin: 0">Drag and drop product images here.</p>
+					</ng-template>
+				</p-fileUpload>
+			</div>
+		</div>
+
+		<div class="product-form__actions">
+			<p-button label="Cancel" severity="secondary" [outlined]="true" />
+			<p-button label="Save Product" icon="pi pi-check" />
+		</div>
+	</p-card>
+</div>

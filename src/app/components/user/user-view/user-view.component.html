@@ -1,0 +1,91 @@
+<article class="card">
+	@if (entity.photo) {
+		<img class="card__photo" style="width:96px;height:96px;border-radius:50%" [src]="entity.photo" alt="" />
+	}
+
+	<h2 class="card__title">{{ entity.name }}</h2>
+
+	<div class="card__meta">
+		@for (role of entity.roles; track role) {
+			<span class="card__badge">{{ role }}</span>
+		}
+	</div>
+
+	<p>{{ entity.bio }}</p>
+
+		<div class="card__row"><dt>Розташування</dt><dd>{{ entity.city }}, {{ entity.country }}</dd></div>
+		<div class="card__row"><dt>Ел. пошта</dt><dd>{{ entity.contact.email }}</dd></div>
+		<div class="card__row"><dt>Телефон</dt><dd>{{ entity.contact.phone }}</dd></div>
+		<div class="card__row"><dt>Досвід</dt><dd>{{ entity.experienceYears }} років</dd></div>
+		@if (agent(); as ag) {
+			<div class="card__row">
+				<dt>Агент</dt>
+				<dd>
+					<button type="button" class="card__relation" (click)="viewAgent()">
+						<app-agent-icon [entity]="ag" />
+					</button>
+				</dd>
+			</div>
+		}
+		@if (agency(); as agc) {
+			<div class="card__row">
+				<dt>Агентство</dt>
+				<dd>
+					<button type="button" class="card__relation" (click)="viewAgency()">
+						<app-agency-icon [entity]="agc" />
+					</button>
+				</dd>
+			</div>
+		}
+		@if (developer(); as dev) {
+			<div class="card__row">
+				<dt>Забудовник</dt>
+				<dd>
+					<button type="button" class="card__relation" (click)="viewDeveloper()">
+						<app-developer-icon [entity]="dev" />
+					</button>
+				</dd>
+			</div>
+		}
+		@if (entity.requestIds.length) {
+			<div class="card__row"><dt>Запити</dt><dd>{{ entity.requestIds.length }}</dd></div>
+		}
+
+	@if (entity.interests.length) {
+		<div class="card__meta">
+			@for (i of entity.interests; track i) {
+				<span class="card__badge">{{ i }}</span>
+			}
+		</div>
+	}
+
+	@if (entity.preferredPropertyTypes.length) {
+		<div class="card__meta">
+			@for (t of entity.preferredPropertyTypes; track t) {
+				<span class="card__badge">{{ t }}</span>
+			}
+		</div>
+	}
+
+	@if (ownedProperties().length) {
+		<h3 class="card__section-title">Об'єкти у власності</h3>
+		<div class="card__list">
+			@for (property of ownedProperties(); track property._id) {
+				<button type="button" class="card__list-item" (click)="viewProperty(property)">
+					<app-property-short [entity]="property" />
+				</button>
+			}
+		</div>
+	}
+
+	@if (relatedListings().length) {
+		<h3 class="card__section-title">Оголошення</h3>
+		<div class="card__list">
+			@for (listing of relatedListings(); track listing._id) {
+				<button type="button" class="card__list-item" (click)="viewListing(listing)">
+					<app-listing-short [entity]="listing" />
+				</button>
+			}
+		</div>
+	}
+</article>

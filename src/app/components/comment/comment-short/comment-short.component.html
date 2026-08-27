@@ -1,0 +1,9 @@
+<article class="short">
+	<div class="short__body">
+		<h3 class="short__title">{{ entity.authorUserId }}</h3>
+		<span class="short__meta">{{ entity.text }}</span>
+		@if (entity.rating !== null) {
+			<span class="short__price">★ {{ entity.rating }}</span>
+		}
+	</div>
+</article>

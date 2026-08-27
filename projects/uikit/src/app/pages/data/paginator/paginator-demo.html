@@ -1,0 +1,29 @@
+<h1 class="demo-page__title">Paginator</h1>
+
+<section class="demo-section">
+	<h2 class="demo-section__title">Basic</h2>
+	<p-paginator [first]="first()" [rows]="rows()" [totalRecords]="120" (onPageChange)="onPageChange($event)" />
+</section>
+
+<section class="demo-section">
+	<h2 class="demo-section__title">Rows Per Page Options</h2>
+	<p-paginator
+		[first]="first()"
+		[rows]="rows()"
+		[totalRecords]="120"
+		[rowsPerPageOptions]="[10, 20, 30]"
+		(onPageChange)="onPageChange($event)"
+	/>
+</section>
+
+<section class="demo-section">
+	<h2 class="demo-section__title">Current Page Report</h2>
+	<p-paginator
+		[first]="first()"
+		[rows]="rows()"
+		[totalRecords]="120"
+		[showCurrentPageReport]="true"
+		currentPageReportTemplate="Showing {first} to {last} of {totalRecords}"
+		(onPageChange)="onPageChange($event)"
+	/>
+</section>

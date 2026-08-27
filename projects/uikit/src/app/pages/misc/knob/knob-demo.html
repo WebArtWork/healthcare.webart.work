@@ -1,0 +1,16 @@
+<h1 class="demo-page__title">Knob</h1>
+
+<section class="demo-section">
+	<h2 class="demo-section__title">Basic</h2>
+	<p-knob [(ngModel)]="value" />
+</section>
+
+<section class="demo-section">
+	<h2 class="demo-section__title">Custom Colors</h2>
+	<p-knob [ngModel]="value()" valueColor="var(--p-primary-color)" rangeColor="var(--p-content-border-color)" />
+</section>
+
+<section class="demo-section">
+	<h2 class="demo-section__title">Readonly</h2>
+	<p-knob [ngModel]="value()" [readonly]="true" />
+</section>

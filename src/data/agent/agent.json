@@ -1,0 +1,40 @@
+[
+	{
+		"_id": "agent-1",
+		"userId": "user-2",
+		"agencyId": "agency-1",
+		"displayName": "Ilya Marchenko",
+		"photo": "https://assets.neryxomka.com/agents/ilya-marchenko.jpg",
+		"bio": "Residential specialist focused on the riverside and downtown districts of Vaelmont.",
+		"country": "Draecia",
+		"city": "Vaelmont",
+		"serviceAreas": ["Riverside District", "Downtown Vaelmont"],
+		"specializations": ["apartment", "house"],
+		"yearsExperience": 9,
+		"listingIds": ["listing-3"],
+		"representedPropertyIds": ["prop-3"],
+		"contactPhone": "+1-555-0141",
+		"contactEmail": "ilya.marchenko@draecia-realty.example",
+		"averageRating": 4.8,
+		"reviewCount": 21
+	},
+	{
+		"_id": "agent-2",
+		"userId": "user-3",
+		"agencyId": "agency-1",
+		"displayName": "Sofia Renner",
+		"photo": "https://assets.neryxomka.com/agents/sofia-renner.jpg",
+		"bio": "Commercial leasing agent handling retail and office space across Vaelmont's business district.",
+		"country": "Draecia",
+		"city": "Vaelmont",
+		"serviceAreas": ["Business District"],
+		"specializations": ["office", "retail space"],
+		"yearsExperience": 6,
+		"listingIds": ["listing-4"],
+		"representedPropertyIds": ["prop-4"],
+		"contactPhone": "+1-555-0142",
+		"contactEmail": "sofia.renner@draecia-realty.example",
+		"averageRating": 4.5,
+		"reviewCount": 14
+	}
+]

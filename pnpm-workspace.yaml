@@ -1,0 +1,13 @@
+allowBuilds:
+  '@parcel/watcher': set this to true or false
+  canvas: set this to true or false
+  esbuild: set this to true or false
+  lmdb: set this to true or false
+  msgpackr-extract: set this to true or false
+minimumReleaseAgeExclude:
+  - '@wawjs/ngx-prime@22.0.2 || 22.0.3'
+  - '@wawjs/css-prime-motion@1.1.0'
+  - '@wawjs/css-prime-styled@1.1.0'
+  - '@wawjs/css-prime-styles@1.1.0'
+  - '@wawjs/css-prime-themes@1.1.0'
+  - '@wawjs/css-prime-utils@1.1.0'

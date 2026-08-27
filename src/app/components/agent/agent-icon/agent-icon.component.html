@@ -1,0 +1,8 @@
+<span class="icon">
+	@if (entity.photo) {
+		<img class="icon__avatar" [src]="entity.photo" alt="" />
+	} @else {
+		<span class="icon__glyph"><i class="pi pi-user"></i></span>
+	}
+	<span class="icon__name">{{ entity.displayName }}</span>
+</span>

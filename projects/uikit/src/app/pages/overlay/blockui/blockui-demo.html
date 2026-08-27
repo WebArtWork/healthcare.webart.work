@@ -1,0 +1,12 @@
+<h1 class="demo-page__title">BlockUI</h1>
+
+<section class="demo-section">
+	<h2 class="demo-section__title">Basic</h2>
+	<div style="position: relative">
+		<p-blockUI [blocked]="blocked()" />
+		<div style="border: 1px solid var(--p-content-border-color); padding: 1rem; border-radius: 6px">
+			<p style="margin: 0 0 1rem">Content that can be blocked while an operation is in progress.</p>
+			<p-button label="Toggle Block" (onClick)="blocked.set(!blocked())" />
+		</div>
+	</div>
+</section>

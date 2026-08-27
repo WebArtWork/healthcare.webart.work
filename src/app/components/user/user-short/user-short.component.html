@@ -1,0 +1,10 @@
+<article class="short">
+	@if (entity.photo) {
+		<img class="short__thumb" style="border-radius:50%" [src]="entity.photo" alt="" />
+	}
+
+	<div class="short__body">
+		<h3 class="short__title">{{ entity.name }}</h3>
+		<span class="short__meta">{{ entity.city }}, {{ entity.country }}</span>
+	</div>
+</article>

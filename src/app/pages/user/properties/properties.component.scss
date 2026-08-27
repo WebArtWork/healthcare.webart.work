@@ -1,0 +1,42 @@
+.properties {
+	display: flex;
+	flex-direction: column;
+	gap: var(--sp-4);
+}
+
+.properties__filters {
+	display: flex;
+	align-items: center;
+	gap: var(--sp-2);
+}
+
+.properties__search {
+	flex: 0 0 auto;
+	width: 200px;
+}
+
+.properties__map-link {
+	flex: 0 0 auto;
+	margin-left: auto;
+}
+
+.properties__results {
+	display: flex;
+	flex-direction: column;
+	gap: var(--sp-3);
+}
+
+.properties__grid {
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: var(--sp-4);
+}
+
+.properties__row {
+	cursor: pointer;
+}
+
+.properties__empty {
+	text-align: center;
+	color: var(--c-text-muted);
+}

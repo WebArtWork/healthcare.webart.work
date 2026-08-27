@@ -1,0 +1,24 @@
+<h1 class="demo-page__title">InputNumber</h1>
+
+<section class="demo-section">
+	<h2 class="demo-section__title">Basic</h2>
+	<p-inputnumber [(ngModel)]="value" />
+</section>
+
+<section class="demo-section">
+	<h2 class="demo-section__title">Currency</h2>
+	<p-inputnumber [(ngModel)]="currency" mode="currency" currency="USD" locale="en-US" />
+</section>
+
+<section class="demo-section">
+	<h2 class="demo-section__title">Buttons</h2>
+	<p-inputnumber [ngModel]="5" [showButtons]="true" buttonLayout="horizontal" [step]="1" />
+</section>
+
+<section class="demo-section">
+	<h2 class="demo-section__title">States</h2>
+	<div class="demo-section__row">
+		<p-inputnumber [ngModel]="10" [disabled]="true" />
+		<p-inputnumber [ngModel]="null" [invalid]="true" placeholder="Required" />
+	</div>
+</section>

@@ -1,0 +1,38 @@
+[
+	{
+		"_id": "dev-1",
+		"name": "Solvara Developments",
+		"description": "A residential and mixed-use developer active in Vaelmont since 2011, known for the Aurelia Gardens complex and several standalone commercial buildings.",
+		"logo": "https://assets.neryxomka.com/developers/solvara-logo.png",
+		"country": "Draecia",
+		"city": "Vaelmont",
+		"foundedYear": 2011,
+		"isClaimed": true,
+		"complexIds": ["complex-1"],
+		"propertyIds": ["prop-1", "prop-2", "prop-6"],
+		"listingIds": ["listing-1", "listing-2"],
+		"contact": {
+			"phone": "+1-555-0110",
+			"email": "info@solvara-dev.example",
+			"website": "https://solvara-dev.example"
+		}
+	},
+	{
+		"_id": "dev-2",
+		"name": "Northbridge Industrial Group",
+		"description": "Specializes in industrial and warehouse developments on the outskirts of Vaelmont.",
+		"logo": "https://assets.neryxomka.com/developers/northbridge-logo.png",
+		"country": "Draecia",
+		"city": "Vaelmont",
+		"foundedYear": 2004,
+		"isClaimed": false,
+		"complexIds": [],
+		"propertyIds": ["prop-7"],
+		"listingIds": [],
+		"contact": {
+			"phone": "+1-555-0199",
+			"email": "contact@northbridge-industrial.example",
+			"website": "https://northbridge-industrial.example"
+		}
+	}
+]

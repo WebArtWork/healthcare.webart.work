@@ -1,0 +1,12 @@
+<h1 class="demo-page__title">Popover</h1>
+
+<section class="demo-section">
+	<h2 class="demo-section__title">Basic</h2>
+	<p-button label="Show" (onClick)="toggle($event)" />
+	<p-popover #op>
+		<div style="padding: 0.5rem; max-width: 20rem">
+			<p style="margin: 0 0 0.5rem">Popover content rendered on demand.</p>
+			<p-button label="Close" size="small" (onClick)="op.hide()" />
+		</div>
+	</p-popover>
+</section>

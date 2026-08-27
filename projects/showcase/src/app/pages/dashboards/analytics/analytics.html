@@ -1,0 +1,43 @@
+<div class="analytics">
+	<div class="analytics__kpis">
+		@for (kpi of kpis; track kpi.label) {
+			<p-card class="analytics__kpi-card">
+				<div class="analytics__kpi">
+					<i class="analytics__kpi-icon" [class]="kpi.icon"></i>
+					<div>
+						<div class="analytics__kpi-value">{{ kpi.value }}</div>
+						<div class="analytics__kpi-label">{{ kpi.label }}</div>
+					</div>
+					<span
+						class="analytics__kpi-change"
+						[class.analytics__kpi-change--up]="kpi.trend === 'up'"
+						[class.analytics__kpi-change--down]="kpi.trend === 'down'"
+					>
+						{{ kpi.change }}
+					</span>
+				</div>
+			</p-card>
+		}
+	</div>
+
+	<div class="analytics__grid">
+		<p-card header="Revenue Trend" class="analytics__chart-card">
+			<div style="height: 18rem">
+				<p-chart type="line" [data]="revenueTrend" [options]="chartOptions" />
+			</div>
+		</p-card>
+
+		<p-card header="Goals" class="analytics__meter-card">
+			<p-meterGroup [value]="meterValues" />
+			<div class="analytics__progress-list">
+				@for (meter of goalMeters; track meter.label) {
+					<div class="analytics__progress-row">
+						<span>{{ meter.label }}</span>
+						<p-progressBar [value]="meter.value" [showValue]="false" style="flex: 1" />
+						<span>{{ meter.value }}%</span>
+					</div>
+				}
+			</div>
+		</p-card>
+	</div>
+</div>

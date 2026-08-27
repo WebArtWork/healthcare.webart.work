@@ -1,0 +1,28 @@
+<h1 class="demo-page__title">SplitButton</h1>
+
+<section class="demo-section">
+	<h2 class="demo-section__title">Basic</h2>
+	<p-splitButton label="Save" icon="pi pi-check" [model]="items" />
+</section>
+
+<section class="demo-section">
+	<h2 class="demo-section__title">Severities</h2>
+	<div class="demo-section__row">
+		<p-splitButton label="Save" [model]="items" severity="secondary" />
+		<p-splitButton label="Save" [model]="items" severity="success" />
+		<p-splitButton label="Save" [model]="items" severity="danger" />
+	</div>
+</section>
+
+<section class="demo-section">
+	<h2 class="demo-section__title">Outlined &amp; Text</h2>
+	<div class="demo-section__row">
+		<p-splitButton label="Save" [model]="items" [outlined]="true" />
+		<p-splitButton label="Save" [model]="items" [text]="true" />
+	</div>
+</section>
+
+<section class="demo-section">
+	<h2 class="demo-section__title">States</h2>
+	<p-splitButton label="Save" [model]="items" [disabled]="true" />
+</section>

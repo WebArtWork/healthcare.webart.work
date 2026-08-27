@@ -1,0 +1,15 @@
+<section class="records">
+
+	@if (entity(); as item) {
+	<app-record-view
+		[entity]="item"
+		[property]="property()"
+		[author]="author()"
+		[involvedUsers]="involvedUsers()"
+	/>
+	} @else {
+	<p-card class="records__not-found">
+		<p>Запис не знайдено.</p>
+	</p-card>
+	}
+</section>

@@ -1,0 +1,26 @@
+<h1 class="demo-page__title">Textarea</h1>
+
+<section class="demo-section">
+	<h2 class="demo-section__title">Basic</h2>
+	<textarea pTextarea [(ngModel)]="value" rows="5" cols="30"></textarea>
+</section>
+
+<section class="demo-section">
+	<h2 class="demo-section__title">Auto Resize</h2>
+	<textarea pTextarea [ngModel]="''" [autoResize]="true" rows="5" cols="30"></textarea>
+</section>
+
+<section class="demo-section">
+	<h2 class="demo-section__title">Fluid</h2>
+	<div class="demo-section__row" style="width: 100%">
+		<textarea pTextarea [ngModel]="''" [fluid]="true" rows="3"></textarea>
+	</div>
+</section>
+
+<section class="demo-section">
+	<h2 class="demo-section__title">States</h2>
+	<div class="demo-section__row">
+		<textarea pTextarea [ngModel]="'Disabled'" [disabled]="true" rows="3" cols="30"></textarea>
+		<textarea pTextarea [ngModel]="''" [invalid]="true" rows="3" cols="30"></textarea>
+	</div>
+</section>

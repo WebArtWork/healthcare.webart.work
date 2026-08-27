@@ -1,0 +1,24 @@
+<div class="calendar-page">
+	<h1>Calendar</h1>
+
+	<div class="calendar-page__grid">
+		<p-card>
+			<p-datePicker [(ngModel)]="selectedDate" [inline]="true" />
+		</p-card>
+
+		<p-card header="Events">
+			@if (eventsForSelectedDate().length === 0) {
+				<p style="color: var(--p-text-muted-color)">No events for the selected day.</p>
+			} @else {
+				<div class="calendar-page__events">
+					@for (event of eventsForSelectedDate(); track event.title) {
+						<div class="calendar-page__event">
+							<p-tag [value]="event.time" severity="info" />
+							<span>{{ event.title }}</span>
+						</div>
+					}
+				</div>
+			}
+		</p-card>
+	</div>
+</div>

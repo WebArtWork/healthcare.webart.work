@@ -1,0 +1,39 @@
+<h1 class="demo-page__title">Stepper</h1>
+
+<section class="demo-section">
+	<h2 class="demo-section__title">Basic</h2>
+	<p-stepper [value]="1" [style]="{ 'max-width': '30rem' }">
+		<p-step-list>
+			<p-step-item [value]="1">
+				<p-step>Personal</p-step>
+			</p-step-item>
+			<p-step-item [value]="2">
+				<p-step>Payment</p-step>
+			</p-step-item>
+			<p-step-item [value]="3">
+				<p-step>Confirmation</p-step>
+			</p-step-item>
+		</p-step-list>
+		<p-step-panels>
+			<p-step-panel [value]="1">
+				<ng-template #content let-activateCallback="activateCallback">
+					<div style="padding: 1rem 0">Personal details step content.</div>
+					<p-button label="Next" (onClick)="activateCallback(2)" />
+				</ng-template>
+			</p-step-panel>
+			<p-step-panel [value]="2">
+				<ng-template #content let-activateCallback="activateCallback">
+					<div style="padding: 1rem 0">Payment details step content.</div>
+					<p-button label="Back" severity="secondary" (onClick)="activateCallback(1)" />
+					<p-button label="Next" (onClick)="activateCallback(3)" />
+				</ng-template>
+			</p-step-panel>
+			<p-step-panel [value]="3">
+				<ng-template #content let-activateCallback="activateCallback">
+					<div style="padding: 1rem 0">Confirmation step content.</div>
+					<p-button label="Back" severity="secondary" (onClick)="activateCallback(2)" />
+				</ng-template>
+			</p-step-panel>
+		</p-step-panels>
+	</p-stepper>
+</section>

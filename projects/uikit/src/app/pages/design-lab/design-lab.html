@@ -1,0 +1,247 @@
+<h1 class="demo-page__title">Design Lab</h1>
+
+<p class="demo-page__note">
+	Live configuration surface for the ngx-prime theme. Every control below updates the running
+	app instantly via <code>usePreset</code> / <code>updatePrimaryPalette</code> /
+	<code>updateSurfacePalette</code> — the same functions a real project would call in its own
+	theme setup.
+</p>
+
+<section class="demo-section">
+	<h2 class="demo-section__title">Preset</h2>
+	<div class="demo-section__row">
+		<p-selectButton
+			[options]="presets"
+			optionLabel="name"
+			[ngModel]="selectedPresetOption()"
+			(ngModelChange)="selectPreset($event)"
+		/>
+	</div>
+</section>
+
+<section class="demo-section">
+	<h2 class="demo-section__title">Primary Color</h2>
+	<div class="demo-section__row">
+		@for (swatch of primaryColors; track swatch.name) {
+			<button
+				type="button"
+				[attr.aria-label]="swatch.name"
+				[attr.aria-pressed]="activePrimary() === swatch.name"
+				(click)="selectPrimary(swatch)"
+				style="width: 2rem; height: 2rem; border-radius: 50%; border: 2px solid transparent; cursor: pointer; padding: 0"
+				[style.background]="swatch.color"
+				[style.border-color]="activePrimary() === swatch.name ? 'var(--p-text-color)' : 'transparent'"
+			></button>
+		}
+	</div>
+</section>
+
+<section class="demo-section">
+	<h2 class="demo-section__title">Surface Color</h2>
+	<div class="demo-section__row">
+		@for (swatch of surfaceColors; track swatch.name) {
+			<button
+				type="button"
+				[attr.aria-label]="swatch.name"
+				[attr.aria-pressed]="activeSurface() === swatch.name"
+				(click)="selectSurface(swatch)"
+				style="width: 2rem; height: 2rem; border-radius: 50%; border: 2px solid transparent; cursor: pointer; padding: 0"
+				[style.background]="swatch.color"
+				[style.border-color]="activeSurface() === swatch.name ? 'var(--p-text-color)' : 'transparent'"
+			></button>
+		}
+	</div>
+</section>
+
+<section class="demo-section">
+	<h2 class="demo-section__title">Menu Mode</h2>
+	<p class="demo-page__note" style="margin-top: 0">
+		Not a prime token — this is the uikit shell's own sidebar layout setting.
+	</p>
+	<div class="demo-section__row">
+		<p-selectButton
+			[options]="menuModeOptions"
+			optionLabel="label"
+			optionValue="value"
+			[ngModel]="designLabState.menuMode()"
+			(ngModelChange)="setMenuMode($event)"
+		/>
+	</div>
+</section>
+
+<section class="demo-section">
+	<h2 class="demo-section__title">Primitive Tokens — Border Radius Scale</h2>
+	<p class="demo-page__note" style="margin-top: 0">
+		Overrides <code>primitive.borderRadius</code> via <code>updatePreset</code>. Most component
+		radii reference these steps (e.g. <code>{{ '{border.radius.md}' }}</code>).
+	</p>
+	<div class="demo-section__row" style="flex-wrap: wrap; gap: 1rem">
+		@for (step of ['none', 'xs', 'sm', 'md', 'lg', 'xl']; track step) {
+			<label style="display: flex; flex-direction: column; gap: 0.25rem; font-size: 0.875rem">
+				{{ step }}
+				<input
+					pInputText
+					size="small"
+					[ngModel]="borderRadiusScale()[step]"
+					(ngModelChange)="setBorderRadiusStep(step, $event)"
+					style="width: 6rem"
+				/>
+			</label>
+		}
+	</div>
+</section>
+
+<section class="demo-section">
+	<h2 class="demo-section__title">Semantic Tokens</h2>
+
+	<h3 style="margin-bottom: 0.5rem">Focus Ring</h3>
+	<div class="demo-section__row" style="align-items: end; flex-wrap: wrap">
+		<label style="display: flex; flex-direction: column; gap: 0.25rem; font-size: 0.875rem">
+			Width
+			<input
+				pInputText
+				size="small"
+				[ngModel]="focusRingWidth()"
+				(ngModelChange)="setFocusRingWidth($event)"
+				style="width: 6rem"
+			/>
+		</label>
+		<label style="display: flex; flex-direction: column; gap: 0.25rem; font-size: 0.875rem">
+			Style
+			<p-selectButton
+				[options]="focusRingStyleOptions"
+				[ngModel]="focusRingStyle()"
+				(ngModelChange)="setFocusRingStyle($event)"
+			/>
+		</label>
+	</div>
+
+	<h3 style="margin: 1rem 0 0.5rem">Form Field Padding</h3>
+	<div class="demo-section__row" style="align-items: end; flex-wrap: wrap">
+		<label style="display: flex; flex-direction: column; gap: 0.25rem; font-size: 0.875rem">
+			Padding X
+			<input
+				pInputText
+				size="small"
+				[ngModel]="formFieldPaddingX()"
+				(ngModelChange)="setFormFieldPaddingX($event)"
+				style="width: 6rem"
+			/>
+		</label>
+		<label style="display: flex; flex-direction: column; gap: 0.25rem; font-size: 0.875rem">
+			Padding Y
+			<input
+				pInputText
+				size="small"
+				[ngModel]="formFieldPaddingY()"
+				(ngModelChange)="setFormFieldPaddingY($event)"
+				style="width: 6rem"
+			/>
+		</label>
+	</div>
+
+	<div class="demo-section__row" style="margin-top: 1rem">
+		<input pInputText placeholder="Preview input" style="width: 14rem" />
+	</div>
+</section>
+
+<section class="demo-section">
+	<h2 class="demo-section__title">Component Tokens</h2>
+	<p class="demo-page__note" style="margin-top: 0">
+		A representative subset — Button, Card, Table only — rather than full coverage of every
+		component's token tree. This documents the search/filter pattern; see ROADMAP.md for scope
+		notes.
+	</p>
+	<input
+		pInputText
+		placeholder="Search component tokens…"
+		[(ngModel)]="componentTokenSearch"
+		style="width: 100%; max-width: 20rem; margin-bottom: 1rem"
+	/>
+	@for (group of filteredComponentTokenGroups(); track group.name) {
+		<div style="margin-bottom: 1rem">
+			<h3 style="margin-bottom: 0.5rem">{{ group.label }}</h3>
+			<div class="demo-section__row" style="align-items: end; flex-wrap: wrap">
+				@for (field of group.fields; track field.path.join('.')) {
+					<label style="display: flex; flex-direction: column; gap: 0.25rem; font-size: 0.875rem">
+						{{ field.label }}
+						<input
+							pInputText
+							size="small"
+							[ngModel]="field.value"
+							(ngModelChange)="setComponentTokenValue(group, field.path, $event)"
+							style="width: 9rem"
+						/>
+					</label>
+				}
+			</div>
+		</div>
+	}
+
+	<div class="demo-section__row" style="margin-top: 0.5rem">
+		<p-button label="Sample Button" />
+		<p-card header="Sample Card" [style]="{ width: '16rem' }">Card body content for preview.</p-card>
+	</div>
+</section>
+
+<section class="demo-section">
+	<h2 class="demo-section__title">Global Config</h2>
+	<div class="demo-section__row" style="align-items: center; flex-wrap: wrap; gap: 1.5rem">
+		<label style="display: flex; align-items: center; gap: 0.5rem">
+			<p-toggleswitch [ngModel]="ngxPrime.ripple()" (ngModelChange)="toggleRipple($event)" />
+			Ripple
+		</label>
+		<label style="display: flex; flex-direction: column; gap: 0.25rem; font-size: 0.875rem">
+			Input Variant
+			<p-selectButton
+				[options]="inputVariantOptions"
+				[ngModel]="ngxPrime.inputVariant()"
+				(ngModelChange)="setInputVariant($event)"
+			/>
+		</label>
+		<label style="display: flex; align-items: center; gap: 0.5rem">
+			<p-toggleswitch [ngModel]="rtl()" (ngModelChange)="toggleRtl($event)" />
+			RTL
+		</label>
+	</div>
+
+	<div class="demo-section__row" style="align-items: end; margin-top: 1rem; flex-wrap: wrap">
+		<label style="display: flex; flex-direction: column; gap: 0.25rem; font-size: 0.875rem">
+			Dark Mode Selector
+			<input
+				pInputText
+				size="small"
+				[ngModel]="darkModeSelectorValue()"
+				(ngModelChange)="setDarkModeSelector($event)"
+				style="width: 10rem"
+			/>
+		</label>
+
+		<label style="display: flex; flex-direction: column; gap: 0.25rem; font-size: 0.875rem">
+			zIndex.modal
+			<input
+				pInputText
+				type="number"
+				size="small"
+				[ngModel]="zIndexModal()"
+				(ngModelChange)="setZIndexModal($event)"
+				style="width: 6rem"
+			/>
+		</label>
+	</div>
+</section>
+
+<section class="demo-section">
+	<h2 class="demo-section__title">Pass-Through (pt) Preview</h2>
+	<p class="demo-page__note" style="margin-top: 0">
+		One documented example of the <code>pt</code> pass-through API — per-instance style/class
+		injection that bypasses the token system entirely. Full PT editing across components is not
+		built; this shows the pattern only.
+	</p>
+	<label style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.75rem">
+		<p-toggleswitch [ngModel]="ptExampleEnabled()" (ngModelChange)="togglePtExample($event)" />
+		Enable pt example on the button below
+	</label>
+	<p-button label="Button with pt override" [pt]="ptExampleEnabled() ? ptExample : undefined" />
+	<pre style="margin-top: 0.75rem; font-size: 0.8rem; overflow-x: auto"><code>{{ '[pt]="{ root: { style: \'border: 2px dashed;\' }, label: { style: \'font-style: italic;\' } } }"' }}</code></pre>
+</section>

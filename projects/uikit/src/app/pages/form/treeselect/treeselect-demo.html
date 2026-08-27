@@ -1,0 +1,31 @@
+<h1 class="demo-page__title">TreeSelect</h1>
+
+<section class="demo-section">
+	<h2 class="demo-section__title">Basic</h2>
+	<p-treeSelect [(ngModel)]="selection" [options]="nodes" placeholder="Select Item" style="min-width: 14rem" />
+</section>
+
+<section class="demo-section">
+	<h2 class="demo-section__title">Checkbox Selection</h2>
+	<p-treeSelect
+		[(ngModel)]="multiSelection"
+		[options]="nodes"
+		selectionMode="checkbox"
+		display="chip"
+		placeholder="Select Items"
+		style="min-width: 18rem"
+	/>
+</section>
+
+<section class="demo-section">
+	<h2 class="demo-section__title">Filter</h2>
+	<p-treeSelect [ngModel]="selection()" [options]="nodes" [filter]="true" placeholder="Select Item" style="min-width: 14rem" />
+</section>
+
+<section class="demo-section">
+	<h2 class="demo-section__title">States</h2>
+	<div class="demo-section__row">
+		<p-treeSelect [ngModel]="selection()" [options]="nodes" [disabled]="true" placeholder="Disabled" />
+		<p-treeSelect [ngModel]="selection()" [options]="nodes" [invalid]="true" placeholder="Invalid" />
+	</div>
+</section>

@@ -1,0 +1,25 @@
+<h1 class="demo-page__title">Inplace</h1>
+
+<section class="demo-section">
+	<h2 class="demo-section__title">Basic</h2>
+	<p-inplace>
+		<ng-template #display>
+			<span>Click to edit</span>
+		</ng-template>
+		<ng-template #content>
+			<input type="text" pInputText autofocus />
+		</ng-template>
+	</p-inplace>
+</section>
+
+<section class="demo-section">
+	<h2 class="demo-section__title">Closable</h2>
+	<p-inplace [closable]="true">
+		<ng-template #display>
+			<span>Click to view image</span>
+		</ng-template>
+		<ng-template #content>
+			<div style="width: 12rem; height: 8rem; background: var(--p-content-border-color)"></div>
+		</ng-template>
+	</p-inplace>
+</section>

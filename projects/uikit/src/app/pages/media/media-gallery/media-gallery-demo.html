@@ -1,0 +1,23 @@
+<h1 class="demo-page__title">Media Gallery</h1>
+
+<p class="demo-page__note">Galleria driving a thumbnail strip with previewable full-size images, plus a standalone grid.</p>
+
+<section class="demo-section">
+	<p-galleria [value]="images" [numVisible]="5" [circular]="true" [showThumbnails]="true" style="max-width: 40rem">
+		<ng-template let-image #item>
+			<img [src]="image.src" [alt]="image.alt" style="width: 100%; display: block" />
+		</ng-template>
+		<ng-template let-image #thumbnail>
+			<img [src]="image.src" [alt]="image.alt" style="width: 100%; height: 3rem; object-fit: cover; display: block" />
+		</ng-template>
+	</p-galleria>
+</section>
+
+<section class="demo-section">
+	<h2 class="demo-section__title">Thumbnail Grid</h2>
+	<div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(6rem, 1fr)); gap: 0.5rem; max-width: 30rem">
+		@for (image of images; track image.alt) {
+			<p-image [src]="image.src" [alt]="image.alt" [preview]="true" [imageStyle]="{ width: '100%', 'border-radius': '4px' }" />
+		}
+	</div>
+</section>

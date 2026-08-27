@@ -1,0 +1,38 @@
+.explore__header {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: var(--sp-2);
+	margin-bottom: var(--sp-4);
+}
+
+.explore__title {
+	margin: 0 var(--sp-4) 0 0;
+}
+
+.explore__search {
+	min-width: 220px;
+	flex: 1 1 220px;
+}
+
+.explore__filter {
+	min-width: 180px;
+}
+
+.explore__map-link {
+	margin-left: auto;
+}
+
+.explore__grid {
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: var(--sp-4);
+}
+
+.explore__row {
+	cursor: pointer;
+}
+
+.explore__empty {
+	color: var(--c-text-muted);
+}

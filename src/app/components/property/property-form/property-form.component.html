@@ -1,0 +1,92 @@
+<form class="form" [formGroup]="form">
+		<div class="form__field">
+			<label class="form__label" for="type" translate>Тип</label>
+			<p-select id="type" formControlName="type" [options]="typeOptions" optionLabel="label" optionValue="value" appendTo="body" />
+
+		</div>
+		<div class="form__field">
+			<label class="form__label" for="country" translate>Країна</label>
+			<input id="country" pInputText class="form__control" type="text" [formControlName]="'country'" [class._invalid]="form.get('country')?.invalid && form.get('country')?.touched" />
+			@if (form.get('country')?.hasError('required') && form.get('country')?.touched) {
+				<span class="form__error" translate>Країна обов'язкова</span>
+			}
+		</div>
+		<div class="form__field">
+			<label class="form__label" for="city" translate>Місто</label>
+			<input id="city" pInputText class="form__control" type="text" [formControlName]="'city'" [class._invalid]="form.get('city')?.invalid && form.get('city')?.touched" />
+			@if (form.get('city')?.hasError('required') && form.get('city')?.touched) {
+				<span class="form__error" translate>Місто обов'язкове</span>
+			}
+		</div>
+		<div class="form__field">
+			<label class="form__label" for="address" translate>Адреса</label>
+			<input id="address" pInputText class="form__control" type="text" [formControlName]="'address'" [class._invalid]="form.get('address')?.invalid && form.get('address')?.touched" />
+			@if (form.get('address')?.hasError('required') && form.get('address')?.touched) {
+				<span class="form__error" translate>Адреса обов'язкова</span>
+			}
+		</div>
+		<div class="form__field">
+			<label class="form__label" for="buildingUnitInfo" translate>Будинок / квартира</label>
+			<input id="buildingUnitInfo" pInputText class="form__control" type="text" [formControlName]="'buildingUnitInfo'" [class._invalid]="form.get('buildingUnitInfo')?.invalid && form.get('buildingUnitInfo')?.touched" />
+
+		</div>
+		<div class="form__field">
+			<label class="form__label" for="cadastralId" translate>Кадастровий номер</label>
+			<input id="cadastralId" pInputText class="form__control" type="text" [formControlName]="'cadastralId'" [class._invalid]="form.get('cadastralId')?.invalid && form.get('cadastralId')?.touched" />
+
+		</div>
+		<div class="form__field">
+			<label class="form__label" for="sizeSqm" translate>Площа (м²)</label>
+			<p-inputnumber id="sizeSqm" formControlName="sizeSqm" [min]="1" [invalid]="form.get('sizeSqm')?.invalid && form.get('sizeSqm')?.touched" />
+			@if (form.get('sizeSqm')?.hasError('required') && form.get('sizeSqm')?.touched) {
+				<span class="form__error" translate>Площа обов'язкова</span>
+			}
+			@if (form.get('sizeSqm')?.hasError('min') && form.get('sizeSqm')?.touched) {
+				<span class="form__error" translate>Має бути більше 0</span>
+			}
+		</div>
+		<div class="form__field">
+			<label class="form__label" for="rooms" translate>Кімнати</label>
+			<p-inputnumber id="rooms" formControlName="rooms" [min]="0" [invalid]="form.get('rooms')?.invalid && form.get('rooms')?.touched" />
+
+		</div>
+		<div class="form__field">
+			<label class="form__label" for="bedrooms" translate>Спальні</label>
+			<p-inputnumber id="bedrooms" formControlName="bedrooms" [min]="0" [invalid]="form.get('bedrooms')?.invalid && form.get('bedrooms')?.touched" />
+
+		</div>
+		<div class="form__field">
+			<label class="form__label" for="bathrooms" translate>Санвузли</label>
+			<p-inputnumber id="bathrooms" formControlName="bathrooms" [min]="0" [invalid]="form.get('bathrooms')?.invalid && form.get('bathrooms')?.touched" />
+
+		</div>
+		<div class="form__field">
+			<label class="form__label" for="floor" translate>Поверх</label>
+			<p-inputnumber id="floor" formControlName="floor" [invalid]="form.get('floor')?.invalid && form.get('floor')?.touched" />
+
+		</div>
+		<div class="form__field">
+			<label class="form__label" for="totalFloors" translate>Поверховість</label>
+			<p-inputnumber id="totalFloors" formControlName="totalFloors" [invalid]="form.get('totalFloors')?.invalid && form.get('totalFloors')?.touched" />
+
+		</div>
+		<div class="form__field">
+			<label class="form__label" for="yearBuilt" translate>Рік побудови</label>
+			<p-inputnumber id="yearBuilt" formControlName="yearBuilt" [invalid]="form.get('yearBuilt')?.invalid && form.get('yearBuilt')?.touched" />
+
+		</div>
+		<div class="form__field">
+			<label class="form__label" for="status" translate>Статус</label>
+			<p-select id="status" formControlName="status" [options]="statusOptions" optionLabel="label" optionValue="value" appendTo="body" />
+
+		</div>
+		<div class="form__field">
+			<label class="form__label" for="visibility" translate>Видимість</label>
+			<p-select id="visibility" formControlName="visibility" [options]="visibilityOptions" optionLabel="label" optionValue="value" appendTo="body" />
+
+		</div>
+
+	<div class="form__actions">
+		<button type="button" pButton class="form__submit" [disabled]="form.invalid"><span translate>Зберегти</span></button>
+	</div>
+</form>

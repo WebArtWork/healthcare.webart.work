@@ -1,0 +1,18 @@
+<h1 class="demo-page__title">SelectButton</h1>
+
+<section class="demo-section">
+	<h2 class="demo-section__title">Basic</h2>
+	<p-selectbutton [options]="options" [(ngModel)]="value" />
+</section>
+
+<section class="demo-section">
+	<h2 class="demo-section__title">Multiple</h2>
+	<p-selectbutton [options]="multiOptions" [(ngModel)]="multiValue" [multiple]="true" />
+</section>
+
+<section class="demo-section">
+	<h2 class="demo-section__title">States</h2>
+	<div class="demo-section__row">
+		<p-selectbutton [options]="options" [ngModel]="'On'" [disabled]="true" />
+	</div>
+</section>

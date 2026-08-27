@@ -1,0 +1,22 @@
+<h1 class="demo-page__title">Panel</h1>
+
+<p class="demo-page__note">A panel with header actions and mixed content, the shape a settings/summary card is usually built from.</p>
+
+<section class="demo-section">
+	<p-panel [toggleable]="true" style="max-width: 28rem">
+		<ng-template #header>
+			<div style="display: flex; align-items: center; gap: 0.5rem; flex: 1">
+				<span style="font-weight: 600">Project Alpha</span>
+				<p-tag value="Active" severity="success" />
+			</div>
+		</ng-template>
+		<ng-template #icons>
+			<p-button icon="pi pi-cog" [text]="true" size="small" />
+		</ng-template>
+		<p style="margin: 0 0 1rem">Summary content describing the project's current status.</p>
+		<div style="display: flex; gap: 0.5rem">
+			<p-button label="View Details" size="small" />
+			<p-button label="Archive" severity="secondary" size="small" [outlined]="true" />
+		</div>
+	</p-panel>
+</section>

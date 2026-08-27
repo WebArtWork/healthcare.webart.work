@@ -1,0 +1,22 @@
+[
+	{
+		"_id": "agency-1",
+		"name": "Draecia Realty Group",
+		"description": "Full-service brokerage covering residential and commercial real estate across Vaelmont.",
+		"logo": "https://assets.neryxomka.com/agencies/draecia-realty-logo.png",
+		"country": "Draecia",
+		"city": "Vaelmont",
+		"foundedYear": 2008,
+		"agentIds": ["agent-1", "agent-2"],
+		"listingIds": ["listing-3", "listing-4"],
+		"representedPropertyIds": ["prop-3", "prop-4"],
+		"contact": {
+			"phone": "+1-555-0140",
+			"email": "hello@draecia-realty.example",
+			"website": "https://draecia-realty.example",
+			"address": "22 Market Street, Vaelmont"
+		},
+		"averageRating": 4.6,
+		"reviewCount": 38
+	}
+]

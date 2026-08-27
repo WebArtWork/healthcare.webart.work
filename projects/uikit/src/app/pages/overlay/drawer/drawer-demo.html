@@ -1,0 +1,27 @@
+<h1 class="demo-page__title">Drawer</h1>
+
+<section class="demo-section">
+	<h2 class="demo-section__title">Positions</h2>
+	<div class="demo-section__row">
+		<p-button label="Left" (onClick)="leftVisible.set(true)" />
+		<p-button label="Right" (onClick)="rightVisible.set(true)" />
+		<p-button label="Top" (onClick)="topVisible.set(true)" />
+		<p-button label="Full Screen" (onClick)="fullVisible.set(true)" />
+	</div>
+
+	<p-drawer [(visible)]="leftVisible" header="Left Drawer">
+		<p style="margin: 0">Drawer content slides in from the left.</p>
+	</p-drawer>
+
+	<p-drawer [(visible)]="rightVisible" position="right" header="Right Drawer">
+		<p style="margin: 0">Drawer content slides in from the right.</p>
+	</p-drawer>
+
+	<p-drawer [(visible)]="topVisible" position="top" header="Top Drawer">
+		<p style="margin: 0">Drawer content slides in from the top.</p>
+	</p-drawer>
+
+	<p-drawer [(visible)]="fullVisible" [fullScreen]="true" header="Full Screen Drawer">
+		<p style="margin: 0">Full screen drawer content.</p>
+	</p-drawer>
+</section>

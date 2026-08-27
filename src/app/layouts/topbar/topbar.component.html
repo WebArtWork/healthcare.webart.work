@@ -1,0 +1,100 @@
+<nav
+	class="sticky top-0 z-[100] flex min-h-14 items-center bg-[var(--c-bg-secondary)] shadow px-5 max-md:fixed max-md:top-0 max-md:w-full max-md:px-3"
+>
+	<ul
+		class="m-0 flex w-full list-none items-center gap-2 p-0 max-md:justify-between max-md:gap-0"
+	>
+		<li
+			class="inline-flex items-center gap-2 max-md:flex-none"
+		>
+			<a
+				routerLink="/"
+				class="inline-flex items-center gap-2 no-underline text-[var(--c-text-primary)]"
+				[attr.aria-label]="company.name"
+			>
+				@if (company.image) {
+				<img
+					class="block h-8 w-auto object-contain"
+					[src]="company.image"
+					[attr.alt]="company.name"
+				/>
+				}
+			</a>
+		</li>
+
+		<li
+			class="hidden max-md:inline-flex max-md:min-w-0 max-md:flex-1 max-md:items-center"
+		>
+			<span class="truncate text-base font-semibold">{{ pageTitle() }}</span>
+		</li>
+
+		<li
+			class="inline-flex items-center max-md:hidden"
+		>
+			<app-nav-icon
+				routerLink="/properties"
+				[name]="viewport() === 'mobile' ? '' : translateService.translate('Properties')()"
+				[ariaLabel]="translateService.translate('Properties')()"
+				icon="building"
+			/>
+		</li>
+
+		<li
+			class="inline-flex items-center max-md:hidden"
+		>
+			<app-nav-icon
+				routerLink="/agencies"
+				[name]="viewport() === 'mobile' ? '' : translateService.translate('Agencies')()"
+				[ariaLabel]="translateService.translate('Agencies')()"
+				icon="briefcase"
+			/>
+		</li>
+
+		<li
+			class="inline-flex items-center max-md:hidden"
+		>
+			<app-nav-icon
+				routerLink="/developers"
+				[name]="viewport() === 'mobile' ? '' : translateService.translate('Developers')()"
+				[ariaLabel]="translateService.translate('Developers')()"
+				icon="users"
+			/>
+		</li>
+
+		<li
+			class="inline-flex items-center max-md:hidden"
+		>
+			<app-nav-icon
+				routerLink="/feed"
+				[name]="viewport() === 'mobile' ? '' : translateService.translate('Feed')()"
+				[ariaLabel]="translateService.translate('Feed')()"
+				icon="images"
+			/>
+		</li>
+
+		<li class="mx-auto max-md:hidden"></li>
+
+		@if (sidebarToggler()) {
+		<li
+			class="inline-flex items-center max-md:flex-1 max-md:justify-center"
+			(mouseleave)="onBurgerHover(false)"
+			(mouseenter)="onBurgerHover(true)"
+		>
+			<button
+				type="button"
+				class="inline-flex cursor-pointer items-center justify-center border-0 bg-transparent p-2 text-[1.375rem] leading-none text-[var(--c-text-secondary)] transition-colors hover:text-[var(--c-primary)]"
+				(click)="onBurgerClick()"
+				[attr.aria-label]="translateService.translate('Menu')()"
+			>
+				<i class="pi pi-{{ burgerIcon() }}"></i>
+			</button>
+		</li>
+		} @if (showProfile()) {
+		<li
+			class="inline-flex items-center max-md:hidden"
+		>
+			<app-nav-icon icon="user" routerLink="/profile" />
+		</li>
+		}
+	</ul>
+</nav>

@@ -1,0 +1,29 @@
+<h1 class="demo-page__title">AutoComplete</h1>
+
+<section class="demo-section">
+	<h2 class="demo-section__title">Basic</h2>
+	<p-autoComplete [(ngModel)]="selectedCountry" [suggestions]="filtered()" (completeMethod)="search($event)" />
+</section>
+
+<section class="demo-section">
+	<h2 class="demo-section__title">Dropdown</h2>
+	<p-autoComplete [(ngModel)]="selectedCountry" [suggestions]="filtered()" (completeMethod)="search($event)" [dropdown]="true" />
+</section>
+
+<section class="demo-section">
+	<h2 class="demo-section__title">Multiple</h2>
+	<p-autoComplete
+		[(ngModel)]="selectedCountries"
+		[suggestions]="filtered()"
+		(completeMethod)="search($event)"
+		[multiple]="true"
+	/>
+</section>
+
+<section class="demo-section">
+	<h2 class="demo-section__title">States</h2>
+	<div class="demo-section__row">
+		<p-autoComplete [ngModel]="selectedCountry()" [suggestions]="filtered()" [disabled]="true" placeholder="Disabled" />
+		<p-autoComplete [ngModel]="selectedCountry()" [suggestions]="filtered()" [invalid]="true" placeholder="Invalid" />
+	</div>
+</section>

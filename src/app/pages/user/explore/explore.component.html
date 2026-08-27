@@ -1,0 +1,71 @@
+<div class="explore">
+	<div class="explore__header">
+		<h1 class="explore__title">Пошук</h1>
+
+		<input
+			pInputText
+			type="text"
+			placeholder="Адреса, місто або назва оголошення"
+			class="explore__search"
+			[ngModel]="searchTerm()"
+			(ngModelChange)="searchTerm.set($event)"
+		/>
+
+		<p-multiSelect
+			appendTo="body"
+			scrollHeight="auto"
+			[options]="propertyTypeOptions"
+			optionLabel="label"
+			optionValue="value"
+			placeholder="Тип нерухомості"
+			class="explore__filter"
+			[ngModel]="selectedPropertyTypes()"
+			(ngModelChange)="selectedPropertyTypes.set($event)"
+		/>
+
+		<p-select
+			appendTo="body"
+			scrollHeight="auto"
+			[options]="listingTypeOptions"
+			optionLabel="label"
+			optionValue="value"
+			placeholder="Тип угоди"
+			[showClear]="true"
+			class="explore__filter"
+			[ngModel]="selectedListingType()"
+			(ngModelChange)="selectedListingType.set($event)"
+		/>
+
+		<p-select
+			appendTo="body"
+			scrollHeight="auto"
+			[options]="listingStatusOptions"
+			optionLabel="label"
+			optionValue="value"
+			placeholder="Статус"
+			[showClear]="true"
+			class="explore__filter"
+			[ngModel]="selectedStatus()"
+			(ngModelChange)="selectedStatus.set($event)"
+		/>
+
+		<a pButton routerLink="/map" severity="secondary" size="small" class="explore__map-link">Карта</a>
+	</div>
+
+	<div class="explore__grid">
+		@for (row of results(); track row.listing._id) {
+		<div class="explore__row" (click)="view(row.listing)">
+			<app-listing-short
+				[entity]="row.listing"
+				[agent]="row.relations.agent"
+				[agency]="row.relations.agency"
+				[developer]="row.relations.developer"
+				[complex]="row.relations.complex"
+				(relationClick)="viewRelation($event)"
+			/>
+		</div>
+		} @empty {
+		<p class="explore__empty">За заданими критеріями оголошень не знайдено.</p>
+		}
+	</div>
+</div>

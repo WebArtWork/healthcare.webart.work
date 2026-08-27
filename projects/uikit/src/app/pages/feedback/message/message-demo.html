@@ -1,0 +1,23 @@
+<h1 class="demo-page__title">Message</h1>
+
+<section class="demo-section">
+	<h2 class="demo-section__title">Severities</h2>
+	<div style="display: flex; flex-direction: column; gap: 0.5rem">
+		@for (severity of severities; track severity) {
+			<p-message [severity]="severity">{{ severity }} message</p-message>
+		}
+	</div>
+</section>
+
+<section class="demo-section">
+	<h2 class="demo-section__title">Closable</h2>
+	<p-message severity="info" [closable]="true">This message can be closed.</p-message>
+</section>
+
+<section class="demo-section">
+	<h2 class="demo-section__title">Outlined &amp; Simple</h2>
+	<div style="display: flex; flex-direction: column; gap: 0.5rem">
+		<p-message severity="success" variant="outlined">Outlined message</p-message>
+		<p-message severity="warn" variant="simple">Simple message</p-message>
+	</div>
+</section>

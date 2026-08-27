@@ -1,0 +1,52 @@
+<article class="card">
+	<img class="card__photo" style="width:96px;height:96px" [src]="entity.logo || '/default-developer.png'" alt="" />
+
+	<h2 class="card__title">{{ entity.name }}</h2>
+
+	<div class="card__meta">
+		<span class="card__badge">Засновано у {{ entity.foundedYear }}</span>
+		@if (entity.isClaimed) {
+			<span class="card__badge">Підтверджено</span>
+		}
+	</div>
+
+	<p>{{ entity.description }}</p>
+
+		<div class="card__row"><dt>Розташування</dt><dd>{{ entity.city }}, {{ entity.country }}</dd></div>
+		<div class="card__row"><dt>Телефон</dt><dd>{{ entity.contact.phone }}</dd></div>
+		<div class="card__row"><dt>Ел. пошта</dt><dd>{{ entity.contact.email }}</dd></div>
+		<div class="card__row"><dt>Веб-сайт</dt><dd>{{ entity.contact.website }}</dd></div>
+
+	@if (relatedComplexes().length) {
+		<h3 class="card__section-title">Комплекси</h3>
+		<div class="card__list">
+			@for (complex of relatedComplexes(); track complex._id) {
+				<button type="button" class="card__list-item" (click)="viewComplex(complex)">
+					<app-complex-short [entity]="complex" />
+				</button>
+			}
+		</div>
+	}
+
+	@if (relatedProperties().length) {
+		<h3 class="card__section-title">Об'єкти</h3>
+		<div class="card__list">
+			@for (property of relatedProperties(); track property._id) {
+				<button type="button" class="card__list-item" (click)="viewProperty(property)">
+					<app-property-short [entity]="property" />
+				</button>
+			}
+		</div>
+	}
+
+	@if (relatedListings().length) {
+		<h3 class="card__section-title">Оголошення</h3>
+		<div class="card__list">
+			@for (listing of relatedListings(); track listing._id) {
+				<button type="button" class="card__list-item" (click)="viewListing(listing)">
+					<app-listing-short [entity]="listing" />
+				</button>
+			}
+		</div>
+	}
+</article>

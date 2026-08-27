@@ -1,0 +1,114 @@
+@reference 'tailwindcss';
+
+.feed {
+	/*
+	 * .user__main (the parent) is already correctly sized/positioned to exclude
+	 * the topbar, mobile bottom nav, and — critically — the sidebar's grid
+	 * column on desktop (see user.component.scss's `grid-template-columns: 1fr
+	 * var(--drawer-w)`). Position: fixed against the viewport ignored all of
+	 * that and let the feed render underneath/behind the sidebar.
+	 *
+	 * `absolute; inset: 0` on its own already aligns to .user__main's padding
+	 * box (i.e. it already bypasses that parent's own padding) — no extra
+	 * negative margin needed. Adding one pushed this element further out,
+	 * overflowing .user__main's box and triggering its own scrollbar.
+	 */
+	@apply absolute inset-0 z-10 overflow-hidden bg-black;
+}
+
+.feed__scroll {
+	@apply h-full w-full snap-y snap-mandatory overflow-y-scroll overscroll-y-contain;
+	scrollbar-width: none;
+
+	&::-webkit-scrollbar {
+		display: none;
+	}
+}
+
+.feed__section {
+	@apply relative flex h-full w-full flex-col snap-start snap-always overflow-hidden bg-black;
+}
+
+.feed__img {
+	@apply absolute inset-0 h-full w-full object-cover opacity-85;
+}
+
+.feed__overlay {
+	@apply pointer-events-none absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent;
+}
+
+.feed__info {
+	@apply absolute bottom-4 left-4 right-20 z-10 flex flex-col gap-3;
+}
+
+.feed__chips {
+	@apply flex flex-wrap gap-1.5;
+}
+
+.feed__chip {
+	@apply rounded-full border border-white/20 bg-black/40 px-2 py-1 text-[0.65rem] font-medium capitalize tracking-wide text-white/90 backdrop-blur-md;
+}
+
+.feed__link {
+	@apply block cursor-pointer outline-none;
+}
+
+.feed__link:focus-visible .feed__heading {
+	@apply text-gray-300;
+}
+
+.feed__heading {
+	@apply m-0 text-xl font-bold leading-tight text-white transition-colors;
+	display: -webkit-box;
+	-webkit-line-clamp: 2;
+	-webkit-box-orient: vertical;
+	overflow: hidden;
+}
+
+.feed__link:hover .feed__heading {
+	@apply text-gray-300;
+}
+
+.feed__location {
+	@apply flex items-center gap-2;
+}
+
+.feed__location-icon {
+	@apply flex h-7 w-7 items-center justify-center rounded-full bg-white/15 text-xs text-white backdrop-blur-sm;
+}
+
+.feed__location-text {
+	@apply text-sm font-medium text-white/90;
+}
+
+.feed__relations {
+	@apply flex flex-wrap items-center gap-2;
+}
+
+.feed__relation {
+	@apply inline-flex cursor-pointer rounded-[var(--radius-pill,999px)] border-0 bg-transparent p-0;
+}
+
+.feed__sidebar {
+	@apply absolute bottom-4 right-3 z-10 flex flex-col items-center gap-5;
+}
+
+.feed__action {
+	@apply flex flex-col items-center gap-1 text-white;
+}
+
+.feed__action-btn {
+	@apply h-11 w-11 border-white/10 bg-black/40 backdrop-blur-md transition-colors;
+}
+
+.feed__action-btn:hover {
+	@apply bg-black/60;
+}
+
+.feed__action-label {
+	@apply text-xs font-semibold text-white;
+}
+
+.feed__empty {
+	@apply flex h-full w-full items-center justify-center px-6 text-center text-white/70;
+}

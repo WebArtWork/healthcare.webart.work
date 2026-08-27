@@ -1,0 +1,20 @@
+<h1 class="demo-page__title">InputMask</h1>
+
+<p class="demo-page__note">
+	Native <code>[pInputMask]</code> directive applied directly to a plain input element.
+</p>
+
+<section class="demo-section">
+	<h2 class="demo-section__title">Phone</h2>
+	<input type="text" pInputMask="(999) 999-9999" [(ngModel)]="phone" placeholder="(999) 999-9999" />
+</section>
+
+<section class="demo-section">
+	<h2 class="demo-section__title">SSN</h2>
+	<input type="text" pInputMask="999-99-9999" [(ngModel)]="ssn" placeholder="999-99-9999" />
+</section>
+
+<section class="demo-section">
+	<h2 class="demo-section__title">Serial Number (Slot Char)</h2>
+	<input type="text" pInputMask="a*-999-a999" slotChar="_" [(ngModel)]="serial" placeholder="a*-999-a999" />
+</section>

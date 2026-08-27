@@ -1,0 +1,53 @@
+<h1 class="demo-page__title">MultiSelect</h1>
+
+<section class="demo-section">
+	<h2 class="demo-section__title">Basic</h2>
+	<p-multiSelect
+		[(ngModel)]="selectedCities"
+		[options]="cities"
+		optionLabel="name"
+		placeholder="Select Cities"
+		style="min-width: 14rem"
+	/>
+</section>
+
+<section class="demo-section">
+	<h2 class="demo-section__title">Chip Display</h2>
+	<p-multiSelect
+		[ngModel]="selectedCities()"
+		[options]="cities"
+		optionLabel="name"
+		display="chip"
+		placeholder="Select Cities"
+		style="min-width: 18rem"
+	/>
+</section>
+
+<section class="demo-section">
+	<h2 class="demo-section__title">Filter</h2>
+	<p-multiSelect
+		[ngModel]="selectedCities()"
+		[options]="cities"
+		optionLabel="name"
+		[filter]="true"
+		placeholder="Select Cities"
+		style="min-width: 14rem"
+	/>
+</section>
+
+<section class="demo-section">
+	<h2 class="demo-section__title">Sizes</h2>
+	<div class="demo-section__row">
+		@for (size of sizes; track size) {
+			<p-multiSelect [ngModel]="selectedCities()" [options]="cities" optionLabel="name" placeholder="Select Cities" [size]="size" />
+		}
+	</div>
+</section>
+
+<section class="demo-section">
+	<h2 class="demo-section__title">States</h2>
+	<div class="demo-section__row">
+		<p-multiSelect [ngModel]="selectedCities()" [options]="cities" optionLabel="name" [disabled]="true" placeholder="Disabled" />
+		<p-multiSelect [ngModel]="selectedCities()" [options]="cities" optionLabel="name" [invalid]="true" placeholder="Invalid" />
+	</div>
+</section>

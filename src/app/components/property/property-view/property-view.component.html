@@ -1,0 +1,92 @@
+<article class="card">
+	<h2 class="card__title">{{ typeLabels[entity.type] }} · {{ entity.city }}, {{ entity.country }}</h2>
+
+	<div class="card__meta">
+		<span class="card__badge">{{ statusLabels[entity.status] }}</span>
+		<span class="card__badge">{{ visibilityLabels[entity.visibility] }}</span>
+	</div>
+
+	<div class="card__photos">
+		@for (photo of photos; track photo) {
+			<img class="card__photo" [src]="photo" alt="" (error)="onPhotoError($event)" />
+		}
+	</div>
+
+		<div class="card__row"><dt>Адреса</dt><dd>{{ entity.address }}</dd></div>
+		<div class="card__row"><dt>Корпус / квартира</dt><dd>{{ entity.buildingUnitInfo }}</dd></div>
+		<div class="card__row"><dt>Кадастровий номер</dt><dd>{{ entity.cadastralId }}</dd></div>
+		<div class="card__row"><dt>Координати</dt><dd>{{ entity.coordinates.lat }}, {{ entity.coordinates.lng }}</dd></div>
+		<div class="card__row"><dt>Площа</dt><dd>{{ entity.characteristics.sizeSqm }} m²</dd></div>
+		<div class="card__row"><dt>Кімнати</dt><dd>{{ entity.characteristics.rooms }}</dd></div>
+		<div class="card__row"><dt>Спальні</dt><dd>{{ entity.characteristics.bedrooms }}</dd></div>
+		<div class="card__row"><dt>Санвузли</dt><dd>{{ entity.characteristics.bathrooms }}</dd></div>
+		@if (entity.characteristics.floor !== null) {
+			<div class="card__row"><dt>Поверх</dt><dd>{{ entity.characteristics.floor }} / {{ entity.characteristics.totalFloors }}</dd></div>
+		}
+		@if (entity.characteristics.yearBuilt !== null) {
+			<div class="card__row"><dt>Рік будівництва</dt><dd>{{ entity.characteristics.yearBuilt }}</dd></div>
+		}
+		@if (complex) {
+			<div class="card__row">
+				<dt>Комплекс</dt>
+				<dd><button type="button" class="card__relation" (click)="viewComplex()"><app-complex-icon [entity]="complex" /></button></dd>
+			</div>
+		}
+		@if (developer) {
+			<div class="card__row">
+				<dt>Забудовник</dt>
+				<dd><button type="button" class="card__relation" (click)="viewDeveloper()"><app-developer-icon [entity]="developer" /></button></dd>
+			</div>
+		}
+		@if (agency) {
+			<div class="card__row">
+				<dt>Агентство</dt>
+				<dd><button type="button" class="card__relation" (click)="viewAgency()"><app-agency-icon [entity]="agency" /></button></dd>
+			</div>
+		}
+		@if (agent) {
+			<div class="card__row">
+				<dt>Агент</dt>
+				<dd><button type="button" class="card__relation" (click)="viewAgent()"><app-agent-icon [entity]="agent" /></button></dd>
+			</div>
+		}
+
+	@if (entity.access.length) {
+		<div class="card__meta">
+			@for (a of entity.access; track a.userId) {
+				<span class="card__badge">{{ a.role }}: {{ a.userId }}</span>
+			}
+		</div>
+	}
+
+	@if (listings.length) {
+		<h3 class="card__section-title">Оголошення</h3>
+		<div class="card__list">
+			@for (listing of listings; track listing._id) {
+				<div class="card__list-item" (click)="viewListing(listing)">
+					<app-listing-short [entity]="listing" />
+				</div>
+			}
+		</div>
+	}
+
+	@if (records.length) {
+		<h3 class="card__section-title">Історія об'єкта</h3>
+		<div class="card__list">
+			@for (record of records; track record._id) {
+				<div class="card__list-item" (click)="viewRecord(record)">
+					<app-record-short [entity]="record" />
+				</div>
+			}
+		</div>
+	}
+
+	@if (comments.length) {
+		<h3 class="card__section-title">Відгуки</h3>
+		<div class="card__list">
+			@for (comment of comments; track comment._id) {
+				<app-comment-short [entity]="comment" />
+			}
+		</div>
+	}
+</article>

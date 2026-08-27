@@ -1,0 +1,13 @@
+<h1 class="demo-page__title">ImageCompare</h1>
+
+<section class="demo-section">
+	<h2 class="demo-section__title">Basic</h2>
+	<p-imageCompare style="max-width: 25rem; display: block">
+		<ng-template #left>
+			<img [src]="before" alt="Before" style="width: 100%" />
+		</ng-template>
+		<ng-template #right>
+			<img [src]="after" alt="After" style="width: 100%" />
+		</ng-template>
+	</p-imageCompare>
+</section>

@@ -1,0 +1,52 @@
+<h1 class="demo-page__title">Button</h1>
+
+<section class="demo-section">
+	<h2 class="demo-section__title">Basic</h2>
+	<p-button label="Button" />
+</section>
+
+<section class="demo-section">
+	<h2 class="demo-section__title">Sizes</h2>
+	<div class="demo-section__row">
+		@for (size of sizes; track size) {
+			<p-button [label]="size ?? 'Normal'" [size]="size" />
+		}
+	</div>
+</section>
+
+<section class="demo-section">
+	<h2 class="demo-section__title">Severity</h2>
+	<div class="demo-section__row">
+		@for (severity of severities; track severity) {
+			<p-button [label]="severity" [severity]="severity" />
+		}
+	</div>
+</section>
+
+<section class="demo-section">
+	<h2 class="demo-section__title">Variants</h2>
+	<div class="demo-section__row">
+		<p-button label="Outlined" [outlined]="true" />
+		<p-button label="Text" [text]="true" />
+		<p-button label="Link" [link]="true" />
+		<p-button label="Rounded" [rounded]="true" />
+		<p-button label="Raised" [raised]="true" />
+	</div>
+</section>
+
+<section class="demo-section">
+	<h2 class="demo-section__title">States</h2>
+	<div class="demo-section__row">
+		<p-button label="Disabled" [disabled]="true" />
+		<p-button label="Loading" [loading]="true" />
+	</div>
+</section>
+
+<section class="demo-section">
+	<h2 class="demo-section__title">Icons</h2>
+	<div class="demo-section__row">
+		<p-button label="Save" icon="pi pi-check" />
+		<p-button label="Delete" icon="pi pi-trash" iconPos="right" severity="danger" />
+		<p-button icon="pi pi-heart" [rounded]="true" [text]="true" ariaLabel="Like" />
+	</div>
+</section>

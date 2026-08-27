@@ -1,0 +1,10 @@
+<h1 class="demo-page__title">PickList</h1>
+
+<section class="demo-section">
+	<h2 class="demo-section__title">Basic</h2>
+	<p-pickList [source]="source()" [target]="target()" sourceHeader="Available" targetHeader="Selected" dataKey="id">
+		<ng-template let-product #item>
+			<div>{{ product.name }}</div>
+		</ng-template>
+	</p-pickList>
+</section>

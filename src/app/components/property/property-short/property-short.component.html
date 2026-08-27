@@ -1,0 +1,22 @@
+<article class="short">
+	<img
+		class="short__thumb"
+		[src]="photo"
+		[alt]="entity.type"
+		loading="lazy"
+		(error)="onPhotoError($event)"
+	/>
+
+	<div class="short__body">
+		<h3 class="short__title">{{ entity.type }} · {{ entity.city }}</h3>
+		<p class="short__address">{{ entity.address }}</p>
+
+		<div class="short__meta">
+			<span>{{ entity.status }}</span>
+			<span>{{ entity.characteristics.sizeSqm }} m²</span>
+			@if (entity.characteristics.rooms) {
+				<span>{{ entity.characteristics.rooms }} кімнат</span>
+			}
+		</div>
+	</div>
+</article>

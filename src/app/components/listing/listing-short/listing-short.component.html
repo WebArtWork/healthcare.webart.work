@@ -1,0 +1,40 @@
+<article class="short">
+	@if (entity.photos.length) {
+		<img class="short__thumb" [src]="entity.photos[0]" [alt]="entity.title" loading="lazy" />
+	}
+
+	<div class="short__body">
+		<h3 class="short__title">{{ entity.title }}</h3>
+		<p class="short__address">{{ entity.publicLocation }}</p>
+
+		<div class="short__meta">
+			<span>{{ entity.price }} {{ entity.currency }}</span>
+			<span>{{ entity.listingType }}</span>
+			<span>{{ entity.status }}</span>
+		</div>
+
+		@if (agent || agency || developer || complex) {
+			<div class="short__relations">
+				@if (agent) {
+					<button type="button" class="short__relation" (click)="onRelationClick($event, 'agent', agent._id)">
+						<app-agent-icon [entity]="agent" />
+					</button>
+				}
+				@if (agency) {
+					<button type="button" class="short__relation" (click)="onRelationClick($event, 'agency', agency._id)">
+						<app-agency-icon [entity]="agency" />
+					</button>
+				} @else if (developer) {
+					<button type="button" class="short__relation" (click)="onRelationClick($event, 'developer', developer._id)">
+						<app-developer-icon [entity]="developer" />
+					</button>
+				}
+				@if (complex) {
+					<button type="button" class="short__relation" (click)="onRelationClick($event, 'complex', complex._id)">
+						<app-complex-icon [entity]="complex" />
+					</button>
+				}
+			</div>
+		}
+	</div>
+</article>

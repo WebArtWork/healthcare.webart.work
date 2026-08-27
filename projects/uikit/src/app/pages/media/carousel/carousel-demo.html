@@ -1,0 +1,15 @@
+<h1 class="demo-page__title">Carousel</h1>
+
+<section class="demo-section">
+	<h2 class="demo-section__title">Basic</h2>
+	<p-carousel [value]="items" [numVisible]="3" [numScroll]="1" [responsiveOptions]="responsiveOptions">
+		<ng-template let-item #item>
+			<div
+				style="margin: 0.5rem; height: 8rem; border-radius: 6px; display: flex; align-items: center; justify-content: center; color: #fff; font-weight: 600"
+				[style.background]="item.color"
+			>
+				{{ item.name }}
+			</div>
+		</ng-template>
+	</p-carousel>
+</section>

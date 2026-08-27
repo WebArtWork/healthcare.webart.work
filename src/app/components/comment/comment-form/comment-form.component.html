@@ -1,0 +1,31 @@
+<form class="form" [formGroup]="form">
+		<div class="form__field">
+			<label class="form__label" for="entityType" translate>Тип об'єкта</label>
+			<p-select id="entityType" formControlName="entityType" [options]="entityTypeOptions" optionLabel="label" optionValue="value" appendTo="body" />
+
+		</div>
+		<div class="form__field">
+			<label class="form__label" for="rating" translate>Оцінка (1-5)</label>
+			<p-inputnumber id="rating" formControlName="rating" [min]="1" [max]="5" [invalid]="form.get('rating')?.invalid && form.get('rating')?.touched" />
+			@if (form.get('rating')?.hasError('min') && form.get('rating')?.touched) {
+				<span class="form__error" translate>Має бути від 1 до 5</span>
+			}
+			@if (form.get('rating')?.hasError('max') && form.get('rating')?.touched) {
+				<span class="form__error" translate>Має бути від 1 до 5</span>
+			}
+		</div>
+		<div class="form__field">
+			<label class="form__label" for="text" translate>Коментар</label>
+			<textarea id="text" pTextarea class="form__control" rows="4" [formControlName]="'text'" [class._invalid]="form.get('text')?.invalid && form.get('text')?.touched"></textarea>
+			@if (form.get('text')?.hasError('required') && form.get('text')?.touched) {
+				<span class="form__error" translate>Коментар обов'язковий</span>
+			}
+			@if (form.get('text')?.hasError('maxlength') && form.get('text')?.touched) {
+				<span class="form__error" translate>Занадто довгий текст</span>
+			}
+		</div>
+
+	<div class="form__actions">
+		<button type="button" pButton class="form__submit" [disabled]="form.invalid"><span translate>Зберегти</span></button>
+	</div>
+</form>

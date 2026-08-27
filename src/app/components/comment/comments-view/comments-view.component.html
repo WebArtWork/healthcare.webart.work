@@ -1,0 +1,19 @@
+<article class="card">
+	<div class="card__meta">
+		<span class="card__badge">{{ entity.entityType }}</span>
+		<span class="card__badge">{{ entity.moderationStatus }}</span>
+		@if (entity.verifiedReviewerStatus) {
+			<span class="card__badge">{{ entity.verifiedReviewerStatus }}</span>
+		}
+	</div>
+
+	@if (entity.rating !== null) {
+		<span class="short__price">★ {{ entity.rating }}</span>
+	}
+
+	<p>{{ entity.text }}</p>
+
+		<div class="card__row"><dt>Author</dt><dd>{{ entity.authorUserId }}</dd></div>
+		<div class="card__row"><dt>Date</dt><dd>{{ entity.date }}</dd></div>
+		<div class="card__row"><dt>Helpful votes</dt><dd>{{ entity.helpfulVotes }}</dd></div>
+</article>

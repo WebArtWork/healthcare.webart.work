@@ -1,0 +1,24 @@
+<h1 class="demo-page__title">Fieldset</h1>
+
+<section class="demo-section">
+	<h2 class="demo-section__title">Basic</h2>
+	<p-fieldset legend="Header">
+		<p style="margin: 0">
+			Content of the fieldset, can be any content such as text or other components.
+		</p>
+	</p-fieldset>
+</section>
+
+<section class="demo-section">
+	<h2 class="demo-section__title">Toggleable</h2>
+	<p-fieldset legend="Toggleable" [toggleable]="true">
+		<p style="margin: 0">Click the legend to collapse and expand the content.</p>
+	</p-fieldset>
+</section>
+
+<section class="demo-section">
+	<h2 class="demo-section__title">Collapsed by default</h2>
+	<p-fieldset legend="Collapsed" [toggleable]="true" [collapsed]="true">
+		<p style="margin: 0">Hidden content shown once expanded.</p>
+	</p-fieldset>
+</section>

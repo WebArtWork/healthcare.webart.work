@@ -1,0 +1,16 @@
+<h1 class="demo-page__title">AnimateOnScroll</h1>
+
+<p class="demo-page__note">Scroll this section into view to trigger the enter animation.</p>
+
+<section class="demo-section" style="height: 20rem; overflow-y: auto; border: 1px solid var(--p-content-border-color)">
+	<div style="height: 15rem"></div>
+	<div
+		pAnimateOnScroll
+		enterClass="fadeinup"
+		leaveClass="fadeoutdown"
+		style="padding: 1rem; background: var(--p-primary-color); color: var(--p-primary-contrast-color); border-radius: 6px; margin: 0 1rem"
+	>
+		This box animates in as it enters the viewport.
+	</div>
+	<div style="height: 20rem"></div>
+</section>

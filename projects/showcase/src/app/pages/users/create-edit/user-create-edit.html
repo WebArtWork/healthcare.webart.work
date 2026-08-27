@@ -1,0 +1,41 @@
+<div class="user-form">
+	<p-card header="Create / Edit User">
+		<div class="user-form__grid">
+			<label class="user-form__field">
+				<span>Name</span>
+				<input pInputText [(ngModel)]="name" placeholder="Full name" />
+			</label>
+			<label class="user-form__field">
+				<span>Email</span>
+				<input pInputText type="email" [(ngModel)]="email" placeholder="name@example.com" />
+			</label>
+			<label class="user-form__field">
+				<span>Role</span>
+				<p-select [options]="roles" optionLabel="label" [(ngModel)]="role" placeholder="Select a role" />
+			</label>
+			<label class="user-form__field user-form__field--inline">
+				<span>Active</span>
+				<p-toggleswitch [(ngModel)]="active" />
+			</label>
+			<div class="user-form__field user-form__field--full">
+				<span>Avatar</span>
+				<p-fileUpload
+					name="avatar"
+					url="https://www.primefaces.org/cdn/api/upload.php"
+					accept="image/*"
+					[maxFileSize]="1000000"
+					(onUpload)="onAvatarUpload()"
+				>
+					<ng-template #empty>
+						<p style="margin: 0">Drag and drop an avatar image here.</p>
+					</ng-template>
+				</p-fileUpload>
+			</div>
+		</div>
+
+		<div class="user-form__actions">
+			<p-button label="Cancel" severity="secondary" [outlined]="true" />
+			<p-button label="Save User" icon="pi pi-check" />
+		</div>
+	</p-card>
+</div>

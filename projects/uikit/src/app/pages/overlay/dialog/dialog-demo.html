@@ -1,0 +1,31 @@
+<h1 class="demo-page__title">Dialog</h1>
+
+<section class="demo-section">
+	<h2 class="demo-section__title">Basic</h2>
+	<p-button label="Show" (onClick)="basicVisible.set(true)" />
+	<p-dialog header="Basic Dialog" [(visible)]="basicVisible" [style]="{ width: '25rem' }">
+		<p>This is a basic, non-modal dialog.</p>
+	</p-dialog>
+</section>
+
+<section class="demo-section">
+	<h2 class="demo-section__title">Modal</h2>
+	<p-button label="Show Modal" (onClick)="modalVisible.set(true)" />
+	<p-dialog header="Modal Dialog" [(visible)]="modalVisible" [modal]="true" [style]="{ width: '25rem' }">
+		<p>Modal dialogs block interaction with the rest of the page.</p>
+	</p-dialog>
+</section>
+
+<section class="demo-section">
+	<h2 class="demo-section__title">Maximizable</h2>
+	<p-button label="Show Maximizable" (onClick)="maximizableVisible.set(true)" />
+	<p-dialog
+		header="Maximizable Dialog"
+		[(visible)]="maximizableVisible"
+		[modal]="true"
+		[maximizable]="true"
+		[style]="{ width: '25rem' }"
+	>
+		<p>Use the maximize icon in the header to toggle full-screen.</p>
+	</p-dialog>
+</section>

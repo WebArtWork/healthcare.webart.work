@@ -1,0 +1,32 @@
+<h1 class="demo-page__title">Checkbox</h1>
+
+<section class="demo-section">
+	<h2 class="demo-section__title">Basic</h2>
+	<p-checkbox [(ngModel)]="checked" [binary]="true" />
+</section>
+
+<section class="demo-section">
+	<h2 class="demo-section__title">Sizes</h2>
+	<div class="demo-section__row">
+		@for (size of sizes; track size) {
+			<p-checkbox [ngModel]="true" [binary]="true" [size]="size" />
+		}
+	</div>
+</section>
+
+<section class="demo-section">
+	<h2 class="demo-section__title">Variants</h2>
+	<div class="demo-section__row">
+		<p-checkbox [ngModel]="true" [binary]="true" variant="outlined" />
+		<p-checkbox [ngModel]="true" [binary]="true" variant="filled" />
+	</div>
+</section>
+
+<section class="demo-section">
+	<h2 class="demo-section__title">States</h2>
+	<div class="demo-section__row">
+		<p-checkbox [ngModel]="true" [binary]="true" [disabled]="true" />
+		<p-checkbox [ngModel]="false" [binary]="true" [invalid]="true" />
+		<p-checkbox [ngModel]="false" [binary]="true" [indeterminate]="true" />
+	</div>
+</section>

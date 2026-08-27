@@ -1,0 +1,96 @@
+<form class="form" [formGroup]="form">
+		<div class="form__field">
+			<label class="form__label" for="transactionType" translate>Тип угоди</label>
+			<p-select id="transactionType" formControlName="transactionType" [options]="transactionTypeOptions" optionLabel="label" optionValue="value" appendTo="body" />
+
+		</div>
+		<div class="form__field">
+			<label class="form__label" for="country" translate>Країна</label>
+			<input id="country" pInputText class="form__control" type="text" [formControlName]="'country'" [class._invalid]="form.get('country')?.invalid && form.get('country')?.touched" />
+			@if (form.get('country')?.hasError('required') && form.get('country')?.touched) {
+				<span class="form__error" translate>Країна обов'язкова</span>
+			}
+		</div>
+		<div class="form__field">
+			<label class="form__label" for="region" translate>Регіон</label>
+			<input id="region" pInputText class="form__control" type="text" [formControlName]="'region'" [class._invalid]="form.get('region')?.invalid && form.get('region')?.touched" />
+			@if (form.get('region')?.hasError('required') && form.get('region')?.touched) {
+				<span class="form__error" translate>Регіон обов'язковий</span>
+			}
+		</div>
+		<div class="form__field">
+			<label class="form__label" for="city" translate>Місто</label>
+			<input id="city" pInputText class="form__control" type="text" [formControlName]="'city'" [class._invalid]="form.get('city')?.invalid && form.get('city')?.touched" />
+			@if (form.get('city')?.hasError('required') && form.get('city')?.touched) {
+				<span class="form__error" translate>Місто обов'язкове</span>
+			}
+		</div>
+		<div class="form__field">
+			<label class="form__label" for="minPrice" translate>Мінімальна ціна</label>
+			<p-inputnumber id="minPrice" formControlName="minPrice" [min]="0" [invalid]="form.get('minPrice')?.invalid && form.get('minPrice')?.touched" />
+			@if (form.get('minPrice')?.hasError('required') && form.get('minPrice')?.touched) {
+				<span class="form__error" translate>Обов'язкове поле</span>
+			}
+			@if (form.get('minPrice')?.hasError('min') && form.get('minPrice')?.touched) {
+				<span class="form__error" translate>Має бути 0 або більше</span>
+			}
+		</div>
+		<div class="form__field">
+			<label class="form__label" for="maxPrice" translate>Максимальна ціна</label>
+			<p-inputnumber id="maxPrice" formControlName="maxPrice" [min]="0" [invalid]="form.get('maxPrice')?.invalid && form.get('maxPrice')?.touched" />
+			@if (form.get('maxPrice')?.hasError('required') && form.get('maxPrice')?.touched) {
+				<span class="form__error" translate>Обов'язкове поле</span>
+			}
+			@if (form.get('maxPrice')?.hasError('min') && form.get('maxPrice')?.touched) {
+				<span class="form__error" translate>Має бути 0 або більше</span>
+			}
+		</div>
+		<div class="form__field">
+			<label class="form__label" for="currency" translate>Валюта</label>
+			<input id="currency" pInputText class="form__control" type="text" [formControlName]="'currency'" [class._invalid]="form.get('currency')?.invalid && form.get('currency')?.touched" />
+			@if (form.get('currency')?.hasError('required') && form.get('currency')?.touched) {
+				<span class="form__error" translate>Валюта обов'язкова</span>
+			}
+		</div>
+		<div class="form__field">
+			<label class="form__label" for="preferredSizeSqm" translate>Бажана площа (м²)</label>
+			<p-inputnumber id="preferredSizeSqm" formControlName="preferredSizeSqm" [min]="0" [invalid]="form.get('preferredSizeSqm')?.invalid && form.get('preferredSizeSqm')?.touched" />
+
+		</div>
+		<div class="form__field">
+			<label class="form__label" for="roomRequirements" translate>Вимоги до кімнат</label>
+			<p-inputnumber id="roomRequirements" formControlName="roomRequirements" [min]="0" [invalid]="form.get('roomRequirements')?.invalid && form.get('roomRequirements')?.touched" />
+
+		</div>
+		<div class="form__field">
+			<label class="form__label" for="conditionRequirements" translate>Вимоги до стану</label>
+			<input id="conditionRequirements" pInputText class="form__control" type="text" [formControlName]="'conditionRequirements'" [class._invalid]="form.get('conditionRequirements')?.invalid && form.get('conditionRequirements')?.touched" />
+
+		</div>
+		<div class="form__field">
+			<label class="form__label" for="constructionPreferences" translate>Побажання щодо будівництва</label>
+			<input id="constructionPreferences" pInputText class="form__control" type="text" [formControlName]="'constructionPreferences'" [class._invalid]="form.get('constructionPreferences')?.invalid && form.get('constructionPreferences')?.touched" />
+
+		</div>
+		<div class="form__field">
+			<label class="form__label" for="preferredMoveDate" translate>Бажана дата переїзду</label>
+			<input id="preferredMoveDate" pInputText class="form__control" type="date" [formControlName]="'preferredMoveDate'" [class._invalid]="form.get('preferredMoveDate')?.invalid && form.get('preferredMoveDate')?.touched" />
+
+		</div>
+		<div class="form__field">
+			<label class="form__label" for="expirationDate" translate>Дата закінчення</label>
+			<input id="expirationDate" pInputText class="form__control" type="date" [formControlName]="'expirationDate'" [class._invalid]="form.get('expirationDate')?.invalid && form.get('expirationDate')?.touched" />
+			@if (form.get('expirationDate')?.hasError('required') && form.get('expirationDate')?.touched) {
+				<span class="form__error" translate>Дата обов'язкова</span>
+			}
+		</div>
+		<div class="form__field">
+			<label class="form__label" for="visibility" translate>Видимість</label>
+			<p-select id="visibility" formControlName="visibility" [options]="visibilityOptions" optionLabel="label" optionValue="value" appendTo="body" />
+
+		</div>
+
+	<div class="form__actions">
+		<button type="button" pButton class="form__submit" [disabled]="form.invalid"><span translate>Зберегти</span></button>
+	</div>
+</form>

@@ -1,0 +1,79 @@
+<h1 class="demo-page__title">Table</h1>
+
+<section class="demo-section">
+	<h2 class="demo-section__title">Basic</h2>
+	<p-table [value]="products">
+		<ng-template #header>
+			<tr>
+				<th>Code</th>
+				<th>Name</th>
+				<th>Category</th>
+				<th>Price</th>
+				<th>Status</th>
+			</tr>
+		</ng-template>
+		<ng-template #body let-product>
+			<tr>
+				<td>{{ product.code }}</td>
+				<td>{{ product.name }}</td>
+				<td>{{ product.category }}</td>
+				<td>{{ product.price | currency }}</td>
+				<td><p-tag [value]="product.status" [severity]="severity(product.status)" /></td>
+			</tr>
+		</ng-template>
+	</p-table>
+</section>
+
+<section class="demo-section">
+	<h2 class="demo-section__title">Sorting &amp; pagination</h2>
+	<p-table [value]="products" [paginator]="true" [rows]="2">
+		<ng-template #header>
+			<tr>
+				<th pSortableColumn="name">Name <p-sortIcon field="name" /></th>
+				<th pSortableColumn="price">Price <p-sortIcon field="price" /></th>
+			</tr>
+		</ng-template>
+		<ng-template #body let-product>
+			<tr>
+				<td>{{ product.name }}</td>
+				<td>{{ product.price | currency }}</td>
+			</tr>
+		</ng-template>
+	</p-table>
+</section>
+
+<section class="demo-section">
+	<h2 class="demo-section__title">Sizes</h2>
+	<p-table [value]="products" size="small">
+		<ng-template #header>
+			<tr>
+				<th>Name</th>
+				<th>Price</th>
+			</tr>
+		</ng-template>
+		<ng-template #body let-product>
+			<tr>
+				<td>{{ product.name }}</td>
+				<td>{{ product.price | currency }}</td>
+			</tr>
+		</ng-template>
+	</p-table>
+</section>
+
+<section class="demo-section">
+	<h2 class="demo-section__title">Striped &amp; gridlines</h2>
+	<p-table [value]="products" [stripedRows]="true" [showGridlines]="true">
+		<ng-template #header>
+			<tr>
+				<th>Name</th>
+				<th>Price</th>
+			</tr>
+		</ng-template>
+		<ng-template #body let-product>
+			<tr>
+				<td>{{ product.name }}</td>
+				<td>{{ product.price | currency }}</td>
+			</tr>
+		</ng-template>
+	</p-table>
+</section>

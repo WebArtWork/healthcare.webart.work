@@ -1,0 +1,20 @@
+<h1 class="demo-page__title">SpeedDial</h1>
+
+<section class="demo-section">
+	<h2 class="demo-section__title">Linear</h2>
+	<div style="position: relative; height: 12rem">
+		<p-speedDial [model]="items" direction="up" [style]="{ position: 'absolute', left: '1rem', bottom: '0' }" />
+	</div>
+</section>
+
+<section class="demo-section">
+	<h2 class="demo-section__title">Circle</h2>
+	<div style="position: relative; height: 14rem">
+		<p-speedDial
+			[model]="items"
+			type="circle"
+			[radius]="80"
+			[style]="{ position: 'absolute', left: '3rem', top: '1rem' }"
+		/>
+	</div>
+</section>

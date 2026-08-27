@@ -1,0 +1,19 @@
+<h1 class="demo-page__title">ColorPicker</h1>
+
+<p class="demo-page__note">
+	Native <code>&lt;input type="color" pColorPicker&gt;</code> — the legacy overlay-based
+	<code>p-colorPicker</code> component is deprecated in favor of this directive.
+</p>
+
+<section class="demo-section">
+	<h2 class="demo-section__title">Basic</h2>
+	<input type="color" pColorPicker [(ngModel)]="color" />
+</section>
+
+<section class="demo-section">
+	<h2 class="demo-section__title">States</h2>
+	<div class="demo-section__row">
+		<input type="color" pColorPicker [ngModel]="color()" [disabled]="true" />
+		<input type="color" pColorPicker [ngModel]="color()" [invalid]="true" />
+	</div>
+</section>

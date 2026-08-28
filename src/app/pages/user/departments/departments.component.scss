@@ -4,37 +4,21 @@
 	gap: var(--sp-4);
 }
 
-.departments__header {
+.departments__filters {
 	display: flex;
-	flex-direction: column;
-	gap: var(--sp-1);
+	align-items: center;
+	gap: var(--sp-2);
 }
 
-.departments__title {
-	margin: 0;
-	color: var(--c-text-secondary);
-}
-
-.departments__hint {
-	font-size: 0.85rem;
-	color: var(--c-text-muted);
-}
-
-.departments__field {
-	display: flex;
-	flex-direction: column;
-	gap: var(--sp-1);
+.departments__search {
+	flex: 0 0 auto;
+	width: 200px;
 }
 
 .departments__results {
 	display: flex;
 	flex-direction: column;
 	gap: var(--sp-3);
-}
-
-.departments__count {
-	font-size: 0.85rem;
-	color: var(--c-text-muted);
 }
 
 .departments__grid {

@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
 import { inject } from '@angular/core';
 import { Router } from '@angular/router';
 import { Department } from '../../../department/department.interface';
@@ -41,8 +41,9 @@ const DEFAULT_PHOTO = '/patient-default.svg';
 	templateUrl: './patient-view.component.html',
 	styleUrl: './patient-view.component.scss',
 })
-export class PatientViewComponent {
+export class PatientViewComponent implements OnChanges {
 	private readonly _router = inject(Router);
+	private readonly _failedPhotos = new Set<string>();
 
 	@Input() entity!: Patient;
 	@Input() facility?: Facility | null;
@@ -59,11 +60,18 @@ export class PatientViewComponent {
 	readonly visibilityLabels = PATIENT_VISIBILITY_LABELS;
 
 	get photos(): string[] {
-		return this.entity.photos.length ? this.entity.photos : [DEFAULT_PHOTO];
+		const uniquePhotos = [...new Set(this.entity.photos)];
+		if (!uniquePhotos.length) return [DEFAULT_PHOTO];
+		return uniquePhotos.every((photo) => this._failedPhotos.has(photo)) ? [DEFAULT_PHOTO] : uniquePhotos;
 	}
 
-	onPhotoError(event: Event): void {
+	onPhotoError(event: Event, photo: string): void {
+		this._failedPhotos.add(photo);
 		(event.target as HTMLImageElement).src = DEFAULT_PHOTO;
+	}
+
+	ngOnChanges(changes: SimpleChanges): void {
+		if (changes['entity']) this._failedPhotos.clear();
 	}
 
 	viewFacility(): void {

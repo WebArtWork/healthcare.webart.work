@@ -8,7 +8,7 @@
 
 	<div class="card__photos">
 		@for (photo of photos; track photo) {
-			<img class="card__photo" [src]="photo" alt="" (error)="onPhotoError($event)" />
+			<img class="card__photo" [src]="photo" alt="" (error)="onPhotoError($event, photo)" />
 		}
 	</div>
 

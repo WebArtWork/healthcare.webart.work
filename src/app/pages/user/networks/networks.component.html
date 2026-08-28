@@ -1,27 +1,17 @@
 <section class="networks">
-	<header class="networks__header">
-		<h2 class="networks__title">Мережі</h2>
-		<span class="networks__hint">Перегляньте всі медичні мережі MedPass</span>
-	</header>
-
-	<p-card class="networks__filters">
-		<div class="networks__field">
-			<label for="networks-search">Пошук</label>
-			<input
-				id="networks-search"
-				pInputText
-				type="text"
-				placeholder="Назва, місто або країна"
-				[fluid]="true"
-				[ngModel]="searchTerm()"
-				(ngModelChange)="searchTerm.set($event)"
-			/>
-		</div>
-	</p-card>
+	<div class="networks__filters">
+		<input
+			id="networks-search"
+			pInputText
+			type="text"
+			placeholder="Назва, місто або країна"
+			class="networks__search"
+			[ngModel]="searchTerm()"
+			(ngModelChange)="searchTerm.set($event)"
+		/>
+	</div>
 
 	<div class="networks__results">
-		<span class="networks__count">Знайдено мереж: {{ results().length }}</span>
-
 		<div class="networks__grid">
 			@for (item of results(); track item._id) {
 			<div class="networks__row" (click)="view(item)">

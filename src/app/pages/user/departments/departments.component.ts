@@ -1,14 +1,13 @@
 import { Component, computed, inject, signal } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
-import { CardModule } from '@wawjs/ngx-prime/card';
 import { InputTextModule } from '@wawjs/ngx-prime/inputtext';
 import { DepartmentShortComponent } from '../../../components/department/department-short/department-short.component';
 import { Department } from '../../../department/department.interface';
 import { departments } from '../../../department/department.data';
 
 @Component({
-	imports: [DepartmentShortComponent, FormsModule, CardModule, InputTextModule],
+	imports: [DepartmentShortComponent, FormsModule, InputTextModule],
 	templateUrl: './departments.component.html',
 	styleUrl: './departments.component.scss',
 })

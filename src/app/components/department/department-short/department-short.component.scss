@@ -17,7 +17,8 @@
 	flex: 0 0 220px;
 	width: 220px;
 	min-height: 140px;
-	object-fit: cover;
+	object-fit: contain;
+	padding: var(--sp-3);
 	background: var(--c-bg-tertiary);
 
 	@media (max-width: 480px) {

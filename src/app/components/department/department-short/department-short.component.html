@@ -1,5 +1,11 @@
 <article class="short">
-	<img class="short__thumb" [src]="entity.logo || '/default-department.png'" [alt]="entity.name" loading="lazy" />
+	<img
+		class="short__thumb"
+		[src]="photo"
+		[alt]="entity.name"
+		loading="lazy"
+		(error)="onPhotoError($event)"
+	/>
 
 	<div class="short__body">
 		<h3 class="short__title">{{ entity.name }}</h3>

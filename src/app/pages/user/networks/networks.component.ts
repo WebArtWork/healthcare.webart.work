@@ -1,14 +1,13 @@
 import { Component, computed, inject, signal } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
-import { CardModule } from '@wawjs/ngx-prime/card';
 import { InputTextModule } from '@wawjs/ngx-prime/inputtext';
 import { NetworkShortComponent } from '../../../components/network/network-short/network-short.component';
 import { Network } from '../../../network/network.interface';
 import { networks } from '../../../network/network.data';
 
 @Component({
-	imports: [NetworkShortComponent, FormsModule, CardModule, InputTextModule],
+	imports: [NetworkShortComponent, FormsModule, InputTextModule],
 	templateUrl: './networks.component.html',
 	styleUrl: './networks.component.scss',
 })

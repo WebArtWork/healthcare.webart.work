@@ -36,7 +36,7 @@
 		"@wawjs/ngx-form": "22.0.3",
 		"@wawjs/ngx-http": "22.0.3",
 		"@wawjs/ngx-map": "22.0.3",
-		"@wawjs/ngx-prime": "^22.0.3",
+		"@wawjs/ngx-prime": "^22.0.4",
 		"@wawjs/ngx-socket": "22.0.3",
 		"@wawjs/ngx-tinymce": "22.0.3",
 		"@wawjs/ngx-translate": "22.0.3",

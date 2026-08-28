@@ -5,7 +5,7 @@ allowBuilds:
   lmdb: set this to true or false
   msgpackr-extract: set this to true or false
 minimumReleaseAgeExclude:
-  - '@wawjs/ngx-prime@22.0.2 || 22.0.3'
+  - '@wawjs/ngx-prime@22.0.2 || 22.0.3 || 22.0.4'
   - '@wawjs/css-prime-motion@1.1.0'
   - '@wawjs/css-prime-styled@1.1.0'
   - '@wawjs/css-prime-styles@1.1.0'

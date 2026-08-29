@@ -44,8 +44,8 @@
 
 	<app-nav-icon
 		[class.sidebar--minimized-icon]="!showNames()"
-		[name]="showNames() ? translateService.translate('Поділитися профілем')() : ''"
-		[ariaLabel]="translateService.translate('Поділитися профілем')()"
+		[name]="showNames() ? translateService.translate('Шер профілю')() : ''"
+		[ariaLabel]="translateService.translate('Шер профілю')()"
 		(click)="closeIfOverlay()"
 		routerLink="/share-profile"
 		icon="id-card"
@@ -104,8 +104,8 @@
 
 	<app-nav-icon
 		[class.sidebar--minimized-icon]="!showNames()"
-		[name]="showNames() ? translateService.translate('Поділитися MedPass')() : ''"
-		[ariaLabel]="translateService.translate('Поділитися MedPass')()"
+		[name]="showNames() ? translateService.translate('Шер MedPass')() : ''"
+		[ariaLabel]="translateService.translate('Шер MedPass')()"
 		(click)="closeIfOverlay()"
 		routerLink="/share"
 		icon="qrcode"

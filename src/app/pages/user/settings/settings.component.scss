@@ -6,7 +6,7 @@
 .settings__language-picker { position: relative; justify-self: start; }
 .settings__language { display: inline-flex; align-items: center; justify-content: center; justify-self: start; gap: var(--sp-2); min-height: 40px; padding: var(--sp-2) var(--sp-3); border: 1px solid var(--c-border); border-radius: var(--radius); background: transparent; color: var(--c-text-primary); font-size: .875rem; cursor: pointer; }
 .settings__language:focus-visible { outline: none; box-shadow: var(--focus-ring); }
-.settings__flag { display: inline-flex; align-items: center; justify-content: center; flex: 0 0 auto; font-size: 1.125rem; line-height: 1; }
+.settings__flag { display: inline-block; flex: 0 0 auto; width: 20px; height: 15px; border-radius: 2px; object-fit: cover; }
 .settings__languages { position: absolute; z-index: 10; top: calc(100% + var(--sp-2)); left: 0; display: grid; gap: var(--sp-1); min-width: 200px; max-height: 320px; overflow-y: auto; margin: 0; padding: var(--sp-2); list-style: none; border: 1px solid var(--c-border); border-radius: var(--radius); background: var(--c-bg-primary); box-shadow: var(--shadow-md, var(--shadow-sm)); }
 .settings__language-option { display: flex; width: 100%; align-items: center; gap: var(--sp-2); padding: var(--sp-2) var(--sp-3); border: none; border-radius: var(--radius); background: transparent; color: var(--c-text-primary); font-size: .875rem; text-align: left; cursor: pointer; }
 .settings__language-option:hover { background: var(--c-bg-secondary); }

@@ -15,8 +15,13 @@ export const environment = {
 		default: 'https://medpass.health/logo.png',
 		logo: 'https://medpass.health/logo.png',
 	},
-	defaultLanguageCode: 'en',
+	defaultLanguageCode: 'ua',
 	languages: [
+		{
+			code: 'ua',
+			name: 'Ukrainian',
+			nativeName: '\u0423\u043a\u0440\u0430\u0457\u043d\u0441\u044c\u043a\u0430',
+		},
 		{ code: 'cs', name: 'Czech', nativeName: '\u010ce\u0161tina' },
 		{ code: 'de', name: 'German', nativeName: 'Deutsch' },
 		{ code: 'el', name: 'Greek', nativeName: '\u0395\u03bb\u03bb\u03b7\u03bd\u03b9\u03ba\u03ac' },
@@ -30,10 +35,5 @@ export const environment = {
 		{ code: 'pt', name: 'Portuguese', nativeName: 'Portugu\u00eas' },
 		{ code: 'ro', name: 'Romanian', nativeName: 'Rom\u00e2n\u0103' },
 		{ code: 'sv', name: 'Swedish', nativeName: 'Svenska' },
-		{
-			code: 'ua',
-			name: 'Ukrainian',
-			nativeName: '\u0423\u043a\u0440\u0430\u0457\u043d\u0441\u044c\u043a\u0430',
-		},
 	],
 };

@@ -22,14 +22,14 @@
 			/>
 
 			@if (!markers().length) {
-			<p class="map-page__empty">Немає пацієнтів із координатами.</p>
+			<p class="map-page__empty" translate>Немає пацієнтів із координатами.</p>
 			}
 		</div>
 
 		@if (selected(); as patient) {
 		<p-card class="map-page__panel">
 			<div class="map-page__panel-header">
-				<span class="map-page__panel-title">Обраний пацієнт</span>
+				<span class="map-page__panel-title" translate>Обраний пацієнт</span>
 				<p-button
 					icon="pi pi-times"
 					[text]="true"

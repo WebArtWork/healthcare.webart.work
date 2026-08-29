@@ -1,6 +1,6 @@
 <div class="explore">
 	<div class="explore__header">
-		<h1 class="explore__title">Пошук</h1>
+		<h1 class="explore__title" translate>Пошук</h1>
 
 		<input
 			pInputText
@@ -49,7 +49,7 @@
 			(ngModelChange)="selectedStatus.set($event)"
 		/>
 
-		<a pButton routerLink="/map" severity="secondary" size="small" class="explore__map-link">Карта</a>
+		<a pButton routerLink="/map" severity="secondary" size="small" class="explore__map-link" translate>Карта</a>
 	</div>
 
 	<div class="explore__grid">
@@ -65,7 +65,7 @@
 			/>
 		</div>
 		} @empty {
-		<p class="explore__empty">За заданими критеріями записів на прийом не знайдено.</p>
+		<p class="explore__empty" translate>За заданими критеріями записів на прийом не знайдено.</p>
 		}
 	</div>
 </div>

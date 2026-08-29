@@ -16,6 +16,7 @@ import {
 	TranslateService,
 } from '@wawjs/ngx-translate';
 import { FieldErrorComponent } from '../../../shared/field-error/field-error.component';
+import { languageFlagUrl } from '../../../shared/language-flags/language-flags';
 import { ThemeState } from '../../../theme/theme-state';
 import { SecurityModel } from './settings.interface';
 import { securitySchema } from './settings.schema';
@@ -32,26 +33,8 @@ export class SettingsComponent {
 	readonly themeService = inject(ThemeState);
 	private readonly _destroyRef = inject(DestroyRef);
 
-	private static readonly LANGUAGE_FLAG_EMOJI: Record<string, string> = {
-		cs: '🇨🇿',
-		de: '🇩🇪',
-		el: '🇬🇷',
-		en: '🇬🇧',
-		es: '🇪🇸',
-		fr: '🇫🇷',
-		hu: '🇭🇺',
-		it: '🇮🇹',
-		nl: '🇳🇱',
-		pl: '🇵🇱',
-		pt: '🇵🇹',
-		ro: '🇷🇴',
-		sv: '🇸🇪',
-		ua: '🇺🇦',
-		uk: '🇺🇦',
-	};
-
-	languageFlagEmoji(code: string): string {
-		return SettingsComponent.LANGUAGE_FLAG_EMOJI[code] ?? '🌐';
+	languageFlagUrl(code: string): string {
+		return languageFlagUrl(code);
 	}
 
 	readonly isAuthenticated = computed(() => !!this.userService.user()._id);

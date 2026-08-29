@@ -84,36 +84,28 @@
 
 	<section class="settings__section">
 		<h2 class="settings__label" translate>Switch language</h2>
-		<div class="settings__language-picker">
-			<button
-				(click)="isLanguageListOpen.set(!isLanguageListOpen())"
-				class="settings__language"
-				[attr.aria-label]="translateService.translate('Switch language')()"
-				[attr.aria-expanded]="isLanguageListOpen()"
-				type="button"
-			>
-				<img class="settings__flag" [src]="languageFlagUrl(languageService.language())" alt="" aria-hidden="true" />
-				<span [translate]="languageService.getLanguage(languageService.language())?.name ?? ''"></span>
-				<i class="pi pi-chevron-down" aria-hidden="true"></i>
-			</button>
-			@if (isLanguageListOpen()) {
-				<ul class="settings__languages">
-					@for (language of languageService.languages(); track language.code) {
-						<li>
-							<button
-								(click)="setLanguage(language.code)"
-								class="settings__language-option"
-								[class.settings__language-option--active]="language.code === languageService.language()"
-								type="button"
-							>
-								<img class="settings__flag" [src]="languageFlagUrl(language.code)" alt="" aria-hidden="true" />
-								<span [translate]="language.name"></span>
-							</button>
-						</li>
-					}
-				</ul>
-			}
-		</div>
+		<p-select
+			class="settings__language-picker"
+			[options]="languageService.languages()"
+			optionLabel="name"
+			optionValue="code"
+			[ngModel]="languageService.language()"
+			(ngModelChange)="setLanguage($event)"
+			[ariaLabel]="translateService.translate('Switch language')()"
+		>
+			<ng-template #selectedItem let-code>
+				<span class="settings__language-value">
+					<img class="settings__flag" [src]="languageFlagUrl(code)" alt="" aria-hidden="true" />
+					<span [translate]="languageService.getLanguage(code)?.name ?? ''"></span>
+				</span>
+			</ng-template>
+			<ng-template #item let-language>
+				<span class="settings__language-value">
+					<img class="settings__flag" [src]="languageFlagUrl(language.code)" alt="" aria-hidden="true" />
+					<span [translate]="language.name"></span>
+				</span>
+			</ng-template>
+		</p-select>
 	</section>
 
 	@if (isAuthenticated()) {

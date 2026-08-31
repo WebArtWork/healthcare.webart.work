@@ -1,0 +1,86 @@
+<header class="showcase-topbar">
+	<button
+		type="button"
+		class="showcase-topbar__menu-toggle"
+		aria-label="Toggle navigation"
+		(click)="menuToggle.emit()"
+	>
+		<i class="pi pi-bars"></i>
+	</button>
+
+	<a routerLink="/" class="showcase-topbar__title">NGX Prime Default Development Kit</a>
+
+	<div class="showcase-topbar__actions">
+		@if (pagePromptService.config()) {
+			<p-button
+				icon="pi pi-sparkles"
+				[text]="true"
+				[rounded]="true"
+				ariaLabel="Create a page like this one with AI"
+				(onClick)="openPagePrompt()"
+			/>
+		}
+
+		@if (isTranslatorSection()) {
+			<p-select
+				[options]="translationsState.languages"
+				optionLabel="name"
+				optionValue="code"
+				[ngModel]="translationsState.selectedLanguage()"
+				(ngModelChange)="translationsState.selectedLanguage.set($event)"
+				scrollHeight="none"
+				aria-label="Language"
+			/>
+
+			<p-button
+				icon="pi pi-download"
+				[text]="true"
+				[rounded]="true"
+				[disabled]="!canDownloadSelected()"
+				ariaLabel="Download selected language JSON"
+				[pTooltip]="
+					translationsState.isDefaultLanguageSelected()
+						? 'English is the source language — nothing to download'
+						: translationsState.modifiedCount() > 0
+							? 'Download your changed rows'
+							: 'No changes to download yet'
+				"
+				tooltipPosition="bottom"
+				(onClick)="downloadSelectedLanguage()"
+			/>
+		}
+
+		@if (isUikitSection()) {
+			<p-button
+				icon="pi pi-palette"
+				[text]="true"
+				[rounded]="true"
+				ariaLabel="Design Lab"
+				pTooltip="Design Lab"
+				tooltipPosition="bottom"
+				(onClick)="goToDesignLab()"
+			/>
+
+			<p-button
+				icon="pi pi-download"
+				[text]="true"
+				[rounded]="true"
+				[disabled]="!designLabState.hasChanges()"
+				ariaLabel="Download changed theme config as JSON"
+				pTooltip="Download Config"
+				tooltipPosition="bottom"
+				(onClick)="downloadConfig()"
+			/>
+		}
+
+		<p-button
+			[icon]="dark() ? 'pi pi-sun' : 'pi pi-moon'"
+			[text]="true"
+			[rounded]="true"
+			[ariaLabel]="dark() ? 'Switch to light mode' : 'Switch to dark mode'"
+			(onClick)="toggleDarkMode()"
+		/>
+	</div>
+
+	<sc-page-prompt-dialog [(visible)]="promptDialogVisible" />
+</header>

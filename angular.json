@@ -40,9 +40,7 @@
 					"options": {
 						"outputPath": "dist/app",
 						"index": "src/index.html",
-						"polyfills": [
-							"src/polyfills.ts"
-						],
+						"polyfills": ["src/polyfills.ts"],
 						"tsConfig": "tsconfig.app.json",
 						"inlineStyleLanguage": "scss",
 						"assets": [
@@ -79,10 +77,7 @@
 						],
 						"scripts": [],
 						"stylePreprocessorOptions": {
-							"includePaths": [
-								"src/scss/utils",
-								"."
-							]
+							"includePaths": ["src/scss/utils", "."]
 						},
 						"allowedCommonJsDependencies": [
 							"brace",
@@ -141,7 +136,7 @@
 				}
 			}
 		},
-		"showcase": {
+		"devkit": {
 			"projectType": "application",
 			"schematics": {
 				"@schematics/angular:component": {
@@ -170,227 +165,19 @@
 					"skipTests": true
 				}
 			},
-			"root": "projects/showcase",
-			"sourceRoot": "projects/showcase/src",
-			"prefix": "sc",
+			"root": "projects/devkit",
+			"sourceRoot": "projects/devkit/src",
+			"prefix": "dk",
 			"architect": {
 				"build": {
 					"builder": "@angular/build:application",
 					"options": {
-						"browser": "projects/showcase/src/main.ts",
-						"server": "projects/showcase/src/main.server.ts",
+						"browser": "projects/devkit/src/main.ts",
+						"server": "projects/devkit/src/main.server.ts",
 						"outputMode": "static",
-						"tsConfig": "projects/showcase/tsconfig.app.json",
+						"tsConfig": "projects/devkit/tsconfig.app.json",
 						"inlineStyleLanguage": "scss",
 						"assets": [
-							{
-								"glob": "**/*",
-								"input": "projects/showcase/public"
-							},
-							{
-								"glob": "favicon.png",
-								"input": "src/assets",
-								"output": "/"
-							},
-							{
-								"glob": "logo.png",
-								"input": "src/assets",
-								"output": "/"
-							}
-						],
-						"styles": [
-							"projects/showcase/src/styles.css"
-						]
-					},
-					"configurations": {
-						"production": {
-							"budgets": [
-								{
-									"type": "initial",
-									"maximumWarning": "800kB",
-									"maximumError": "1.5MB"
-								},
-								{
-									"type": "anyComponentStyle",
-									"maximumWarning": "4kB",
-									"maximumError": "8kB"
-								}
-							],
-							"outputHashing": "all"
-						},
-						"development": {
-							"optimization": false,
-							"extractLicenses": false,
-							"sourceMap": true
-						}
-					},
-					"defaultConfiguration": "production"
-				},
-				"serve": {
-					"builder": "@angular/build:dev-server",
-					"options": {
-						"port": 4310
-					},
-					"configurations": {
-						"production": {
-							"buildTarget": "showcase:build:production"
-						},
-						"development": {
-							"buildTarget": "showcase:build:development"
-						}
-					},
-					"defaultConfiguration": "development"
-				}
-			}
-		},
-		"uikit": {
-			"projectType": "application",
-			"schematics": {
-				"@schematics/angular:component": {
-					"style": "scss",
-					"skipTests": true
-				},
-				"@schematics/angular:class": {
-					"skipTests": true
-				},
-				"@schematics/angular:directive": {
-					"skipTests": true
-				},
-				"@schematics/angular:guard": {
-					"skipTests": true
-				},
-				"@schematics/angular:interceptor": {
-					"skipTests": true
-				},
-				"@schematics/angular:pipe": {
-					"skipTests": true
-				},
-				"@schematics/angular:resolver": {
-					"skipTests": true
-				},
-				"@schematics/angular:service": {
-					"skipTests": true
-				}
-			},
-			"root": "projects/uikit",
-			"sourceRoot": "projects/uikit/src",
-			"prefix": "uk",
-			"architect": {
-				"build": {
-					"builder": "@angular/build:application",
-					"options": {
-						"browser": "projects/uikit/src/main.ts",
-						"server": "projects/uikit/src/main.server.ts",
-						"outputMode": "static",
-						"tsConfig": "projects/uikit/tsconfig.app.json",
-						"inlineStyleLanguage": "scss",
-						"assets": [
-							{
-								"glob": "**/*",
-								"input": "projects/uikit/public"
-							},
-							{
-								"glob": "favicon.png",
-								"input": "src/assets",
-								"output": "/"
-							},
-							{
-								"glob": "logo.png",
-								"input": "src/assets",
-								"output": "/"
-							}
-						],
-						"styles": [
-							"projects/uikit/src/styles.css"
-						]
-					},
-					"configurations": {
-						"production": {
-							"budgets": [
-								{
-									"type": "initial",
-									"maximumWarning": "800kB",
-									"maximumError": "1.5MB"
-								},
-								{
-									"type": "anyComponentStyle",
-									"maximumWarning": "4kB",
-									"maximumError": "8kB"
-								}
-							],
-							"outputHashing": "all"
-						},
-						"development": {
-							"optimization": false,
-							"extractLicenses": false,
-							"sourceMap": true
-						}
-					},
-					"defaultConfiguration": "production"
-				},
-				"serve": {
-					"builder": "@angular/build:dev-server",
-					"options": {
-						"port": 4320
-					},
-					"configurations": {
-						"production": {
-							"buildTarget": "uikit:build:production"
-						},
-						"development": {
-							"buildTarget": "uikit:build:development"
-						}
-					},
-					"defaultConfiguration": "development"
-				}
-			}
-		},
-		"translator": {
-			"projectType": "application",
-			"schematics": {
-				"@schematics/angular:component": {
-					"style": "scss",
-					"skipTests": true
-				},
-				"@schematics/angular:class": {
-					"skipTests": true
-				},
-				"@schematics/angular:directive": {
-					"skipTests": true
-				},
-				"@schematics/angular:guard": {
-					"skipTests": true
-				},
-				"@schematics/angular:interceptor": {
-					"skipTests": true
-				},
-				"@schematics/angular:pipe": {
-					"skipTests": true
-				},
-				"@schematics/angular:resolver": {
-					"skipTests": true
-				},
-				"@schematics/angular:service": {
-					"skipTests": true
-				}
-			},
-			"root": "projects/translator",
-			"sourceRoot": "projects/translator/src",
-			"prefix": "tr",
-			"architect": {
-				"build": {
-					"builder": "@angular/build:application",
-					"options": {
-						"browser": "projects/translator/src/main.ts",
-						"server": "projects/translator/src/main.server.ts",
-						"outputMode": "static",
-						"tsConfig": "projects/translator/tsconfig.app.json",
-						"inlineStyleLanguage": "scss",
-						"assets": [
-							{
-								"glob": "**/*",
-								"input": "projects/translator/public"
-							},
 							{
 								"glob": "*.json",
 								"input": "src/i18n",
@@ -407,9 +194,7 @@
 								"output": "/"
 							}
 						],
-						"styles": [
-							"projects/translator/src/styles.css"
-						]
+						"styles": ["projects/devkit/src/styles.css"]
 					},
 					"configurations": {
 						"production": {
@@ -438,14 +223,14 @@
 				"serve": {
 					"builder": "@angular/build:dev-server",
 					"options": {
-						"port": 4330
+						"port": 4000
 					},
 					"configurations": {
 						"production": {
-							"buildTarget": "translator:build:production"
+							"buildTarget": "devkit:build:production"
 						},
 						"development": {
-							"buildTarget": "translator:build:development"
+							"buildTarget": "devkit:build:development"
 						}
 					},
 					"defaultConfiguration": "development"

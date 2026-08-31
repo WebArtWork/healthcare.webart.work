@@ -5,13 +5,9 @@
 	"scripts": {
 		"start": "ng serve",
 		"build": "ng build --configuration production && node tools/seo/generate-static-seo.mjs",
-		"start:showcase": "ng serve showcase",
-		"start:uikit": "ng serve uikit",
-		"build:showcase": "ng build showcase",
-		"build:uikit": "ng build uikit",
-		"start:translator": "ng serve translator",
-		"build:translator": "ng build translator",
-		"postinstall": "patch-package"
+		"postinstall": "patch-package",
+		"start:devkit": "ng serve devkit",
+		"build:devkit": "ng build devkit"
 	},
 	"dependencies": {
 		"@angular/aria": "22.1.4",

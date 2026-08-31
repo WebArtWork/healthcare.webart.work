@@ -147,5 +147,14 @@
 		icon="briefcase"
 	/>
 
+	<app-nav-icon
+		[class.sidebar--minimized-icon]="!showNames()"
+		[name]="showNames() ? translateService.translate('Feedback')() : ''"
+		[ariaLabel]="translateService.translate('Feedback')()"
+		(click)="closeIfOverlay()"
+		routerLink="/feedback"
+		icon="comment"
+	/>
+
 	<hr class="my-2 border-0 border-t-2 border-t-[var(--c-text-primary)]" />
 </aside>

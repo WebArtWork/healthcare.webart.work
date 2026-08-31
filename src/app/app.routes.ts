@@ -127,6 +127,21 @@ export const routes: Routes = [
 					),
 			},
 			{
+				path: 'feedback',
+				canActivate: [MetaGuard],
+				data: {
+					meta: {
+						title: 'Відгук',
+						description: 'Поділіться відгуком або повідомте про помилку в MedPass.',
+						index: false,
+					},
+				},
+				loadChildren: () =>
+					import('./pages/user/feedback/feedback.routes').then(
+						(m) => m.routes,
+					),
+			},
+			{
 				path: 'share',
 				canActivate: [MetaGuard],
 				data: {

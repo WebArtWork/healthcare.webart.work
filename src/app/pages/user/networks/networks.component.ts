@@ -2,9 +2,9 @@ import { Component, computed, inject, signal } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { InputTextModule } from '@wawjs/ngx-prime/inputtext';
-import { NetworkShortComponent } from '../../../components/network/network-short/network-short.component';
-import { Network } from '../../../network/network.interface';
-import { networks } from '../../../network/network.data';
+import { NetworkShortComponent } from '../../../features/network/network-short/network-short.component';
+import { Network } from '../../../features/network/network.interface';
+import { networks } from '../../../features/network/network.data';
 
 @Component({
 	imports: [NetworkShortComponent, FormsModule, InputTextModule],

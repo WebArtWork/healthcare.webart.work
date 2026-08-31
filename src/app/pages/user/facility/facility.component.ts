@@ -3,9 +3,9 @@ import { toSignal } from '@angular/core/rxjs-interop';
 import { ActivatedRoute } from '@angular/router';
 import { map } from 'rxjs';
 import { CardModule } from '@wawjs/ngx-prime/card';
-import { FacilityViewComponent } from '../../../components/facility/facility-view/facility-view.component';
-import { Facility } from '../../../facility/facility.interface';
-import { facilities } from '../../../facility/facility.data';
+import { FacilityViewComponent } from '../../../features/facility/facility-view/facility-view.component';
+import { Facility } from '../../../features/facility/facility.interface';
+import { facilities } from '../../../features/facility/facility.data';
 
 @Component({
 	imports: [FacilityViewComponent, CardModule],

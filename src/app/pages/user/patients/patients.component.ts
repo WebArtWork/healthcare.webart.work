@@ -3,9 +3,9 @@ import { FormsModule } from '@angular/forms';
 import { Router, RouterLink } from '@angular/router';
 import { ButtonModule } from '@wawjs/ngx-prime/button';
 import { InputTextModule } from '@wawjs/ngx-prime/inputtext';
-import { PatientShortComponent } from '../../../components/patient/patient-short/patient-short.component';
-import { Patient } from '../../../patient/patient.interface';
-import { patients } from '../../../patient/patient.data';
+import { PatientShortComponent } from '../../../features/patient/patient-short/patient-short.component';
+import { Patient } from '../../../features/patient/patient.interface';
+import { patients } from '../../../features/patient/patient.data';
 
 @Component({
 	imports: [PatientShortComponent, FormsModule, RouterLink, ButtonModule, InputTextModule],

@@ -6,9 +6,9 @@ import { MessageService } from '@wawjs/ngx-prime/api';
 import { ButtonModule } from '@wawjs/ngx-prime/button';
 import { CardModule } from '@wawjs/ngx-prime/card';
 import { TranslateService } from '@wawjs/ngx-translate';
-import { NetworkViewComponent } from '../../../components/network/network-view/network-view.component';
-import { Network } from '../../../network/network.interface';
-import { networks } from '../../../network/network.data';
+import { NetworkViewComponent } from '../../../features/network/network-view/network-view.component';
+import { Network } from '../../../features/network/network.interface';
+import { networks } from '../../../features/network/network.data';
 
 @Component({
 	imports: [NetworkViewComponent, CardModule, ButtonModule],

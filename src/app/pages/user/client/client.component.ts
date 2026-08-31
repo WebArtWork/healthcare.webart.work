@@ -3,9 +3,9 @@ import { toSignal } from '@angular/core/rxjs-interop';
 import { ActivatedRoute } from '@angular/router';
 import { map } from 'rxjs';
 import { CardModule } from '@wawjs/ngx-prime/card';
-import { UserViewComponent } from '../../../components/user/user-view/user-view.component';
-import { User } from '../../../user/user.interface';
-import { users } from '../../../user/user.data';
+import { UserViewComponent } from '../../../features/user/user-view/user-view.component';
+import { User } from '../../../features/user/user.interface';
+import { users } from '../../../features/user/user.data';
 
 @Component({
 	imports: [UserViewComponent, CardModule],

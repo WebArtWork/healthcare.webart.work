@@ -6,7 +6,7 @@ import { ButtonModule } from '@wawjs/ngx-prime/button';
 import { MessageService } from '@wawjs/ngx-prime/api';
 import { TranslateService } from '@wawjs/ngx-translate';
 import { QrCodeComponent } from '../../../shared/qr-code/qr-code.component';
-import { companyProfile } from '../../../company/company.data';
+import { companyProfile } from '../../../features/company/company.data';
 
 export type ShareKind = 'app' | 'profile';
 

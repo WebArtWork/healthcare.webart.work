@@ -1,6 +1,6 @@
 import { environment } from '@env';
 import { DEFAULT_NETWORK_CONFIG } from '@wawjs/ngx-http';
-import { companyProfile } from './company/company.data';
+import { companyProfile } from './features/company/company.data';
 
 const dbName = 'wawjs-store';
 const storeName = 'kv';

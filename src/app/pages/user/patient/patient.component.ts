@@ -3,10 +3,10 @@ import { toSignal } from '@angular/core/rxjs-interop';
 import { ActivatedRoute } from '@angular/router';
 import { map } from 'rxjs';
 import { CardModule } from '@wawjs/ngx-prime/card';
-import { PatientViewComponent } from '../../../components/patient/patient-view/patient-view.component';
-import { Patient } from '../../../patient/patient.interface';
-import { patients } from '../../../patient/patient.data';
-import { PatientRelations, relationsForPatient } from '../../../patient/patient-relations';
+import { PatientViewComponent } from '../../../features/patient/patient-view/patient-view.component';
+import { Patient } from '../../../features/patient/patient.interface';
+import { patients } from '../../../features/patient/patient.data';
+import { PatientRelations, relationsForPatient } from '../../../features/patient/patient-relations';
 
 @Component({
 	imports: [PatientViewComponent, CardModule],

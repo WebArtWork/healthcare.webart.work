@@ -6,9 +6,9 @@ import { MessageService } from '@wawjs/ngx-prime/api';
 import { ButtonModule } from '@wawjs/ngx-prime/button';
 import { CardModule } from '@wawjs/ngx-prime/card';
 import { TranslateService } from '@wawjs/ngx-translate';
-import { DoctorViewComponent } from '../../../components/doctor/doctor-view/doctor-view.component';
-import { Doctor } from '../../../doctor/doctor.interface';
-import { doctors } from '../../../doctor/doctor.data';
+import { DoctorViewComponent } from '../../../features/doctor/doctor-view/doctor-view.component';
+import { Doctor } from '../../../features/doctor/doctor.interface';
+import { doctors } from '../../../features/doctor/doctor.data';
 
 @Component({
 	imports: [DoctorViewComponent, CardModule, ButtonModule],

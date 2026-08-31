@@ -6,9 +6,9 @@ import { MessageService } from '@wawjs/ngx-prime/api';
 import { ButtonModule } from '@wawjs/ngx-prime/button';
 import { CardModule } from '@wawjs/ngx-prime/card';
 import { TranslateService } from '@wawjs/ngx-translate';
-import { DepartmentViewComponent } from '../../../components/department/department-view/department-view.component';
-import { Department } from '../../../department/department.interface';
-import { departments } from '../../../department/department.data';
+import { DepartmentViewComponent } from '../../../features/department/department-view/department-view.component';
+import { Department } from '../../../features/department/department.interface';
+import { departments } from '../../../features/department/department.data';
 
 @Component({
 	imports: [DepartmentViewComponent, CardModule, ButtonModule],

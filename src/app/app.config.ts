@@ -20,7 +20,27 @@ import { provideNgxSocket } from '@wawjs/ngx-socket';
 import { provideNgxTinymce } from '@wawjs/ngx-tinymce';
 import { provideTranslate } from '@wawjs/ngx-translate';
 import { provideNgxPrime } from '@wawjs/ngx-prime/config';
+import { definePreset } from '@wawjs/css-prime-styled';
 import Aura from '@wawjs/css-prime-themes/aura';
+
+/** Healthcare brand teal, matched to the logo's cross/hands color. */
+const HealthcarePreset = definePreset(Aura, {
+	semantic: {
+		primary: {
+			50: '#eefbfa',
+			100: '#d3f4f1',
+			200: '#a8e8e3',
+			300: '#74d5cf',
+			400: '#43bcb7',
+			500: '#279e9b',
+			600: '#1c7f7d',
+			700: '#1a6664',
+			800: '#1a5250',
+			900: '#194444',
+			950: '#0a2726',
+		},
+	},
+});
 import { NgxBosConfig, ngxBosProvide } from '@wawjs/ngx-bos';
 import { io } from 'socket.io-client';
 import { environment } from '@env';
@@ -73,7 +93,7 @@ export const appConfig: ApplicationConfig = {
 		}),
 		provideNgxPrime({
 			theme: {
-				preset: Aura,
+				preset: HealthcarePreset,
 				options: { darkModeSelector: "[data-mode='dark']" },
 			},
 		}),

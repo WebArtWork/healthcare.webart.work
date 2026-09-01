@@ -149,6 +149,15 @@
 
 	<app-nav-icon
 		[class.sidebar--minimized-icon]="!showNames()"
+		[name]="showNames() ? translateService.translate('Для спеціалістів')() : ''"
+		[ariaLabel]="translateService.translate('Для спеціалістів')()"
+		(click)="closeIfOverlay()"
+		routerLink="/for-specialists"
+		icon="user-nurse"
+	/>
+
+	<app-nav-icon
+		[class.sidebar--minimized-icon]="!showNames()"
 		[name]="showNames() ? translateService.translate('Feedback')() : ''"
 		[ariaLabel]="translateService.translate('Feedback')()"
 		(click)="closeIfOverlay()"

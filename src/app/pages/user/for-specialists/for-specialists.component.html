@@ -1,0 +1,48 @@
+@if (showForm()) {
+	<div class="landing-page">
+		<header class="landing-page__hero">
+			<h1>{{ translateService.translate('Стати спеціалістом MedPass')() }}</h1>
+		</header>
+
+		<app-lead-form kind="specialist" [submitLabel]="translateService.translate('Надіслати заявку')()" />
+	</div>
+} @else {
+	<div class="landing-page">
+		<header class="landing-page__hero">
+			<h1>{{ translateService.translate('Медична допомога виходить за межі кабінету лікаря')() }}</h1>
+			<p>{{ translateService.translate('Медсестри, терапевти, технічний та інший медичний персонал — приєднуйтесь до MedPass і будьте частиною команди догляду за пацієнтом.')() }}</p>
+			<button pButton type="button" (click)="showForm.set(true)">{{ translateService.translate('Стати спеціалістом')() }}</button>
+		</header>
+
+		<section class="landing-page__section">
+			<h2>{{ translateService.translate('Як це працює')() }}</h2>
+			<ul class="landing-page__list">
+				<li>{{ translateService.translate('Ваш профіль відображається серед фахівців лікаря, відділення або мережі.')() }}</li>
+				<li>{{ translateService.translate('Ви бачите потрібну частину цифрового медичного паспорта пацієнта.')() }}</li>
+				<li>{{ translateService.translate('Направлення від лікарів, відділень і мереж надходять прямо у ваш профіль.')() }}</li>
+				<li>{{ translateService.translate('Можна працювати самостійно або в складі команди догляду.')() }}</li>
+			</ul>
+		</section>
+
+		<section class="landing-page__section">
+			<h2>{{ translateService.translate('Чому MedPass')() }}</h2>
+			<p>{{ translateService.translate('Ми визнаємо внесок кожного медичного фахівця в одужання пацієнта — не лише лікаря, а й усієї команди догляду.')() }}</p>
+		</section>
+
+		<section class="landing-page__section">
+			<h2>{{ translateService.translate('Питання')() }}</h2>
+			<p-accordion [multiple]="true">
+				@for (item of faq; track item.question) {
+					<p-accordionpanel [value]="item.question">
+						<p-accordionheader>{{ translateService.translate(item.question)() }}</p-accordionheader>
+						<p-accordioncontent>{{ translateService.translate(item.answer)() }}</p-accordioncontent>
+					</p-accordionpanel>
+				}
+			</p-accordion>
+		</section>
+
+		<footer class="landing-page__cta">
+			<button pButton type="button" (click)="showForm.set(true)">{{ translateService.translate('Стати спеціалістом')() }}</button>
+		</footer>
+	</div>
+}

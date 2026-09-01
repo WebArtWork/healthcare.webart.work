@@ -213,6 +213,20 @@ export const routes: Routes = [
 					),
 			},
 			{
+				path: 'for-specialists',
+				canActivate: [MetaGuard],
+				data: {
+					meta: {
+						title: 'Для спеціалістів',
+						description: 'Приєднуйтесь до MedPass як медсестра, терапевт, технік чи інший медичний спеціаліст.',
+					},
+				},
+				loadChildren: () =>
+					import('./pages/user/for-specialists/for-specialists.routes').then(
+						(m) => m.routes,
+					),
+			},
+			{
 				path: 'feed',
 				canActivate: [MetaGuard],
 				data: {

@@ -6,13 +6,14 @@ import { ButtonModule } from '@wawjs/ngx-prime/button';
 import { TranslateService } from '@wawjs/ngx-translate';
 import { ContactService } from '../../contact.service';
 
-export type LeadFormKind = 'user' | 'doctor' | 'network' | 'department';
+export type LeadFormKind = 'user' | 'doctor' | 'network' | 'department' | 'specialist';
 
 const KIND_LABELS: Record<LeadFormKind, string> = {
 	user: 'Заявка користувача',
 	doctor: 'Заявка лікаря',
 	network: 'Заявка мережі',
 	department: 'Заявка відділення',
+	specialist: 'Заявка спеціаліста',
 };
 
 /** Inline lead-capture form used on the /for-* landing pages. Sends to the MedPass Telegram contact channel. */

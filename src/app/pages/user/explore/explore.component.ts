@@ -5,11 +5,11 @@ import { ButtonModule } from '@wawjs/ngx-prime/button';
 import { InputTextModule } from '@wawjs/ngx-prime/inputtext';
 import { MultiSelectModule } from '@wawjs/ngx-prime/multiselect';
 import { SelectModule } from '@wawjs/ngx-prime/select';
-import { AppointmentRelationType, AppointmentShortComponent } from '../../../components/appointment/appointment-short/appointment-short.component';
-import { Appointment, AppointmentStatus, AppointmentType } from '../../../appointment/appointment.interface';
-import { appointments } from '../../../appointment/appointment.data';
-import { AppointmentRelations, patientForAppointment, relationsForAppointment } from '../../../appointment/appointment-relations';
-import { PatientCategory } from '../../../patient/patient.interface';
+import { AppointmentRelationType, AppointmentShortComponent } from '../../../features/appointment/appointment-short/appointment-short.component';
+import { Appointment, AppointmentStatus, AppointmentType } from '../../../features/appointment/appointment.interface';
+import { appointments } from '../../../features/appointment/appointment.data';
+import { AppointmentRelations, patientForAppointment, relationsForAppointment } from '../../../features/appointment/appointment-relations';
+import { PatientCategory } from '../../../features/patient/patient.interface';
 
 interface SelectOption<T> {
 	label: string;

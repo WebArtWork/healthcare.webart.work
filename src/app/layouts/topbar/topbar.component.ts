@@ -10,7 +10,7 @@ import { NavigationEnd, Router, RouterLink } from '@angular/router';
 import { CoreService } from '@wawjs/ngx-core';
 import { TranslateService } from '@wawjs/ngx-translate';
 import { filter, map, startWith } from 'rxjs';
-import { companyProfile } from '../../company/company.data';
+import { companyProfile } from '../../features/company/company.data';
 import { NavIconComponent } from '../../shared/nav-icon/nav-icon.component';
 import { SidebarService } from '../sidebar/sidebar.service';
 

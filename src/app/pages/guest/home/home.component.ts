@@ -3,7 +3,7 @@ import { RouterLink } from '@angular/router';
 import { ButtonModule } from '@wawjs/ngx-prime/button';
 import { CardModule } from '@wawjs/ngx-prime/card';
 import { TranslateDirective, TranslateService } from '@wawjs/ngx-translate';
-import { companyProfile } from '../../../company/company.data';
+import { companyProfile } from '../../../features/company/company.data';
 
 interface HomeFeature {
 	icon: string;

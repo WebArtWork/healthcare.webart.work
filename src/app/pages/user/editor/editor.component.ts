@@ -4,13 +4,13 @@ import { MessageService } from '@wawjs/ngx-prime/api';
 import { ButtonModule } from '@wawjs/ngx-prime/button';
 import { CardModule } from '@wawjs/ngx-prime/card';
 import { SelectButtonModule } from '@wawjs/ngx-prime/selectbutton';
-import { DepartmentFormComponent } from '../../../components/department/department-form/department-form.component';
-import { DoctorFormComponent } from '../../../components/doctor/doctor-form/doctor-form.component';
-import { FacilityFormComponent } from '../../../components/facility/facility-form/facility-form.component';
-import { NetworkFormComponent } from '../../../components/network/network-form/network-form.component';
-import { AppointmentFormComponent } from '../../../components/appointment/appointment-form/appointment-form.component';
-import { PatientFormComponent } from '../../../components/patient/patient-form/patient-form.component';
-import { RecordFormComponent } from '../../../components/record/record-form/record-form.component';
+import { DepartmentFormComponent } from '../../../features/department/department-form/department-form.component';
+import { DoctorFormComponent } from '../../../features/doctor/doctor-form/doctor-form.component';
+import { FacilityFormComponent } from '../../../features/facility/facility-form/facility-form.component';
+import { NetworkFormComponent } from '../../../features/network/network-form/network-form.component';
+import { AppointmentFormComponent } from '../../../features/appointment/appointment-form/appointment-form.component';
+import { PatientFormComponent } from '../../../features/patient/patient-form/patient-form.component';
+import { RecordFormComponent } from '../../../features/record/record-form/record-form.component';
 
 type EntityType =
 	| 'patient'

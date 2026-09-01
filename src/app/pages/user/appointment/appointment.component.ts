@@ -3,10 +3,10 @@ import { toSignal } from '@angular/core/rxjs-interop';
 import { ActivatedRoute } from '@angular/router';
 import { map } from 'rxjs';
 import { CardModule } from '@wawjs/ngx-prime/card';
-import { AppointmentViewComponent } from '../../../components/appointment/appointment-view/appointment-view.component';
-import { Appointment } from '../../../appointment/appointment.interface';
-import { appointments } from '../../../appointment/appointment.data';
-import { AppointmentRelations, relationsForAppointment } from '../../../appointment/appointment-relations';
+import { AppointmentViewComponent } from '../../../features/appointment/appointment-view/appointment-view.component';
+import { Appointment } from '../../../features/appointment/appointment.interface';
+import { appointments } from '../../../features/appointment/appointment.data';
+import { AppointmentRelations, relationsForAppointment } from '../../../features/appointment/appointment-relations';
 
 @Component({
 	imports: [AppointmentViewComponent, CardModule],

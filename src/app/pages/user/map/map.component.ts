@@ -2,10 +2,10 @@ import { ChangeDetectionStrategy, Component, computed, inject, signal } from '@a
 import { Router } from '@angular/router';
 import { ButtonModule } from '@wawjs/ngx-prime/button';
 import { CardModule } from '@wawjs/ngx-prime/card';
-import { PatientShortComponent } from '../../../components/patient/patient-short/patient-short.component';
+import { PatientShortComponent } from '../../../features/patient/patient-short/patient-short.component';
 import { LeafletMapComponent, LeafletMapMarker } from '../../../shared/leaflet-map/leaflet-map.component';
-import { Patient } from '../../../patient/patient.interface';
-import { patients } from '../../../patient/patient.data';
+import { Patient } from '../../../features/patient/patient.interface';
+import { patients } from '../../../features/patient/patient.data';
 
 type MapCategory = 'patients' | 'departments' | 'networks';
 

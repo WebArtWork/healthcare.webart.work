@@ -1,13 +1,13 @@
 import { Component, computed, inject, signal } from '@angular/core';
 import { Router } from '@angular/router';
 import { ButtonModule } from '@wawjs/ngx-prime/button';
-import { DepartmentIconComponent } from '../../../components/department/department-icon/department-icon.component';
-import { DoctorIconComponent } from '../../../components/doctor/doctor-icon/doctor-icon.component';
-import { NetworkIconComponent } from '../../../components/network/network-icon/network-icon.component';
-import { Appointment } from '../../../appointment/appointment.interface';
-import { appointments } from '../../../appointment/appointment.data';
-import { AppointmentRelations, relationsForAppointment } from '../../../appointment/appointment-relations';
-import { AppointmentRelationType } from '../../../components/appointment/appointment-short/appointment-short.component';
+import { DepartmentIconComponent } from '../../../features/department/department-icon/department-icon.component';
+import { DoctorIconComponent } from '../../../features/doctor/doctor-icon/doctor-icon.component';
+import { NetworkIconComponent } from '../../../features/network/network-icon/network-icon.component';
+import { Appointment } from '../../../features/appointment/appointment.interface';
+import { appointments } from '../../../features/appointment/appointment.data';
+import { AppointmentRelations, relationsForAppointment } from '../../../features/appointment/appointment-relations';
+import { AppointmentRelationType } from '../../../features/appointment/appointment-short/appointment-short.component';
 
 type FeedAction = 'favourite' | 'ignore';
 

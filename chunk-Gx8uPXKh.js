@@ -1,0 +1,1 @@
+var t=[{path:``,loadComponent:()=>import(`./chunk-C6gGp4ei.js`).then(o=>o.DoctorComponent)}];export{t as routes};

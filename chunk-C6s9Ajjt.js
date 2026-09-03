@@ -1,0 +1,1 @@
+var t=[{path:``,loadComponent:()=>import(`./chunk-Cqt0likm.js`).then(o=>o.ForDepartmentsPageComponent)}];export{t as routes};

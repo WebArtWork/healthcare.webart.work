@@ -1,0 +1,1 @@
+var t=[{path:``,loadComponent:()=>import(`./chunk-D7HMFlDp.js`).then(o=>o.HomeComponent)}];export{t as routes};

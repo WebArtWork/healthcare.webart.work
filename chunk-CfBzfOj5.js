@@ -1,0 +1,1 @@
+var t=[{path:``,loadComponent:()=>import(`./chunk-zh12Lm_q2.js`).then(o=>o.ForSpecialistsPageComponent)}];export{t as routes};

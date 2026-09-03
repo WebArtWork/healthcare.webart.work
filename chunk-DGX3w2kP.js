@@ -1,0 +1,1 @@
+var t=[{path:``,loadComponent:()=>import(`./chunk-DBiMd8yN.js`).then(o=>o.ForNetworksPageComponent)}];export{t as routes};

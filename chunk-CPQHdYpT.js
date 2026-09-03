@@ -1,0 +1,1 @@
+var t=[{path:``,loadComponent:()=>import(`./chunk-DmWniswm2.js`).then(o=>o.MapComponent)}];export{t as routes};

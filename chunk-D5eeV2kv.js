@@ -1,0 +1,1 @@
+var o=[{path:``,loadComponent:()=>import(`./chunk-C2s16ymf2.js`).then(t=>t.PatientsComponent)}];export{o as routes};

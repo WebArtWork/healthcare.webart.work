@@ -1,0 +1,1 @@
+var t=[{path:``,loadComponent:()=>import(`./chunk-CCsbudqt2.js`).then(o=>o.RecordsComponent)}];export{t as routes};

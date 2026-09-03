@@ -1,0 +1,1 @@
+var t=[{path:``,loadComponent:()=>import(`./chunk-CTv_YAY5.js`).then(o=>o.FacilityComponent)}];export{t as routes};

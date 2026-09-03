@@ -1,0 +1,1 @@
+var o=[{path:``,loadComponent:()=>import(`./chunk-ChOLl5SE.js`).then(t=>t.PatientComponent)}];export{o as routes};

@@ -1,0 +1,1 @@
+var o=[{path:``,loadComponent:()=>import(`./chunk-iuEdgGQ4.js`).then(t=>t.DepartmentsComponent)}];export{o as routes};

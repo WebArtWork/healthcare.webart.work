@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500" role="img" aria-label="Patient photo placeholder">
+	<rect width="800" height="500" fill="#2b2f36"/>
+	<rect width="800" height="500" fill="url(#g)"/>
+	<defs>
+		<linearGradient id="g" x1="0" y1="0" x2="0" y2="1">
+			<stop offset="0" stop-color="#3a3f47"/>
+			<stop offset="1" stop-color="#22252b"/>
+		</linearGradient>
+	</defs>
+
+	<g transform="translate(400,250)" fill="none" stroke="#8a94a6" stroke-width="10" stroke-linejoin="round" stroke-linecap="round">
+		<!-- head -->
+		<circle cx="0" cy="-60" r="55" />
+		<!-- shoulders -->
+		<path d="M-140,110 C-140,10 -70,-15 0,-15 C70,-15 140,10 140,110" />
+	</g>
+
+	<text x="400" y="410" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="26" fill="#8a94a6">
+		Photo coming soon
+	</text>
+</svg>

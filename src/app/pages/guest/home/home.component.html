@@ -34,6 +34,21 @@
 			<a pButton routerLink="/sign" class="px-6">
 				<span translate>Розпочати</span>
 			</a>
+			<a pButton [outlined]="true" routerLink="/for-users">
+				<span translate>Для пацієнтів</span>
+			</a>
+			<a pButton [outlined]="true" routerLink="/for-doctors">
+				<span translate>Для лікарів</span>
+			</a>
+			<a pButton [outlined]="true" routerLink="/for-networks">
+				<span translate>Для мереж</span>
+			</a>
+			<a pButton [outlined]="true" routerLink="/for-departments">
+				<span translate>Для відділень</span>
+			</a>
+			<a pButton [outlined]="true" routerLink="/for-specialists">
+				<span translate>Для спеціалістів</span>
+			</a>
 		</div>
 	</section>
 
@@ -43,7 +58,7 @@
 		>
 			<div class="flex flex-col gap-4 bg-[var(--c-bg-secondary)] p-8">
 				<span
-					class="inline-flex w-fit items-center gap-2 rounded-full border border-[var(--c-secondary)] px-3 py-1 text-xs font-semibold text-[var(--c-secondary)]"
+					class="inline-flex w-fit items-center gap-2 rounded-full bg-[var(--c-secondary)] px-3 py-1 text-sm font-semibold text-white"
 					translate
 					>Знайома ситуація</span
 				>
@@ -58,7 +73,7 @@
 
 			<div class="flex flex-col gap-4 p-8">
 				<span
-					class="inline-flex w-fit items-center gap-2 rounded-full border border-[var(--c-primary)] px-3 py-1 text-xs font-semibold text-[var(--c-primary-hover)]"
+					class="inline-flex w-fit items-center gap-2 rounded-full bg-[var(--c-primary)] px-3 py-1 text-sm font-semibold text-white"
 					translate
 					>Як це вирішує MedPass</span
 				>
@@ -68,6 +83,37 @@
 					призначали і як минуло лікування. Новий лікар бачить
 					реальну історію ще до прийому, а не покладається на пам'ять
 					пацієнта.
+				</p>
+			</div>
+		</div>
+
+		<div
+			class="mx-auto mt-5 grid max-w-5xl grid-cols-1 gap-5 overflow-hidden rounded-2xl border border-[var(--c-border)] md:grid-cols-2"
+		>
+			<div class="flex flex-col gap-4 bg-[var(--c-bg-secondary)] p-8">
+				<span
+					class="inline-flex w-fit items-center gap-2 rounded-full bg-[var(--c-secondary)] px-3 py-1 text-sm font-semibold text-white"
+					translate
+					>З боку лікаря чи закладу</span
+				>
+				<p class="m-0 text-base text-[var(--c-text-primary)]" translate>
+					Без підтвердженої історії лікар витрачає час прийому на
+					розпитування замість лікування, а пацієнти йдуть до
+					конкурентів, чий профіль викликає більше довіри.
+				</p>
+			</div>
+
+			<div class="flex flex-col gap-4 p-8">
+				<span
+					class="inline-flex w-fit items-center gap-2 rounded-full bg-[var(--c-primary)] px-3 py-1 text-sm font-semibold text-white"
+					translate
+					>Навіщо вести паспорт</span
+				>
+				<p class="m-0 text-base text-[var(--c-text-primary)]" translate>
+					Лікар, що веде цифровий паспорт пацієнтів, приймає рішення
+					на основі повної картини з першого візиту, а перевірений
+					профіль у MedPass приводить нових пацієнтів без додаткової
+					реклами.
 				</p>
 			</div>
 		</div>
